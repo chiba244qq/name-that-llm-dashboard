@@ -32,7 +32,98 @@ DOC_DATES = {
     "submission_34_v40_deployment.md": "2026-11-03 08:10 JST",
     "apex_ii_sota_architecture_and_v41_plan.md": "2026-11-03 16:00 JST",
     "name_that_llm_comprehensive_guide.md": "2026-11-03 21:55 JST",
-    "kaggle_live_dashboard_deployment.md": "2026-11-04 09:29 JST"
+    "kaggle_live_dashboard_deployment.md": "2026-11-04 09:29 JST",
+    "offline_oof_and_error_analysis_report.md": "2026-11-04 17:42 JST"
+}
+
+REPORT_METADATA = {
+    # --- ACTIVE: Reading Order 1 to 12 ---
+    "name_that_llm_comprehensive_guide.md": {
+        "order": 1, "step": "STEP 1: 超入門・全体像", "status": "active",
+        "note": "【必読・全体像】コンペ概要、Balanced Accuracy、9時間VOID崖、基本解法が中学生でもわかる完全ガイド"
+    },
+    "kaggle_live_dashboard_deployment.md": {
+        "order": 2, "step": "STEP 2: 運用インフラ", "status": "active",
+        "note": "リアルタイム監視ダッシュボード・自動提出・アーカイブ統合の全体像"
+    },
+    "gold_medal_master_strategy.md": {
+        "order": 3, "step": "STEP 3: 戦略ロードマップ", "status": "active",
+        "note": "Top 18 金メダル獲得に向けた4段階フェーズ計画とリソース配分"
+    },
+    "ntl_master_strategy_and_operations.md": {
+        "order": 4, "step": "STEP 3: 戦略ロードマップ", "status": "active",
+        "note": "銀メダル死守から金メダル挑戦へのマスター戦略＆作戦計画"
+    },
+    "phase0_oof_results_and_breakthrough_findings.md": {
+        "order": 5, "step": "STEP 4: 検証基盤の確立", "status": "active",
+        "note": "オフライン 5-Fold OOF 基盤の確立と、Public LB との相関解明"
+    },
+    "offline_oof_and_error_analysis_report.md": {
+        "order": 6, "step": "STEP 4: 検証基盤 (最新分析)", "status": "active",
+        "note": "【最新】Sinkhorn x Target Mix 2次元グリッド探索 & 176件の兄弟混同深層分析"
+    },
+    "sibling_disambiguation_training_plan.md": {
+        "order": 7, "step": "STEP 5: コア技術・ブレークスルー", "status": "active",
+        "note": "全エラーの68%を占める兄弟モデル（Gemini/GLM）特化識別器の学習仕様書"
+    },
+    "kaggle_discussion_and_code_intel_report.md": {
+        "order": 8, "step": "STEP 5: コア技術・最新インテル", "status": "active",
+        "note": "Kaggle上位陣（0.667+）の解法動向、Hungarian破綻の理由、Apex Kの分析"
+    },
+    "submission_33_v39_deployment.md": {
+        "order": 9, "step": "STEP 6: 実戦・ブレークスルー", "status": "active",
+        "note": "0.666達成！Open Pool v11 Extra 49k 換装で銀メダル上位を確定させた記録"
+    },
+    "submission_34_v40_deployment.md": {
+        "order": 10, "step": "STEP 6: 実戦・ブレークスルー", "status": "active",
+        "note": "0.666完全再現！Geminiルーティング除外 & ATLAS Margin 0.32で114位防衛"
+    },
+    "v39_verification_and_tradeoff_analysis.md": {
+        "order": 11, "step": "STEP 6: 実戦・ブレークスルー", "status": "active",
+        "note": "投入前のOOF事前検証手法とリスク・リターンのトレードオフ分析"
+    },
+    "apex_ii_sota_architecture_and_v41_plan.md": {
+        "order": 12, "step": "STEP 7: 現行SOTAアーキテクチャ", "status": "active",
+        "note": "現行主力モデル構成（Dual-DeBERTa + Pairwise + Sibling + ATLAS）の完全設計解剖"
+    },
+
+    # --- ARCHIVED / SUPERSEDED / REJECTED (9件) ---
+    "submission_32_v38_deployment.md": {
+        "order": 91, "step": "ARCHIVE: 通過点", "status": "archived",
+        "note": "【通過点】0.665達成記録。V39 (0.666) へ完全移行済み"
+    },
+    "submission_31_v37_deployment.md": {
+        "order": 92, "step": "ARCHIVE: 棄却施策", "status": "archived",
+        "note": "【棄却】ルールベース事前分布調整。スコア微減（0.659）のため不採用確定"
+    },
+    "phase0_oof_baseline_deployment.md": {
+        "order": 93, "step": "ARCHIVE: 初期着手", "status": "archived",
+        "note": "【初期着手】Phase 0 OOF の着手ログ。結果レポート（Step 5）に統合済み"
+    },
+    "submission_30_v36_deployment_and_monitoring.md": {
+        "order": 94, "step": "ARCHIVE: 旧世代", "status": "archived",
+        "note": "【旧世代】V36 (0.662) 銅メダル時代の提出記録。現行スタックにより代替"
+    },
+    "submission_28_29_results_and_next_steps.md": {
+        "order": 95, "step": "ARCHIVE: 旧戦況", "status": "archived",
+        "note": "【旧戦況】第28・29弾の中間スコア記録。銀メダル突破前の歴史的記録"
+    },
+    "offline_validation_and_sibling_mining.md": {
+        "order": 96, "step": "ARCHIVE: 旧ハーネス", "status": "archived",
+        "note": "【代替済み】k=2 疎サンプリング。より高精度な 5-Fold OOF（Step 5）の完成により役目を終了"
+    },
+    "submission_28_sinkhorn50_deployment.md": {
+        "order": 97, "step": "ARCHIVE: 旧世代", "status": "archived",
+        "note": "【旧世代】第28弾の初期 Sinkhorn 0.50 投入記録。V38/V39 で発展完了"
+    },
+    "dual_submission_operations_ab.md": {
+        "order": 98, "step": "ARCHIVE: 旧並行実験", "status": "archived",
+        "note": "【旧世代】第26・27弾の並行推論実験。旧モデル構成のため現在非推奨"
+    },
+    "submission_25_sinkhorn60_deployment.md": {
+        "order": 99, "step": "ARCHIVE: 失敗検証", "status": "archived",
+        "note": "【過剰補正】Sinkhorn 0.60 投入で 0.659 へ低下。Sinkhorn 0.50 回帰の教訓となった記録"
+    }
 }
 
 def extract_reports():
@@ -83,17 +174,29 @@ def extract_reports():
         if len(summary) > 130:
             summary = summary[:130] + '...'
 
+        # Custom Metadata (Reading Order & Status)
+        meta = REPORT_METADATA.get(fname, {
+            "order": 50,
+            "step": "その他",
+            "status": "active",
+            "note": summary
+        })
+
         reports.append({
             "filename": fname,
             "title": clean_title,
             "date": date_str,
             "category": category,
             "badge_color": badge_color,
-            "summary": summary
+            "summary": summary,
+            "order": meta["order"],
+            "step": meta["step"],
+            "status": meta["status"],
+            "note": meta["note"]
         })
 
-    # Sort descending by date
-    reports.sort(key=lambda x: x["date"], reverse=True)
+    # Sort primarily by recommended reading order (Active 1..12 first, then Archived 91..99)
+    reports.sort(key=lambda x: x["order"])
     return reports
 
 def main():

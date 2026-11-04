@@ -316,35 +316,35 @@
         <div>
           <div class="flex items-center space-x-2">
             <span class="text-xl">📚</span>
-            <h3 class="text-lg sm:text-xl font-bold text-white tracking-tight">Strategic Reports & Engineering Archives</h3>
+            <h3 class="text-lg sm:text-xl font-bold text-white tracking-tight">Engineering Archives & Recommended Learning Path</h3>
           </div>
           <p class="text-xs sm:text-sm text-slate-400 mt-1">
-            コンペ開始からの全20本の戦略レポート・包括解説・OOF実験・配備ログを時系列で閲覧できます。カードをクリックするとその場で全文を展開します。
+            コンペの基礎理解から最新SOTAアーキテクチャまでを順を追って理解できるように整理されたナレッジベースです。過去の実験や役目を終えた施策は最後尾にアーカイブされています。
           </p>
         </div>
         
         <!-- Category Filter -->
         <div class="flex flex-wrap items-center gap-1.5 text-xs" id="category-filters">
-          <button onclick="filterReports('all')" class="filter-btn px-3 py-1.5 rounded-lg bg-cyan-500 text-white font-semibold shadow transition" data-cat="all">
-            すべて (<span id="count-all">20</span>)
+          <button onclick="filterReports('reading-path')" class="filter-btn px-3 py-1.5 rounded-lg bg-cyan-500 text-white font-semibold shadow transition" data-cat="reading-path">
+            📖 推奨読書順 (<span id="count-active">12</span>)
           </button>
-          <button onclick="filterReports('提出・運用レポート')" class="filter-btn px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white font-medium transition" data-cat="提出・運用レポート">
-            提出・運用
+          <button onclick="filterReports('all')" class="filter-btn px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white font-medium transition" data-cat="all">
+            すべて (<span id="count-all">21</span>)
           </button>
-          <button onclick="filterReports('アーキテクチャ設計')" class="filter-btn px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white font-medium transition" data-cat="アーキテクチャ設計">
-            設計・戦略
+          <button onclick="filterReports('strategy')" class="filter-btn px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white font-medium transition" data-cat="strategy">
+            入門・戦略
           </button>
-          <button onclick="filterReports('総合ガイド・入門')" class="filter-btn px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white font-medium transition" data-cat="総合ガイド・入門">
-            総合ガイド
+          <button onclick="filterReports('tech')" class="filter-btn px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white font-medium transition" data-cat="tech">
+            検証・SOTA設計
           </button>
-          <button onclick="filterReports('競合調査・インテル')" class="filter-btn px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white font-medium transition" data-cat="競合調査・インテル">
-            インテル調査
+          <button onclick="filterReports('archived')" class="filter-btn px-3 py-1.5 rounded-lg bg-slate-800 text-slate-400 hover:text-white font-medium transition" data-cat="archived">
+            🗄 過去の記録 (<span id="count-archived">9</span>)
           </button>
         </div>
       </div>
 
-      <!-- Reports Timeline Grid -->
-      <div id="reports-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <!-- Reports Container (Active + Archived sections) -->
+      <div id="reports-container" class="space-y-8">
         <!-- Injected dynamically -->
       </div>
     </section>
@@ -594,39 +594,75 @@
       // Reports Timeline
       if (data.reports) {
         allReports = data.reports;
-        document.getElementById('count-all').textContent = allReports.length;
-        renderReports(allReports);
+        const activeList = allReports.filter(r => r.status === 'active');
+        const archivedList = allReports.filter(r => r.status === 'archived');
+        setTxt('count-all', allReports.length);
+        setTxt('count-active', activeList.length);
+        setTxt('count-archived', archivedList.length);
+        renderReports(allReports, 'reading-path');
       }
     }
 
-    function renderReports(reports) {
-      const grid = document.getElementById('reports-grid');
-      grid.innerHTML = '';
+    function createReportCard(r, isArchived) {
+      const card = document.createElement('div');
+      
+      const badgeColorClasses = {
+        cyan: "bg-cyan-950 text-cyan-400 border-cyan-800",
+        emerald: "bg-emerald-950 text-emerald-400 border-emerald-800",
+        blue: "bg-blue-950 text-blue-400 border-blue-800",
+        amber: "bg-amber-950 text-amber-400 border-amber-800",
+        purple: "bg-purple-950 text-purple-400 border-purple-800"
+      }[r.badge_color] || "bg-slate-800 text-slate-300 border-slate-700";
 
-      reports.forEach(r => {
-        const card = document.createElement('div');
-        card.className = "rounded-xl border border-slate-800 bg-slate-900/80 hover:border-cyan-500/50 p-4 sm:p-5 flex flex-col justify-between space-y-3 transition group hover:shadow-lg hover:shadow-cyan-500/5 cursor-pointer";
+      if (isArchived) {
+        card.className = "rounded-xl border border-dashed border-slate-800 bg-slate-950/40 opacity-60 hover:opacity-100 hover:border-slate-700 p-4 sm:p-5 flex flex-col justify-between space-y-3 transition group cursor-pointer";
         card.onclick = () => openModal(r);
-
-        const badgeColorClasses = {
-          cyan: "bg-cyan-950 text-cyan-400 border-cyan-800",
-          emerald: "bg-emerald-950 text-emerald-400 border-emerald-800",
-          blue: "bg-blue-950 text-blue-400 border-blue-800",
-          amber: "bg-amber-950 text-amber-400 border-amber-800",
-          purple: "bg-purple-950 text-purple-400 border-purple-800"
-        }[r.badge_color] || "bg-slate-800 text-slate-300 border-slate-700";
-
         card.innerHTML = `
           <div class="space-y-2">
             <div class="flex items-center justify-between text-xs">
-              <span class="px-2 py-0.5 rounded font-semibold border ${badgeColorClasses}">
-                ${r.category}
+              <span class="px-2 py-0.5 rounded font-mono text-[10px] font-bold bg-slate-900 text-slate-400 border border-slate-800">
+                [ARCHIVED] ${r.step || '過去の記録'}
               </span>
+              <span class="text-slate-500 mono text-[11px]">${r.date}</span>
+            </div>
+            <h4 class="text-sm font-bold text-slate-400 group-hover:text-slate-200 transition leading-snug">
+              ${r.title}
+            </h4>
+            ${r.note ? `<p class="text-[11px] text-amber-500/80 font-mono bg-slate-900/60 p-2 rounded border border-slate-800/80">${r.note}</p>` : ''}
+            <p class="text-xs text-slate-500 line-clamp-2 leading-relaxed">
+              ${r.summary}
+            </p>
+          </div>
+          
+          <div class="pt-2 border-t border-slate-900 flex items-center justify-between text-xs">
+            <span class="mono text-slate-600 text-[11px] truncate max-w-[150px]">${r.filename}</span>
+            <span class="text-slate-400 group-hover:translate-x-1 transition font-medium flex items-center space-x-1 text-[11px]">
+              <span>記録を確認</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </span>
+          </div>
+        `;
+      } else {
+        card.className = "rounded-xl border border-slate-800 bg-slate-900/80 hover:border-cyan-500/50 p-4 sm:p-5 flex flex-col justify-between space-y-3 transition group hover:shadow-lg hover:shadow-cyan-500/5 cursor-pointer relative overflow-hidden";
+        card.onclick = () => openModal(r);
+        const orderNum = r.order ? (r.order < 10 ? `0${r.order}` : r.order) : '';
+        card.innerHTML = `
+          <div class="space-y-2.5">
+            <div class="flex items-center justify-between text-xs">
+              <div class="flex items-center space-x-1.5">
+                <span class="font-mono font-black text-cyan-400 text-xs px-1.5 py-0.5 rounded bg-cyan-950/80 border border-cyan-800/60">
+                  #${orderNum}
+                </span>
+                <span class="px-2 py-0.5 rounded font-semibold text-[11px] border ${badgeColorClasses}">
+                  ${r.step || r.category}
+                </span>
+              </div>
               <span class="text-slate-400 mono text-[11px]">${r.date}</span>
             </div>
             <h4 class="text-sm sm:text-base font-bold text-white group-hover:text-cyan-400 transition leading-snug">
               ${r.title}
             </h4>
+            ${r.note ? `<p class="text-[11px] text-cyan-300 font-sans bg-cyan-950/40 p-2 rounded-lg border border-cyan-900/60 leading-relaxed font-medium">${r.note}</p>` : ''}
             <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed">
               ${r.summary}
             </p>
@@ -635,13 +671,122 @@
           <div class="pt-2 border-t border-slate-800/80 flex items-center justify-between text-xs">
             <span class="mono text-slate-500 text-[11px] truncate max-w-[150px]">${r.filename}</span>
             <span class="text-cyan-400 group-hover:translate-x-1 transition font-medium flex items-center space-x-1">
-              <span>全文を読む</span>
+              <span>読む</span>
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
             </span>
           </div>
         `;
-        grid.appendChild(card);
-      });
+      }
+      return card;
+    }
+
+    function renderReports(reports, filterMode = 'reading-path') {
+      const container = document.getElementById('reports-container');
+      if (!container) return;
+      container.innerHTML = '';
+
+      let activeReports = reports.filter(r => r.status === 'active');
+      let archivedReports = reports.filter(r => r.status === 'archived');
+
+      // Sorting
+      activeReports.sort((a, b) => (a.order || 50) - (b.order || 50));
+      archivedReports.sort((a, b) => (a.order || 99) - (b.order || 99));
+
+      if (filterMode === 'reading-path') {
+        // Show Active only, sorted by reading order
+        const header = document.createElement('div');
+        header.className = "flex items-center justify-between border-b border-slate-800/80 pb-3";
+        header.innerHTML = `
+          <div class="flex items-center space-x-2">
+            <span class="relative flex h-2.5 w-2.5">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyan-500"></span>
+            </span>
+            <h4 class="text-sm font-bold uppercase tracking-wider text-cyan-400 font-mono">
+              CURATED LEARNING PATH: 体系的理解のための推奨読書順 (全${activeReports.length}編)
+            </h4>
+          </div>
+          <span class="text-xs text-slate-400 font-mono">Step 1 から順にお読みください</span>
+        `;
+        container.appendChild(header);
+
+        const grid = document.createElement('div');
+        grid.className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4";
+        activeReports.forEach(r => grid.appendChild(createReportCard(r, false)));
+        container.appendChild(grid);
+
+      } else if (filterMode === 'archived') {
+        // Show Archived only
+        const header = document.createElement('div');
+        header.className = "flex items-center justify-between border-b border-slate-800/80 pb-3";
+        header.innerHTML = `
+          <h4 class="text-sm font-bold uppercase tracking-wider text-slate-400 font-mono flex items-center gap-2">
+            <span>🗄️</span> 過去の実験・棄却・旧世代アーカイブ (全${archivedReports.length}編)
+          </h4>
+          <span class="text-xs text-slate-500">※ 現在の推論スタックには含まれない履歴です</span>
+        `;
+        container.appendChild(header);
+
+        const grid = document.createElement('div');
+        grid.className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4";
+        archivedReports.forEach(r => grid.appendChild(createReportCard(r, true)));
+        container.appendChild(grid);
+
+      } else {
+        // 'all' or other categories
+        let displayActive = activeReports;
+        let displayArchived = archivedReports;
+
+        if (filterMode === 'strategy') {
+          displayActive = activeReports.filter(r => r.category.includes('入門') || r.category.includes('ガイド') || r.category.includes('設計') || r.category.includes('インフラ'));
+          displayArchived = [];
+        } else if (filterMode === 'tech') {
+          displayActive = activeReports.filter(r => r.category.includes('戦略') || r.category.includes('分析') || r.category.includes('インテル') || r.category.includes('設計'));
+          displayArchived = [];
+        }
+
+        // Active Section
+        if (displayActive.length > 0) {
+          const actHeader = document.createElement('div');
+          actHeader.className = "flex items-center justify-between border-b border-slate-800/80 pb-3";
+          actHeader.innerHTML = `
+            <h4 class="text-sm font-bold uppercase tracking-wider text-cyan-400 font-mono flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+              現行アクティブレポート (${displayActive.length}編)
+            </h4>
+          `;
+          container.appendChild(actHeader);
+
+          const grid = document.createElement('div');
+          grid.className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4";
+          displayActive.forEach(r => grid.appendChild(createReportCard(r, false)));
+          container.appendChild(grid);
+        }
+
+        // Archived Section at the bottom (Greyed out)
+        if (displayArchived.length > 0 && filterMode === 'all') {
+          const archSection = document.createElement('div');
+          archSection.className = "pt-8 space-y-4 border-t border-slate-800/80";
+          archSection.innerHTML = `
+            <div class="flex items-center justify-between">
+              <div>
+                <h4 class="text-sm font-bold uppercase tracking-wider text-slate-400 font-mono flex items-center gap-2">
+                  <span>🗄️</span> 過去の実験・役目を終えた施策 (Archived: ${displayArchived.length}編)
+                </h4>
+                <p class="text-xs text-slate-500 mt-1">
+                  過去の試行錯誤や棄却された仮説、より新しい基盤によって置き換えられた歴史的記録です。
+                </p>
+              </div>
+              <span class="text-xs text-slate-500 font-mono px-2 py-1 rounded bg-slate-900 border border-slate-800">グレーアウト表示</span>
+            </div>
+          `;
+          const grid = document.createElement('div');
+          grid.className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4";
+          displayArchived.forEach(r => grid.appendChild(createReportCard(r, true)));
+          archSection.appendChild(grid);
+          container.appendChild(archSection);
+        }
+      }
     }
 
     function filterReports(cat) {
@@ -653,12 +798,7 @@
         }
       });
 
-      if (cat === 'all') {
-        renderReports(allReports);
-      } else {
-        const filtered = allReports.filter(r => r.category === cat);
-        renderReports(filtered);
-      }
+      renderReports(allReports, cat);
     }
 
     async function openModal(report) {

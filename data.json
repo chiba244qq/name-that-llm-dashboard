@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-11-04 17:42:44 JST",
+  "updated_at": "2026-11-04 20:03:25 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 4558,
-    "my_rank": 203,
+    "total_teams": 4573,
+    "my_rank": 209,
     "my_score": 0.666,
     "medal": "Silver",
-    "top_percent": 4.45,
+    "top_percent": 4.57,
     "gold_cutoff": 0.701,
     "silver_cutoff": 0.666,
-    "silver_rank_cutoff": 227,
+    "silver_rank_cutoff": 228,
     "bronze_cutoff": 0.665,
-    "bronze_rank_cutoff": 455
+    "bronze_rank_cutoff": 457
   },
   "running_submission": {
     "ref": 57977543,
@@ -344,12 +344,16 @@
   ],
   "reports": [
     {
-      "filename": "offline_oof_and_error_analysis_report.md",
-      "title": "Phase 0 OOF 数理最適化＆深層エラー分析レポート",
-      "date": "2026-11-04 17:42 JST",
-      "category": "戦略・分析",
-      "badge_color": "purple",
-      "summary": "本レポートは、手元にある **Phase 0 OOF データセット（2,699件の正解ラベルおよび予測確率）** を用い、Kaggle の本推論待ち時間（約6時間）を活用して実施したローカルオフライン検証の結果をまとめたものです。"
+      "filename": "name_that_llm_comprehensive_guide.md",
+      "title": "【中学生でも完全にわかる！】Kaggle「Name That LLM」超入門＆完全攻略ガイド",
+      "date": "2026-11-03 21:55 JST",
+      "category": "総合ガイド・入門",
+      "badge_color": "cyan",
+      "summary": "〜18人のAI作家の「筆跡」を見破る探偵ゲームと、銀メダルから金メダルを目指す僕たちの挑戦記〜",
+      "order": 1,
+      "step": "STEP 1: 超入門・全体像",
+      "status": "active",
+      "note": "【必読・全体像】コンペ概要、Balanced Accuracy、9時間VOID崖、基本解法が中学生でもわかる完全ガイド"
     },
     {
       "filename": "kaggle_live_dashboard_deployment.md",
@@ -357,95 +361,11 @@
       "date": "2026-11-04 09:29 JST",
       "category": "提出・運用レポート",
       "badge_color": "emerald",
-      "summary": "- **ダッシュボード公開完了**:"
-    },
-    {
-      "filename": "name_that_llm_comprehensive_guide.md",
-      "title": "【中学生でも完全にわかる！】Kaggle「Name That LLM」超入門＆完全攻略ガイド",
-      "date": "2026-11-03 21:55 JST",
-      "category": "総合ガイド・入門",
-      "badge_color": "cyan",
-      "summary": "〜18人のAI作家の「筆跡」を見破る探偵ゲームと、銀メダルから金メダルを目指す僕たちの挑戦記〜"
-    },
-    {
-      "filename": "apex_ii_sota_architecture_and_v41_plan.md",
-      "title": "Apex-II SOTA アーキテクチャ深層解剖 & 第35弾（V41）設計書",
-      "date": "2026-11-03 16:00 JST",
-      "category": "アーキテクチャ設計",
-      "badge_color": "blue",
-      "summary": "- **現行実績と課題**:"
-    },
-    {
-      "filename": "submission_34_v40_deployment.md",
-      "title": "第34弾（V40: Apex Sovereign）投入および自動化パイプライン展開記録",
-      "date": "2026-11-03 08:10 JST",
-      "category": "提出・運用レポート",
-      "badge_color": "emerald",
-      "summary": "- **現行実績**: **Score `0.666`**（第33弾 V39）を達成し、銀メダル上位（Rank 89〜166 / 4,354 チーム中 Top 2.0%〜3.8%）を堅守。"
-    },
-    {
-      "filename": "submission_33_v39_deployment.md",
-      "title": "第33弾（V39: Extra 49k + Sinkhorn 0.50）投入および自律監視記録",
-      "date": "2026-11-02 22:33 JST",
-      "category": "提出・運用レポート",
-      "badge_color": "emerald",
-      "summary": "* **サブミッション名**: NTL 0666 V39 Extra49k Sinkhorn50"
-    },
-    {
-      "filename": "kaggle_discussion_and_code_intel_report.md",
-      "title": "Kaggle 最新動向・コード・ディスカッション精査レポート",
-      "date": "2026-11-02 21:51 JST",
-      "category": "競合調査・インテル",
-      "badge_color": "amber",
-      "summary": "- **公開フロンティアの進展**:"
-    },
-    {
-      "filename": "v39_verification_and_tradeoff_analysis.md",
-      "title": "次期施策（V39）の事前検証と投入に関するトレードオフ分析",
-      "date": "2026-11-02 21:50 JST",
-      "category": "戦略・分析",
-      "badge_color": "purple",
-      "summary": "最新の調査で特定された 2 つの重要改善要素："
-    },
-    {
-      "filename": "submission_32_v38_deployment.md",
-      "title": "第32弾（V38: OpenPool-SVC12 + Sinkhorn 0.50）投入および自律監視記録",
-      "date": "2026-11-02 15:11 JST",
-      "category": "提出・運用レポート",
-      "badge_color": "emerald",
-      "summary": "* **サブミッション名**: NTL 0664 V38 OpenPool-SVC12 Sinkhorn50"
-    },
-    {
-      "filename": "sibling_disambiguation_training_plan.md",
-      "title": "兄弟モデル特化型分類器（Sibling Disambiguator）学習計画書",
-      "date": "2026-11-02 14:34 JST",
-      "category": "アーキテクチャ設計",
-      "badge_color": "blue",
-      "summary": "Phase 0 の 5-Fold Prompt-Grouped CV 解析において、以下の重要ファクトが特定されました："
-    },
-    {
-      "filename": "submission_31_v37_deployment.md",
-      "title": "第31弾（V37 Sibling Calibration）投入完了 & 実測検証レポート",
-      "date": "2026-11-02 07:01 JST",
-      "category": "提出・運用レポート",
-      "badge_color": "emerald",
-      "summary": "Phase 0 の実測 5-Fold OOF データ（2,699 行）においてスコア改善（`+0.00148`）が実証された **GLM & Gemini 兄弟モデル特化校正（Sibling Disambiguation）** を組み込んだ**第31弾（`ts..."
-    },
-    {
-      "filename": "phase0_oof_results_and_breakthrough_findings.md",
-      "title": "Phase 0 OOF 検証基盤完了 & 第30弾結果報告：決定打的ファクトの解明",
-      "date": "2026-11-02 06:50 JST",
-      "category": "戦略・分析",
-      "badge_color": "purple",
-      "summary": "一晩の自律稼働により、以下の 2 大マイルストーンが完了しました。"
-    },
-    {
-      "filename": "phase0_oof_baseline_deployment.md",
-      "title": "Phase 0: 実アンサンブル 5-Fold OOF 検証基盤の着手レポート",
-      "date": "2026-11-01 23:07 JST",
-      "category": "提出・運用レポート",
-      "badge_color": "emerald",
-      "summary": "ゴールドメダル戦略 v2 の最優先課題である **「Phase 0: 検証基盤の構築（実アンサンブルの 5-Fold OOF 化）」** を直ちに着手し、Kaggle クラウド（2×T4 GPU）上で実行する専用カーネル **`tsuyoshichiba/nt..."
+      "summary": "- **ダッシュボード公開完了**:",
+      "order": 2,
+      "step": "STEP 2: 運用インフラ",
+      "status": "active",
+      "note": "リアルタイム監視ダッシュボード・自動提出・アーカイブ統合の全体像"
     },
     {
       "filename": "gold_medal_master_strategy.md",
@@ -453,39 +373,11 @@
       "date": "2026-11-01 23:00 JST",
       "category": "アーキテクチャ設計",
       "badge_color": "blue",
-      "summary": "| # | v1 での記述 | 検証結果 | 影響 |"
-    },
-    {
-      "filename": "submission_30_v36_deployment_and_monitoring.md",
-      "title": "第30弾（V36 Sibling Typo）投入完了および自律監視運用レポート",
-      "date": "2026-11-01 19:48 JST",
-      "category": "提出・運用レポート",
-      "badge_color": "emerald",
-      "summary": "事前検証（疎サンプリング・モンテカルロ評価ハーネス）において正の汎化寄与を示したタイポグラフィ層の拡張マーカー（`'...'`）を組み込んだ**第30弾（`tsuyoshichiba/ntl-0663-v36-sibling-typo`）**のFAST_COM..."
-    },
-    {
-      "filename": "submission_28_29_results_and_next_steps.md",
-      "title": "第28弾・第29弾 推論完了結果 ＆ 最新戦況レポート",
-      "date": "2026-11-01 19:12 JST",
-      "category": "提出・運用レポート",
-      "badge_color": "emerald",
-      "summary": "本日午前中に並行投入した 2 本の推論が、いずれも 5.5〜6.5 時間で安全に完走し、**`0.662` に完全復帰・安定再現** しました。"
-    },
-    {
-      "filename": "offline_validation_and_sibling_mining.md",
-      "title": "オフライン検証ハーネス（k=2 疎サンプリング）＆ 兄弟モデル弁別特徴量マイニングレポート",
-      "date": "2026-11-01 11:02 JST",
-      "category": "戦略・分析",
-      "badge_color": "purple",
-      "summary": "第23弾（`0.662` 完走ベースライン / `--sinkhorn 0.45`）の完全互換カーネルを第29弾として提出完了しました。"
-    },
-    {
-      "filename": "submission_28_sinkhorn50_deployment.md",
-      "title": "第28弾: NTL 0663 V35 Sinkhorn 50 投入・自律監視配備レポート",
-      "date": "2026-11-01 10:27 JST",
-      "category": "提出・運用レポート",
-      "badge_color": "emerald",
-      "summary": "第25〜27弾の推論結果（`0.659`）から得られた「ATLAS 時間バジェット打ち切り（推論時間 8.5h 超過）の回避」および「Sinkhorn 0.60 の過度な均一化補正の是正」という教訓に基づき、**5 時間 34 分で全対象行の完走が実証されてい..."
+      "summary": "| # | v1 での記述 | 検証結果 | 影響 |",
+      "order": 3,
+      "step": "STEP 3: 戦略ロードマップ",
+      "status": "active",
+      "note": "Top 18 金メダル獲得に向けた4段階フェーズ計画とリソース配分"
     },
     {
       "filename": "ntl_master_strategy_and_operations.md",
@@ -493,7 +385,191 @@
       "date": "2026-10-31 21:45 JST",
       "category": "アーキテクチャ設計",
       "badge_color": "blue",
-      "summary": "```mermaid"
+      "summary": "```mermaid",
+      "order": 4,
+      "step": "STEP 3: 戦略ロードマップ",
+      "status": "active",
+      "note": "銀メダル死守から金メダル挑戦へのマスター戦略＆作戦計画"
+    },
+    {
+      "filename": "phase0_oof_results_and_breakthrough_findings.md",
+      "title": "Phase 0 OOF 検証基盤完了 & 第30弾結果報告：決定打的ファクトの解明",
+      "date": "2026-11-02 06:50 JST",
+      "category": "戦略・分析",
+      "badge_color": "purple",
+      "summary": "一晩の自律稼働により、以下の 2 大マイルストーンが完了しました。",
+      "order": 5,
+      "step": "STEP 4: 検証基盤の確立",
+      "status": "active",
+      "note": "オフライン 5-Fold OOF 基盤の確立と、Public LB との相関解明"
+    },
+    {
+      "filename": "offline_oof_and_error_analysis_report.md",
+      "title": "Phase 0 OOF 数理最適化＆深層エラー分析レポート",
+      "date": "2026-11-04 17:42 JST",
+      "category": "戦略・分析",
+      "badge_color": "purple",
+      "summary": "本レポートは、手元にある **Phase 0 OOF データセット（2,699件の正解ラベルおよび予測確率）** を用い、Kaggle の本推論待ち時間（約6時間）を活用して実施したローカルオフライン検証の結果をまとめたものです。",
+      "order": 6,
+      "step": "STEP 4: 検証基盤 (最新分析)",
+      "status": "active",
+      "note": "【最新】Sinkhorn x Target Mix 2次元グリッド探索 & 176件の兄弟混同深層分析"
+    },
+    {
+      "filename": "sibling_disambiguation_training_plan.md",
+      "title": "兄弟モデル特化型分類器（Sibling Disambiguator）学習計画書",
+      "date": "2026-11-02 14:34 JST",
+      "category": "アーキテクチャ設計",
+      "badge_color": "blue",
+      "summary": "Phase 0 の 5-Fold Prompt-Grouped CV 解析において、以下の重要ファクトが特定されました：",
+      "order": 7,
+      "step": "STEP 5: コア技術・ブレークスルー",
+      "status": "active",
+      "note": "全エラーの68%を占める兄弟モデル（Gemini/GLM）特化識別器の学習仕様書"
+    },
+    {
+      "filename": "kaggle_discussion_and_code_intel_report.md",
+      "title": "Kaggle 最新動向・コード・ディスカッション精査レポート",
+      "date": "2026-11-02 21:51 JST",
+      "category": "競合調査・インテル",
+      "badge_color": "amber",
+      "summary": "- **公開フロンティアの進展**:",
+      "order": 8,
+      "step": "STEP 5: コア技術・最新インテル",
+      "status": "active",
+      "note": "Kaggle上位陣（0.667+）の解法動向、Hungarian破綻の理由、Apex Kの分析"
+    },
+    {
+      "filename": "submission_33_v39_deployment.md",
+      "title": "第33弾（V39: Extra 49k + Sinkhorn 0.50）投入および自律監視記録",
+      "date": "2026-11-02 22:33 JST",
+      "category": "提出・運用レポート",
+      "badge_color": "emerald",
+      "summary": "* **サブミッション名**: NTL 0666 V39 Extra49k Sinkhorn50",
+      "order": 9,
+      "step": "STEP 6: 実戦・ブレークスルー",
+      "status": "active",
+      "note": "0.666達成！Open Pool v11 Extra 49k 換装で銀メダル上位を確定させた記録"
+    },
+    {
+      "filename": "submission_34_v40_deployment.md",
+      "title": "第34弾（V40: Apex Sovereign）投入および自動化パイプライン展開記録",
+      "date": "2026-11-03 08:10 JST",
+      "category": "提出・運用レポート",
+      "badge_color": "emerald",
+      "summary": "- **現行実績**: **Score `0.666`**（第33弾 V39）を達成し、銀メダル上位（Rank 89〜166 / 4,354 チーム中 Top 2.0%〜3.8%）を堅守。",
+      "order": 10,
+      "step": "STEP 6: 実戦・ブレークスルー",
+      "status": "active",
+      "note": "0.666完全再現！Geminiルーティング除外 & ATLAS Margin 0.32で114位防衛"
+    },
+    {
+      "filename": "v39_verification_and_tradeoff_analysis.md",
+      "title": "次期施策（V39）の事前検証と投入に関するトレードオフ分析",
+      "date": "2026-11-02 21:50 JST",
+      "category": "戦略・分析",
+      "badge_color": "purple",
+      "summary": "最新の調査で特定された 2 つの重要改善要素：",
+      "order": 11,
+      "step": "STEP 6: 実戦・ブレークスルー",
+      "status": "active",
+      "note": "投入前のOOF事前検証手法とリスク・リターンのトレードオフ分析"
+    },
+    {
+      "filename": "apex_ii_sota_architecture_and_v41_plan.md",
+      "title": "Apex-II SOTA アーキテクチャ深層解剖 & 第35弾（V41）設計書",
+      "date": "2026-11-03 16:00 JST",
+      "category": "アーキテクチャ設計",
+      "badge_color": "blue",
+      "summary": "- **現行実績と課題**:",
+      "order": 12,
+      "step": "STEP 7: 現行SOTAアーキテクチャ",
+      "status": "active",
+      "note": "現行主力モデル構成（Dual-DeBERTa + Pairwise + Sibling + ATLAS）の完全設計解剖"
+    },
+    {
+      "filename": "submission_32_v38_deployment.md",
+      "title": "第32弾（V38: OpenPool-SVC12 + Sinkhorn 0.50）投入および自律監視記録",
+      "date": "2026-11-02 15:11 JST",
+      "category": "提出・運用レポート",
+      "badge_color": "emerald",
+      "summary": "* **サブミッション名**: NTL 0664 V38 OpenPool-SVC12 Sinkhorn50",
+      "order": 91,
+      "step": "ARCHIVE: 通過点",
+      "status": "archived",
+      "note": "【通過点】0.665達成記録。V39 (0.666) へ完全移行済み"
+    },
+    {
+      "filename": "submission_31_v37_deployment.md",
+      "title": "第31弾（V37 Sibling Calibration）投入完了 & 実測検証レポート",
+      "date": "2026-11-02 07:01 JST",
+      "category": "提出・運用レポート",
+      "badge_color": "emerald",
+      "summary": "Phase 0 の実測 5-Fold OOF データ（2,699 行）においてスコア改善（`+0.00148`）が実証された **GLM & Gemini 兄弟モデル特化校正（Sibling Disambiguation）** を組み込んだ**第31弾（`ts...",
+      "order": 92,
+      "step": "ARCHIVE: 棄却施策",
+      "status": "archived",
+      "note": "【棄却】ルールベース事前分布調整。スコア微減（0.659）のため不採用確定"
+    },
+    {
+      "filename": "phase0_oof_baseline_deployment.md",
+      "title": "Phase 0: 実アンサンブル 5-Fold OOF 検証基盤の着手レポート",
+      "date": "2026-11-01 23:07 JST",
+      "category": "提出・運用レポート",
+      "badge_color": "emerald",
+      "summary": "ゴールドメダル戦略 v2 の最優先課題である **「Phase 0: 検証基盤の構築（実アンサンブルの 5-Fold OOF 化）」** を直ちに着手し、Kaggle クラウド（2×T4 GPU）上で実行する専用カーネル **`tsuyoshichiba/nt...",
+      "order": 93,
+      "step": "ARCHIVE: 初期着手",
+      "status": "archived",
+      "note": "【初期着手】Phase 0 OOF の着手ログ。結果レポート（Step 5）に統合済み"
+    },
+    {
+      "filename": "submission_30_v36_deployment_and_monitoring.md",
+      "title": "第30弾（V36 Sibling Typo）投入完了および自律監視運用レポート",
+      "date": "2026-11-01 19:48 JST",
+      "category": "提出・運用レポート",
+      "badge_color": "emerald",
+      "summary": "事前検証（疎サンプリング・モンテカルロ評価ハーネス）において正の汎化寄与を示したタイポグラフィ層の拡張マーカー（`'...'`）を組み込んだ**第30弾（`tsuyoshichiba/ntl-0663-v36-sibling-typo`）**のFAST_COM...",
+      "order": 94,
+      "step": "ARCHIVE: 旧世代",
+      "status": "archived",
+      "note": "【旧世代】V36 (0.662) 銅メダル時代の提出記録。現行スタックにより代替"
+    },
+    {
+      "filename": "submission_28_29_results_and_next_steps.md",
+      "title": "第28弾・第29弾 推論完了結果 ＆ 最新戦況レポート",
+      "date": "2026-11-01 19:12 JST",
+      "category": "提出・運用レポート",
+      "badge_color": "emerald",
+      "summary": "本日午前中に並行投入した 2 本の推論が、いずれも 5.5〜6.5 時間で安全に完走し、**`0.662` に完全復帰・安定再現** しました。",
+      "order": 95,
+      "step": "ARCHIVE: 旧戦況",
+      "status": "archived",
+      "note": "【旧戦況】第28・29弾の中間スコア記録。銀メダル突破前の歴史的記録"
+    },
+    {
+      "filename": "offline_validation_and_sibling_mining.md",
+      "title": "オフライン検証ハーネス（k=2 疎サンプリング）＆ 兄弟モデル弁別特徴量マイニングレポート",
+      "date": "2026-11-01 11:02 JST",
+      "category": "戦略・分析",
+      "badge_color": "purple",
+      "summary": "第23弾（`0.662` 完走ベースライン / `--sinkhorn 0.45`）の完全互換カーネルを第29弾として提出完了しました。",
+      "order": 96,
+      "step": "ARCHIVE: 旧ハーネス",
+      "status": "archived",
+      "note": "【代替済み】k=2 疎サンプリング。より高精度な 5-Fold OOF（Step 5）の完成により役目を終了"
+    },
+    {
+      "filename": "submission_28_sinkhorn50_deployment.md",
+      "title": "第28弾: NTL 0663 V35 Sinkhorn 50 投入・自律監視配備レポート",
+      "date": "2026-11-01 10:27 JST",
+      "category": "提出・運用レポート",
+      "badge_color": "emerald",
+      "summary": "第25〜27弾の推論結果（`0.659`）から得られた「ATLAS 時間バジェット打ち切り（推論時間 8.5h 超過）の回避」および「Sinkhorn 0.60 の過度な均一化補正の是正」という教訓に基づき、**5 時間 34 分で全対象行の完走が実証されてい...",
+      "order": 97,
+      "step": "ARCHIVE: 旧世代",
+      "status": "archived",
+      "note": "【旧世代】第28弾の初期 Sinkhorn 0.50 投入記録。V38/V39 で発展完了"
     },
     {
       "filename": "dual_submission_operations_ab.md",
@@ -501,7 +577,11 @@
       "date": "2026-10-31 21:00 JST",
       "category": "提出・運用レポート",
       "badge_color": "emerald",
-      "summary": "第25弾（基準 0.664 版）の推論進行と並行して、作戦 A（Llama Gaussian Head 追加）および作戦 A+B 統合（Llama Gaussian Head + TargetMix 0.42 + Pool 0.45）の 2 本をセットアップし..."
+      "summary": "第25弾（基準 0.664 版）の推論進行と並行して、作戦 A（Llama Gaussian Head 追加）および作戦 A+B 統合（Llama Gaussian Head + TargetMix 0.42 + Pool 0.45）の 2 本をセットアップし...",
+      "order": 98,
+      "step": "ARCHIVE: 旧並行実験",
+      "status": "archived",
+      "note": "【旧世代】第26・27弾の並行推論実験。旧モデル構成のため現在非推奨"
     },
     {
       "filename": "submission_25_sinkhorn60_deployment.md",
@@ -509,7 +589,11 @@
       "date": "2026-10-31 12:00 JST",
       "category": "提出・運用レポート",
       "badge_color": "emerald",
-      "summary": "- **提出 ID (Ref)**: `57837803`"
+      "summary": "- **提出 ID (Ref)**: `57837803`",
+      "order": 99,
+      "step": "ARCHIVE: 失敗検証",
+      "status": "archived",
+      "note": "【過剰補正】Sinkhorn 0.60 投入で 0.659 へ低下。Sinkhorn 0.50 回帰の教訓となった記録"
     }
   ]
 }
