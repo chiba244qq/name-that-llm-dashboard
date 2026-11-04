@@ -1,14 +1,100 @@
 #!/usr/bin/env python3
 """Build latest competition and submission metrics into data.json for dashboard."""
 import os
+import re
 import sys
 import json
 import zipfile
 import tempfile
 import datetime
+import glob
 import pandas as pd
 import kaggle
 from kaggle.api.kaggle_api_extended import KaggleApi
+
+DOC_DATES = {
+    "submission_25_sinkhorn60_deployment.md": "2026-10-31 12:00 JST",
+    "dual_submission_operations_ab.md": "2026-10-31 21:00 JST",
+    "ntl_master_strategy_and_operations.md": "2026-10-31 21:45 JST",
+    "submission_28_sinkhorn50_deployment.md": "2026-11-01 10:27 JST",
+    "offline_validation_and_sibling_mining.md": "2026-11-01 11:02 JST",
+    "submission_28_29_results_and_next_steps.md": "2026-11-01 19:12 JST",
+    "submission_30_v36_deployment_and_monitoring.md": "2026-11-01 19:48 JST",
+    "gold_medal_master_strategy.md": "2026-11-01 23:00 JST",
+    "phase0_oof_baseline_deployment.md": "2026-11-01 23:07 JST",
+    "phase0_oof_results_and_breakthrough_findings.md": "2026-11-02 06:50 JST",
+    "submission_31_v37_deployment.md": "2026-11-02 07:01 JST",
+    "sibling_disambiguation_training_plan.md": "2026-11-02 14:34 JST",
+    "submission_32_v38_deployment.md": "2026-11-02 15:11 JST",
+    "v39_verification_and_tradeoff_analysis.md": "2026-11-02 21:50 JST",
+    "kaggle_discussion_and_code_intel_report.md": "2026-11-02 21:51 JST",
+    "submission_33_v39_deployment.md": "2026-11-02 22:33 JST",
+    "submission_34_v40_deployment.md": "2026-11-03 08:10 JST",
+    "apex_ii_sota_architecture_and_v41_plan.md": "2026-11-03 16:00 JST",
+    "name_that_llm_comprehensive_guide.md": "2026-11-03 21:55 JST",
+    "kaggle_live_dashboard_deployment.md": "2026-11-04 09:29 JST"
+}
+
+def extract_reports():
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    docs_dir = os.path.join(base_dir, 'docs')
+    reports = []
+    
+    for p in sorted(glob.glob(os.path.join(docs_dir, '*.md'))):
+        fname = os.path.basename(p)
+        with open(p, encoding='utf-8') as f:
+            content = f.read()
+
+        # Title
+        m_title = re.search(r'^#\s+(.+)$', content, re.MULTILINE)
+        raw_title = m_title.group(1).strip() if m_title else fname
+        # Clean title markdown
+        clean_title = re.sub(r'[\[\]\(\)\*]', '', raw_title)
+
+        # Date
+        date_str = DOC_DATES.get(fname)
+        if not date_str:
+            m_date = re.search(r'\*\*(?:記録日時|作成日時|更新日時|最終更新日時|デプロイ日時)\*\*:\s*([0-9\-\:\s]+(?:JST|UTC)?)', content)
+            if m_date:
+                date_str = m_date.group(1).strip()
+            else:
+                m_time = os.path.getmtime(p)
+                date_str = datetime.datetime.fromtimestamp(m_time).strftime('%Y-%m-%d %H:%M JST')
+
+        # Category
+        category = '戦略・分析'
+        badge_color = 'purple'
+        if 'guide' in fname:
+            category = '総合ガイド・入門'
+            badge_color = 'cyan'
+        elif 'deployment' in fname or 'submission' in fname or 'dashboard' in fname:
+            category = '提出・運用レポート'
+            badge_color = 'emerald'
+        elif 'intel' in fname or 'discussion' in fname:
+            category = '競合調査・インテル'
+            badge_color = 'amber'
+        elif 'plan' in fname or 'strategy' in fname:
+            category = 'アーキテクチャ設計'
+            badge_color = 'blue'
+
+        # Extract Summary
+        lines = [l.strip() for l in content.splitlines() if l.strip() and not l.startswith('#') and not l.startswith('**') and not l.startswith('---') and not l.startswith('>')]
+        summary = lines[0] if lines else ''
+        if len(summary) > 130:
+            summary = summary[:130] + '...'
+
+        reports.append({
+            "filename": fname,
+            "title": clean_title,
+            "date": date_str,
+            "category": category,
+            "badge_color": badge_color,
+            "summary": summary
+        })
+
+    # Sort descending by date
+    reports.sort(key=lambda x: x["date"], reverse=True)
+    return reports
 
 def main():
     api = KaggleApi()
@@ -30,11 +116,9 @@ def main():
         
         status_str = str(s.status).replace("SubmissionStatus.", "")
         
-        # Convert date to JST string
         date_str = str(s.date)
         try:
             dt = datetime.datetime.fromisoformat(date_str)
-            # Kaggle API returns UTC
             dt_jst = dt + datetime.timedelta(hours=9)
             date_jst = dt_jst.strftime("%Y-%m-%d %H:%M:%S")
         except Exception:
@@ -108,6 +192,10 @@ def main():
         {"version": "V41 (Apex-II)", "score": "0.670+ (目標)", "data_pool": "Open Pool v11 190k + 49k", "deberta": "Dual (0.75 Pool + 0.25 Orig)", "pairwise_ab": "V34.1 A/B Verifier (~16s)", "sibling_style": "V40A Residual (0.10)", "atlas_margin": "0.32", "sinkhorn": "0.30", "highlight": "3大SOTA統合スタック"}
     ]
 
+    # 5. Extract Markdown Reports
+    reports = extract_reports()
+    print(f"Extracted {len(reports)} markdown reports from docs/")
+
     now_jst = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S JST")
     out_data = {
         "updated_at": now_jst,
@@ -127,13 +215,14 @@ def main():
         "running_submission": running_sub,
         "timeline": timeline,
         "submissions": sub_list[:15],
-        "architecture_matrix": architecture_matrix
+        "architecture_matrix": architecture_matrix,
+        "reports": reports
     }
 
     out_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data.json')
     with open(out_path, 'w', encoding='utf-8') as f:
         json.dump(out_data, f, ensure_ascii=False, indent=2)
-    print(f"data.json successfully generated at: {out_path}")
+    print(f"data.json successfully generated with {len(reports)} reports at: {out_path}")
 
 if __name__ == "__main__":
     main()

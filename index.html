@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Name That LLM | Kaggle Command Center & Live Dashboard</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -38,12 +39,25 @@
     .glow-cyan { box-shadow: 0 0 25px -5px rgba(32, 190, 255, 0.25); }
     .glow-gold { box-shadow: 0 0 25px -5px rgba(234, 179, 8, 0.25); }
     .glow-silver { box-shadow: 0 0 25px -5px rgba(148, 163, 184, 0.25); }
+    
+    /* Markdown Prose Styling */
+    .prose h1 { color: #f8fafc; font-weight: 800; border-bottom: 1px solid #334155; padding-bottom: 0.5rem; }
+    .prose h2 { color: #38bdf8; font-weight: 700; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+    .prose h3 { color: #e2e8f0; font-weight: 600; }
+    .prose a { color: #38bdf8; text-decoration: underline; }
+    .prose pre { background-color: #0f172a !important; border: 1px solid #334155; border-radius: 0.75rem; }
+    .prose code { color: #38bdf8; font-family: 'JetBrains Mono', monospace; font-size: 0.875em; }
+    .prose blockquote { border-left-color: #38bdf8; background: rgba(56, 189, 248, 0.05); padding: 0.5rem 1rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.875rem; }
+    .prose th { background-color: #1e293b; color: #f8fafc; border: 1px solid #334155; padding: 0.5rem; text-align: left; }
+    .prose td { border: 1px solid #334155; padding: 0.5rem; }
+    .prose tr:nth-child(even) { background-color: rgba(30, 41, 59, 0.4); }
   </style>
 </head>
 <body class="text-slate-100 min-h-screen flex flex-col antialiased selection:bg-cyan-500 selection:text-white">
 
   <!-- Top Navigation Bar -->
-  <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
+  <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-40">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       <div class="flex items-center space-x-3">
         <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center font-black text-white text-lg shadow-md shadow-cyan-500/20">
@@ -59,14 +73,21 @@
           <p class="text-xs text-slate-400">Team: <span class="text-slate-200 font-medium">Tsuyoshi Chiba</span> | Live Command Center</p>
         </div>
       </div>
-      <div class="flex items-center space-x-3 text-xs sm:text-sm">
-        <div class="hidden sm:flex items-center space-x-2 bg-slate-800/80 border border-slate-700/60 px-3 py-1.5 rounded-lg text-slate-300">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span>Last Updated:</span>
-          <span id="updated-at" class="mono text-white font-semibold">Loading...</span>
-        </div>
+      
+      <!-- Nav Tabs -->
+      <div class="flex items-center space-x-2 sm:space-x-4">
+        <nav class="flex items-center space-x-1 bg-slate-800/80 p-1 rounded-xl border border-slate-700/60 text-xs sm:text-sm">
+          <a href="#dashboard" class="px-3 py-1.5 rounded-lg font-semibold bg-cyan-500 text-white shadow-sm transition">
+            Live Metrics
+          </a>
+          <a href="#reports-section" class="px-3 py-1.5 rounded-lg font-medium text-slate-300 hover:text-white hover:bg-slate-700/50 transition flex items-center space-x-1.5">
+            <span>Archives (20)</span>
+            <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+          </a>
+        </nav>
+        
         <a href="https://www.kaggle.com/competitions/name-that-llm/leaderboard" target="_blank" rel="noreferrer" 
-           class="px-3.5 py-1.5 rounded-lg bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 font-medium transition flex items-center space-x-1.5">
+           class="hidden sm:flex px-3.5 py-1.5 rounded-lg bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 text-xs sm:text-sm font-medium transition items-center space-x-1.5">
           <span>Kaggle LB</span>
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
         </a>
@@ -74,7 +95,7 @@
     </div>
   </header>
 
-  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
+  <main id="dashboard" class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-8">
 
     <!-- Active Inference Banner (V41 Running) -->
     <div id="running-banner" class="rounded-2xl border border-cyan-500/40 bg-gradient-to-r from-cyan-950/60 via-slate-900 to-slate-900 p-5 glow-cyan relative overflow-hidden">
@@ -126,7 +147,7 @@
           <span class="px-2 py-0.5 rounded font-semibold bg-emerald-950 text-emerald-400 border border-emerald-800" id="kpi-top-pct">
             Top 4.18%
           </span>
-          <span class="text-slate-400">In Silver Medal Zone</span>
+          <span class="text-slate-400">In Silver Zone</span>
         </div>
       </div>
 
@@ -280,7 +301,7 @@
             </tr>
           </thead>
           <tbody id="matrix-body" class="divide-y divide-slate-800/60 text-slate-300">
-            <!-- Dynamic rows injected here -->
+            <!-- Injected dynamically -->
           </tbody>
         </table>
       </div>
@@ -306,28 +327,115 @@
             </tr>
           </thead>
           <tbody id="subs-body" class="divide-y divide-slate-800/60 text-slate-300 font-mono">
-            <!-- Dynamic rows injected here -->
+            <!-- Injected dynamically -->
           </tbody>
         </table>
       </div>
     </div>
 
+    <!-- NEW: Strategic Reports & Archives Timeline Section -->
+    <section id="reports-section" class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 sm:p-6 space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800 pb-5">
+        <div>
+          <div class="flex items-center space-x-2">
+            <span class="text-xl">📚</span>
+            <h3 class="text-lg sm:text-xl font-bold text-white tracking-tight">Strategic Reports & Engineering Archives</h3>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-400 mt-1">
+            コンペ開始からの全20本の戦略レポート・包括解説・OOF実験・配備ログを時系列で閲覧できます。カードをクリックするとその場で全文を展開します。
+          </p>
+        </div>
+        
+        <!-- Category Filter -->
+        <div class="flex flex-wrap items-center gap-1.5 text-xs" id="category-filters">
+          <button onclick="filterReports('all')" class="filter-btn px-3 py-1.5 rounded-lg bg-cyan-500 text-white font-semibold shadow transition" data-cat="all">
+            すべて (<span id="count-all">20</span>)
+          </button>
+          <button onclick="filterReports('提出・運用レポート')" class="filter-btn px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white font-medium transition" data-cat="提出・運用レポート">
+            提出・運用
+          </button>
+          <button onclick="filterReports('アーキテクチャ設計')" class="filter-btn px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white font-medium transition" data-cat="アーキテクチャ設計">
+            設計・戦略
+          </button>
+          <button onclick="filterReports('総合ガイド・入門')" class="filter-btn px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white font-medium transition" data-cat="総合ガイド・入門">
+            総合ガイド
+          </button>
+          <button onclick="filterReports('競合調査・インテル')" class="filter-btn px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white font-medium transition" data-cat="競合調査・インテル">
+            インテル調査
+          </button>
+        </div>
+      </div>
+
+      <!-- Reports Timeline Grid -->
+      <div id="reports-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <!-- Injected dynamically -->
+      </div>
+    </section>
+
   </main>
 
+  <!-- Markdown Modal Viewer -->
+  <div id="md-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 overflow-hidden">
+    <div class="bg-slate-900 border border-slate-700/80 rounded-2xl w-full max-w-4xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden relative">
+      
+      <!-- Modal Header -->
+      <div class="px-5 py-4 border-b border-slate-800 flex items-center justify-between bg-slate-900/90 sticky top-0 z-10">
+        <div class="flex items-center space-x-3 overflow-hidden pr-4">
+          <span id="modal-category" class="px-2.5 py-0.5 rounded text-xs font-semibold bg-cyan-950 text-cyan-400 border border-cyan-800 shrink-0">
+            Category
+          </span>
+          <div class="truncate">
+            <h2 id="modal-title" class="text-base sm:text-lg font-bold text-white truncate">Report Title</h2>
+            <p id="modal-date" class="text-xs text-slate-400 mono">Date</p>
+          </div>
+        </div>
+        
+        <div class="flex items-center space-x-2 shrink-0">
+          <a id="modal-raw-link" href="#" target="_blank" rel="noreferrer" class="p-2 text-slate-400 hover:text-cyan-400 rounded-lg hover:bg-slate-800 transition" title="Raw Markdown を別タブで開く">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+          </a>
+          <button onclick="closeModal()" class="p-2 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition" title="閉じる (Esc)">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Modal Content (Scrollable) -->
+      <div class="p-6 sm:p-8 overflow-y-auto flex-1 text-slate-200">
+        <div id="modal-content" class="prose prose-invert max-w-none">
+          <div class="flex items-center justify-center py-12 text-slate-400 space-x-2">
+            <svg class="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+            <span>Loading document...</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="px-5 py-3 border-t border-slate-800 bg-slate-900/90 flex items-center justify-between text-xs text-slate-500">
+        <span id="modal-filename" class="mono">filename.md</span>
+        <button onclick="closeModal()" class="px-4 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 transition font-medium">
+          閉じる
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- Footer -->
-  <footer class="border-t border-slate-800 bg-slate-900/60 py-6 text-center text-xs text-slate-500">
+  <footer class="border-t border-slate-800 bg-slate-900/60 py-6 text-center text-xs text-slate-500 mt-12">
     <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
       <div>Kaggle "Name That LLM" Competitive Engineering Command Center</div>
       <div class="flex items-center space-x-4">
         <span>Team: Tsuyoshi Chiba</span>
         <span>•</span>
-        <span>Generated via AI Agent Architect</span>
+        <span>Live Dashboard & Strategic Knowledge Archives</span>
       </div>
     </div>
   </footer>
 
-  <!-- Dashboard Controller Script -->
+  <!-- Controller Script -->
   <script>
+    let allReports = [];
+
     async function loadDashboard() {
       try {
         const res = await fetch('data.json?t=' + new Date().getTime());
@@ -413,7 +521,118 @@
 
       // Chart.js
       renderChart(data.timeline, c.silver_cutoff, c.gold_cutoff);
+
+      // Reports Timeline
+      if (data.reports) {
+        allReports = data.reports;
+        document.getElementById('count-all').textContent = allReports.length;
+        renderReports(allReports);
+      }
     }
+
+    function renderReports(reports) {
+      const grid = document.getElementById('reports-grid');
+      grid.innerHTML = '';
+
+      reports.forEach(r => {
+        const card = document.createElement('div');
+        card.className = "rounded-xl border border-slate-800 bg-slate-900/80 hover:border-cyan-500/50 p-4 sm:p-5 flex flex-col justify-between space-y-3 transition group hover:shadow-lg hover:shadow-cyan-500/5 cursor-pointer";
+        card.onclick = () => openModal(r);
+
+        const badgeColorClasses = {
+          cyan: "bg-cyan-950 text-cyan-400 border-cyan-800",
+          emerald: "bg-emerald-950 text-emerald-400 border-emerald-800",
+          blue: "bg-blue-950 text-blue-400 border-blue-800",
+          amber: "bg-amber-950 text-amber-400 border-amber-800",
+          purple: "bg-purple-950 text-purple-400 border-purple-800"
+        }[r.badge_color] || "bg-slate-800 text-slate-300 border-slate-700";
+
+        card.innerHTML = `
+          <div class="space-y-2">
+            <div class="flex items-center justify-between text-xs">
+              <span class="px-2 py-0.5 rounded font-semibold border ${badgeColorClasses}">
+                ${r.category}
+              </span>
+              <span class="text-slate-400 mono text-[11px]">${r.date}</span>
+            </div>
+            <h4 class="text-sm sm:text-base font-bold text-white group-hover:text-cyan-400 transition leading-snug">
+              ${r.title}
+            </h4>
+            <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed">
+              ${r.summary}
+            </p>
+          </div>
+          
+          <div class="pt-2 border-t border-slate-800/80 flex items-center justify-between text-xs">
+            <span class="mono text-slate-500 text-[11px] truncate max-w-[150px]">${r.filename}</span>
+            <span class="text-cyan-400 group-hover:translate-x-1 transition font-medium flex items-center space-x-1">
+              <span>全文を読む</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </span>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function filterReports(cat) {
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        if (btn.getAttribute('data-cat') === cat) {
+          btn.className = "filter-btn px-3 py-1.5 rounded-lg bg-cyan-500 text-white font-semibold shadow transition";
+        } else {
+          btn.className = "filter-btn px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white font-medium transition";
+        }
+      });
+
+      if (cat === 'all') {
+        renderReports(allReports);
+      } else {
+        const filtered = allReports.filter(r => r.category === cat);
+        renderReports(filtered);
+      }
+    }
+
+    async function openModal(report) {
+      const modal = document.getElementById('md-modal');
+      document.getElementById('modal-title').textContent = report.title;
+      document.getElementById('modal-date').textContent = report.date;
+      document.getElementById('modal-category').textContent = report.category;
+      document.getElementById('modal-filename').textContent = `docs/${report.filename}`;
+      document.getElementById('modal-raw-link').href = `docs/${report.filename}`;
+      
+      const contentEl = document.getElementById('modal-content');
+      contentEl.innerHTML = `
+        <div class="flex items-center justify-center py-12 text-slate-400 space-x-2">
+          <svg class="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+          <span>ドキュメントを読み込み中...</span>
+        </div>
+      `;
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+
+      try {
+        const res = await fetch(`docs/${report.filename}?t=${new Date().getTime()}`);
+        if (!res.ok) throw new Error('File not found');
+        const mdText = await res.text();
+        contentEl.innerHTML = marked.parse(mdText);
+      } catch (err) {
+        contentEl.innerHTML = `<div class="p-4 rounded-xl bg-rose-950/50 border border-rose-800 text-rose-300">ドキュメントの読み込みに失敗しました: ${err.message}</div>`;
+      }
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('md-modal');
+      modal.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    document.getElementById('md-modal').addEventListener('click', (e) => {
+      if (e.target.id === 'md-modal') closeModal();
+    });
 
     let myChart = null;
     function renderChart(timeline, silverCutoff, goldCutoff) {
