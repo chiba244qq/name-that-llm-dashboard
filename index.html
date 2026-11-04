@@ -7,6 +7,7 @@
   <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -437,9 +438,41 @@
     </div>
   </footer>
 
+
   <!-- Controller Script -->
   <script>
+    mermaid.initialize({
+      startOnLoad: false,
+      theme: "dark",
+      securityLevel: "loose",
+      themeVariables: {
+        darkMode: true,
+        background: "#0f172a",
+        primaryColor: "#0ea5e9",
+        primaryTextColor: "#f8fafc",
+        primaryBorderColor: "#38bdf8",
+        lineColor: "#38bdf8",
+        secondaryColor: "#1e293b",
+        tertiaryColor: "#0b0f19"
+      }
+    });
+
+    const customRenderer = new marked.Renderer();
+    const origCodeRenderer = customRenderer.code.bind(customRenderer);
+    customRenderer.code = function(code, language) {
+      if (typeof code === "object") {
+        language = code.lang;
+        code = code.text;
+      }
+      if (language === "mermaid") {
+        return `<div class="mermaid flex justify-center my-6 bg-slate-950/80 p-4 rounded-xl border border-slate-800 overflow-x-auto shadow-inner">${code}</div>`;
+      }
+      return origCodeRenderer(code, language);
+    };
+    marked.setOptions({ renderer: customRenderer });
+
     let allReports = [];
+
 
     async function loadDashboard() {
       try {
@@ -626,6 +659,13 @@
         if (!res.ok) throw new Error('File not found');
         const mdText = await res.text();
         contentEl.innerHTML = marked.parse(mdText);
+        try {
+          await mermaid.run({
+            nodes: contentEl.querySelectorAll(".mermaid")
+          });
+        } catch (mErr) {
+          console.warn("Mermaid render error:", mErr);
+        }
       } catch (err) {
         contentEl.innerHTML = `<div class="p-4 rounded-xl bg-rose-950/50 border border-rose-800 text-rose-300">ドキュメントの読み込みに失敗しました: ${err.message}</div>`;
       }
