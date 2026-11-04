@@ -459,15 +459,14 @@
 
     const customRenderer = new marked.Renderer();
     const origCodeRenderer = customRenderer.code.bind(customRenderer);
-    customRenderer.code = function(code, language) {
-      if (typeof code === "object") {
-        language = code.lang;
-        code = code.text;
+    customRenderer.code = function(token) {
+      const text = typeof token === "object" ? token.text : token;
+      const lang = typeof token === "object" ? token.lang : arguments[1];
+
+      if (lang === "mermaid") {
+        return `<div class="mermaid flex justify-center my-6 bg-slate-950/80 p-4 rounded-xl border border-slate-800 overflow-x-auto shadow-inner">${text}</div>`;
       }
-      if (language === "mermaid") {
-        return `<div class="mermaid flex justify-center my-6 bg-slate-950/80 p-4 rounded-xl border border-slate-800 overflow-x-auto shadow-inner">${code}</div>`;
-      }
-      return origCodeRenderer(code, language);
+      return origCodeRenderer(token);
     };
     marked.setOptions({ renderer: customRenderer });
 
