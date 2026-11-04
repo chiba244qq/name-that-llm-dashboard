@@ -683,7 +683,26 @@
         const res = await fetch(`docs/${report.filename}?t=${new Date().getTime()}`);
         if (!res.ok) throw new Error('File not found');
         const mdText = await res.text();
-        contentEl.innerHTML = marked.parse(mdText);
+
+        // Protect LaTeX Math from Marked.js escaping (preserves backslashes, underscores, percent signs)
+        const mathBlocks = [];
+        let protectedText = mdText.replace(/\$\$([\s\S]*?)\$\$/g, (match) => {
+          mathBlocks.push(match);
+          return `%%MATHBLOCK_${mathBlocks.length - 1}%%`;
+        });
+        protectedText = protectedText.replace(/\$([^\$\n]+?)\$/g, (match) => {
+          mathBlocks.push(match);
+          return `%%MATHINLINE_${mathBlocks.length - 1}%%`;
+        });
+
+        let parsedHtml = marked.parse(protectedText);
+
+        // Restore LaTeX Math
+        parsedHtml = parsedHtml.replace(/%%MATH(BLOCK|INLINE)_(\d+)%%/g, (match, type, index) => {
+          return mathBlocks[parseInt(index, 10)] || match;
+        });
+
+        contentEl.innerHTML = parsedHtml;
 
         // Render KaTeX Math safely (ignoring code and mermaid blocks)
         try {
