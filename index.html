@@ -76,6 +76,11 @@
       
       <!-- Nav Tabs -->
       <div class="flex items-center space-x-2 sm:space-x-4">
+        <div class="hidden sm:flex items-center space-x-2 bg-slate-800/80 border border-slate-700/60 px-3 py-1.5 rounded-lg text-slate-300 text-xs">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>Updated:</span>
+          <span id="updated-at" class="mono text-white font-semibold">Loading...</span>
+        </div>
         <nav class="flex items-center space-x-1 bg-slate-800/80 p-1 rounded-xl border border-slate-700/60 text-xs sm:text-sm">
           <a href="#dashboard" class="px-3 py-1.5 rounded-lg font-semibold bg-cyan-500 text-white shadow-sm transition">
             Live Metrics
@@ -210,7 +215,7 @@
         <div class="flex items-center justify-between">
           <div>
             <h3 class="text-base font-bold text-white">Score Evolution & Breakthrough Trajectory</h3>
-            <p class="text-xs text-slate-400">V28 (Bronze) $\to$ V38 (Silver) $\to$ V39/V40 (0.666) $\to$ V41 (Apex-II Target)</p>
+            <p class="text-xs text-slate-400">V28 (Bronze) → V38 (Silver) → V39/V40 (0.666) → V41 (Apex-II Target)</p>
           </div>
           <div class="flex items-center space-x-2 text-xs">
             <span class="inline-flex items-center px-2 py-0.5 rounded bg-cyan-950 text-cyan-400 border border-cyan-800 font-semibold">
@@ -253,7 +258,7 @@
                 <span class="mono text-blue-300">0.75 / 0.25</span>
               </div>
               <p class="text-slate-400 leading-relaxed">
-                未見プロンプト精度が 0.523 $\to$ 0.576 へ急伸した OpenPool 学習済み DeBERTa 重みを統合。
+                未見プロンプト精度が 0.523 → 0.576 へ急伸した OpenPool 学習済み DeBERTa 重みを統合。
               </p>
             </div>
             <div class="p-3 rounded-xl bg-slate-800/60 border border-slate-700/60 space-y-1">
@@ -282,7 +287,7 @@
     <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 space-y-4">
       <div class="flex items-center justify-between">
         <div>
-          <h3 class="text-base font-bold text-white">Pipeline Evolution Matrix (V38 $\to$ V41)</h3>
+          <h3 class="text-base font-bold text-white">Pipeline Evolution Matrix (V38 → V41)</h3>
           <p class="text-xs text-slate-400">Detailed component breakdown across major competition releases</p>
         </div>
       </div>
@@ -446,31 +451,37 @@
       }
     }
 
+    
+    function setTxt(id, val) {
+      const el = document.getElementById(id);
+      if (el) el.textContent = val;
+    }
+
     function renderDashboard(data) {
-      document.getElementById('updated-at').textContent = data.updated_at;
+      setTxt("updated-at", data.updated_at);
 
       // KPIs
       const c = data.competition;
-      document.getElementById('kpi-rank').textContent = c.my_rank;
-      document.getElementById('kpi-total-teams').textContent = c.total_teams.toLocaleString();
-      document.getElementById('kpi-top-pct').textContent = `Top ${c.top_percent}%`;
-      document.getElementById('kpi-score').textContent = c.my_score.toFixed(3);
-      document.getElementById('kpi-medal').textContent = `${c.medal} Medal`;
-      document.getElementById('silver-cutoff-rank').textContent = c.silver_rank_cutoff;
+      setTxt("kpi-rank", c.my_rank);
+      setTxt("kpi-total-teams", c.total_teams.toLocaleString());
+      setTxt("kpi-top-pct", `Top ${c.top_percent}%`);
+      setTxt("kpi-score", c.my_score.toFixed(3));
+      setTxt("kpi-medal", `${c.medal} Medal`);
+      setTxt("silver-cutoff-rank", c.silver_rank_cutoff);
 
-      document.getElementById('cutoff-gold').textContent = c.gold_cutoff.toFixed(3);
-      document.getElementById('cutoff-silver').textContent = c.silver_cutoff.toFixed(3);
-      document.getElementById('cutoff-bronze').textContent = c.bronze_cutoff.toFixed(3);
+      setTxt("cutoff-gold", c.gold_cutoff.toFixed(3));
+      setTxt("cutoff-silver", c.silver_cutoff.toFixed(3));
+      setTxt("cutoff-bronze", c.bronze_cutoff.toFixed(3));
 
       // Running Banner
       if (data.running_submission) {
         const r = data.running_submission;
-        document.getElementById('run-ref').textContent = r.ref;
-        document.getElementById('run-version').textContent = r.version;
-        document.getElementById('run-desc').textContent = r.description;
-        document.getElementById('run-submitted').textContent = r.submitted_at;
-        document.getElementById('run-target').textContent = r.target_score;
-        document.getElementById('run-completion').textContent = r.estimated_completion;
+        setTxt("run-ref", r.ref);
+        setTxt("run-version", r.version);
+        setTxt("run-desc", r.description);
+        setTxt("run-submitted", r.submitted_at);
+        setTxt("run-target", r.target_score);
+        setTxt("run-completion", r.estimated_completion);
       }
 
       // Matrix
