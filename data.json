@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-11-04 09:41:56 JST",
+  "updated_at": "2026-11-04 10:46:10 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 4523,
-    "my_rank": 189,
+    "total_teams": 4526,
+    "my_rank": 190,
     "my_score": 0.666,
     "medal": "Silver",
-    "top_percent": 4.18,
+    "top_percent": 4.2,
     "gold_cutoff": 0.697,
     "silver_cutoff": 0.666,
     "silver_rank_cutoff": 226,
@@ -277,11 +277,11 @@
     },
     {
       "filename": "kaggle_discussion_and_code_intel_report.md",
-      "title": "Kaggle 最新動向・コード・ディスカッション精査レポート（2026-11-02）",
+      "title": "Kaggle 最新動向・コード・ディスカッション精査レポート",
       "date": "2026-11-02 21:51 JST",
       "category": "競合調査・インテル",
       "badge_color": "amber",
-      "summary": "現在のリーダーボード（4,291 チーム参戦）および最新の公開コード・ディスカッションを徹底調査しました。"
+      "summary": "- **公開フロンティアの進展**:"
     },
     {
       "filename": "v39_verification_and_tradeoff_analysis.md",
