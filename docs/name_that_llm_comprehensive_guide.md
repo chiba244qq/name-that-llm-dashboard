@@ -226,11 +226,11 @@ Kaggle の採点マシンは、この `model` 列に書かれた名前と、主�
 
 ```mermaid
 flowchart TD
-    subgraph 試験場の4大掟
-        R1["① 制限時間は厳格に9時間（VOID崖）<br>1秒でも遅れたら0点失格！"]
-        R2["② インターネット完全遮断（No Internet）<br>外部検索やカンニングは不可能"]
-        R3["③ 提出チケットは1日5枚限定<br>毎朝09:00（世界標準時00:00）に復活"]
-        R4["④ 2段階テスト（FAST_COMMIT）<br>見本3問で10分チェック → 本番突入"]
+    subgraph SG_Rules ["試験場の4大掟"]
+        R1["① 制限時間は厳格に9時間（VOID崖）<br/>1秒でも遅れたら0点失格！"]
+        R2["② インターネット完全遮断（No Internet）<br/>外部検索やカンニングは不可能"]
+        R3["③ 提出チケットは1日5枚限定<br/>毎朝09:00（世界標準時00:00）に復活"]
+        R4["④ 2段階テスト（FAST_COMMIT）<br/>見本3問で10分チェック → 本番突入"]
     end
 ```
 
@@ -358,23 +358,29 @@ flowchart LR
 
 ```mermaid
 flowchart TD
-    subgraph 入力データ
+    subgraph SG_Input ["入力データ"]
         IN["名無しの文章"]
     end
 
-    subgraph 判定チーム（アンサンブル）
+    subgraph SG_Ensemble ["判定チーム（アンサンブル）"]
         M1["大型AI軍団 (Qwen-14B, Llama-8B 等)"]
         M2["双子のDeBERTa (教科書秀才 + 街頭秀才)"]
         M3["1対1のタイマン比較 (Pairwise Verifier)"]
         M4["そっくり兄弟の個性ブースト (Sibling Residual)"]
     end
 
-    subgraph 最終調整
+    subgraph SG_Final ["最終調整"]
         SK["絶妙な力加減の配分ロボット (Sinkhorn)"]
     end
 
-    IN --> M1 & M2 & M3 & M4
-    M1 & M2 & M3 & M4 --> SK
+    IN --> M1
+    IN --> M2
+    IN --> M3
+    IN --> M4
+    M1 --> SK
+    M2 --> SK
+    M3 --> SK
+    M4 --> SK
     SK --> OUT["最終解答用紙: submission.parquet"]
 ```
 

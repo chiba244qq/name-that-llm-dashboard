@@ -448,6 +448,7 @@
       startOnLoad: false,
       theme: "dark",
       securityLevel: "loose",
+      suppressErrorRendering: true,
       themeVariables: {
         darkMode: true,
         background: "#0f172a",
@@ -467,7 +468,8 @@
       const lang = typeof token === "object" ? token.lang : arguments[1];
 
       if (lang === "mermaid") {
-        return `<div class="mermaid flex justify-center my-6 bg-slate-950/80 p-4 rounded-xl border border-slate-800 overflow-x-auto shadow-inner">${text}</div>`;
+        const encoded = encodeURIComponent(text);
+        return `<div class="mermaid-diagram flex justify-center my-6 bg-slate-950/80 p-4 rounded-xl border border-slate-800 overflow-x-auto shadow-inner" data-mermaid="${encoded}"><div class="text-xs text-slate-500 animate-pulse">Rendering diagram...</div></div>`;
       }
       return origCodeRenderer(token);
     };
@@ -662,7 +664,7 @@
         const mdText = await res.text();
         contentEl.innerHTML = marked.parse(mdText);
 
-        // Render KaTeX Math
+        // Render KaTeX Math safely (ignoring code and mermaid blocks)
         try {
           if (typeof renderMathInElement === "function") {
             renderMathInElement(contentEl, {
@@ -672,6 +674,8 @@
                 {left: "\\(", right: "\\)", display: false},
                 {left: "\\[", right: "\\]", display: true}
               ],
+              ignoredClasses: ["katex", "mermaid-diagram"],
+              ignoredTags: ["script", "noscript", "style", "textarea", "pre", "code", "option"],
               throwOnError: false
             });
           }
@@ -679,12 +683,26 @@
           console.warn("KaTeX render error:", kErr);
         }
 
-        try {
-          await mermaid.run({
-            nodes: contentEl.querySelectorAll(".mermaid")
-          });
-        } catch (mErr) {
-          console.warn("Mermaid render error:", mErr);
+        // Render Mermaid Diagrams individually with safe fallback
+        const mermaidEls = contentEl.querySelectorAll(".mermaid-diagram");
+        for (let i = 0; i < mermaidEls.length; i++) {
+          const mEl = mermaidEls[i];
+          const rawCode = decodeURIComponent(mEl.getAttribute("data-mermaid") || "");
+          const uniqueId = `mermaid-${Date.now()}-${i}`;
+          try {
+            const { svg } = await mermaid.render(uniqueId, rawCode);
+            mEl.innerHTML = svg;
+          } catch (mErr) {
+            console.warn("Mermaid individual render warning:", mErr);
+            mEl.innerHTML = `
+              <div class="w-full">
+                <div class="text-xs text-amber-400/90 mb-2 font-mono flex items-center gap-1.5">
+                  <svg class="w-4 h-4 text-amber-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                  <span>ダイアグラムの簡易テキスト表示</span>
+                </div>
+                <pre class="text-xs text-slate-300 bg-slate-900/90 p-3 rounded-lg border border-slate-800 font-mono whitespace-pre overflow-x-auto">${rawCode.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</pre>
+              </div>`;
+          }
         }
       } catch (err) {
         contentEl.innerHTML = `<div class="p-4 rounded-xl bg-rose-950/50 border border-rose-800 text-rose-300">ドキュメントの読み込みに失敗しました: ${err.message}</div>`;

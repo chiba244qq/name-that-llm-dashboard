@@ -30,14 +30,14 @@
 
 ```mermaid
 flowchart TD
-    subgraph Data Layer
+    subgraph SG_Data ["Data Layer"]
         A1["Official Train/Test"]
         A2["Open Pool v11 Decontaminated (190,588 rows)"]
         A3["2x match_weight Extra (49,056 rows)"]
         A4["ChatGPT A/B Rev03 Manifest"]
     end
 
-    subgraph Deep LM Ensemble (T4x2 DP)
+    subgraph SG_DeepLM ["Deep LM Ensemble (T4x2 DP)"]
         B1["Qwen3-14B Base + Adapter V5 (w=3.0, keep=27)"]
         B2["Qwen3-8B Base + Adapter V5 (w=2.0, keep=24)"]
         B3["Llama-3.1-8B Base + Adapter V5 (w=1.0, keep=24)"]
@@ -45,30 +45,33 @@ flowchart TD
         B5["Qwen2.5-14B In-Style (w=1.0)"]
     end
 
-    subgraph Dual-DeBERTa Stack
+    subgraph SG_DualDeBERTa ["Dual-DeBERTa Stack"]
         C1["DeBERTa-v3-large Official (0.25)"]
         C2["DeBERTa-v3-large OpenPool Trained (0.75 / BA 0.5763)"]
     end
 
-    subgraph Complementary & Likelihood
+    subgraph SG_CompLikelihood ["Complementary & Likelihood"]
         D1["Complementary Stack (Electra, UltraBERT, TokAttn / w=0.15)"]
         D2["ATLAS Source-Conditioned Likelihood (Margin 0.32, w=0.20)"]
     end
 
-    subgraph Micro-Verifiers
+    subgraph SG_MicroVerifiers ["Micro-Verifiers"]
         E1["V34.1 Evidence-Aware Pairwise Verifier (~16s)"]
         E2["V40A Sibling-Style Residual (alpha=0.10)"]
         E3["4-view n-gram LinearSVC (w=12)"]
     end
 
-    subgraph Global Regularization
+    subgraph SG_GlobalReg ["Global Regularization"]
         F["Sinkhorn-Knopp Regularization (lambda=0.30, target_mix=0.35)"]
     end
 
-    Data Layer --> Deep LM Ensemble
-    Data Layer --> Dual-DeBERTa Stack
-    Data Layer --> Micro-Verifiers
-    Deep LM Ensemble & Dual-DeBERTa Stack & Complementary & Likelihood & Micro-Verifiers --> F
+    SG_Data --> SG_DeepLM
+    SG_Data --> SG_DualDeBERTa
+    SG_Data --> SG_MicroVerifiers
+    SG_DeepLM --> F
+    SG_DualDeBERTa --> F
+    SG_CompLikelihood --> F
+    SG_MicroVerifiers --> F
     F --> G["Final Prediction (submission.parquet)"]
 ```
 

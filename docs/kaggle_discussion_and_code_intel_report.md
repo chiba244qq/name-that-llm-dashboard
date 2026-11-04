@@ -36,7 +36,7 @@ flowchart TD
     C --> E
     E --> F["bgunshui Apex K / 当チーム V41 Apex-II (0.667+)"]
     
-    subgraph Core Components in V41
+    subgraph SG_Core ["Core Components in V41"]
         C -- "Pairwise Verifier + Sibling 0.10 + Sinkhorn 0.30" --> F
         D -- "Open Pool v11 2x match_weight (49k rows)" --> F
         G["bgunshui Pool-trained DeBERTa (BA 0.580)"] --> F
