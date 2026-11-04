@@ -1,19 +1,60 @@
 {
-  "updated_at": "2026-11-04 16:12:08 JST",
+  "updated_at": "2026-11-04 17:10:30 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 4552,
-    "my_rank": 202,
+    "total_teams": 4556,
+    "my_rank": 203,
     "my_score": 0.666,
     "medal": "Silver",
-    "top_percent": 4.44,
+    "top_percent": 4.46,
     "gold_cutoff": 0.701,
     "silver_cutoff": 0.666,
     "silver_rank_cutoff": 227,
     "bronze_cutoff": 0.665,
     "bronze_rank_cutoff": 455
   },
-  "running_submission": null,
+  "running_submission": {
+    "ref": 57977543,
+    "version": "V42-C (Apex V40Anchor)",
+    "description": "NTL 0672 V42c Apex V40Anchor (V40 Anchor: Sinkhorn 0.50 + Mix 0.35 + Apex-II Dual-DeBERTa + Sibling 0.10)",
+    "params": "Sinkhorn 0.50 | Mix 0.35 | Sibling 0.10 | Dual-DeBERTa 0.75",
+    "submitted_at": "2026-11-04 17:07:22",
+    "status": "PENDING",
+    "target_score": "0.668 - 0.672+",
+    "estimated_completion": "~23:25 JST"
+  },
+  "active_runs": [
+    {
+      "ref": 57977543,
+      "version": "V42-C (Apex V40Anchor)",
+      "description": "NTL 0672 V42c Apex V40Anchor (V40 Anchor: Sinkhorn 0.50 + Mix 0.35 + Apex-II Dual-DeBERTa + Sibling 0.10)",
+      "params": "Sinkhorn 0.50 | Mix 0.35 | Sibling 0.10 | Dual-DeBERTa 0.75",
+      "submitted_at": "2026-11-04 17:07:22",
+      "status": "PENDING",
+      "target_score": "0.668 - 0.672+",
+      "estimated_completion": "~23:25 JST"
+    },
+    {
+      "ref": 57977217,
+      "version": "V42 (Apex Re-Anchored)",
+      "description": "NTL 0672 V42 Apex Re-Anchored (Dual-DeBERTa + Pairwise A/B + Sibling Residual 0.10 + Sinkhorn 0.50)",
+      "params": "Sinkhorn 0.50 | Mix 0.42 | Sibling 0.10 | Dual-DeBERTa 0.75",
+      "submitted_at": "2026-11-04 16:59:35",
+      "status": "PENDING",
+      "target_score": "0.668 - 0.672+",
+      "estimated_completion": "~23:25 JST"
+    },
+    {
+      "ref": 57977214,
+      "version": "V42-B (Apex Conservative)",
+      "description": "NTL 0672 V42-B Apex Conservative (Dual-DeBERTa + Pairwise A/B + Sibling Residual 0.05 + Sinkhorn 0.50)",
+      "params": "Sinkhorn 0.50 | Mix 0.42 | Sibling 0.05 | Dual-DeBERTa 0.75",
+      "submitted_at": "2026-11-04 16:59:32",
+      "status": "PENDING",
+      "target_score": "0.668 - 0.672+",
+      "estimated_completion": "~23:25 JST"
+    }
+  ],
   "timeline": [
     {
       "version": "V28",
@@ -66,14 +107,42 @@
     },
     {
       "version": "V41",
+      "score": 0.663,
+      "date": "11-04",
+      "tag": "Silver Hold",
+      "desc": "Apex-II (Sinkhorn 0.30緩和による微減、要改善特定)"
+    },
+    {
+      "version": "V42 A/B/C",
       "score": null,
       "target": 0.672,
       "date": "11-04",
       "tag": "Running",
-      "desc": "Apex-II (Dual-DeBERTa + Pairwise A/B + Sibling Residual 0.10 + Sinkhorn 0.30)"
+      "desc": "3系統並行アブレーション推論中 (~23:25完走予定)"
     }
   ],
   "submissions": [
+    {
+      "ref": 57977543,
+      "date": "2026-11-04 17:07:22",
+      "status": "PENDING",
+      "score": null,
+      "description": "NTL 0672 V42c Apex V40Anchor (V40 Anchor: Sinkhorn 0.50 + Mix 0.35 + Apex-II Dual-DeBERTa + Sibling 0.10)"
+    },
+    {
+      "ref": 57977217,
+      "date": "2026-11-04 16:59:35",
+      "status": "PENDING",
+      "score": null,
+      "description": "NTL 0672 V42 Apex Re-Anchored (Dual-DeBERTa + Pairwise A/B + Sibling Residual 0.10 + Sinkhorn 0.50)"
+    },
+    {
+      "ref": 57977214,
+      "date": "2026-11-04 16:59:32",
+      "status": "PENDING",
+      "score": null,
+      "description": "NTL 0672 V42-B Apex Conservative (Dual-DeBERTa + Pairwise A/B + Sibling Residual 0.05 + Sinkhorn 0.50)"
+    },
     {
       "ref": 57963401,
       "date": "2026-11-04 09:00:17",
@@ -178,6 +247,20 @@
       "status": "COMPLETE",
       "score": 0.662,
       "description": "NTL 0663 V35 Sinkhorn 50 (mercurydust 0.660 V31 + 2xT4 DP Fast Run + ATLAS 20% + Sinkhorn 0.50)"
+    },
+    {
+      "ref": 57839567,
+      "date": "2026-10-31 22:15:50",
+      "status": "COMPLETE",
+      "score": 0.659,
+      "description": "NTL 0664 V34 Llama Gauss TargetMix 42 (mercurydust 0.660 V31 + 2xT4 DP + ATLAS 20% + Sinkhorn 0.60 + Llama Gauss 0.44 + TargetMix 0.42 + Pool 0.45)"
+    },
+    {
+      "ref": 57839298,
+      "date": "2026-10-31 22:06:01",
+      "status": "COMPLETE",
+      "score": 0.659,
+      "description": "NTL 0664 V33 Llama Gauss (mercurydust 0.660 V31 + 2xT4 DP Fast Run + ATLAS 20% + Sinkhorn 0.60 + Llama Gauss 0.44)"
     }
   ],
   "architecture_matrix": [
@@ -189,7 +272,7 @@
       "pairwise_ab": "None",
       "sibling_style": "None",
       "atlas_margin": "0.0",
-      "sinkhorn": "0.50",
+      "sinkhorn": "0.50 / Mix 0.35",
       "highlight": "銀メダル圏突入"
     },
     {
@@ -200,7 +283,7 @@
       "pairwise_ab": "None",
       "sibling_style": "None",
       "atlas_margin": "0.0",
-      "sinkhorn": "0.50",
+      "sinkhorn": "0.50 / Mix 0.35",
       "highlight": "データセット高品質化"
     },
     {
@@ -211,19 +294,52 @@
       "pairwise_ab": "None",
       "sibling_style": "None",
       "atlas_margin": "0.32",
-      "sinkhorn": "0.50",
+      "sinkhorn": "0.50 / Mix 0.35",
       "highlight": "ルーティング汚染行排除"
     },
     {
-      "version": "V41 (Apex-II)",
-      "score": "0.670+ (目標)",
+      "version": "V41",
+      "score": "0.663",
       "data_pool": "Open Pool v11 190k + 49k",
-      "deberta": "Dual (0.75 Pool + 0.25 Orig)",
-      "pairwise_ab": "V34.1 A/B Verifier (~16s)",
+      "deberta": "Dual (0.75 Pool)",
+      "pairwise_ab": "V34.1 A/B Verifier",
       "sibling_style": "V40A Residual (0.10)",
       "atlas_margin": "0.32",
-      "sinkhorn": "0.30",
-      "highlight": "3大SOTA統合スタック"
+      "sinkhorn": "0.30 / Mix 0.35",
+      "highlight": "Sinkhorn緩和による微減"
+    },
+    {
+      "version": "V42",
+      "score": "推論中 (0.670+狙い)",
+      "data_pool": "Open Pool v11 190k + 49k",
+      "deberta": "Dual (0.75 Pool)",
+      "pairwise_ab": "V34.1 A/B Verifier",
+      "sibling_style": "Residual (0.10)",
+      "atlas_margin": "0.32",
+      "sinkhorn": "0.50 / Mix 0.42",
+      "highlight": "強い正則化+Mix0.42"
+    },
+    {
+      "version": "V42-B",
+      "score": "推論中",
+      "data_pool": "Open Pool v11 190k + 49k",
+      "deberta": "Dual (0.75 Pool)",
+      "pairwise_ab": "V34.1 A/B Verifier",
+      "sibling_style": "Residual (0.05)",
+      "atlas_margin": "0.32",
+      "sinkhorn": "0.50 / Mix 0.42",
+      "highlight": "Sibling保守版"
+    },
+    {
+      "version": "V42-C",
+      "score": "推論中 (本命比較)",
+      "data_pool": "Open Pool v11 190k + 49k",
+      "deberta": "Dual (0.75 Pool)",
+      "pairwise_ab": "V34.1 A/B Verifier",
+      "sibling_style": "Residual (0.10)",
+      "atlas_margin": "0.32",
+      "sinkhorn": "0.50 / Mix 0.35",
+      "highlight": "V40完全同条件アンカー"
     }
   ],
   "reports": [

@@ -133,16 +133,38 @@ def main():
         }
         sub_list.append(item)
 
-        if running_sub is None and ("PENDING" in status_str or "RUNNING" in status_str):
-            running_sub = {
-                "ref": s.ref,
-                "version": "V41 (Apex-II)" if "V41" in s.description else "In Progress",
-                "description": s.description,
-                "submitted_at": date_jst,
-                "status": "RUNNING" if "RUNNING" in status_str else "PENDING",
-                "target_score": "0.670 - 0.675+",
-                "estimated_completion": "15:35 JST"
-            }
+    # Detect all active/running submissions
+    active_runs = []
+    for s in sub_list:
+        if "PENDING" in s["status"] or "RUNNING" in s["status"]:
+            desc = s["description"]
+            ver_name = "In Progress"
+            params_summary = ""
+            if "V42c" in desc or "V42-C" in desc:
+                ver_name = "V42-C (Apex V40Anchor)"
+                params_summary = "Sinkhorn 0.50 | Mix 0.35 | Sibling 0.10 | Dual-DeBERTa 0.75"
+            elif "V42-B" in desc:
+                ver_name = "V42-B (Apex Conservative)"
+                params_summary = "Sinkhorn 0.50 | Mix 0.42 | Sibling 0.05 | Dual-DeBERTa 0.75"
+            elif "V42 " in desc or "V42 Apex" in desc:
+                ver_name = "V42 (Apex Re-Anchored)"
+                params_summary = "Sinkhorn 0.50 | Mix 0.42 | Sibling 0.10 | Dual-DeBERTa 0.75"
+            elif "V41" in desc:
+                ver_name = "V41 (Apex-II)"
+                params_summary = "Sinkhorn 0.30 | Mix 0.35 | Sibling 0.10 | Dual-DeBERTa 0.75"
+
+            active_runs.append({
+                "ref": s["ref"],
+                "version": ver_name,
+                "description": desc,
+                "params": params_summary,
+                "submitted_at": s["date"],
+                "status": "RUNNING" if "RUNNING" in s["status"] else "PENDING",
+                "target_score": "0.668 - 0.672+",
+                "estimated_completion": "~23:25 JST"
+            })
+
+    running_sub = active_runs[0] if active_runs else None
 
     # 2. Fetch Leaderboard metrics
     print("Fetching Kaggle leaderboard...")
@@ -181,15 +203,19 @@ def main():
         {"version": "V38", "score": 0.665, "date": "11-02", "tag": "Silver", "desc": "OpenPool 198k + LinearSVC 12.0 (銀メダル圏突破!)"},
         {"version": "V39", "score": 0.666, "date": "11-02", "tag": "Silver Top", "desc": "OpenPool v11 Extra 49k 換装 (銀上位獲得)"},
         {"version": "V40", "score": 0.666, "date": "11-03", "tag": "Silver Defend", "desc": "Gemini ルーティング除外 + ATLAS Margin 0.32 (0.666完全再現/114位防衛)"},
-        {"version": "V41", "score": None, "target": 0.672, "date": "11-04", "tag": "Running", "desc": "Apex-II (Dual-DeBERTa + Pairwise A/B + Sibling Residual 0.10 + Sinkhorn 0.30)"}
+        {"version": "V41", "score": 0.663, "date": "11-04", "tag": "Silver Hold", "desc": "Apex-II (Sinkhorn 0.30緩和による微減、要改善特定)"},
+        {"version": "V42 A/B/C", "score": None, "target": 0.672, "date": "11-04", "tag": "Running", "desc": "3系統並行アブレーション推論中 (~23:25完走予定)"}
     ]
 
     # 4. Architecture comparison matrix
     architecture_matrix = [
-        {"version": "V38", "score": "0.665", "data_pool": "Open Pool 198k", "deberta": "Single (Official)", "pairwise_ab": "None", "sibling_style": "None", "atlas_margin": "0.0", "sinkhorn": "0.50", "highlight": "銀メダル圏突入"},
-        {"version": "V39", "score": "0.666", "data_pool": "Open Pool v11 (Extra 49k)", "deberta": "Single (Official)", "pairwise_ab": "None", "sibling_style": "None", "atlas_margin": "0.0", "sinkhorn": "0.50", "highlight": "データセット高品質化"},
-        {"version": "V40", "score": "0.666", "data_pool": "Open Pool v11 Clean", "deberta": "Single (Official)", "pairwise_ab": "None", "sibling_style": "None", "atlas_margin": "0.32", "sinkhorn": "0.50", "highlight": "ルーティング汚染行排除"},
-        {"version": "V41 (Apex-II)", "score": "0.670+ (目標)", "data_pool": "Open Pool v11 190k + 49k", "deberta": "Dual (0.75 Pool + 0.25 Orig)", "pairwise_ab": "V34.1 A/B Verifier (~16s)", "sibling_style": "V40A Residual (0.10)", "atlas_margin": "0.32", "sinkhorn": "0.30", "highlight": "3大SOTA統合スタック"}
+        {"version": "V38", "score": "0.665", "data_pool": "Open Pool 198k", "deberta": "Single (Official)", "pairwise_ab": "None", "sibling_style": "None", "atlas_margin": "0.0", "sinkhorn": "0.50 / Mix 0.35", "highlight": "銀メダル圏突入"},
+        {"version": "V39", "score": "0.666", "data_pool": "Open Pool v11 (Extra 49k)", "deberta": "Single (Official)", "pairwise_ab": "None", "sibling_style": "None", "atlas_margin": "0.0", "sinkhorn": "0.50 / Mix 0.35", "highlight": "データセット高品質化"},
+        {"version": "V40", "score": "0.666", "data_pool": "Open Pool v11 Clean", "deberta": "Single (Official)", "pairwise_ab": "None", "sibling_style": "None", "atlas_margin": "0.32", "sinkhorn": "0.50 / Mix 0.35", "highlight": "ルーティング汚染行排除"},
+        {"version": "V41", "score": "0.663", "data_pool": "Open Pool v11 190k + 49k", "deberta": "Dual (0.75 Pool)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "V40A Residual (0.10)", "atlas_margin": "0.32", "sinkhorn": "0.30 / Mix 0.35", "highlight": "Sinkhorn緩和による微減"},
+        {"version": "V42", "score": "推論中 (0.670+狙い)", "data_pool": "Open Pool v11 190k + 49k", "deberta": "Dual (0.75 Pool)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "Residual (0.10)", "atlas_margin": "0.32", "sinkhorn": "0.50 / Mix 0.42", "highlight": "強い正則化+Mix0.42"},
+        {"version": "V42-B", "score": "推論中", "data_pool": "Open Pool v11 190k + 49k", "deberta": "Dual (0.75 Pool)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "Residual (0.05)", "atlas_margin": "0.32", "sinkhorn": "0.50 / Mix 0.42", "highlight": "Sibling保守版"},
+        {"version": "V42-C", "score": "推論中 (本命比較)", "data_pool": "Open Pool v11 190k + 49k", "deberta": "Dual (0.75 Pool)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "Residual (0.10)", "atlas_margin": "0.32", "sinkhorn": "0.50 / Mix 0.35", "highlight": "V40完全同条件アンカー"}
     ]
 
     # 5. Extract Markdown Reports
@@ -213,8 +239,9 @@ def main():
             "bronze_rank_cutoff": bronze_rank_cutoff
         },
         "running_submission": running_sub,
+        "active_runs": active_runs,
         "timeline": timeline,
-        "submissions": sub_list[:15],
+        "submissions": sub_list[:20],
         "architecture_matrix": architecture_matrix,
         "reports": reports
     }
