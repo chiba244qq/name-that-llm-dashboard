@@ -1,64 +1,20 @@
 {
-  "updated_at": "2026-11-04 20:24:05 JST",
+  "updated_at": "2026-11-05 00:46:32 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 4576,
-    "my_rank": 209,
+    "total_teams": 4614,
+    "my_rank": 220,
     "my_score": 0.666,
     "medal": "Silver",
-    "top_percent": 4.57,
+    "top_percent": 4.77,
     "gold_cutoff": 0.701,
     "silver_cutoff": 0.666,
-    "silver_rank_cutoff": 228,
+    "silver_rank_cutoff": 230,
     "bronze_cutoff": 0.665,
-    "bronze_rank_cutoff": 457
+    "bronze_rank_cutoff": 461
   },
-  "running_submission": {
-    "ref": 57977543,
-    "version": "V42-C (Apex V40Anchor)",
-    "track": "Track 1 (Evolution Anchor)",
-    "description": "NTL 0672 V42c Apex V40Anchor (V40 Anchor: Sinkhorn 0.50 + Mix 0.35 + Apex-II Dual-DeBERTa + Sibling 0.10)",
-    "params": "Sinkhorn 0.50 | Mix 0.35 | Sibling 0.10 | Dual-DeBERTa 0.75",
-    "submitted_at": "2026-11-04 17:07:22",
-    "status": "PENDING",
-    "target_score": "0.668 - 0.672+",
-    "estimated_completion": "~23:25 JST"
-  },
-  "active_runs": [
-    {
-      "ref": 57977543,
-      "version": "V42-C (Apex V40Anchor)",
-      "track": "Track 1 (Evolution Anchor)",
-      "description": "NTL 0672 V42c Apex V40Anchor (V40 Anchor: Sinkhorn 0.50 + Mix 0.35 + Apex-II Dual-DeBERTa + Sibling 0.10)",
-      "params": "Sinkhorn 0.50 | Mix 0.35 | Sibling 0.10 | Dual-DeBERTa 0.75",
-      "submitted_at": "2026-11-04 17:07:22",
-      "status": "PENDING",
-      "target_score": "0.668 - 0.672+",
-      "estimated_completion": "~23:25 JST"
-    },
-    {
-      "ref": 57977217,
-      "version": "V42 (Apex Re-Anchored)",
-      "track": "Track 1 (Evolution Aggressive)",
-      "description": "NTL 0672 V42 Apex Re-Anchored (Dual-DeBERTa + Pairwise A/B + Sibling Residual 0.10 + Sinkhorn 0.50)",
-      "params": "Sinkhorn 0.50 | Mix 0.42 | Sibling 0.10 | Dual-DeBERTa 0.75",
-      "submitted_at": "2026-11-04 16:59:35",
-      "status": "PENDING",
-      "target_score": "0.668 - 0.672+",
-      "estimated_completion": "~23:25 JST"
-    },
-    {
-      "ref": 57977214,
-      "version": "V42-B (Apex Conservative)",
-      "track": "Track 1 (Evolution Conservative)",
-      "description": "NTL 0672 V42-B Apex Conservative (Dual-DeBERTa + Pairwise A/B + Sibling Residual 0.05 + Sinkhorn 0.50)",
-      "params": "Sinkhorn 0.50 | Mix 0.42 | Sibling 0.05 | Dual-DeBERTa 0.75",
-      "submitted_at": "2026-11-04 16:59:32",
-      "status": "PENDING",
-      "target_score": "0.668 - 0.672+",
-      "estimated_completion": "~23:25 JST"
-    }
-  ],
+  "running_submission": null,
+  "active_runs": [],
   "timeline": [
     {
       "version": "V28",
@@ -117,34 +73,40 @@
       "desc": "Apex-II (Sinkhorn 0.30緩和による微減、要改善特定)"
     },
     {
-      "version": "V42 A/B/C",
-      "score": null,
-      "target": 0.672,
+      "version": "V42 A/B",
+      "score": 0.663,
       "date": "11-04",
-      "tag": "Running",
-      "desc": "3系統並行アブレーション推論中 (~23:25完走予定)"
+      "tag": "Silver",
+      "desc": "Dual-DeBERTa+Sibling+Sinkhorn0.50 (Mix0.42: 0.663)"
+    },
+    {
+      "version": "V42-C",
+      "score": 0.661,
+      "date": "11-04",
+      "tag": "Rejected",
+      "desc": "V40同条件アンカー (Apex-II新パーツによる減退 -0.005 を特定)"
     }
   ],
   "submissions": [
     {
       "ref": 57977543,
       "date": "2026-11-04 17:07:22",
-      "status": "PENDING",
-      "score": null,
+      "status": "COMPLETE",
+      "score": 0.661,
       "description": "NTL 0672 V42c Apex V40Anchor (V40 Anchor: Sinkhorn 0.50 + Mix 0.35 + Apex-II Dual-DeBERTa + Sibling 0.10)"
     },
     {
       "ref": 57977217,
       "date": "2026-11-04 16:59:35",
-      "status": "PENDING",
-      "score": null,
+      "status": "COMPLETE",
+      "score": 0.663,
       "description": "NTL 0672 V42 Apex Re-Anchored (Dual-DeBERTa + Pairwise A/B + Sibling Residual 0.10 + Sinkhorn 0.50)"
     },
     {
       "ref": 57977214,
       "date": "2026-11-04 16:59:32",
-      "status": "PENDING",
-      "score": null,
+      "status": "COMPLETE",
+      "score": 0.663,
       "description": "NTL 0672 V42-B Apex Conservative (Dual-DeBERTa + Pairwise A/B + Sibling Residual 0.05 + Sinkhorn 0.50)"
     },
     {
@@ -319,7 +281,7 @@
     {
       "version": "V42",
       "track": "Track 1",
-      "score": "推論中 (0.670+狙い)",
+      "score": "0.663",
       "data_pool": "Open Pool v11 190k + 49k",
       "deberta": "Dual (0.75 Pool)",
       "pairwise_ab": "V34.1 A/B Verifier",
@@ -331,7 +293,7 @@
     {
       "version": "V42-B",
       "track": "Track 1",
-      "score": "推論中",
+      "score": "0.663",
       "data_pool": "Open Pool v11 190k + 49k",
       "deberta": "Dual (0.75 Pool)",
       "pairwise_ab": "V34.1 A/B Verifier",
@@ -343,7 +305,7 @@
     {
       "version": "V42-C",
       "track": "Track 1",
-      "score": "推論中 (本命比較)",
+      "score": "0.661",
       "data_pool": "Open Pool v11 190k + 49k",
       "deberta": "Dual (0.75 Pool)",
       "pairwise_ab": "V34.1 A/B Verifier",

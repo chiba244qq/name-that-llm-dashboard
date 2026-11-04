@@ -318,7 +318,8 @@ def main():
         {"version": "V39", "score": 0.666, "date": "11-02", "tag": "Silver Top", "desc": "OpenPool v11 Extra 49k 換装 (銀上位獲得)"},
         {"version": "V40", "score": 0.666, "date": "11-03", "tag": "Silver Defend", "desc": "Gemini ルーティング除外 + ATLAS Margin 0.32 (0.666完全再現/114位防衛)"},
         {"version": "V41", "score": 0.663, "date": "11-04", "tag": "Silver Hold", "desc": "Apex-II (Sinkhorn 0.30緩和による微減、要改善特定)"},
-        {"version": "V42 A/B/C", "score": None, "target": 0.672, "date": "11-04", "tag": "Running", "desc": "3系統並行アブレーション推論中 (~23:25完走予定)"}
+        {"version": "V42 A/B", "score": 0.663, "date": "11-04", "tag": "Silver", "desc": "Dual-DeBERTa+Sibling+Sinkhorn0.50 (Mix0.42: 0.663)"},
+        {"version": "V42-C", "score": 0.661, "date": "11-04", "tag": "Rejected", "desc": "V40同条件アンカー (Apex-II新パーツによる減退 -0.005 を特定)"}
     ]
 
     # 4. Architecture comparison matrix
@@ -327,9 +328,9 @@ def main():
         {"version": "V39", "track": "Track 1", "score": "0.666", "data_pool": "Open Pool v11 (Extra 49k)", "deberta": "Single (Official)", "pairwise_ab": "None", "sibling_style": "None", "atlas_margin": "0.0", "sinkhorn": "0.50 / Mix 0.35", "highlight": "データセット高品質化"},
         {"version": "V40", "track": "Track 1", "score": "0.666", "data_pool": "Open Pool v11 Clean", "deberta": "Single (Official)", "pairwise_ab": "None", "sibling_style": "None", "atlas_margin": "0.32", "sinkhorn": "0.50 / Mix 0.35", "highlight": "ルーティング汚染行排除"},
         {"version": "V41", "track": "Track 2", "score": "0.663", "data_pool": "Open Pool v11 190k + 49k", "deberta": "Dual (0.75 Pool)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "V40A Residual (0.10)", "atlas_margin": "0.32", "sinkhorn": "0.30 / Mix 0.35", "highlight": "Sinkhorn緩和による微減"},
-        {"version": "V42", "track": "Track 1", "score": "推論中 (0.670+狙い)", "data_pool": "Open Pool v11 190k + 49k", "deberta": "Dual (0.75 Pool)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "Residual (0.10)", "atlas_margin": "0.32", "sinkhorn": "0.50 / Mix 0.42", "highlight": "強い正則化+Mix0.42"},
-        {"version": "V42-B", "track": "Track 1", "score": "推論中", "data_pool": "Open Pool v11 190k + 49k", "deberta": "Dual (0.75 Pool)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "Residual (0.05)", "atlas_margin": "0.32", "sinkhorn": "0.50 / Mix 0.42", "highlight": "Sibling保守版"},
-        {"version": "V42-C", "track": "Track 1", "score": "推論中 (本命比較)", "data_pool": "Open Pool v11 190k + 49k", "deberta": "Dual (0.75 Pool)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "Residual (0.10)", "atlas_margin": "0.32", "sinkhorn": "0.50 / Mix 0.35", "highlight": "V40完全同条件アンカー"}
+        {"version": "V42", "track": "Track 1", "score": "0.663", "data_pool": "Open Pool v11 190k + 49k", "deberta": "Dual (0.75 Pool)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "Residual (0.10)", "atlas_margin": "0.32", "sinkhorn": "0.50 / Mix 0.42", "highlight": "強い正則化+Mix0.42"},
+        {"version": "V42-B", "track": "Track 1", "score": "0.663", "data_pool": "Open Pool v11 190k + 49k", "deberta": "Dual (0.75 Pool)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "Residual (0.05)", "atlas_margin": "0.32", "sinkhorn": "0.50 / Mix 0.42", "highlight": "Sibling保守版"},
+        {"version": "V42-C", "track": "Track 1", "score": "0.661", "data_pool": "Open Pool v11 190k + 49k", "deberta": "Dual (0.75 Pool)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "Residual (0.10)", "atlas_margin": "0.32", "sinkhorn": "0.50 / Mix 0.35", "highlight": "V40完全同条件アンカー"}
     ]
 
     # 5. Extract Markdown Reports
