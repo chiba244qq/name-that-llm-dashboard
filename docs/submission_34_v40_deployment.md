@@ -78,11 +78,11 @@ flowchart TD
 
 ### 5.1 第34弾（V40）の実行結果
 - **提出履歴（Kaggle Submissions）**:
-  - `57924679` (09:00:11 JST): `SubmissionStatus.COMPLETE` $\to$ **Public Score `0.666`**
-  - `57924834` (09:01:15 JST): `SubmissionStatus.COMPLETE` $\to$ **Public Score `0.666`**
-  - `57925020` (09:02:19 JST): `SubmissionStatus.COMPLETE` $\to$ **Public Score `0.666`**
-  - `57925158` (09:03:23 JST): `SubmissionStatus.COMPLETE` $\to$ **Public Score `0.666`**
-  - `57925269` (09:04:28 JST): `SubmissionStatus.COMPLETE` $\to$ **Public Score `0.666`**
+  - `57924679` (09:00:11 JST): `SubmissionStatus.COMPLETE` → **Public Score `0.666`**
+  - `57924834` (09:01:15 JST): `SubmissionStatus.COMPLETE` → **Public Score `0.666`**
+  - `57925020` (09:02:19 JST): `SubmissionStatus.COMPLETE` → **Public Score `0.666`**
+  - `57925158` (09:03:23 JST): `SubmissionStatus.COMPLETE` → **Public Score `0.666`**
+  - `57925269` (09:04:28 JST): `SubmissionStatus.COMPLETE` → **Public Score `0.666`**
 - **推論動作**:
   - 全てエラーなく完走（約6時間30分）。
   - スコアは **`0.666` で完全再現**（性能の再現性・耐震性は極めて高い）。

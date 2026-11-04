@@ -6,6 +6,9 @@
   <title>Name That LLM | Kaggle Command Center & Live Dashboard</title>
   <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
   <script>
@@ -658,6 +661,24 @@
         if (!res.ok) throw new Error('File not found');
         const mdText = await res.text();
         contentEl.innerHTML = marked.parse(mdText);
+
+        // Render KaTeX Math
+        try {
+          if (typeof renderMathInElement === "function") {
+            renderMathInElement(contentEl, {
+              delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false},
+                {left: "\\(", right: "\\)", display: false},
+                {left: "\\[", right: "\\]", display: true}
+              ],
+              throwOnError: false
+            });
+          }
+        } catch (kErr) {
+          console.warn("KaTeX render error:", kErr);
+        }
+
         try {
           await mermaid.run({
             nodes: contentEl.querySelectorAll(".mermaid")

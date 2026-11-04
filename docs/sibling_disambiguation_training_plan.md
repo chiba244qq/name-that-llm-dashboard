@@ -80,7 +80,7 @@ flowchart TD
 
 ### 3.3 モデル構造とハイパーパラメータ
 * **Backbone**: `deberta-v3-large`（シーケンス長 512、または 1024 Truncation）
-* **Head**: Linear Classifier (Hidden Size $\to$ 1) + BCEWithLogitsLoss
+* **Head**: Linear Classifier (Hidden Size → 1) + BCEWithLogitsLoss
 * **Optimizer**: AdamW (Learning Rate: $1.5 \times 10^{-5}$, Weight Decay: $0.01$)
 * **Scheduler**: CosineAnnealingLR (Warmup 10%)
 * **Batch Size**: 16 (Gradient Accumulation 2 = Effective Batch Size 32)

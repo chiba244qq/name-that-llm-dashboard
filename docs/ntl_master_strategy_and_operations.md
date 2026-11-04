@@ -93,14 +93,14 @@ Kaggle API および最新の公開ノートブック群（[`research/latest_ker
 [`name-that-llm-error-map-of-the-18-models`](file:///Users/echo/kaggle/name-that-llm/research/latest_kernels/error_map/name-that-llm-error-map-of-the-18-models.ipynb) の Kaggle 実行ログから以下の定量的事実を抽出しました。
 
 - **誤分類の内訳**: 全エラーのうち **51% が「同一ファミリー内の兄弟モデル誤認（Right family, wrong model）」**、**49% が「ファミリー間の誤認（Wrong family）」**。混同上位 12 ペアの **58% は同一ファミリー内**（例: `gemini-3.6/3.7/3.8-flash` 間、`gpt-5.6-luna/sol/terra` 間、`claude-opus-4-6/4-8/5` 間）。
-- **外部プール件数と Recall の無相関**: 各クラスの公開プールデータ件数（1,100〜2,700件）とクラス別 Recall の相関係数は **`-0.09`（ほぼ無相関）**。単に合成データを増やしても Recall は向上せず、むしろ `Nishant` 氏が実証した通り **「訓練プロンプトと TF-IDF コサイン類似度 0.3 以上のリーク行を除外するデータクレンジング」** こそが Stage-1 LoRA 単体性能を `0.493` $\to$ `0.572` へ引き上げた核心要因です。
+- **外部プール件数と Recall の無相関**: 各クラスの公開プールデータ件数（1,100〜2,700件）とクラス別 Recall の相関係数は **`-0.09`（ほぼ無相関）**。単に合成データを増やしても Recall は向上せず、むしろ `Nishant` 氏が実証した通り **「訓練プロンプトと TF-IDF コサイン類似度 0.3 以上のリーク行を除外するデータクレンジング」** こそが Stage-1 LoRA 単体性能を `0.493` → `0.572` へ引き上げた核心要因です。
 
 ### 3.4 最新の高スコア主張カーネルの真偽検証（コード diff 監査）
 本日時点で Kaggle 上に出現している複数の注目カーネルを直接 diff 監査した結果は下表の通りです。
 
 | カーネル Ref | 主張タイトル / Public LB | コード diff 監査結果と技術的評価 |
 | :--- | :--- | :--- |
-| `judith007/0-664-hyperparameter-tuned-who-are-u` | **Public LB `0.664`（実証済）** | `omerfarukmerey` (0.663) に対し **`--sinkhorn 0.45` $\to$ `0.60` の1箇所のみ変更**。現在当チームが **第25弾として投入・検証中**。 |
+| `judith007/0-664-hyperparameter-tuned-who-are-u` | **Public LB `0.664`（実証済）** | `omerfarukmerey` (0.663) に対し **`--sinkhorn 0.45` → `0.60` の1箇所のみ変更**。現在当チームが **第25弾として投入・検証中**。 |
 | `synthreaper/ntl-gold-apex-champion-0-670` | タイトル `0.670+` / **LB `N/A`（未検証）** | 0.662 ベースに `sibling_style.py` (`V40A`, `max_alpha=0.08`) を追加したのみ。当チームの第20弾で同手法は過学習によりスコア低下（`0.644 -> 0.643`）を確認済みであり、**タイトル先行の未検証コード** と判断。 |
 | `otmaneelmahdaouy/ntl-v41-grandmaster-horizon` | タイトル `0.670+` / 本文 `0.662+` | 変更点は ① 4-view SVC の pool 重み `_srcw: 0.35 -> 0.50`、② `--sinkhorn 0.50 --sinkhorn_target_mix 0.40`、③ `--atlas_w 0.25 --atlas_margin 0.35`。 |
 | `youdian1s/ntl-tuned-blend-calib-refit` | 0.662 派生 | **注目すべき発見**: `MODELS` リスト内の `ll8v5`（Llama-3.1-8B）に対して **`"gauss": 0.7`（共有プロンプト Gaussian Head）を有効化**（標準の V31 では `q14v5` と `q8v5` のみに設定されており `ll8v5` には未設定）。 |
@@ -152,7 +152,7 @@ flowchart TD
 
 ### 作戦 0（現在進行中）: 第25弾 `ntl-0664-sinkhorn-60` の完走確認
 - **状態**: `SubmissionStatus.PENDING`（21:00 JST 投入、常駐監視 PID `36295` 稼働中）
-- **変更点**: `--sinkhorn 0.45` $\to$ `0.60`
+- **変更点**: `--sinkhorn 0.45` → `0.60`
 - **期待効果とリスク**:
   - **メリット**: 推論時間は第23弾と同じ約 5 時間 34 分で安全に完走する見込みであり、`judith007` で実証された `0.664`（Rank 64〜91 位）へのジャンプアップが期待されます。
   - **リスク**: セクション 3.2 で確認した通り、同一コードでも実行時の GPU バッチ順序等により `±0.001` の変動が生じる可能性があります。
@@ -174,8 +174,8 @@ flowchart TD
 ### 作戦 B（第27弾候補 / キャリブレーション深化）: Sinkhorn Target-Mix ($\rho$) と Open-Pool SVC 重みの協調最適化
 - **技術的根拠**:
   - `infer.py` L598–602 において、`--sinkhorn` ($\alpha = 0.60$) は Sinkhorn 行列 $Q$ の混合比率を制御しますが、そもそも $Q$ が目指す目標分布 $t = (1 - \rho)\bar{p} + \rho \pi_{\text{train}}$ は `--sinkhorn_target_mix` ($\rho$, 現在 `0.35`) に制約されています。
-  - $\rho$ を `0.35` $\to$ `0.42`〜`0.45` に引き上げることで、Balanced Accuracy に対して有利な均一事前分布 $\pi_{\text{train}}$ への引き戻しがより純粋に作用します。
-  - 併せて、4-view LinearSVC における公開クリーンデータプール（`nlm_pool_v5.parquet`）のサンプル重み `_srcw` を `0.35` $\to$ `0.45`〜`0.50` に微増させ、句読点・文体リズム特徴の汎化性能を高めるアプローチが考えられます。
+  - $\rho$ を `0.35` → `0.42`〜`0.45` に引き上げることで、Balanced Accuracy に対して有利な均一事前分布 $\pi_{\text{train}}$ への引き戻しがより純粋に作用します。
+  - 併せて、4-view LinearSVC における公開クリーンデータプール（`nlm_pool_v5.parquet`）のサンプル重み `_srcw` を `0.35` → `0.45`〜`0.50` に微増させ、句読点・文体リズム特徴の汎化性能を高めるアプローチが考えられます。
 - **計算コストと安全性**:
   - 推論時間への影響は **0 秒**（ハイパーパラメータ変更のみ）。
 - **リスク・デメリット**:

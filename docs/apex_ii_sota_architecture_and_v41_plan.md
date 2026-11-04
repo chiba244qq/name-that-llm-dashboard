@@ -19,7 +19,7 @@
      - 隠れテストセットには「1プロンプトあたりの文章数が少ない（few passages per prompt）」ため、オフラインで有効だった Hungarian assignment はパブリックLBで -0.010〜-0.017 の大暴落を起こす。
      - 大域的な周辺分布最適化である **Sinkhorn アルゴリズム** のみが有効。
   2. **0.666 の壁を破る「Apex-II 統合アーキテクチャ」の特定**:
-     - **Dual-DeBERTa (`0.75 * deb_pool + 0.25 * deb_orig`)**: 未見プロンプトでの BA が 0.5230 $\to$ 0.5763 へ急上昇（`bgunshui/ntl-train-deberta-b` 採用）。
+     - **Dual-DeBERTa (`0.75 * deb_pool + 0.25 * deb_orig`)**: 未見プロンプトでの BA が 0.5230 → 0.5763 へ急上昇（`bgunshui/ntl-train-deberta-b` 採用）。
      - **V34.1 Evidence-Aware Pairwise A/B Verifier**: `mercurydust/ntllm-chatgpt-a-b` rev 03 による証拠スパンとプロンプト弱ラベルの照合（所要時間約16秒）。
      - **V40A Sibling-Style Residual (0.10)**: 全体質量を保持しつつ兄弟モデル間のタイ（同点）を解消。
      - **Sinkhorn パラメータの最適連動**: 兄弟・Pairwise の強いシグナルを殺さないため、`--sinkhorn 0.30`（従来 0.50 から軟化）+ `--sinkhorn_target_mix 0.35` に最適化。
