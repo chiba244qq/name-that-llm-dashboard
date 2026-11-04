@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-11-04 17:10:30 JST",
+  "updated_at": "2026-11-04 17:42:44 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 4556,
+    "total_teams": 4558,
     "my_rank": 203,
     "my_score": 0.666,
     "medal": "Silver",
-    "top_percent": 4.46,
+    "top_percent": 4.45,
     "gold_cutoff": 0.701,
     "silver_cutoff": 0.666,
     "silver_rank_cutoff": 227,
@@ -343,6 +343,14 @@
     }
   ],
   "reports": [
+    {
+      "filename": "offline_oof_and_error_analysis_report.md",
+      "title": "Phase 0 OOF 数理最適化＆深層エラー分析レポート",
+      "date": "2026-11-04 17:42 JST",
+      "category": "戦略・分析",
+      "badge_color": "purple",
+      "summary": "本レポートは、手元にある **Phase 0 OOF データセット（2,699件の正解ラベルおよび予測確率）** を用い、Kaggle の本推論待ち時間（約6時間）を活用して実施したローカルオフライン検証の結果をまとめたものです。"
+    },
     {
       "filename": "kaggle_live_dashboard_deployment.md",
       "title": "Kaggle「Name That LLM」Live Command Center & Dashboard デプロイ完了記録",
