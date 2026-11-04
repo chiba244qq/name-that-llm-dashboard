@@ -1,27 +1,19 @@
 {
-  "updated_at": "2026-11-04 10:46:10 JST",
+  "updated_at": "2026-11-04 15:20:58 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 4526,
-    "my_rank": 190,
+    "total_teams": 4550,
+    "my_rank": 201,
     "my_score": 0.666,
     "medal": "Silver",
-    "top_percent": 4.2,
-    "gold_cutoff": 0.697,
+    "top_percent": 4.42,
+    "gold_cutoff": 0.701,
     "silver_cutoff": 0.666,
-    "silver_rank_cutoff": 226,
+    "silver_rank_cutoff": 227,
     "bronze_cutoff": 0.665,
-    "bronze_rank_cutoff": 452
+    "bronze_rank_cutoff": 455
   },
-  "running_submission": {
-    "ref": 57963401,
-    "version": "V41 (Apex-II)",
-    "description": "NTL 0670 V41 Apex II (Dual-DeBERTa + Pairwise A/B + Sibling Residual 0.10 + Sinkhorn 0.30)",
-    "submitted_at": "2026-11-04 09:00:17",
-    "status": "PENDING",
-    "target_score": "0.670 - 0.675+",
-    "estimated_completion": "15:35 JST"
-  },
+  "running_submission": null,
   "timeline": [
     {
       "version": "V28",
@@ -85,8 +77,8 @@
     {
       "ref": 57963401,
       "date": "2026-11-04 09:00:17",
-      "status": "PENDING",
-      "score": null,
+      "status": "COMPLETE",
+      "score": 0.663,
       "description": "NTL 0670 V41 Apex II (Dual-DeBERTa + Pairwise A/B + Sibling Residual 0.10 + Sinkhorn 0.30)"
     },
     {
