@@ -33,11 +33,12 @@ DOC_DATES = {
     "apex_ii_sota_architecture_and_v41_plan.md": "2026-11-03 16:00 JST",
     "name_that_llm_comprehensive_guide.md": "2026-11-03 21:55 JST",
     "kaggle_live_dashboard_deployment.md": "2026-11-04 09:29 JST",
-    "offline_oof_and_error_analysis_report.md": "2026-11-04 17:42 JST"
+    "offline_oof_and_error_analysis_report.md": "2026-11-04 17:42 JST",
+    "dual_track_strategy_and_operations.md": "2026-11-04 20:20 JST"
 }
 
 REPORT_METADATA = {
-    # --- ACTIVE: Reading Order 1 to 12 ---
+    # --- ACTIVE: Reading Order 1 to 13 ---
     "name_that_llm_comprehensive_guide.md": {
         "order": 1, "step": "STEP 1: 超入門・全体像", "status": "active",
         "note": "【必読・全体像】コンペ概要、Balanced Accuracy、9時間VOID崖、基本解法が中学生でもわかる完全ガイド"
@@ -46,44 +47,48 @@ REPORT_METADATA = {
         "order": 2, "step": "STEP 2: 運用インフラ", "status": "active",
         "note": "リアルタイム監視ダッシュボード・自動提出・アーカイブ統合の全体像"
     },
+    "dual_track_strategy_and_operations.md": {
+        "order": 3, "step": "STEP 3: 運用体制・戦略プロトコル", "status": "active",
+        "note": "【重要】Track 1 (堅実進化) ＆ Track 2 (インテル探索) の2系統分割とスロット配分規律"
+    },
     "gold_medal_master_strategy.md": {
-        "order": 3, "step": "STEP 3: 戦略ロードマップ", "status": "active",
+        "order": 4, "step": "STEP 3: 戦略ロードマップ", "status": "active",
         "note": "Top 18 金メダル獲得に向けた4段階フェーズ計画とリソース配分"
     },
     "ntl_master_strategy_and_operations.md": {
-        "order": 4, "step": "STEP 3: 戦略ロードマップ", "status": "active",
+        "order": 5, "step": "STEP 3: 戦略ロードマップ", "status": "active",
         "note": "銀メダル死守から金メダル挑戦へのマスター戦略＆作戦計画"
     },
     "phase0_oof_results_and_breakthrough_findings.md": {
-        "order": 5, "step": "STEP 4: 検証基盤の確立", "status": "active",
+        "order": 6, "step": "STEP 4: 検証基盤の確立", "status": "active",
         "note": "オフライン 5-Fold OOF 基盤の確立と、Public LB との相関解明"
     },
     "offline_oof_and_error_analysis_report.md": {
-        "order": 6, "step": "STEP 4: 検証基盤 (最新分析)", "status": "active",
+        "order": 7, "step": "STEP 4: 検証基盤 (最新分析)", "status": "active",
         "note": "【最新】Sinkhorn x Target Mix 2次元グリッド探索 & 176件の兄弟混同深層分析"
     },
     "sibling_disambiguation_training_plan.md": {
-        "order": 7, "step": "STEP 5: コア技術・ブレークスルー", "status": "active",
+        "order": 8, "step": "STEP 5: コア技術・ブレークスルー", "status": "active",
         "note": "全エラーの68%を占める兄弟モデル（Gemini/GLM）特化識別器の学習仕様書"
     },
     "kaggle_discussion_and_code_intel_report.md": {
-        "order": 8, "step": "STEP 5: コア技術・最新インテル", "status": "active",
+        "order": 9, "step": "STEP 5: コア技術・最新インテル", "status": "active",
         "note": "Kaggle上位陣（0.667+）の解法動向、Hungarian破綻の理由、Apex Kの分析"
     },
     "submission_33_v39_deployment.md": {
-        "order": 9, "step": "STEP 6: 実戦・ブレークスルー", "status": "active",
+        "order": 10, "step": "STEP 6: 実戦・ブレークスルー", "status": "active",
         "note": "0.666達成！Open Pool v11 Extra 49k 換装で銀メダル上位を確定させた記録"
     },
     "submission_34_v40_deployment.md": {
-        "order": 10, "step": "STEP 6: 実戦・ブレークスルー", "status": "active",
+        "order": 11, "step": "STEP 6: 実戦・ブレークスルー", "status": "active",
         "note": "0.666完全再現！Geminiルーティング除外 & ATLAS Margin 0.32で114位防衛"
     },
     "v39_verification_and_tradeoff_analysis.md": {
-        "order": 11, "step": "STEP 6: 実戦・ブレークスルー", "status": "active",
+        "order": 12, "step": "STEP 6: 実戦・ブレークスルー", "status": "active",
         "note": "投入前のOOF事前検証手法とリスク・リターンのトレードオフ分析"
     },
     "apex_ii_sota_architecture_and_v41_plan.md": {
-        "order": 12, "step": "STEP 7: 現行SOTAアーキテクチャ", "status": "active",
+        "order": 13, "step": "STEP 7: 現行SOTAアーキテクチャ", "status": "active",
         "note": "現行主力モデル構成（Dual-DeBERTa + Pairwise + Sibling + ATLAS）の完全設計解剖"
     },
 
@@ -243,22 +248,28 @@ def main():
             desc = s["description"]
             ver_name = "In Progress"
             params_summary = ""
+            track_label = "Track 1 (Evolution)"
             if "V42c" in desc or "V42-C" in desc:
                 ver_name = "V42-C (Apex V40Anchor)"
                 params_summary = "Sinkhorn 0.50 | Mix 0.35 | Sibling 0.10 | Dual-DeBERTa 0.75"
+                track_label = "Track 1 (Evolution Anchor)"
             elif "V42-B" in desc:
                 ver_name = "V42-B (Apex Conservative)"
                 params_summary = "Sinkhorn 0.50 | Mix 0.42 | Sibling 0.05 | Dual-DeBERTa 0.75"
+                track_label = "Track 1 (Evolution Conservative)"
             elif "V42 " in desc or "V42 Apex" in desc:
                 ver_name = "V42 (Apex Re-Anchored)"
                 params_summary = "Sinkhorn 0.50 | Mix 0.42 | Sibling 0.10 | Dual-DeBERTa 0.75"
+                track_label = "Track 1 (Evolution Aggressive)"
             elif "V41" in desc:
                 ver_name = "V41 (Apex-II)"
                 params_summary = "Sinkhorn 0.30 | Mix 0.35 | Sibling 0.10 | Dual-DeBERTa 0.75"
+                track_label = "Track 2 (Exploration Prototype)"
 
             active_runs.append({
                 "ref": s["ref"],
                 "version": ver_name,
+                "track": track_label,
                 "description": desc,
                 "params": params_summary,
                 "submitted_at": s["date"],
@@ -312,13 +323,13 @@ def main():
 
     # 4. Architecture comparison matrix
     architecture_matrix = [
-        {"version": "V38", "score": "0.665", "data_pool": "Open Pool 198k", "deberta": "Single (Official)", "pairwise_ab": "None", "sibling_style": "None", "atlas_margin": "0.0", "sinkhorn": "0.50 / Mix 0.35", "highlight": "銀メダル圏突入"},
-        {"version": "V39", "score": "0.666", "data_pool": "Open Pool v11 (Extra 49k)", "deberta": "Single (Official)", "pairwise_ab": "None", "sibling_style": "None", "atlas_margin": "0.0", "sinkhorn": "0.50 / Mix 0.35", "highlight": "データセット高品質化"},
-        {"version": "V40", "score": "0.666", "data_pool": "Open Pool v11 Clean", "deberta": "Single (Official)", "pairwise_ab": "None", "sibling_style": "None", "atlas_margin": "0.32", "sinkhorn": "0.50 / Mix 0.35", "highlight": "ルーティング汚染行排除"},
-        {"version": "V41", "score": "0.663", "data_pool": "Open Pool v11 190k + 49k", "deberta": "Dual (0.75 Pool)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "V40A Residual (0.10)", "atlas_margin": "0.32", "sinkhorn": "0.30 / Mix 0.35", "highlight": "Sinkhorn緩和による微減"},
-        {"version": "V42", "score": "推論中 (0.670+狙い)", "data_pool": "Open Pool v11 190k + 49k", "deberta": "Dual (0.75 Pool)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "Residual (0.10)", "atlas_margin": "0.32", "sinkhorn": "0.50 / Mix 0.42", "highlight": "強い正則化+Mix0.42"},
-        {"version": "V42-B", "score": "推論中", "data_pool": "Open Pool v11 190k + 49k", "deberta": "Dual (0.75 Pool)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "Residual (0.05)", "atlas_margin": "0.32", "sinkhorn": "0.50 / Mix 0.42", "highlight": "Sibling保守版"},
-        {"version": "V42-C", "score": "推論中 (本命比較)", "data_pool": "Open Pool v11 190k + 49k", "deberta": "Dual (0.75 Pool)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "Residual (0.10)", "atlas_margin": "0.32", "sinkhorn": "0.50 / Mix 0.35", "highlight": "V40完全同条件アンカー"}
+        {"version": "V38", "track": "Track 1", "score": "0.665", "data_pool": "Open Pool 198k", "deberta": "Single (Official)", "pairwise_ab": "None", "sibling_style": "None", "atlas_margin": "0.0", "sinkhorn": "0.50 / Mix 0.35", "highlight": "銀メダル圏突入"},
+        {"version": "V39", "track": "Track 1", "score": "0.666", "data_pool": "Open Pool v11 (Extra 49k)", "deberta": "Single (Official)", "pairwise_ab": "None", "sibling_style": "None", "atlas_margin": "0.0", "sinkhorn": "0.50 / Mix 0.35", "highlight": "データセット高品質化"},
+        {"version": "V40", "track": "Track 1", "score": "0.666", "data_pool": "Open Pool v11 Clean", "deberta": "Single (Official)", "pairwise_ab": "None", "sibling_style": "None", "atlas_margin": "0.32", "sinkhorn": "0.50 / Mix 0.35", "highlight": "ルーティング汚染行排除"},
+        {"version": "V41", "track": "Track 2", "score": "0.663", "data_pool": "Open Pool v11 190k + 49k", "deberta": "Dual (0.75 Pool)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "V40A Residual (0.10)", "atlas_margin": "0.32", "sinkhorn": "0.30 / Mix 0.35", "highlight": "Sinkhorn緩和による微減"},
+        {"version": "V42", "track": "Track 1", "score": "推論中 (0.670+狙い)", "data_pool": "Open Pool v11 190k + 49k", "deberta": "Dual (0.75 Pool)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "Residual (0.10)", "atlas_margin": "0.32", "sinkhorn": "0.50 / Mix 0.42", "highlight": "強い正則化+Mix0.42"},
+        {"version": "V42-B", "track": "Track 1", "score": "推論中", "data_pool": "Open Pool v11 190k + 49k", "deberta": "Dual (0.75 Pool)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "Residual (0.05)", "atlas_margin": "0.32", "sinkhorn": "0.50 / Mix 0.42", "highlight": "Sibling保守版"},
+        {"version": "V42-C", "track": "Track 1", "score": "推論中 (本命比較)", "data_pool": "Open Pool v11 190k + 49k", "deberta": "Dual (0.75 Pool)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "Residual (0.10)", "atlas_margin": "0.32", "sinkhorn": "0.50 / Mix 0.35", "highlight": "V40完全同条件アンカー"}
     ]
 
     # 5. Extract Markdown Reports

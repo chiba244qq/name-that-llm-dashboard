@@ -511,9 +511,12 @@
             card.innerHTML = `
               <div class="space-y-2">
                 <div class="flex items-center justify-between">
-                  <span class="text-[10px] font-bold px-2 py-0.5 rounded border uppercase tracking-wider ${badgeColor}">
-                    ${r.version}
-                  </span>
+                  <div class="flex items-center space-x-1.5">
+                    <span class="text-[10px] font-bold px-2 py-0.5 rounded border uppercase tracking-wider ${badgeColor}">
+                      ${r.version}
+                    </span>
+                    ${r.track ? `<span class="text-[9px] font-bold px-1.5 py-0.5 rounded border ${r.track.includes('Track 1') ? 'bg-cyan-950/80 text-cyan-300 border-cyan-800' : 'bg-amber-950/80 text-amber-300 border-amber-800'}">${r.track}</span>` : ''}
+                  </div>
                   <span class="text-[11px] font-mono font-semibold text-slate-400">REF: ${r.ref}</span>
                 </div>
                 <div class="text-sm font-bold text-white line-clamp-2">${r.description}</div>
@@ -548,8 +551,11 @@
       data.architecture_matrix.forEach(row => {
         const tr = document.createElement('tr');
         tr.className = "hover:bg-slate-800/40 transition";
+        const trackBadge = row.track ? (row.track.includes('Track 1') 
+          ? '<span class="text-[9px] px-1.5 py-0.5 rounded font-bold bg-cyan-950/80 text-cyan-400 border border-cyan-800 ml-1.5">Track 1</span>'
+          : '<span class="text-[9px] px-1.5 py-0.5 rounded font-bold bg-amber-950/80 text-amber-400 border border-amber-800 ml-1.5">Track 2</span>') : '';
         tr.innerHTML = `
-          <td class="py-2.5 px-3 font-semibold text-white">${row.version}</td>
+          <td class="py-2.5 px-3 font-semibold text-white whitespace-nowrap">${row.version} ${trackBadge}</td>
           <td class="py-2.5 px-3 mono font-bold ${row.score.includes('0.67') ? 'text-emerald-400' : 'text-cyan-400'}">${row.score}</td>
           <td class="py-2.5 px-3">${row.data_pool}</td>
           <td class="py-2.5 px-3">${row.deberta}</td>

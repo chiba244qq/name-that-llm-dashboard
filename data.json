@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-11-04 20:03:25 JST",
+  "updated_at": "2026-11-04 20:24:05 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 4573,
+    "total_teams": 4576,
     "my_rank": 209,
     "my_score": 0.666,
     "medal": "Silver",
@@ -16,6 +16,7 @@
   "running_submission": {
     "ref": 57977543,
     "version": "V42-C (Apex V40Anchor)",
+    "track": "Track 1 (Evolution Anchor)",
     "description": "NTL 0672 V42c Apex V40Anchor (V40 Anchor: Sinkhorn 0.50 + Mix 0.35 + Apex-II Dual-DeBERTa + Sibling 0.10)",
     "params": "Sinkhorn 0.50 | Mix 0.35 | Sibling 0.10 | Dual-DeBERTa 0.75",
     "submitted_at": "2026-11-04 17:07:22",
@@ -27,6 +28,7 @@
     {
       "ref": 57977543,
       "version": "V42-C (Apex V40Anchor)",
+      "track": "Track 1 (Evolution Anchor)",
       "description": "NTL 0672 V42c Apex V40Anchor (V40 Anchor: Sinkhorn 0.50 + Mix 0.35 + Apex-II Dual-DeBERTa + Sibling 0.10)",
       "params": "Sinkhorn 0.50 | Mix 0.35 | Sibling 0.10 | Dual-DeBERTa 0.75",
       "submitted_at": "2026-11-04 17:07:22",
@@ -37,6 +39,7 @@
     {
       "ref": 57977217,
       "version": "V42 (Apex Re-Anchored)",
+      "track": "Track 1 (Evolution Aggressive)",
       "description": "NTL 0672 V42 Apex Re-Anchored (Dual-DeBERTa + Pairwise A/B + Sibling Residual 0.10 + Sinkhorn 0.50)",
       "params": "Sinkhorn 0.50 | Mix 0.42 | Sibling 0.10 | Dual-DeBERTa 0.75",
       "submitted_at": "2026-11-04 16:59:35",
@@ -47,6 +50,7 @@
     {
       "ref": 57977214,
       "version": "V42-B (Apex Conservative)",
+      "track": "Track 1 (Evolution Conservative)",
       "description": "NTL 0672 V42-B Apex Conservative (Dual-DeBERTa + Pairwise A/B + Sibling Residual 0.05 + Sinkhorn 0.50)",
       "params": "Sinkhorn 0.50 | Mix 0.42 | Sibling 0.05 | Dual-DeBERTa 0.75",
       "submitted_at": "2026-11-04 16:59:32",
@@ -266,6 +270,7 @@
   "architecture_matrix": [
     {
       "version": "V38",
+      "track": "Track 1",
       "score": "0.665",
       "data_pool": "Open Pool 198k",
       "deberta": "Single (Official)",
@@ -277,6 +282,7 @@
     },
     {
       "version": "V39",
+      "track": "Track 1",
       "score": "0.666",
       "data_pool": "Open Pool v11 (Extra 49k)",
       "deberta": "Single (Official)",
@@ -288,6 +294,7 @@
     },
     {
       "version": "V40",
+      "track": "Track 1",
       "score": "0.666",
       "data_pool": "Open Pool v11 Clean",
       "deberta": "Single (Official)",
@@ -299,6 +306,7 @@
     },
     {
       "version": "V41",
+      "track": "Track 2",
       "score": "0.663",
       "data_pool": "Open Pool v11 190k + 49k",
       "deberta": "Dual (0.75 Pool)",
@@ -310,6 +318,7 @@
     },
     {
       "version": "V42",
+      "track": "Track 1",
       "score": "推論中 (0.670+狙い)",
       "data_pool": "Open Pool v11 190k + 49k",
       "deberta": "Dual (0.75 Pool)",
@@ -321,6 +330,7 @@
     },
     {
       "version": "V42-B",
+      "track": "Track 1",
       "score": "推論中",
       "data_pool": "Open Pool v11 190k + 49k",
       "deberta": "Dual (0.75 Pool)",
@@ -332,6 +342,7 @@
     },
     {
       "version": "V42-C",
+      "track": "Track 1",
       "score": "推論中 (本命比較)",
       "data_pool": "Open Pool v11 190k + 49k",
       "deberta": "Dual (0.75 Pool)",
@@ -368,13 +379,25 @@
       "note": "リアルタイム監視ダッシュボード・自動提出・アーカイブ統合の全体像"
     },
     {
+      "filename": "dual_track_strategy_and_operations.md",
+      "title": "Dual-Track R&D 運用体制・スロット配分規律（戦略プロトコル）",
+      "date": "2026-11-04 20:20 JST",
+      "category": "アーキテクチャ設計",
+      "badge_color": "blue",
+      "summary": "本ドキュメントは、Kaggle「Name That LLM」において銀メダル圏（Top 4.4% / Rank 202）を死守しつつ金メダル圏（Top 18 / 0.697+）へ進出するために策定された、**「Dual-Track R&D フレームワーク」**...",
+      "order": 3,
+      "step": "STEP 3: 運用体制・戦略プロトコル",
+      "status": "active",
+      "note": "【重要】Track 1 (堅実進化) ＆ Track 2 (インテル探索) の2系統分割とスロット配分規律"
+    },
+    {
       "filename": "gold_medal_master_strategy.md",
       "title": "Name That LLM: ゴールドメダル戦略 v2（補強版）",
       "date": "2026-11-01 23:00 JST",
       "category": "アーキテクチャ設計",
       "badge_color": "blue",
       "summary": "| # | v1 での記述 | 検証結果 | 影響 |",
-      "order": 3,
+      "order": 4,
       "step": "STEP 3: 戦略ロードマップ",
       "status": "active",
       "note": "Top 18 金メダル獲得に向けた4段階フェーズ計画とリソース配分"
@@ -386,7 +409,7 @@
       "category": "アーキテクチャ設計",
       "badge_color": "blue",
       "summary": "```mermaid",
-      "order": 4,
+      "order": 5,
       "step": "STEP 3: 戦略ロードマップ",
       "status": "active",
       "note": "銀メダル死守から金メダル挑戦へのマスター戦略＆作戦計画"
@@ -398,7 +421,7 @@
       "category": "戦略・分析",
       "badge_color": "purple",
       "summary": "一晩の自律稼働により、以下の 2 大マイルストーンが完了しました。",
-      "order": 5,
+      "order": 6,
       "step": "STEP 4: 検証基盤の確立",
       "status": "active",
       "note": "オフライン 5-Fold OOF 基盤の確立と、Public LB との相関解明"
@@ -410,7 +433,7 @@
       "category": "戦略・分析",
       "badge_color": "purple",
       "summary": "本レポートは、手元にある **Phase 0 OOF データセット（2,699件の正解ラベルおよび予測確率）** を用い、Kaggle の本推論待ち時間（約6時間）を活用して実施したローカルオフライン検証の結果をまとめたものです。",
-      "order": 6,
+      "order": 7,
       "step": "STEP 4: 検証基盤 (最新分析)",
       "status": "active",
       "note": "【最新】Sinkhorn x Target Mix 2次元グリッド探索 & 176件の兄弟混同深層分析"
@@ -422,7 +445,7 @@
       "category": "アーキテクチャ設計",
       "badge_color": "blue",
       "summary": "Phase 0 の 5-Fold Prompt-Grouped CV 解析において、以下の重要ファクトが特定されました：",
-      "order": 7,
+      "order": 8,
       "step": "STEP 5: コア技術・ブレークスルー",
       "status": "active",
       "note": "全エラーの68%を占める兄弟モデル（Gemini/GLM）特化識別器の学習仕様書"
@@ -434,7 +457,7 @@
       "category": "競合調査・インテル",
       "badge_color": "amber",
       "summary": "- **公開フロンティアの進展**:",
-      "order": 8,
+      "order": 9,
       "step": "STEP 5: コア技術・最新インテル",
       "status": "active",
       "note": "Kaggle上位陣（0.667+）の解法動向、Hungarian破綻の理由、Apex Kの分析"
@@ -446,7 +469,7 @@
       "category": "提出・運用レポート",
       "badge_color": "emerald",
       "summary": "* **サブミッション名**: NTL 0666 V39 Extra49k Sinkhorn50",
-      "order": 9,
+      "order": 10,
       "step": "STEP 6: 実戦・ブレークスルー",
       "status": "active",
       "note": "0.666達成！Open Pool v11 Extra 49k 換装で銀メダル上位を確定させた記録"
@@ -458,7 +481,7 @@
       "category": "提出・運用レポート",
       "badge_color": "emerald",
       "summary": "- **現行実績**: **Score `0.666`**（第33弾 V39）を達成し、銀メダル上位（Rank 89〜166 / 4,354 チーム中 Top 2.0%〜3.8%）を堅守。",
-      "order": 10,
+      "order": 11,
       "step": "STEP 6: 実戦・ブレークスルー",
       "status": "active",
       "note": "0.666完全再現！Geminiルーティング除外 & ATLAS Margin 0.32で114位防衛"
@@ -470,7 +493,7 @@
       "category": "戦略・分析",
       "badge_color": "purple",
       "summary": "最新の調査で特定された 2 つの重要改善要素：",
-      "order": 11,
+      "order": 12,
       "step": "STEP 6: 実戦・ブレークスルー",
       "status": "active",
       "note": "投入前のOOF事前検証手法とリスク・リターンのトレードオフ分析"
@@ -482,7 +505,7 @@
       "category": "アーキテクチャ設計",
       "badge_color": "blue",
       "summary": "- **現行実績と課題**:",
-      "order": 12,
+      "order": 13,
       "step": "STEP 7: 現行SOTAアーキテクチャ",
       "status": "active",
       "note": "現行主力モデル構成（Dual-DeBERTa + Pairwise + Sibling + ATLAS）の完全設計解剖"
