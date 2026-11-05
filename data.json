@@ -1,53 +1,20 @@
 {
-  "updated_at": "2026-11-05 17:56:45 JST",
+  "updated_at": "2026-11-05 19:58:33 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 4723,
-    "my_rank": 272,
+    "total_teams": 4737,
+    "my_rank": 280,
     "my_score": 0.666,
     "medal": "Silver",
-    "top_percent": 5.76,
+    "top_percent": 5.91,
     "gold_cutoff": 0.703,
     "silver_cutoff": 0.667,
     "silver_rank_cutoff": 236,
     "bronze_cutoff": 0.665,
-    "bronze_rank_cutoff": 472
+    "bronze_rank_cutoff": 473
   },
-  "running_submission": {
-    "ref": 58008859,
-    "version": "In Progress",
-    "track": "Track 1 (Evolution)",
-    "description": "NTL 0673 V43 Exploration (0.668 Repro: Single-DeBERTa + Sinkhorn 0.30 + Pairwise Verifier + ATLAS 0.20)",
-    "params": "",
-    "submitted_at": "2026-11-05 13:05:45",
-    "status": "PENDING",
-    "target_score": "0.667 - 0.668+",
-    "estimated_completion": "~19:30 JST"
-  },
-  "active_runs": [
-    {
-      "ref": 58008859,
-      "version": "In Progress",
-      "track": "Track 1 (Evolution)",
-      "description": "NTL 0673 V43 Exploration (0.668 Repro: Single-DeBERTa + Sinkhorn 0.30 + Pairwise Verifier + ATLAS 0.20)",
-      "params": "",
-      "submitted_at": "2026-11-05 13:05:45",
-      "status": "PENDING",
-      "target_score": "0.667 - 0.668+",
-      "estimated_completion": "~19:30 JST"
-    },
-    {
-      "ref": 58008686,
-      "version": "In Progress",
-      "track": "Track 1 (Evolution)",
-      "description": "NTL 0673 V43 Evolution (Pure V40 Anchor: Single-DeBERTa + ATLAS Margin 0.32 + Sinkhorn 0.50 + Mix 0.42 OOF Opt)",
-      "params": "",
-      "submitted_at": "2026-11-05 12:58:38",
-      "status": "PENDING",
-      "target_score": "0.667 - 0.668+",
-      "estimated_completion": "~19:30 JST"
-    }
-  ],
+  "running_submission": null,
+  "active_runs": [],
   "timeline": [
     {
       "version": "V28",
@@ -140,15 +107,15 @@
     {
       "ref": 58008859,
       "date": "2026-11-05 13:05:45",
-      "status": "PENDING",
-      "score": null,
+      "status": "COMPLETE",
+      "score": 0.661,
       "description": "NTL 0673 V43 Exploration (0.668 Repro: Single-DeBERTa + Sinkhorn 0.30 + Pairwise Verifier + ATLAS 0.20)"
     },
     {
       "ref": 58008686,
       "date": "2026-11-05 12:58:38",
-      "status": "PENDING",
-      "score": null,
+      "status": "COMPLETE",
+      "score": 0.662,
       "description": "NTL 0673 V43 Evolution (Pure V40 Anchor: Single-DeBERTa + ATLAS Margin 0.32 + Sinkhorn 0.50 + Mix 0.42 OOF Opt)"
     },
     {
