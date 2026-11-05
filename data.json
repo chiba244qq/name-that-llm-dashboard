@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05 13:52:51 JST",
+  "updated_at": "2026-11-05 13:53:48 JST",
   "competition": {
     "name": "Name That LLM",
     "total_teams": 4691,
@@ -450,14 +450,74 @@
       "note": "【必読・解明】スタイロメトリーの限界とHungarian割当の罠。Soft Sinkhornの必然性を数理実証"
     },
     {
+      "filename": "idea_01_glm_exact_teacher_log_likelihood.md",
+      "title": "【実験ネタ #01】GLM-5.3 / Flash 実モデル重み（IQ3_XXS）による直接尤度検証（Exact Teacher Log-Likelihood）",
+      "date": "2026-11-05 13:50 JST",
+      "category": "実験ネタ・R&D",
+      "badge_color": "amber",
+      "summary": "* **arXiv 論文**: *ATLAS: Source-Conditioned Likelihood* (arXiv:2610.19583) / *TRACE Fingerprinting* (2026) / *Binoculars: Zero-Shot...",
+      "order": 6,
+      "step": "STEP 5: 次世代実験ネタ #01",
+      "status": "active",
+      "note": "【実験ネタ #01】GLM-5.3 / Flash 実モデル重みによる直接尤度検証（Exact Teacher Log-Likelihood）"
+    },
+    {
+      "filename": "idea_02_open_pool_v12_and_hard_supplement.md",
+      "title": "【実験ネタ #02】Open Pool v12（211k行）＋ Hard-Class Supplement（Vertex AI 厳密ルート）へのデータ刷新",
+      "date": "2026-11-05 13:52 JST",
+      "category": "実験ネタ・R&D",
+      "badge_color": "amber",
+      "summary": "* **Kaggle Discussion**: [Topic 752766] *[NOW UPDATED] Open Pool v12 is out. +20,781 passages, and the gap list is getting filled*",
+      "order": 7,
+      "step": "STEP 5: 次世代実験ネタ #02",
+      "status": "active",
+      "note": "【実験ネタ #02】Open Pool v12 (211k行) ＋ Hard-Class Supplement (Vertex AI 厳密ルート) データ刷新"
+    },
+    {
+      "filename": "idea_03_early_mid_layer_spectral_probing.md",
+      "title": "【実験ネタ #03】Transformer 初期〜中間層（Early-to-Mid Layers）特化プロービングと LoRA+ / 位置重み付けプーリング",
+      "date": "2026-11-05 13:55 JST",
+      "category": "実験ネタ・R&D",
+      "badge_color": "amber",
+      "summary": "* **arXiv 論文**:",
+      "order": 8,
+      "step": "STEP 5: 次世代実験ネタ #03",
+      "status": "active",
+      "note": "【実験ネタ #03】Transformer 初期〜中間層特化プロービングと LoRA+ / 位置重み付けプーリング"
+    },
+    {
+      "filename": "idea_04_atlas_fast_batching_and_focused_margin.md",
+      "title": "【実験ネタ #04】ATLAS 高速バッチ推論（BS=6）＋ 集中 Dispute Margin（0.28）＋ Pairwise ゲート精密較正",
+      "date": "2026-11-05 13:57 JST",
+      "category": "実験ネタ・R&D",
+      "badge_color": "amber",
+      "summary": "* **arXiv 論文**: *ATLAS: Source-Conditioned Likelihood* (arXiv:2610.19583) / *Probabilistic Attribution For Large Language Models* ...",
+      "order": 9,
+      "step": "STEP 5: 次世代実験ネタ #04",
+      "status": "active",
+      "note": "【実験ネタ #04】ATLAS 高速バッチ推論 (BS=6) ＋ 集中 Dispute Margin (0.28) ＋ Pairwise 較正"
+    },
+    {
+      "filename": "idea_05_family_specific_stylometry_and_m2_validator.md",
+      "title": "【実験ネタ #05】ファミリー別最適スタイロメトリー選択（148d vs 81d）と疎プロンプト抽出（$m=2$）検証器",
+      "date": "2026-11-05 13:58 JST",
+      "category": "実験ネタ・R&D",
+      "badge_color": "amber",
+      "summary": "* **Kaggle 新規公開データセット**: `victorzhong0110/name-that-llm-style-fingerprint-tables` (100単語正規化 81次元スタイル特徴量)",
+      "order": 10,
+      "step": "STEP 5: 次世代実験ネタ #05",
+      "status": "active",
+      "note": "【実験ネタ #05】ファミリー別最適スタイロメトリー選択 (148d vs 81d) と疎プロンプト抽出 (m=2) 検証器"
+    },
+    {
       "filename": "gold_medal_master_strategy.md",
       "title": "Name That LLM: ゴールドメダル戦略 v2（補強版）",
       "date": "2026-11-01 23:00 JST",
       "category": "アーキテクチャ設計",
       "badge_color": "blue",
       "summary": "| # | v1 での記述 | 検証結果 | 影響 |",
-      "order": 6,
-      "step": "STEP 3: 戦略ロードマップ",
+      "order": 11,
+      "step": "STEP 6: 戦略ロードマップ",
       "status": "active",
       "note": "Top 18 金メダル獲得に向けた4段階フェーズ計画とリソース配分"
     },
@@ -468,8 +528,8 @@
       "category": "アーキテクチャ設計",
       "badge_color": "blue",
       "summary": "```mermaid",
-      "order": 6,
-      "step": "STEP 3: 戦略ロードマップ",
+      "order": 12,
+      "step": "STEP 6: 戦略ロードマップ",
       "status": "active",
       "note": "銀メダル死守から金メダル挑戦へのマスター戦略＆作戦計画"
     },
@@ -480,8 +540,8 @@
       "category": "戦略・分析",
       "badge_color": "purple",
       "summary": "一晩の自律稼働により、以下の 2 大マイルストーンが完了しました。",
-      "order": 6,
-      "step": "STEP 4: 検証基盤の確立",
+      "order": 13,
+      "step": "STEP 7: 検証基盤の確立",
       "status": "active",
       "note": "オフライン 5-Fold OOF 基盤の確立と、Public LB との相関解明"
     },
@@ -492,10 +552,10 @@
       "category": "戦略・分析",
       "badge_color": "purple",
       "summary": "本レポートは、手元にある **Phase 0 OOF データセット（2,699件の正解ラベルおよび予測確率）** を用い、Kaggle の本推論待ち時間（約6時間）を活用して実施したローカルオフライン検証の結果をまとめたものです。",
-      "order": 7,
-      "step": "STEP 4: 検証基盤 (最新分析)",
+      "order": 14,
+      "step": "STEP 7: 検証基盤 (エラー深層分析)",
       "status": "active",
-      "note": "【最新】Sinkhorn x Target Mix 2次元グリッド探索 & 176件の兄弟混同深層分析"
+      "note": "Sinkhorn x Target Mix 2次元グリッド探索 & 176件の兄弟混同深層分析"
     },
     {
       "filename": "sibling_disambiguation_training_plan.md",
@@ -504,8 +564,8 @@
       "category": "アーキテクチャ設計",
       "badge_color": "blue",
       "summary": "Phase 0 の 5-Fold Prompt-Grouped CV 解析において、以下の重要ファクトが特定されました：",
-      "order": 8,
-      "step": "STEP 5: コア技術・ブレークスルー",
+      "order": 15,
+      "step": "STEP 8: コア技術・ブレークスルー",
       "status": "active",
       "note": "全エラーの68%を占める兄弟モデル（Gemini/GLM）特化識別器の学習仕様書"
     },
@@ -516,8 +576,8 @@
       "category": "競合調査・インテル",
       "badge_color": "amber",
       "summary": "- **公開フロンティアの進展**:",
-      "order": 9,
-      "step": "STEP 5: コア技術・最新インテル",
+      "order": 16,
+      "step": "STEP 8: コア技術・最新インテル",
       "status": "active",
       "note": "Kaggle上位陣（0.667+）の解法動向、Hungarian破綻の理由、Apex Kの分析"
     },
@@ -528,8 +588,8 @@
       "category": "提出・運用レポート",
       "badge_color": "emerald",
       "summary": "* **サブミッション名**: NTL 0666 V39 Extra49k Sinkhorn50",
-      "order": 10,
-      "step": "STEP 6: 実戦・ブレークスルー",
+      "order": 17,
+      "step": "STEP 9: 実戦・ブレークスルー",
       "status": "active",
       "note": "0.666達成！Open Pool v11 Extra 49k 換装で銀メダル上位を確定させた記録"
     },
@@ -540,8 +600,8 @@
       "category": "提出・運用レポート",
       "badge_color": "emerald",
       "summary": "- **現行実績**: **Score `0.666`**（第33弾 V39）を達成し、銀メダル上位（Rank 89〜166 / 4,354 チーム中 Top 2.0%〜3.8%）を堅守。",
-      "order": 11,
-      "step": "STEP 6: 実戦・ブレークスルー",
+      "order": 18,
+      "step": "STEP 9: 実戦・ブレークスルー",
       "status": "active",
       "note": "0.666完全再現！Geminiルーティング除外 & ATLAS Margin 0.32で114位防衛"
     },
@@ -552,8 +612,8 @@
       "category": "戦略・分析",
       "badge_color": "purple",
       "summary": "最新の調査で特定された 2 つの重要改善要素：",
-      "order": 12,
-      "step": "STEP 6: 実戦・ブレークスルー",
+      "order": 19,
+      "step": "STEP 9: 実戦・ブレークスルー",
       "status": "active",
       "note": "投入前のOOF事前検証手法とリスク・リターンのトレードオフ分析"
     },
@@ -564,10 +624,10 @@
       "category": "アーキテクチャ設計",
       "badge_color": "blue",
       "summary": "- **現行実績と課題**:",
-      "order": 13,
-      "step": "STEP 7: 現行SOTAアーキテクチャ",
+      "order": 20,
+      "step": "STEP 10: 旧SOTAアーキテクチャ解剖",
       "status": "active",
-      "note": "現行主力モデル構成（Dual-DeBERTa + Pairwise + Sibling + ATLAS）の完全設計解剖"
+      "note": "Apex-II 構成（Dual-DeBERTa + Pairwise + Sibling + ATLAS）の設計解剖"
     },
     {
       "filename": "submission_32_v38_deployment.md",

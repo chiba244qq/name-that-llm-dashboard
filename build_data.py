@@ -36,11 +36,16 @@ DOC_DATES = {
     "offline_oof_and_error_analysis_report.md": "2026-11-04 17:42 JST",
     "dual_track_strategy_and_operations.md": "2026-11-04 20:20 JST",
     "submission_37_v43_evolution_deployment.md": "2026-11-05 12:55 JST",
-    "offline_verification_and_hungarian_trap_analysis.md": "2026-11-05 13:25 JST"
+    "offline_verification_and_hungarian_trap_analysis.md": "2026-11-05 13:25 JST",
+    "idea_01_glm_exact_teacher_log_likelihood.md": "2026-11-05 13:50 JST",
+    "idea_02_open_pool_v12_and_hard_supplement.md": "2026-11-05 13:52 JST",
+    "idea_03_early_mid_layer_spectral_probing.md": "2026-11-05 13:55 JST",
+    "idea_04_atlas_fast_batching_and_focused_margin.md": "2026-11-05 13:57 JST",
+    "idea_05_family_specific_stylometry_and_m2_validator.md": "2026-11-05 13:58 JST"
 }
 
 REPORT_METADATA = {
-    # --- ACTIVE: Reading Order 1 to 15 ---
+    # --- ACTIVE: Reading Order 1 to 20 ---
     "name_that_llm_comprehensive_guide.md": {
         "order": 1, "step": "STEP 1: 超入門・全体像", "status": "active",
         "note": "【必読・全体像】コンペ概要、Balanced Accuracy、9時間VOID崖、基本解法が中学生でもわかる完全ガイド"
@@ -61,45 +66,65 @@ REPORT_METADATA = {
         "order": 5, "step": "STEP 4: オフライン数理検証 (最新)", "status": "active",
         "note": "【必読・解明】スタイロメトリーの限界とHungarian割当の罠。Soft Sinkhornの必然性を数理実証"
     },
+    "idea_01_glm_exact_teacher_log_likelihood.md": {
+        "order": 6, "step": "STEP 5: 次世代実験ネタ #01", "status": "active",
+        "note": "【実験ネタ #01】GLM-5.3 / Flash 実モデル重みによる直接尤度検証（Exact Teacher Log-Likelihood）"
+    },
+    "idea_02_open_pool_v12_and_hard_supplement.md": {
+        "order": 7, "step": "STEP 5: 次世代実験ネタ #02", "status": "active",
+        "note": "【実験ネタ #02】Open Pool v12 (211k行) ＋ Hard-Class Supplement (Vertex AI 厳密ルート) データ刷新"
+    },
+    "idea_03_early_mid_layer_spectral_probing.md": {
+        "order": 8, "step": "STEP 5: 次世代実験ネタ #03", "status": "active",
+        "note": "【実験ネタ #03】Transformer 初期〜中間層特化プロービングと LoRA+ / 位置重み付けプーリング"
+    },
+    "idea_04_atlas_fast_batching_and_focused_margin.md": {
+        "order": 9, "step": "STEP 5: 次世代実験ネタ #04", "status": "active",
+        "note": "【実験ネタ #04】ATLAS 高速バッチ推論 (BS=6) ＋ 集中 Dispute Margin (0.28) ＋ Pairwise 較正"
+    },
+    "idea_05_family_specific_stylometry_and_m2_validator.md": {
+        "order": 10, "step": "STEP 5: 次世代実験ネタ #05", "status": "active",
+        "note": "【実験ネタ #05】ファミリー別最適スタイロメトリー選択 (148d vs 81d) と疎プロンプト抽出 (m=2) 検証器"
+    },
     "gold_medal_master_strategy.md": {
-        "order": 6, "step": "STEP 3: 戦略ロードマップ", "status": "active",
+        "order": 11, "step": "STEP 6: 戦略ロードマップ", "status": "active",
         "note": "Top 18 金メダル獲得に向けた4段階フェーズ計画とリソース配分"
     },
     "ntl_master_strategy_and_operations.md": {
-        "order": 6, "step": "STEP 3: 戦略ロードマップ", "status": "active",
+        "order": 12, "step": "STEP 6: 戦略ロードマップ", "status": "active",
         "note": "銀メダル死守から金メダル挑戦へのマスター戦略＆作戦計画"
     },
     "phase0_oof_results_and_breakthrough_findings.md": {
-        "order": 6, "step": "STEP 4: 検証基盤の確立", "status": "active",
+        "order": 13, "step": "STEP 7: 検証基盤の確立", "status": "active",
         "note": "オフライン 5-Fold OOF 基盤の確立と、Public LB との相関解明"
     },
     "offline_oof_and_error_analysis_report.md": {
-        "order": 7, "step": "STEP 4: 検証基盤 (最新分析)", "status": "active",
-        "note": "【最新】Sinkhorn x Target Mix 2次元グリッド探索 & 176件の兄弟混同深層分析"
+        "order": 14, "step": "STEP 7: 検証基盤 (エラー深層分析)", "status": "active",
+        "note": "Sinkhorn x Target Mix 2次元グリッド探索 & 176件の兄弟混同深層分析"
     },
     "sibling_disambiguation_training_plan.md": {
-        "order": 8, "step": "STEP 5: コア技術・ブレークスルー", "status": "active",
+        "order": 15, "step": "STEP 8: コア技術・ブレークスルー", "status": "active",
         "note": "全エラーの68%を占める兄弟モデル（Gemini/GLM）特化識別器の学習仕様書"
     },
     "kaggle_discussion_and_code_intel_report.md": {
-        "order": 9, "step": "STEP 5: コア技術・最新インテル", "status": "active",
+        "order": 16, "step": "STEP 8: コア技術・最新インテル", "status": "active",
         "note": "Kaggle上位陣（0.667+）の解法動向、Hungarian破綻の理由、Apex Kの分析"
     },
     "submission_33_v39_deployment.md": {
-        "order": 10, "step": "STEP 6: 実戦・ブレークスルー", "status": "active",
+        "order": 17, "step": "STEP 9: 実戦・ブレークスルー", "status": "active",
         "note": "0.666達成！Open Pool v11 Extra 49k 換装で銀メダル上位を確定させた記録"
     },
     "submission_34_v40_deployment.md": {
-        "order": 11, "step": "STEP 6: 実戦・ブレークスルー", "status": "active",
+        "order": 18, "step": "STEP 9: 実戦・ブレークスルー", "status": "active",
         "note": "0.666完全再現！Geminiルーティング除外 & ATLAS Margin 0.32で114位防衛"
     },
     "v39_verification_and_tradeoff_analysis.md": {
-        "order": 12, "step": "STEP 6: 実戦・ブレークスルー", "status": "active",
+        "order": 19, "step": "STEP 9: 実戦・ブレークスルー", "status": "active",
         "note": "投入前のOOF事前検証手法とリスク・リターンのトレードオフ分析"
     },
     "apex_ii_sota_architecture_and_v41_plan.md": {
-        "order": 13, "step": "STEP 7: 現行SOTAアーキテクチャ", "status": "active",
-        "note": "現行主力モデル構成（Dual-DeBERTa + Pairwise + Sibling + ATLAS）の完全設計解剖"
+        "order": 20, "step": "STEP 10: 旧SOTAアーキテクチャ解剖", "status": "active",
+        "note": "Apex-II 構成（Dual-DeBERTa + Pairwise + Sibling + ATLAS）の設計解剖"
     },
 
     # --- ARCHIVED / SUPERSEDED / REJECTED (9件) ---
@@ -173,6 +198,9 @@ def extract_reports():
         if 'guide' in fname:
             category = '総合ガイド・入門'
             badge_color = 'cyan'
+        elif fname.startswith('idea_'):
+            category = '実験ネタ・R&D'
+            badge_color = 'amber'
         elif 'deployment' in fname or 'submission' in fname or 'dashboard' in fname:
             category = '提出・運用レポート'
             badge_color = 'emerald'
