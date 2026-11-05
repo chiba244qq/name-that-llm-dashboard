@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05 13:29:04 JST",
+  "updated_at": "2026-11-05 13:32:09 JST",
   "competition": {
     "name": "Name That LLM",
     "total_teams": 4691,
@@ -120,11 +120,20 @@
       "desc": "V40同条件アンカー (Apex-II新パーツによる減退 -0.005 を特定)"
     },
     {
-      "version": "V43",
-      "score": 0.666,
+      "version": "V43 (T1)",
+      "score": null,
+      "target": 0.668,
       "date": "11-05",
-      "tag": "Running",
-      "desc": "Track 1 Evolution: V40復帰 + OOF最適化 Mix 0.42 (推論実行中)"
+      "tag": "Pending",
+      "desc": "Track 1 Evolution: V40復帰 + OOF最適化 Mix 0.42 (推論中: 19:30完了予定)"
+    },
+    {
+      "version": "V43 (T2)",
+      "score": null,
+      "target": 0.668,
+      "date": "11-05",
+      "tag": "Pending",
+      "desc": "Track 2 Exploration: 0.668 Repro (推論中: 19:35完了予定)"
     }
   ],
   "submissions": [
