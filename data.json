@@ -1,30 +1,41 @@
 {
-  "updated_at": "2026-11-05 13:03:10 JST",
+  "updated_at": "2026-11-05 13:06:03 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 4684,
+    "total_teams": 4685,
     "my_rank": 256,
     "my_score": 0.666,
     "medal": "Silver",
-    "top_percent": 5.47,
-    "gold_cutoff": 0.701,
+    "top_percent": 5.46,
+    "gold_cutoff": 0.703,
     "silver_cutoff": 0.666,
     "silver_rank_cutoff": 234,
     "bronze_cutoff": 0.665,
     "bronze_rank_cutoff": 468
   },
   "running_submission": {
-    "ref": 58008686,
+    "ref": 58008859,
     "version": "In Progress",
     "track": "Track 1 (Evolution)",
-    "description": "NTL 0673 V43 Evolution (Pure V40 Anchor: Single-DeBERTa + ATLAS Margin 0.32 + Sinkhorn 0.50 + Mix 0.42 OOF Opt)",
+    "description": "NTL 0673 V43 Exploration (0.668 Repro: Single-DeBERTa + Sinkhorn 0.30 + Pairwise Verifier + ATLAS 0.20)",
     "params": "",
-    "submitted_at": "2026-11-05 12:58:38",
+    "submitted_at": "2026-11-05 13:05:45",
     "status": "PENDING",
     "target_score": "0.668 - 0.672+",
     "estimated_completion": "~23:25 JST"
   },
   "active_runs": [
+    {
+      "ref": 58008859,
+      "version": "In Progress",
+      "track": "Track 1 (Evolution)",
+      "description": "NTL 0673 V43 Exploration (0.668 Repro: Single-DeBERTa + Sinkhorn 0.30 + Pairwise Verifier + ATLAS 0.20)",
+      "params": "",
+      "submitted_at": "2026-11-05 13:05:45",
+      "status": "PENDING",
+      "target_score": "0.668 - 0.672+",
+      "estimated_completion": "~23:25 JST"
+    },
     {
       "ref": 58008686,
       "version": "In Progress",
@@ -117,6 +128,13 @@
     }
   ],
   "submissions": [
+    {
+      "ref": 58008859,
+      "date": "2026-11-05 13:05:45",
+      "status": "PENDING",
+      "score": null,
+      "description": "NTL 0673 V43 Exploration (0.668 Repro: Single-DeBERTa + Sinkhorn 0.30 + Pairwise Verifier + ATLAS 0.20)"
+    },
     {
       "ref": 58008686,
       "date": "2026-11-05 12:58:38",
@@ -249,13 +267,6 @@
       "status": "COMPLETE",
       "score": 0.662,
       "description": "NTL 0663 V35 Sinkhorn 50 (mercurydust 0.660 V31 + 2xT4 DP Fast Run + ATLAS 20% + Sinkhorn 0.50)"
-    },
-    {
-      "ref": 57839567,
-      "date": "2026-10-31 22:15:50",
-      "status": "COMPLETE",
-      "score": 0.659,
-      "description": "NTL 0664 V34 Llama Gauss TargetMix 42 (mercurydust 0.660 V31 + 2xT4 DP + ATLAS 20% + Sinkhorn 0.60 + Llama Gauss 0.44 + TargetMix 0.42 + Pool 0.45)"
     }
   ],
   "architecture_matrix": [
