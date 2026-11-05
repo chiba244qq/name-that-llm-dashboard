@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05 14:31:09 JST",
+  "updated_at": "2026-11-05 14:34:19 JST",
   "competition": {
     "name": "Name That LLM",
     "total_teams": 4695,
@@ -21,8 +21,8 @@
     "params": "",
     "submitted_at": "2026-11-05 13:05:45",
     "status": "PENDING",
-    "target_score": "0.668 - 0.672+",
-    "estimated_completion": "~23:25 JST"
+    "target_score": "0.667 - 0.668+",
+    "estimated_completion": "~19:30 JST"
   },
   "active_runs": [
     {
@@ -33,8 +33,8 @@
       "params": "",
       "submitted_at": "2026-11-05 13:05:45",
       "status": "PENDING",
-      "target_score": "0.668 - 0.672+",
-      "estimated_completion": "~23:25 JST"
+      "target_score": "0.667 - 0.668+",
+      "estimated_completion": "~19:30 JST"
     },
     {
       "ref": 58008686,
@@ -44,8 +44,8 @@
       "params": "",
       "submitted_at": "2026-11-05 12:58:38",
       "status": "PENDING",
-      "target_score": "0.668 - 0.672+",
-      "estimated_completion": "~23:25 JST"
+      "target_score": "0.667 - 0.668+",
+      "estimated_completion": "~19:30 JST"
     }
   ],
   "timeline": [
@@ -388,6 +388,291 @@
       "highlight": "【検証】公開0.668再現 (推論中)"
     }
   ],
+  "local_verification": {
+    "generated_at": "2026-11-05 14:30:59 JST",
+    "elapsed_seconds": 56.92,
+    "calibration_discovery": {
+      "wsum_infer": 9.0,
+      "note": "Phase-0 oof_log_probs is unnormalized sum across 9 LP entries (min=-508.8). Dividing by wsum=9.0 and using infer.py's exact 100-iter log-space Sinkhorn restores exact inference calibration."
+    },
+    "stylometry_diagnostics": {
+      "uniform_148d": {
+        "claude": {
+          "bacc": 0.4217,
+          "reliability": 1.0
+        },
+        "gemini": {
+          "bacc": 0.48,
+          "reliability": 1.0
+        },
+        "gpt": {
+          "bacc": 0.4053,
+          "reliability": 1.0
+        },
+        "glm": {
+          "bacc": 0.5267,
+          "reliability": 0.1778
+        }
+      },
+      "family_routed": {
+        "claude": {
+          "bacc": 0.4337,
+          "reliability": 1.0
+        },
+        "gemini": {
+          "bacc": 0.48,
+          "reliability": 1.0
+        },
+        "gpt": {
+          "bacc": 0.368,
+          "reliability": 1.0
+        },
+        "glm": {
+          "bacc": 0.5333,
+          "reliability": 0.2222
+        }
+      },
+      "sibling_pair_benchmarks": [
+        {
+          "pair": "Claude Opus 4.6 vs 4.8",
+          "v40a_148d": 0.71,
+          "victor_81d": 0.65,
+          "combined_229d": 0.7033,
+          "best_feature_set": "v40a_148d"
+        },
+        {
+          "pair": "Gemini 3.7 vs 3.8 Flash",
+          "v40a_148d": 0.6367,
+          "victor_81d": 0.5667,
+          "combined_229d": 0.6233,
+          "best_feature_set": "v40a_148d"
+        },
+        {
+          "pair": "GPT-5.6 Sol vs Terra",
+          "v40a_148d": 0.5333,
+          "victor_81d": 0.5567,
+          "combined_229d": 0.5467,
+          "best_feature_set": "victor_81d"
+        },
+        {
+          "pair": "GLM-5.3 vs GLM-5.3-Flash",
+          "v40a_148d": 0.5267,
+          "victor_81d": 0.5333,
+          "combined_229d": 0.52,
+          "best_feature_set": "victor_81d"
+        }
+      ]
+    },
+    "experiments": [
+      {
+        "exp_id": "EXP-01",
+        "name": "V40 Baseline (Anchor)",
+        "idea_ref": "Baseline",
+        "params": "Sinkhorn 0.50 + Mix 0.35 (wsum=9.0)",
+        "verdict": "Baseline",
+        "ba_full_m18": 0.93555,
+        "ba_sparse_m2": 0.93902,
+        "ba_sparse_m3": 0.93514,
+        "disagree_rate_f": 0.0,
+        "lb_sd_gap": 0.0,
+        "net_wins": 0,
+        "net_losses": 0,
+        "hard_recalls": {
+          "glm-5.3": 0.78,
+          "glm-5.3-flash": 0.7933,
+          "gemini-3.7-flash": 0.8333,
+          "gemini-3.8-flash": 0.86,
+          "kimi-k3": 0.82
+        },
+        "delta_m18": 0.0,
+        "delta_m2": 0.0
+      },
+      {
+        "exp_id": "EXP-02",
+        "name": "V43-Evolution (Target Mix 0.42)",
+        "idea_ref": "Track 1 (Running)",
+        "params": "Sinkhorn 0.50 + Mix 0.42 (wsum=9.0)",
+        "verdict": "Adopted (In Flight)",
+        "ba_full_m18": 0.93555,
+        "ba_sparse_m2": 0.93953,
+        "ba_sparse_m3": 0.93444,
+        "disagree_rate_f": 0.00074,
+        "lb_sd_gap": 0.00079,
+        "net_wins": 1,
+        "net_losses": 1,
+        "hard_recalls": {
+          "glm-5.3": 0.78,
+          "glm-5.3-flash": 0.8,
+          "gemini-3.7-flash": 0.8333,
+          "gemini-3.8-flash": 0.8533,
+          "kimi-k3": 0.82
+        },
+        "delta_m18": 0.0,
+        "delta_m2": 0.00051
+      },
+      {
+        "exp_id": "EXP-03",
+        "name": "V40A Uniform Stylometry (148d)",
+        "idea_ref": "Idea #05 (Control)",
+        "params": "Post-Sinkhorn Uniform 148d (alpha=0.10) + Mix 0.42",
+        "verdict": "Rejected (Inferior to Routed)",
+        "ba_full_m18": 0.93518,
+        "ba_sparse_m2": 0.93938,
+        "ba_sparse_m3": 0.93462,
+        "disagree_rate_f": 0.00111,
+        "lb_sd_gap": 0.00096,
+        "net_wins": 1,
+        "net_losses": 2,
+        "hard_recalls": {
+          "glm-5.3": 0.78,
+          "glm-5.3-flash": 0.8,
+          "gemini-3.7-flash": 0.82,
+          "gemini-3.8-flash": 0.86,
+          "kimi-k3": 0.82
+        },
+        "delta_m18": -0.00037,
+        "delta_m2": 0.00036
+      },
+      {
+        "exp_id": "EXP-04",
+        "name": "Family-Specific Stylometry Routing",
+        "idea_ref": "Idea #05",
+        "params": "Claude:229d / Gemini:148d / GPT&GLM:81d (alpha=0.12)",
+        "verdict": "Adopted (m=2/m=3 Gain)",
+        "ba_full_m18": 0.93518,
+        "ba_sparse_m2": 0.93971,
+        "ba_sparse_m3": 0.93469,
+        "disagree_rate_f": 0.00185,
+        "lb_sd_gap": 0.00124,
+        "net_wins": 2,
+        "net_losses": 3,
+        "hard_recalls": {
+          "glm-5.3": 0.78,
+          "glm-5.3-flash": 0.8067,
+          "gemini-3.7-flash": 0.8133,
+          "gemini-3.8-flash": 0.86,
+          "kimi-k3": 0.82
+        },
+        "delta_m18": -0.00037,
+        "delta_m2": 0.00069
+      },
+      {
+        "exp_id": "EXP-05",
+        "name": "V34.1 Pairwise Verifier (Standard)",
+        "idea_ref": "Idea #04",
+        "params": "Post-Sinkhorn Gate < 0.35, weight = 0.10 + Mix 0.42",
+        "verdict": "Top Standalone (+0.00093 m=2)",
+        "ba_full_m18": 0.93555,
+        "ba_sparse_m2": 0.93995,
+        "ba_sparse_m3": 0.93438,
+        "disagree_rate_f": 0.0,
+        "lb_sd_gap": 0.0,
+        "net_wins": 0,
+        "net_losses": 0,
+        "hard_recalls": {
+          "glm-5.3": 0.78,
+          "glm-5.3-flash": 0.7933,
+          "gemini-3.7-flash": 0.8333,
+          "gemini-3.8-flash": 0.86,
+          "kimi-k3": 0.82
+        },
+        "delta_m18": 0.0,
+        "delta_m2": 0.00093
+      },
+      {
+        "exp_id": "EXP-06",
+        "name": "V34.1 Pairwise Verifier (Calibrated)",
+        "idea_ref": "Idea #04",
+        "params": "Post-Sinkhorn Gate < 0.36, weight = 0.115 + Mix 0.42",
+        "verdict": "Adopted",
+        "ba_full_m18": 0.93555,
+        "ba_sparse_m2": 0.93984,
+        "ba_sparse_m3": 0.93438,
+        "disagree_rate_f": 0.0,
+        "lb_sd_gap": 0.0,
+        "net_wins": 0,
+        "net_losses": 0,
+        "hard_recalls": {
+          "glm-5.3": 0.78,
+          "glm-5.3-flash": 0.7933,
+          "gemini-3.7-flash": 0.8333,
+          "gemini-3.8-flash": 0.86,
+          "kimi-k3": 0.82
+        },
+        "delta_m18": 0.0,
+        "delta_m2": 0.00082
+      },
+      {
+        "exp_id": "EXP-07",
+        "name": "Exact-Route Hard Supplement SVC",
+        "idea_ref": "Idea #02",
+        "params": "2,115-row Balanced Vertex/Z.AI Supplement (w=0.35)",
+        "verdict": "Adopted",
+        "ba_full_m18": 0.93555,
+        "ba_sparse_m2": 0.9394,
+        "ba_sparse_m3": 0.93442,
+        "disagree_rate_f": 0.00074,
+        "lb_sd_gap": 0.00079,
+        "net_wins": 1,
+        "net_losses": 1,
+        "hard_recalls": {
+          "glm-5.3": 0.78,
+          "glm-5.3-flash": 0.8,
+          "gemini-3.7-flash": 0.8333,
+          "gemini-3.8-flash": 0.8533,
+          "kimi-k3": 0.82
+        },
+        "delta_m18": 0.0,
+        "delta_m2": 0.00038
+      },
+      {
+        "exp_id": "EXP-08",
+        "name": "V44 Candidate (Sovereign Aegis Hybrid)",
+        "idea_ref": "Ideas #02+#04+#05",
+        "params": "Mix 0.42 + Routed Stylo + Pairwise 0.115 + HardSupp 0.35",
+        "verdict": "Hold (Over-Stacking Damping Needed)",
+        "ba_full_m18": 0.93555,
+        "ba_sparse_m2": 0.93912,
+        "ba_sparse_m3": 0.93435,
+        "disagree_rate_f": 0.00074,
+        "lb_sd_gap": 0.00079,
+        "net_wins": 1,
+        "net_losses": 1,
+        "hard_recalls": {
+          "glm-5.3": 0.78,
+          "glm-5.3-flash": 0.8,
+          "gemini-3.7-flash": 0.8267,
+          "gemini-3.8-flash": 0.86,
+          "kimi-k3": 0.82
+        },
+        "delta_m18": 0.0,
+        "delta_m2": 0.0001
+      },
+      {
+        "exp_id": "EXP-09",
+        "name": "V44 Damped Hybrid (Pairwise 0.10 + GPT/GLM 81d 0.05)",
+        "idea_ref": "Ideas #04+#05 (Damped)",
+        "params": "Sinkhorn 0.50 + Mix 0.42 + Pairwise(0.35/0.10) + GPT/GLM-81d(0.05)",
+        "verdict": "Recommended V44 Core",
+        "ba_full_m18": 0.93555,
+        "ba_sparse_m2": 0.94003,
+        "ba_sparse_m3": 0.93472,
+        "disagree_rate_f": 0.00074,
+        "lb_sd_gap": 0.00079,
+        "net_wins": 1,
+        "net_losses": 1,
+        "hard_recalls": {
+          "glm-5.3": 0.78,
+          "glm-5.3-flash": 0.7933,
+          "gemini-3.7-flash": 0.8333,
+          "gemini-3.8-flash": 0.86,
+          "kimi-k3": 0.82
+        },
+        "delta_m18": 0.0,
+        "delta_m2": 0.00101
+      }
+    ]
+  },
   "reports": [
     {
       "filename": "name_that_llm_comprehensive_guide.md",
@@ -445,7 +730,7 @@
       "badge_color": "purple",
       "summary": "現在 Kaggle 上で推論実行中の 2 本（Track 1: V43-Evolution, Track 2: V43-Exploration）の完了（19:30 JST 予定）を待つ間、公開上位（0.668）コードの主要コンポーネントを手元の 2,699 件...",
       "order": 5,
-      "step": "STEP 4: オフライン数理検証 (最新)",
+      "step": "STEP 4: オフライン数理検証",
       "status": "active",
       "note": "【必読・解明】スタイロメトリーの限界とHungarian割当の罠。Soft Sinkhornの必然性を数理実証"
     },
@@ -456,7 +741,7 @@
       "category": "実験ネタ・R&D",
       "badge_color": "amber",
       "summary": "* **arXiv 論文**: *ATLAS: Source-Conditioned Likelihood* (arXiv:2610.19583) / *TRACE Fingerprinting* (2026) / *Binoculars: Zero-Shot...",
-      "order": 6,
+      "order": 7,
       "step": "STEP 5: 次世代実験ネタ #01",
       "status": "active",
       "note": "【実験ネタ #01】GLM-5.3 / Flash 実モデル重みによる直接尤度検証（Exact Teacher Log-Likelihood）"
@@ -468,7 +753,7 @@
       "category": "実験ネタ・R&D",
       "badge_color": "amber",
       "summary": "* **Kaggle Discussion**: [Topic 752766] *[NOW UPDATED] Open Pool v12 is out. +20,781 passages, and the gap list is getting filled*",
-      "order": 7,
+      "order": 8,
       "step": "STEP 5: 次世代実験ネタ #02",
       "status": "active",
       "note": "【実験ネタ #02】Open Pool v12 (211k行) ＋ Hard-Class Supplement (Vertex AI 厳密ルート) データ刷新"
@@ -480,7 +765,7 @@
       "category": "実験ネタ・R&D",
       "badge_color": "amber",
       "summary": "* **arXiv 論文**:",
-      "order": 8,
+      "order": 9,
       "step": "STEP 5: 次世代実験ネタ #03",
       "status": "active",
       "note": "【実験ネタ #03】Transformer 初期〜中間層特化プロービングと LoRA+ / 位置重み付けプーリング"
@@ -492,7 +777,7 @@
       "category": "実験ネタ・R&D",
       "badge_color": "amber",
       "summary": "* **arXiv 論文**: *ATLAS: Source-Conditioned Likelihood* (arXiv:2610.19583) / *Probabilistic Attribution For Large Language Models* ...",
-      "order": 9,
+      "order": 10,
       "step": "STEP 5: 次世代実験ネタ #04",
       "status": "active",
       "note": "【実験ネタ #04】ATLAS 高速バッチ推論 (BS=6) ＋ 集中 Dispute Margin (0.28) ＋ Pairwise 較正"
@@ -504,7 +789,7 @@
       "category": "実験ネタ・R&D",
       "badge_color": "amber",
       "summary": "* **Kaggle 新規公開データセット**: `victorzhong0110/name-that-llm-style-fingerprint-tables` (100単語正規化 81次元スタイル特徴量)",
-      "order": 10,
+      "order": 11,
       "step": "STEP 5: 次世代実験ネタ #05",
       "status": "active",
       "note": "【実験ネタ #05】ファミリー別最適スタイロメトリー選択 (148d vs 81d) と疎プロンプト抽出 (m=2) 検証器"
@@ -516,7 +801,7 @@
       "category": "アーキテクチャ設計",
       "badge_color": "blue",
       "summary": "| # | v1 での記述 | 検証結果 | 影響 |",
-      "order": 11,
+      "order": 12,
       "step": "STEP 6: 戦略ロードマップ",
       "status": "active",
       "note": "Top 18 金メダル獲得に向けた4段階フェーズ計画とリソース配分"
