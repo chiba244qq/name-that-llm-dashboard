@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05 12:50:38 JST",
+  "updated_at": "2026-11-05 12:54:25 JST",
   "competition": {
     "name": "Name That LLM",
     "total_teams": 4684,
@@ -85,6 +85,13 @@
       "date": "11-04",
       "tag": "Rejected",
       "desc": "V40同条件アンカー (Apex-II新パーツによる減退 -0.005 を特定)"
+    },
+    {
+      "version": "V43",
+      "score": 0.666,
+      "date": "11-05",
+      "tag": "Running",
+      "desc": "Track 1 Evolution: V40復帰 + OOF最適化 Mix 0.42 (推論実行中)"
     }
   ],
   "submissions": [
@@ -313,6 +320,18 @@
       "atlas_margin": "0.32",
       "sinkhorn": "0.50 / Mix 0.35",
       "highlight": "V40完全同条件アンカー"
+    },
+    {
+      "version": "V43",
+      "track": "Track 1",
+      "score": "Pending",
+      "data_pool": "Open Pool v11 Clean",
+      "deberta": "Single (Official)",
+      "pairwise_ab": "None",
+      "sibling_style": "None",
+      "atlas_margin": "0.32",
+      "sinkhorn": "0.50 / Mix 0.42",
+      "highlight": "【本命】V40復帰+OOF最適化Mix0.42"
     }
   ],
   "reports": [
@@ -353,13 +372,25 @@
       "note": "【重要】Track 1 (堅実進化) ＆ Track 2 (インテル探索) の2系統分割とスロット配分規律"
     },
     {
+      "filename": "submission_37_v43_evolution_deployment.md",
+      "title": "Submission 37 V43-Evolution Deployment & Operations Report",
+      "date": "2026-11-05 12:55 JST",
+      "category": "提出・運用レポート",
+      "badge_color": "emerald",
+      "summary": "直近の第36弾並行アブレーション（V42 A/B/C）および Kaggle 公開上位コード（0.667〜0.668）の diff 比較により、以下の事実が実証・確定しました：",
+      "order": 4,
+      "step": "STEP 3: Track 1 堅実進化 (最新)",
+      "status": "active",
+      "note": "【最新・本命】第37弾 V43-Evolution。V40基準スタック復帰＋OOF最適化 Target Mix 0.42"
+    },
+    {
       "filename": "gold_medal_master_strategy.md",
       "title": "Name That LLM: ゴールドメダル戦略 v2（補強版）",
       "date": "2026-11-01 23:00 JST",
       "category": "アーキテクチャ設計",
       "badge_color": "blue",
       "summary": "| # | v1 での記述 | 検証結果 | 影響 |",
-      "order": 4,
+      "order": 5,
       "step": "STEP 3: 戦略ロードマップ",
       "status": "active",
       "note": "Top 18 金メダル獲得に向けた4段階フェーズ計画とリソース配分"
@@ -371,7 +402,7 @@
       "category": "アーキテクチャ設計",
       "badge_color": "blue",
       "summary": "```mermaid",
-      "order": 5,
+      "order": 6,
       "step": "STEP 3: 戦略ロードマップ",
       "status": "active",
       "note": "銀メダル死守から金メダル挑戦へのマスター戦略＆作戦計画"
