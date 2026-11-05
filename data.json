@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-11-05 14:34:19 JST",
+  "updated_at": "2026-11-05 14:36:17 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 4695,
+    "total_teams": 4697,
     "my_rank": 258,
     "my_score": 0.666,
     "medal": "Silver",
-    "top_percent": 5.5,
+    "top_percent": 5.49,
     "gold_cutoff": 0.703,
     "silver_cutoff": 0.666,
     "silver_rank_cutoff": 234,
@@ -733,6 +733,18 @@
       "step": "STEP 4: オフライン数理検証",
       "status": "active",
       "note": "【必読・解明】スタイロメトリーの限界とHungarian割当の罠。Soft Sinkhornの必然性を数理実証"
+    },
+    {
+      "filename": "local_oof_benchmark_and_v44_selection_report.md",
+      "title": "ローカル事前検証ベンチマーク（EXP-01〜EXP-09）＆ V44 採用候補選定レポート",
+      "date": "2026-11-05 14:30 JST",
+      "category": "戦略・分析",
+      "badge_color": "purple",
+      "summary": "ローカル検証スイート（`EXP-01`〜`EXP-09`）の構築過程において、Phase-0 で抽出した 5-Fold OOF ロジット（`oof_artifacts.npz` 内の `oof_log_probs`）と本番 `infer.py` の推論パイプラ...",
+      "order": 6,
+      "step": "STEP 4: ローカル実験ベンチマーク (最新)",
+      "status": "active",
+      "note": "【最新・実験総括】wsum=9.0較正の発見と全8実験 (EXP-01〜08) のFull/Sparse(m=2) OOF比較レポート"
     },
     {
       "filename": "idea_01_glm_exact_teacher_log_likelihood.md",

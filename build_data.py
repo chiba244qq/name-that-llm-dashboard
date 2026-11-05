@@ -41,11 +41,12 @@ DOC_DATES = {
     "idea_02_open_pool_v12_and_hard_supplement.md": "2026-11-05 13:52 JST",
     "idea_03_early_mid_layer_spectral_probing.md": "2026-11-05 13:55 JST",
     "idea_04_atlas_fast_batching_and_focused_margin.md": "2026-11-05 13:57 JST",
-    "idea_05_family_specific_stylometry_and_m2_validator.md": "2026-11-05 13:58 JST"
+    "idea_05_family_specific_stylometry_and_m2_validator.md": "2026-11-05 13:58 JST",
+    "local_oof_benchmark_and_v44_selection_report.md": "2026-11-05 14:30 JST"
 }
 
 REPORT_METADATA = {
-    # --- ACTIVE: Reading Order 1 to 20 ---
+    # --- ACTIVE: Reading Order 1 to 21 ---
     "name_that_llm_comprehensive_guide.md": {
         "order": 1, "step": "STEP 1: 超入門・全体像", "status": "active",
         "note": "【必読・全体像】コンペ概要、Balanced Accuracy、9時間VOID崖、基本解法が中学生でもわかる完全ガイド"
@@ -63,31 +64,35 @@ REPORT_METADATA = {
         "note": "【最新・本命】第37弾 V43-Evolution。V40基準スタック復帰＋OOF最適化 Target Mix 0.42"
     },
     "offline_verification_and_hungarian_trap_analysis.md": {
-        "order": 5, "step": "STEP 4: オフライン数理検証 (最新)", "status": "active",
+        "order": 5, "step": "STEP 4: オフライン数理検証", "status": "active",
         "note": "【必読・解明】スタイロメトリーの限界とHungarian割当の罠。Soft Sinkhornの必然性を数理実証"
     },
+    "local_oof_benchmark_and_v44_selection_report.md": {
+        "order": 6, "step": "STEP 4: ローカル実験ベンチマーク (最新)", "status": "active",
+        "note": "【最新・実験総括】wsum=9.0較正の発見と全8実験 (EXP-01〜08) のFull/Sparse(m=2) OOF比較レポート"
+    },
     "idea_01_glm_exact_teacher_log_likelihood.md": {
-        "order": 6, "step": "STEP 5: 次世代実験ネタ #01", "status": "active",
+        "order": 7, "step": "STEP 5: 次世代実験ネタ #01", "status": "active",
         "note": "【実験ネタ #01】GLM-5.3 / Flash 実モデル重みによる直接尤度検証（Exact Teacher Log-Likelihood）"
     },
     "idea_02_open_pool_v12_and_hard_supplement.md": {
-        "order": 7, "step": "STEP 5: 次世代実験ネタ #02", "status": "active",
+        "order": 8, "step": "STEP 5: 次世代実験ネタ #02", "status": "active",
         "note": "【実験ネタ #02】Open Pool v12 (211k行) ＋ Hard-Class Supplement (Vertex AI 厳密ルート) データ刷新"
     },
     "idea_03_early_mid_layer_spectral_probing.md": {
-        "order": 8, "step": "STEP 5: 次世代実験ネタ #03", "status": "active",
+        "order": 9, "step": "STEP 5: 次世代実験ネタ #03", "status": "active",
         "note": "【実験ネタ #03】Transformer 初期〜中間層特化プロービングと LoRA+ / 位置重み付けプーリング"
     },
     "idea_04_atlas_fast_batching_and_focused_margin.md": {
-        "order": 9, "step": "STEP 5: 次世代実験ネタ #04", "status": "active",
+        "order": 10, "step": "STEP 5: 次世代実験ネタ #04", "status": "active",
         "note": "【実験ネタ #04】ATLAS 高速バッチ推論 (BS=6) ＋ 集中 Dispute Margin (0.28) ＋ Pairwise 較正"
     },
     "idea_05_family_specific_stylometry_and_m2_validator.md": {
-        "order": 10, "step": "STEP 5: 次世代実験ネタ #05", "status": "active",
+        "order": 11, "step": "STEP 5: 次世代実験ネタ #05", "status": "active",
         "note": "【実験ネタ #05】ファミリー別最適スタイロメトリー選択 (148d vs 81d) と疎プロンプト抽出 (m=2) 検証器"
     },
     "gold_medal_master_strategy.md": {
-        "order": 11, "step": "STEP 6: 戦略ロードマップ", "status": "active",
+        "order": 12, "step": "STEP 6: 戦略ロードマップ", "status": "active",
         "note": "Top 18 金メダル獲得に向けた4段階フェーズ計画とリソース配分"
     },
     "ntl_master_strategy_and_operations.md": {
@@ -287,7 +292,18 @@ def main():
             ver_name = "In Progress"
             params_summary = ""
             track_label = "Track 1 (Evolution)"
-            if "V42c" in desc or "V42-C" in desc:
+            est_comp = "~19:30 JST"
+            if "V43-Evolution" in desc:
+                ver_name = "V43 (Evolution Anchor+Mix)"
+                params_summary = "Sinkhorn 0.50 | Mix 0.42 | Single-DeBERTa | ATLAS 0.32"
+                track_label = "Track 1 (Evolution)"
+                est_comp = "~19:30 JST"
+            elif "V43-Exploration" in desc:
+                ver_name = "V43 (0.668 Repro Verifier)"
+                params_summary = "Sinkhorn 0.30 | Mix 0.35 | Pairwise A/B | Sibling 0.10 | areebbb 1x"
+                track_label = "Track 2 (Exploration)"
+                est_comp = "~19:35 JST"
+            elif "V42c" in desc or "V42-C" in desc:
                 ver_name = "V42-C (Apex V40Anchor)"
                 params_summary = "Sinkhorn 0.50 | Mix 0.35 | Sibling 0.10 | Dual-DeBERTa 0.75"
                 track_label = "Track 1 (Evolution Anchor)"
@@ -312,8 +328,8 @@ def main():
                 "params": params_summary,
                 "submitted_at": s["date"],
                 "status": "RUNNING" if "RUNNING" in s["status"] else "PENDING",
-                "target_score": "0.668 - 0.672+",
-                "estimated_completion": "~23:25 JST"
+                "target_score": "0.667 - 0.668+",
+                "estimated_completion": est_comp
             })
 
     running_sub = active_runs[0] if active_runs else None
@@ -379,6 +395,22 @@ def main():
     reports = extract_reports()
     print(f"Extracted {len(reports)} markdown reports from docs/")
 
+    # 6. Load Local Offline Verification Benchmark Results
+    local_verif = None
+    verif_candidates = [
+        '/Users/echo/kaggle/name-that-llm/local_verification_results.json',
+        os.path.join(os.path.dirname(os.path.abspath(__file__)), 'local_verification_results.json')
+    ]
+    for vp in verif_candidates:
+        if os.path.exists(vp):
+            try:
+                with open(vp, 'r', encoding='utf-8') as vf:
+                    local_verif = json.load(vf)
+                print(f"Loaded local verification results ({len(local_verif.get('experiments', []))} experiments) from {vp}")
+                break
+            except Exception as e:
+                print(f"Warning: failed to load {vp}: {e}")
+
     now_jst = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S JST")
     out_data = {
         "updated_at": now_jst,
@@ -400,6 +432,7 @@ def main():
         "timeline": timeline,
         "submissions": sub_list[:20],
         "architecture_matrix": architecture_matrix,
+        "local_verification": local_verif,
         "reports": reports
     }
 

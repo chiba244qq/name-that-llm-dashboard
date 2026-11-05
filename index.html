@@ -249,7 +249,7 @@
         </div>
         <div class="pt-3 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
           <span>Submission Quota Remaining:</span>
-          <span class="font-bold text-emerald-400 mono text-sm">4 / 5 Slots</span>
+          <span class="font-bold text-emerald-400 mono text-sm">3 / 5 Slots</span>
         </div>
       </div>
 
@@ -259,7 +259,7 @@
     <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 space-y-4">
       <div class="flex items-center justify-between">
         <div>
-          <h3 class="text-base font-bold text-white">Pipeline Evolution Matrix (V38 → V41)</h3>
+          <h3 class="text-base font-bold text-white">Pipeline Evolution Matrix (V38 → V43)</h3>
           <p class="text-xs text-slate-400">Detailed component breakdown across major competition releases</p>
         </div>
       </div>
@@ -281,6 +281,89 @@
             <!-- Injected dynamically -->
           </tbody>
         </table>
+      </div>
+    </div>
+
+    <!-- NEW: Local OOF Verification & R&D Experiment Benchmark Tracker -->
+    <div class="rounded-2xl border border-cyan-500/30 bg-slate-900/70 p-5 space-y-5">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-4">
+        <div>
+          <div class="flex items-center space-x-2">
+            <span class="text-lg">🧪</span>
+            <h3 class="text-base sm:text-lg font-bold text-white">Local OOF Verification & R&D Experiment Tracker（ローカル事前検証ベンチマーク）</h3>
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-cyan-950 text-cyan-400 border border-cyan-800 mono">5-Fold OOF + m=2 Sparse CV</span>
+          </div>
+          <p class="text-xs text-slate-400 mt-1">
+            Kaggle本番スロット消費前にローカル環境（2,699行 Ground-Truth 5-Fold OOF ＆ 本番テスト形状を模した 1プロンプト2回答 $m=2$ 疎サンプリング25回平均）で検証した全実験ログです。
+          </p>
+        </div>
+        <div class="text-right text-xs mono text-slate-400">
+          <div>較正条件: <span class="text-cyan-300 font-semibold">wsum = 9.0 (Log-Space Sinkhorn)</span></div>
+          <div>最終検証: <span id="local-verif-time" class="text-slate-200">--</span></div>
+        </div>
+      </div>
+
+      <!-- Main 9-Experiment Benchmark Table -->
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs border-collapse">
+          <thead>
+            <tr class="border-b border-slate-800 text-slate-400 uppercase tracking-wider font-semibold">
+              <th class="py-2.5 px-2.5">Exp ID</th>
+              <th class="py-2.5 px-2.5">Experiment / Hypothesis</th>
+              <th class="py-2.5 px-2.5">Target Idea</th>
+              <th class="py-2.5 px-2.5">Full OOF (m=18)</th>
+              <th class="py-2.5 px-2.5">Sparse OOF (m=2)</th>
+              <th class="py-2.5 px-2.5">Δ (m=2 vs V40)</th>
+              <th class="py-2.5 px-2.5">Sparse (m=3)</th>
+              <th class="py-2.5 px-2.5">LB Noise SD</th>
+              <th class="py-2.5 px-2.5">Verdict & Adoption Status</th>
+            </tr>
+          </thead>
+          <tbody id="local-exp-body" class="divide-y divide-slate-800/60 text-slate-300">
+            <!-- Injected dynamically -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Sub-table: Sibling-Pair Stylometry Feature Selection (Idea #05) -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 pt-2 border-t border-slate-800/80">
+        <div class="lg:col-span-2 overflow-x-auto">
+          <div class="text-xs font-bold text-slate-200 mb-2 flex items-center space-x-1.5">
+            <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+            <span>Sibling-Pair Binary 5-Fold Grouped CV (148d V40A vs 81d Victor per100w vs 229d Combined)</span>
+          </div>
+          <table class="w-full text-left text-xs border-collapse bg-slate-950/50 rounded-lg overflow-hidden border border-slate-800">
+            <thead>
+              <tr class="border-b border-slate-800 text-slate-400 font-semibold">
+                <th class="py-2 px-3">Target Sibling Pair</th>
+                <th class="py-2 px-3">V40A Uniform (148d)</th>
+                <th class="py-2 px-3">Victor per100w (81d)</th>
+                <th class="py-2 px-3">Combined (229d)</th>
+                <th class="py-2 px-3">Selected Routing</th>
+              </tr>
+            </thead>
+            <tbody id="sibling-bench-body" class="divide-y divide-slate-800/60 text-slate-300 mono">
+              <!-- Injected dynamically -->
+            </tbody>
+          </table>
+        </div>
+        <div class="rounded-xl bg-slate-950/60 border border-slate-800 p-3.5 text-xs space-y-2 flex flex-col justify-between">
+          <div class="space-y-1.5">
+            <div class="font-bold text-cyan-400 flex items-center space-x-1">
+              <span>💡</span>
+              <span>ローカル検証からの重要知見</span>
+            </div>
+            <p class="text-slate-300 leading-relaxed">
+              1. <b>wsum=9.0 較正の発見</b>: Phase-0 OOFロジットは9メンバーの未正規化総和（min=-508.8）であり、<code class="text-cyan-300">infer.py</code> 同様に <code class="text-cyan-300">wsum=9.0</code> で除算後に対数空間Sinkhornを適用することで実機と一致した信頼度分布が復元されます。
+            </p>
+            <p class="text-slate-300 leading-relaxed">
+              2. <b>疎プロンプト ($m=2$) での逆転現象</b>: 148次元一括適用（EXP-03）は $m=2$ で減退する一方、<b>V34.1 Pairwise Verifier（EXP-05: +0.00093）</b>と<b>ファミリー別特徴選択（EXP-04: +0.00069）</b>、および両者の減衰統合版（<b>EXP-09: +0.00101</b>）が最高スコアを達成しました。
+            </p>
+          </div>
+          <div class="text-[11px] text-slate-400 mono pt-1 border-t border-slate-800/80">
+            Script: <code class="text-slate-300">run_comprehensive_local_verification.py</code>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -566,6 +649,78 @@
         `;
         mb.appendChild(tr);
       });
+
+      // Local Verification Benchmark Tracker
+      const leb = document.getElementById('local-exp-body');
+      const sbb = document.getElementById('sibling-bench-body');
+      if (leb && data.local_verification && data.local_verification.experiments) {
+        setTxt('local-verif-time', data.local_verification.generated_at || '--');
+        leb.innerHTML = '';
+        data.local_verification.experiments.forEach(exp => {
+          const tr = document.createElement('tr');
+          const isBest = exp.exp_id === 'EXP-05' || exp.exp_id === 'EXP-09';
+          tr.className = isBest ? "bg-cyan-950/20 hover:bg-cyan-950/40 transition" : "hover:bg-slate-800/40 transition";
+          
+          const dm2 = exp.delta_m2 || 0;
+          const dm2Str = (dm2 >= 0 ? '+' : '') + dm2.toFixed(5);
+          const dm2Class = dm2 > 0.0006 ? 'text-emerald-400 font-bold' : dm2 > 0 ? 'text-cyan-400' : 'text-rose-400';
+
+          let vBadge = '';
+          const v = exp.verdict || '';
+          if (v.includes('Recommended') || v.includes('Top')) {
+            vBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-950 text-emerald-400 border border-emerald-800">${v}</span>`;
+          } else if (v.includes('Adopted')) {
+            vBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-cyan-950 text-cyan-400 border border-cyan-800">${v}</span>`;
+          } else if (v.includes('Rejected')) {
+            vBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-rose-950 text-rose-400 border border-rose-800">${v}</span>`;
+          } else if (v.includes('Hold')) {
+            vBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-950 text-amber-400 border border-amber-800">${v}</span>`;
+          } else {
+            vBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-800 text-slate-300 border border-slate-700">${v}</span>`;
+          }
+
+          tr.innerHTML = `
+            <td class="py-2.5 px-2.5 mono font-bold text-white whitespace-nowrap">${exp.exp_id}</td>
+            <td class="py-2.5 px-2.5">
+              <div class="font-semibold text-slate-100">${exp.name}</div>
+              <div class="text-[11px] text-slate-400 mono">${exp.params}</div>
+            </td>
+            <td class="py-2.5 px-2.5 whitespace-nowrap">
+              <span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-slate-800 text-amber-300 border border-slate-700">${exp.idea_ref}</span>
+            </td>
+            <td class="py-2.5 px-2.5 mono font-semibold text-slate-200">${exp.ba_full_m18.toFixed(5)}</td>
+            <td class="py-2.5 px-2.5 mono font-bold ${isBest ? 'text-emerald-400' : 'text-cyan-300'}">${exp.ba_sparse_m2.toFixed(5)}</td>
+            <td class="py-2.5 px-2.5 mono ${dm2Class}">${dm2Str}</td>
+            <td class="py-2.5 px-2.5 mono text-slate-300">${exp.ba_sparse_m3.toFixed(5)}</td>
+            <td class="py-2.5 px-2.5 mono text-slate-400">±${exp.lb_sd_gap.toFixed(4)}</td>
+            <td class="py-2.5 px-2.5 whitespace-nowrap">${vBadge}</td>
+          `;
+          leb.appendChild(tr);
+        });
+      }
+
+      if (sbb && data.local_verification && data.local_verification.stylometry_diagnostics && data.local_verification.stylometry_diagnostics.sibling_pair_benchmarks) {
+        sbb.innerHTML = '';
+        data.local_verification.stylometry_diagnostics.sibling_pair_benchmarks.forEach(sb => {
+          const tr = document.createElement('tr');
+          tr.className = "hover:bg-slate-900/80 transition";
+          const best148 = sb.best_feature_set === 'v40a_148d';
+          const best81 = sb.best_feature_set === 'victor_81d';
+          const best229 = sb.best_feature_set === 'combined_229d';
+          tr.innerHTML = `
+            <td class="py-2 px-3 font-sans font-semibold text-slate-200">${sb.pair}</td>
+            <td class="py-2 px-3 ${best148 ? 'text-emerald-400 font-bold' : 'text-slate-400'}">${sb.v40a_148d.toFixed(4)} ${best148 ? '★' : ''}</td>
+            <td class="py-2 px-3 ${best81 ? 'text-emerald-400 font-bold' : 'text-slate-400'}">${sb.victor_81d.toFixed(4)} ${best81 ? '★' : ''}</td>
+            <td class="py-2 px-3 ${best229 ? 'text-emerald-400 font-bold' : 'text-slate-400'}">${sb.combined_229d.toFixed(4)} ${best229 ? '★' : ''}</td>
+            <td class="py-2 px-3">
+              <span class="px-1.5 py-0.5 rounded text-[10px] font-bold ${best81 ? 'bg-amber-950 text-amber-300 border border-amber-800' : 'bg-cyan-950 text-cyan-300 border border-cyan-800'}">
+                ${best81 ? '81d Length-Norm (per100w)' : '148d Char/Word/Struct'}
+              </span>
+            </td>
+          `;
+          sbb.appendChild(tr);
+        });
+      }
 
       // Submissions
       const sb = document.getElementById('subs-body');
