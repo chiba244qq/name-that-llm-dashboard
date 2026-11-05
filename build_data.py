@@ -412,6 +412,7 @@ def main():
                 print(f"Warning: failed to load {vp}: {e}")
 
     now_jst = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S JST")
+    medal_str = "Gold" if my_rank <= 18 else ("Silver" if my_rank <= silver_rank_cutoff else ("Bronze" if my_rank <= bronze_rank_cutoff else "No Medal"))
     out_data = {
         "updated_at": now_jst,
         "competition": {
@@ -419,7 +420,7 @@ def main():
             "total_teams": total_teams,
             "my_rank": my_rank,
             "my_score": my_score,
-            "medal": "Silver",
+            "medal": medal_str,
             "top_percent": top_pct,
             "gold_cutoff": top18_cutoff,
             "silver_cutoff": silver_cutoff,
