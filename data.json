@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-11-05 13:18:48 JST",
+  "updated_at": "2026-11-05 13:23:52 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 4689,
+    "total_teams": 4690,
     "my_rank": 256,
     "my_score": 0.666,
     "medal": "Silver",
@@ -11,7 +11,7 @@
     "silver_cutoff": 0.666,
     "silver_rank_cutoff": 234,
     "bronze_cutoff": 0.665,
-    "bronze_rank_cutoff": 468
+    "bronze_rank_cutoff": 469
   },
   "running_submission": {
     "ref": 58008859,
@@ -417,13 +417,25 @@
       "note": "【最新・本命】第37弾 V43-Evolution。V40基準スタック復帰＋OOF最適化 Target Mix 0.42"
     },
     {
+      "filename": "offline_verification_and_hungarian_trap_analysis.md",
+      "title": "Offline 5-Fold OOF Verification & Hungarian Trap Analysis Report",
+      "date": "2026-11-05 13:25 JST",
+      "category": "戦略・分析",
+      "badge_color": "purple",
+      "summary": "現在 Kaggle 上で推論実行中の 2 本（Track 1: V43-Evolution, Track 2: V43-Exploration）の完了（19:30 JST 予定）を待つ間、公開上位（0.668）コードの主要コンポーネントを手元の 2,699 件...",
+      "order": 5,
+      "step": "STEP 4: オフライン数理検証 (最新)",
+      "status": "active",
+      "note": "【必読・解明】スタイロメトリーの限界とHungarian割当の罠。Soft Sinkhornの必然性を数理実証"
+    },
+    {
       "filename": "gold_medal_master_strategy.md",
       "title": "Name That LLM: ゴールドメダル戦略 v2（補強版）",
       "date": "2026-11-01 23:00 JST",
       "category": "アーキテクチャ設計",
       "badge_color": "blue",
       "summary": "| # | v1 での記述 | 検証結果 | 影響 |",
-      "order": 5,
+      "order": 6,
       "step": "STEP 3: 戦略ロードマップ",
       "status": "active",
       "note": "Top 18 金メダル獲得に向けた4段階フェーズ計画とリソース配分"
@@ -535,18 +547,6 @@
       "step": "STEP 7: 現行SOTAアーキテクチャ",
       "status": "active",
       "note": "現行主力モデル構成（Dual-DeBERTa + Pairwise + Sibling + ATLAS）の完全設計解剖"
-    },
-    {
-      "filename": "offline_verification_and_hungarian_trap_analysis.md",
-      "title": "Offline 5-Fold OOF Verification & Hungarian Trap Analysis Report",
-      "date": "2026-11-05 13:25 JST",
-      "category": "戦略・分析",
-      "badge_color": "purple",
-      "summary": "現在 Kaggle 上で推論実行中の 2 本（Track 1: V43-Evolution, Track 2: V43-Exploration）の完了（19:30 JST 予定）を待つ間、公開上位（0.668）コードの主要コンポーネントを手元の 2,699 件...",
-      "order": 50,
-      "step": "その他",
-      "status": "active",
-      "note": "現在 Kaggle 上で推論実行中の 2 本（Track 1: V43-Evolution, Track 2: V43-Exploration）の完了（19:30 JST 予定）を待つ間、公開上位（0.668）コードの主要コンポーネントを手元の 2,699 件..."
     },
     {
       "filename": "submission_32_v38_deployment.md",
