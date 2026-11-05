@@ -35,11 +35,12 @@ DOC_DATES = {
     "kaggle_live_dashboard_deployment.md": "2026-11-04 09:29 JST",
     "offline_oof_and_error_analysis_report.md": "2026-11-04 17:42 JST",
     "dual_track_strategy_and_operations.md": "2026-11-04 20:20 JST",
-    "submission_37_v43_evolution_deployment.md": "2026-11-05 12:55 JST"
+    "submission_37_v43_evolution_deployment.md": "2026-11-05 12:55 JST",
+    "offline_verification_and_hungarian_trap_analysis.md": "2026-11-05 13:25 JST"
 }
 
 REPORT_METADATA = {
-    # --- ACTIVE: Reading Order 1 to 14 ---
+    # --- ACTIVE: Reading Order 1 to 15 ---
     "name_that_llm_comprehensive_guide.md": {
         "order": 1, "step": "STEP 1: 超入門・全体像", "status": "active",
         "note": "【必読・全体像】コンペ概要、Balanced Accuracy、9時間VOID崖、基本解法が中学生でもわかる完全ガイド"
@@ -56,8 +57,12 @@ REPORT_METADATA = {
         "order": 4, "step": "STEP 3: Track 1 堅実進化 (最新)", "status": "active",
         "note": "【最新・本命】第37弾 V43-Evolution。V40基準スタック復帰＋OOF最適化 Target Mix 0.42"
     },
+    "offline_verification_and_hungarian_trap_analysis.md": {
+        "order": 5, "step": "STEP 4: オフライン数理検証 (最新)", "status": "active",
+        "note": "【必読・解明】スタイロメトリーの限界とHungarian割当の罠。Soft Sinkhornの必然性を数理実証"
+    },
     "gold_medal_master_strategy.md": {
-        "order": 5, "step": "STEP 3: 戦略ロードマップ", "status": "active",
+        "order": 6, "step": "STEP 3: 戦略ロードマップ", "status": "active",
         "note": "Top 18 金メダル獲得に向けた4段階フェーズ計画とリソース配分"
     },
     "ntl_master_strategy_and_operations.md": {
@@ -325,7 +330,8 @@ def main():
         {"version": "V41", "score": 0.663, "date": "11-04", "tag": "Silver Hold", "desc": "Apex-II (Sinkhorn 0.30緩和による微減、要改善特定)"},
         {"version": "V42 A/B", "score": 0.663, "date": "11-04", "tag": "Silver", "desc": "Dual-DeBERTa+Sibling+Sinkhorn0.50 (Mix0.42: 0.663)"},
         {"version": "V42-C", "score": 0.661, "date": "11-04", "tag": "Rejected", "desc": "V40同条件アンカー (Apex-II新パーツによる減退 -0.005 を特定)"},
-        {"version": "V43", "score": 0.666, "date": "11-05", "tag": "Running", "desc": "Track 1 Evolution: V40復帰 + OOF最適化 Mix 0.42 (推論実行中)"}
+        {"version": "V43 (T1)", "score": None, "target": 0.668, "date": "11-05", "tag": "Pending", "desc": "Track 1 Evolution: V40復帰 + OOF最適化 Mix 0.42 (推論中: 19:30完了予定)"},
+        {"version": "V43 (T2)", "score": None, "target": 0.668, "date": "11-05", "tag": "Pending", "desc": "Track 2 Exploration: 0.668 Repro (推論中: 19:35完了予定)"}
     ]
 
     # 4. Architecture comparison matrix
@@ -337,7 +343,8 @@ def main():
         {"version": "V42", "track": "Track 1", "score": "0.663", "data_pool": "Open Pool v11 190k + 49k", "deberta": "Dual (0.75 Pool)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "Residual (0.10)", "atlas_margin": "0.32", "sinkhorn": "0.50 / Mix 0.42", "highlight": "強い正則化+Mix0.42"},
         {"version": "V42-B", "track": "Track 1", "score": "0.663", "data_pool": "Open Pool v11 190k + 49k", "deberta": "Dual (0.75 Pool)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "Residual (0.05)", "atlas_margin": "0.32", "sinkhorn": "0.50 / Mix 0.42", "highlight": "Sibling保守版"},
         {"version": "V42-C", "track": "Track 1", "score": "0.661", "data_pool": "Open Pool v11 190k + 49k", "deberta": "Dual (0.75 Pool)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "Residual (0.10)", "atlas_margin": "0.32", "sinkhorn": "0.50 / Mix 0.35", "highlight": "V40完全同条件アンカー"},
-        {"version": "V43", "track": "Track 1", "score": "Pending", "data_pool": "Open Pool v11 Clean", "deberta": "Single (Official)", "pairwise_ab": "None", "sibling_style": "None", "atlas_margin": "0.32", "sinkhorn": "0.50 / Mix 0.42", "highlight": "【本命】V40復帰+OOF最適化Mix0.42"}
+        {"version": "V43 (T1)", "track": "Track 1", "score": "Pending", "data_pool": "Open Pool v11 Clean", "deberta": "Single (Official)", "pairwise_ab": "None", "sibling_style": "None", "atlas_margin": "0.32", "sinkhorn": "0.50 / Mix 0.42", "highlight": "【本命】V40復帰+OOF最適化Mix0.42 (推論中)"},
+        {"version": "V43 (T2)", "track": "Track 2", "score": "Pending", "data_pool": "Open Pool v11 + areebbb 1x", "deberta": "Single (Official)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "Residual (0.10)", "atlas_margin": "0.32", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【検証】公開0.668再現 (推論中)"}
     ]
 
     # 5. Extract Markdown Reports

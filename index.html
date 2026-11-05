@@ -914,7 +914,7 @@
       const ctx = document.getElementById('scoreChart').getContext('2d');
       const labels = timeline.map(t => t.version);
       const scores = timeline.map(t => t.score);
-      const targets = timeline.map(t => t.version === 'V41' ? t.target : null);
+      const targets = timeline.map(t => t.target || null);
 
       if (myChart) myChart.destroy();
 

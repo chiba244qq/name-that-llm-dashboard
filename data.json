@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05 13:32:09 JST",
+  "updated_at": "2026-11-05 13:32:27 JST",
   "competition": {
     "name": "Name That LLM",
     "total_teams": 4691,
@@ -364,7 +364,7 @@
       "highlight": "V40完全同条件アンカー"
     },
     {
-      "version": "V43",
+      "version": "V43 (T1)",
       "track": "Track 1",
       "score": "Pending",
       "data_pool": "Open Pool v11 Clean",
@@ -373,7 +373,19 @@
       "sibling_style": "None",
       "atlas_margin": "0.32",
       "sinkhorn": "0.50 / Mix 0.42",
-      "highlight": "【本命】V40復帰+OOF最適化Mix0.42"
+      "highlight": "【本命】V40復帰+OOF最適化Mix0.42 (推論中)"
+    },
+    {
+      "version": "V43 (T2)",
+      "track": "Track 2",
+      "score": "Pending",
+      "data_pool": "Open Pool v11 + areebbb 1x",
+      "deberta": "Single (Official)",
+      "pairwise_ab": "V34.1 A/B Verifier",
+      "sibling_style": "Residual (0.10)",
+      "atlas_margin": "0.32",
+      "sinkhorn": "0.30 / Mix 0.35",
+      "highlight": "【検証】公開0.668再現 (推論中)"
     }
   ],
   "reports": [
