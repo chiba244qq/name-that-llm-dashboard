@@ -292,8 +292,18 @@ def main():
             ver_name = "In Progress"
             params_summary = ""
             track_label = "Track 1 (Evolution)"
-            est_comp = "~19:30 JST"
-            if "V43-Evolution" in desc:
+            est_comp = "~15:30 JST"
+            if "V44 Evolution" in desc or "V44-Evolution" in desc:
+                ver_name = "V44 (Sovereign-Aegis Hybrid)"
+                params_summary = "Frozen Snapshot | Sinkhorn 0.50 | Mix 0.42 | Pairwise Verifier | Single-DeBERTa"
+                track_label = "Track 1 (Evolution)"
+                est_comp = "~15:30 JST"
+            elif "V44 Exploration" in desc or "V44-Exploration" in desc:
+                ver_name = "V44 (0.668 Frozen Repro)"
+                params_summary = "Frozen Snapshot | Sinkhorn 0.30 | Mix 0.35 | Pairwise Verifier | areebbb 1x"
+                track_label = "Track 2 (Exploration)"
+                est_comp = "~15:35 JST"
+            elif "V43-Evolution" in desc:
                 ver_name = "V43 (Evolution Anchor+Mix)"
                 params_summary = "Sinkhorn 0.50 | Mix 0.42 | Single-DeBERTa | ATLAS 0.32"
                 track_label = "Track 1 (Evolution)"
@@ -375,7 +385,9 @@ def main():
         {"version": "V42 A/B", "score": 0.663, "date": "11-04", "tag": "Silver", "desc": "Dual-DeBERTa+Sibling+Sinkhorn0.50 (Mix0.42: 0.663)"},
         {"version": "V42-C", "score": 0.661, "date": "11-04", "tag": "Rejected", "desc": "V40同条件アンカー (CLIデータセット自動更新による減退 -0.005)"},
         {"version": "V43 (T1)", "score": 0.662, "date": "11-05", "tag": "Dataset Drift", "desc": "Track 1 Evolution: Mix 0.42 (+0.001 vs T2, ただしOpenPool/Afify更新で0.662)"},
-        {"version": "V43 (T2)", "score": 0.661, "date": "11-05", "tag": "Dataset Drift", "desc": "Track 2 Exploration: 0.668 Repro (CLI push時の外部DS強制最新化により0.661へ低下)"}
+        {"version": "V43 (T2)", "score": 0.661, "date": "11-05", "tag": "Dataset Drift", "desc": "Track 2 Exploration: 0.668 Repro (CLI push時の外部DS強制最新化により0.661へ低下)"},
+        {"version": "V44 (T1)", "score": None, "target": 0.669, "date": "11-06", "tag": "Pending", "desc": "Track 1 Evolution: Sovereign-Aegis Hybrid (Snapshot + Verifier + Mix 0.42: 15:30完了予定)"},
+        {"version": "V44 (T2)", "score": None, "target": 0.668, "date": "11-06", "tag": "Pending", "desc": "Track 2 Exploration: 0.668 Repro (Snapshot固定: 15:35完了予定)"}
     ]
 
     # 4. Architecture comparison matrix
@@ -388,7 +400,9 @@ def main():
         {"version": "V42-B", "track": "Track 1", "score": "0.663", "data_pool": "Open Pool Mutated (Nov 4)", "deberta": "Dual (0.75 Pool)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "Residual (0.05)", "atlas_margin": "0.32", "sinkhorn": "0.50 / Mix 0.42", "highlight": "Sibling保守版"},
         {"version": "V42-C", "track": "Track 1", "score": "0.661", "data_pool": "Open Pool Mutated (Nov 4)", "deberta": "Dual (0.75 Pool)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "Residual (0.10)", "atlas_margin": "0.32", "sinkhorn": "0.50 / Mix 0.35", "highlight": "Mix0.35戻しで0.661"},
         {"version": "V43 (T1)", "track": "Track 1", "score": "0.662", "data_pool": "Open Pool v15 (213k) + Afify v11", "deberta": "Single (Official)", "pairwise_ab": "None", "sibling_style": "None", "atlas_margin": "0.32", "sinkhorn": "0.50 / Mix 0.42", "highlight": "Mix 0.42効果でT2に+0.001勝利 (DS汚染特定)"},
-        {"version": "V43 (T2)", "track": "Track 2", "score": "0.661", "data_pool": "Open Pool v15 (213k) + Afify v11", "deberta": "Single (Official)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "Residual (0.10)", "atlas_margin": "0.32", "sinkhorn": "0.30 / Mix 0.35", "highlight": "公開0.668無改変でもDS更新により0.661へ急落"}
+        {"version": "V43 (T2)", "track": "Track 2", "score": "0.661", "data_pool": "Open Pool v15 (213k) + Afify v11", "deberta": "Single (Official)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "Residual (0.10)", "atlas_margin": "0.32", "sinkhorn": "0.30 / Mix 0.35", "highlight": "公開0.668無改変でもDS更新により0.661へ急落"},
+        {"version": "V44 (T1)", "track": "Track 1", "score": "Pending", "data_pool": "Frozen Snapshot (190.5k + 4.5k)", "deberta": "Single (Official)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "Residual (0.10)", "atlas_margin": "0.32", "sinkhorn": "0.50 / Mix 0.42", "highlight": "【本命】0.668スタック+Sovereign最適化パラメータ (推論中)"},
+        {"version": "V44 (T2)", "track": "Track 2", "score": "Pending", "data_pool": "Frozen Snapshot (190.5k + 4.5k)", "deberta": "Single (Official)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "Residual (0.10)", "atlas_margin": "0.32", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【検証】公開0.668のスナップショット完全再現 (推論中)"}
     ]
 
     # 5. Extract Markdown Reports

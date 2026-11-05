@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-11-06 01:01:44 JST",
+  "updated_at": "2026-11-06 08:31:41 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 4770,
-    "my_rank": 306,
+    "total_teams": 4802,
+    "my_rank": 403,
     "my_score": 0.666,
     "medal": "Bronze",
-    "top_percent": 6.42,
-    "gold_cutoff": 0.703,
-    "silver_cutoff": 0.667,
-    "silver_rank_cutoff": 238,
+    "top_percent": 8.39,
+    "gold_cutoff": 0.704,
+    "silver_cutoff": 0.668,
+    "silver_rank_cutoff": 240,
     "bronze_cutoff": 0.666,
-    "bronze_rank_cutoff": 477
+    "bronze_rank_cutoff": 480
   },
   "running_submission": null,
   "active_runs": [],
@@ -99,6 +99,22 @@
       "date": "11-05",
       "tag": "Dataset Drift",
       "desc": "Track 2 Exploration: 0.668 Repro (CLI push時の外部DS強制最新化により0.661へ低下)"
+    },
+    {
+      "version": "V44 (T1)",
+      "score": null,
+      "target": 0.669,
+      "date": "11-06",
+      "tag": "Pending",
+      "desc": "Track 1 Evolution: Sovereign-Aegis Hybrid (Snapshot + Verifier + Mix 0.42: 15:30完了予定)"
+    },
+    {
+      "version": "V44 (T2)",
+      "score": null,
+      "target": 0.668,
+      "date": "11-06",
+      "tag": "Pending",
+      "desc": "Track 2 Exploration: 0.668 Repro (Snapshot固定: 15:35完了予定)"
     }
   ],
   "submissions": [
@@ -351,6 +367,30 @@
       "atlas_margin": "0.32",
       "sinkhorn": "0.30 / Mix 0.35",
       "highlight": "公開0.668無改変でもDS更新により0.661へ急落"
+    },
+    {
+      "version": "V44 (T1)",
+      "track": "Track 1",
+      "score": "Pending",
+      "data_pool": "Frozen Snapshot (190.5k + 4.5k)",
+      "deberta": "Single (Official)",
+      "pairwise_ab": "V34.1 A/B Verifier",
+      "sibling_style": "Residual (0.10)",
+      "atlas_margin": "0.32",
+      "sinkhorn": "0.50 / Mix 0.42",
+      "highlight": "【本命】0.668スタック+Sovereign最適化パラメータ (推論中)"
+    },
+    {
+      "version": "V44 (T2)",
+      "track": "Track 2",
+      "score": "Pending",
+      "data_pool": "Frozen Snapshot (190.5k + 4.5k)",
+      "deberta": "Single (Official)",
+      "pairwise_ab": "V34.1 A/B Verifier",
+      "sibling_style": "Residual (0.10)",
+      "atlas_margin": "0.32",
+      "sinkhorn": "0.30 / Mix 0.35",
+      "highlight": "【検証】公開0.668のスナップショット完全再現 (推論中)"
     }
   ],
   "local_verification": {
