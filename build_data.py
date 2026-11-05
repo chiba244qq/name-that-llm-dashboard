@@ -373,22 +373,22 @@ def main():
         {"version": "V40", "score": 0.666, "date": "11-03", "tag": "Silver Defend", "desc": "Gemini ルーティング除外 + ATLAS Margin 0.32 (0.666完全再現/114位防衛)"},
         {"version": "V41", "score": 0.663, "date": "11-04", "tag": "Silver Hold", "desc": "Apex-II (Sinkhorn 0.30緩和による微減、要改善特定)"},
         {"version": "V42 A/B", "score": 0.663, "date": "11-04", "tag": "Silver", "desc": "Dual-DeBERTa+Sibling+Sinkhorn0.50 (Mix0.42: 0.663)"},
-        {"version": "V42-C", "score": 0.661, "date": "11-04", "tag": "Rejected", "desc": "V40同条件アンカー (Apex-II新パーツによる減退 -0.005 を特定)"},
-        {"version": "V43 (T1)", "score": None, "target": 0.668, "date": "11-05", "tag": "Pending", "desc": "Track 1 Evolution: V40復帰 + OOF最適化 Mix 0.42 (推論中: 19:30完了予定)"},
-        {"version": "V43 (T2)", "score": None, "target": 0.668, "date": "11-05", "tag": "Pending", "desc": "Track 2 Exploration: 0.668 Repro (推論中: 19:35完了予定)"}
+        {"version": "V42-C", "score": 0.661, "date": "11-04", "tag": "Rejected", "desc": "V40同条件アンカー (CLIデータセット自動更新による減退 -0.005)"},
+        {"version": "V43 (T1)", "score": 0.662, "date": "11-05", "tag": "Dataset Drift", "desc": "Track 1 Evolution: Mix 0.42 (+0.001 vs T2, ただしOpenPool/Afify更新で0.662)"},
+        {"version": "V43 (T2)", "score": 0.661, "date": "11-05", "tag": "Dataset Drift", "desc": "Track 2 Exploration: 0.668 Repro (CLI push時の外部DS強制最新化により0.661へ低下)"}
     ]
 
     # 4. Architecture comparison matrix
     architecture_matrix = [
         {"version": "V38", "track": "Track 1", "score": "0.665", "data_pool": "Open Pool 198k", "deberta": "Single (Official)", "pairwise_ab": "None", "sibling_style": "None", "atlas_margin": "0.0", "sinkhorn": "0.50 / Mix 0.35", "highlight": "銀メダル圏突入"},
-        {"version": "V39", "track": "Track 1", "score": "0.666", "data_pool": "Open Pool v11 (Extra 49k)", "deberta": "Single (Official)", "pairwise_ab": "None", "sibling_style": "None", "atlas_margin": "0.0", "sinkhorn": "0.50 / Mix 0.35", "highlight": "データセット高品質化"},
-        {"version": "V40", "track": "Track 1", "score": "0.666", "data_pool": "Open Pool v11 Clean", "deberta": "Single (Official)", "pairwise_ab": "None", "sibling_style": "None", "atlas_margin": "0.32", "sinkhorn": "0.50 / Mix 0.35", "highlight": "ルーティング汚染行排除"},
-        {"version": "V41", "track": "Track 2", "score": "0.663", "data_pool": "Open Pool v11 190k + 49k", "deberta": "Dual (0.75 Pool)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "V40A Residual (0.10)", "atlas_margin": "0.32", "sinkhorn": "0.30 / Mix 0.35", "highlight": "Sinkhorn緩和による微減"},
-        {"version": "V42", "track": "Track 1", "score": "0.663", "data_pool": "Open Pool v11 190k + 49k", "deberta": "Dual (0.75 Pool)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "Residual (0.10)", "atlas_margin": "0.32", "sinkhorn": "0.50 / Mix 0.42", "highlight": "強い正則化+Mix0.42"},
-        {"version": "V42-B", "track": "Track 1", "score": "0.663", "data_pool": "Open Pool v11 190k + 49k", "deberta": "Dual (0.75 Pool)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "Residual (0.05)", "atlas_margin": "0.32", "sinkhorn": "0.50 / Mix 0.42", "highlight": "Sibling保守版"},
-        {"version": "V42-C", "track": "Track 1", "score": "0.661", "data_pool": "Open Pool v11 190k + 49k", "deberta": "Dual (0.75 Pool)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "Residual (0.10)", "atlas_margin": "0.32", "sinkhorn": "0.50 / Mix 0.35", "highlight": "V40完全同条件アンカー"},
-        {"version": "V43 (T1)", "track": "Track 1", "score": "Pending", "data_pool": "Open Pool v11 Clean", "deberta": "Single (Official)", "pairwise_ab": "None", "sibling_style": "None", "atlas_margin": "0.32", "sinkhorn": "0.50 / Mix 0.42", "highlight": "【本命】V40復帰+OOF最適化Mix0.42 (推論中)"},
-        {"version": "V43 (T2)", "track": "Track 2", "score": "Pending", "data_pool": "Open Pool v11 + areebbb 1x", "deberta": "Single (Official)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "Residual (0.10)", "atlas_margin": "0.32", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【検証】公開0.668再現 (推論中)"}
+        {"version": "V39", "track": "Track 1", "score": "0.666", "data_pool": "Open Pool v13 (190.5k)", "deberta": "Single (Official)", "pairwise_ab": "None", "sibling_style": "None", "atlas_margin": "0.0", "sinkhorn": "0.50 / Mix 0.35", "highlight": "データセット高品質化"},
+        {"version": "V40", "track": "Track 1", "score": "0.666", "data_pool": "Open Pool v13 + Afify v9", "deberta": "Single (Official)", "pairwise_ab": "None", "sibling_style": "None", "atlas_margin": "0.32", "sinkhorn": "0.50 / Mix 0.35", "highlight": "3回連続0.666再現 (DS更新前)"},
+        {"version": "V41", "track": "Track 2", "score": "0.663", "data_pool": "Open Pool Mutated (Nov 4)", "deberta": "Dual (0.75 Pool)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "V40A Residual (0.10)", "atlas_margin": "0.32", "sinkhorn": "0.30 / Mix 0.35", "highlight": "外部DS更新によるドリフト開始"},
+        {"version": "V42", "track": "Track 1", "score": "0.663", "data_pool": "Open Pool Mutated (Nov 4)", "deberta": "Dual (0.75 Pool)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "Residual (0.10)", "atlas_margin": "0.32", "sinkhorn": "0.50 / Mix 0.42", "highlight": "Mix0.42で+0.002下支え"},
+        {"version": "V42-B", "track": "Track 1", "score": "0.663", "data_pool": "Open Pool Mutated (Nov 4)", "deberta": "Dual (0.75 Pool)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "Residual (0.05)", "atlas_margin": "0.32", "sinkhorn": "0.50 / Mix 0.42", "highlight": "Sibling保守版"},
+        {"version": "V42-C", "track": "Track 1", "score": "0.661", "data_pool": "Open Pool Mutated (Nov 4)", "deberta": "Dual (0.75 Pool)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "Residual (0.10)", "atlas_margin": "0.32", "sinkhorn": "0.50 / Mix 0.35", "highlight": "Mix0.35戻しで0.661"},
+        {"version": "V43 (T1)", "track": "Track 1", "score": "0.662", "data_pool": "Open Pool v15 (213k) + Afify v11", "deberta": "Single (Official)", "pairwise_ab": "None", "sibling_style": "None", "atlas_margin": "0.32", "sinkhorn": "0.50 / Mix 0.42", "highlight": "Mix 0.42効果でT2に+0.001勝利 (DS汚染特定)"},
+        {"version": "V43 (T2)", "track": "Track 2", "score": "0.661", "data_pool": "Open Pool v15 (213k) + Afify v11", "deberta": "Single (Official)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "Residual (0.10)", "atlas_margin": "0.32", "sinkhorn": "0.30 / Mix 0.35", "highlight": "公開0.668無改変でもDS更新により0.661へ急落"}
     ]
 
     # 5. Extract Markdown Reports
