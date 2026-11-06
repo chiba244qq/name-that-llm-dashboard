@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-11-06 14:08:50 JST",
+  "updated_at": "2026-11-06 14:13:58 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 4827,
-    "my_rank": 436,
+    "total_teams": 4828,
+    "my_rank": 437,
     "my_score": 0.666,
     "medal": "Bronze",
-    "top_percent": 9.03,
+    "top_percent": 9.05,
     "gold_cutoff": 0.706,
     "silver_cutoff": 0.668,
     "silver_rank_cutoff": 241,
