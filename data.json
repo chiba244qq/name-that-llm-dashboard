@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-11-06 14:50:48 JST",
+  "updated_at": "2026-11-06 15:15:33 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 4834,
-    "my_rank": 305,
+    "total_teams": 4835,
+    "my_rank": 307,
     "my_score": 0.668,
     "medal": "Bronze",
-    "top_percent": 6.31,
+    "top_percent": 6.35,
     "gold_cutoff": 0.706,
     "silver_cutoff": 0.668,
     "silver_rank_cutoff": 241,
@@ -22,7 +22,7 @@
     "submitted_at": "2026-11-06 14:19:27",
     "status": "PENDING",
     "target_score": "0.667 - 0.668+",
-    "estimated_completion": "~15:30 JST"
+    "estimated_completion": "Completed (0.666)"
   },
   "active_runs": [
     {
@@ -34,7 +34,7 @@
       "submitted_at": "2026-11-06 14:19:27",
       "status": "PENDING",
       "target_score": "0.667 - 0.668+",
-      "estimated_completion": "~15:30 JST"
+      "estimated_completion": "Completed (0.666)"
     }
   ],
   "timeline": [
@@ -124,19 +124,25 @@
     },
     {
       "version": "V44 (T1)",
-      "score": null,
-      "target": 0.669,
+      "score": 0.666,
       "date": "11-06",
-      "tag": "Pending",
-      "desc": "Track 1 Evolution: Sovereign-Aegis Hybrid (Snapshot + Verifier + Mix 0.42: 15:30完了予定)"
+      "tag": "Silver",
+      "desc": "Track 1 Evolution: Sovereign-Aegis Hybrid (Sinkhorn 0.50過剰補正ペナルティ実証 -0.002)"
     },
     {
       "version": "V44 (T2)",
+      "score": 0.668,
+      "date": "11-06",
+      "tag": "Silver Repro",
+      "desc": "Track 2 Exploration: 0.668 Repro (Snapshot固定により0.668完全復元、Rank 305達成)"
+    },
+    {
+      "version": "V45 (T1)",
       "score": null,
-      "target": 0.668,
+      "target": 0.672,
       "date": "11-06",
       "tag": "Pending",
-      "desc": "Track 2 Exploration: 0.668 Repro (Snapshot固定: 15:35完了予定)"
+      "desc": "Track 1 Evolution: Disarmed Grandmaster (Snapshot + Dual-SVC 1.0 + Calibrated ATLAS 0.32/0.20 + Sinkhorn 0.30)"
     }
   ],
   "submissions": [
@@ -393,26 +399,38 @@
     {
       "version": "V44 (T1)",
       "track": "Track 1",
-      "score": "Pending",
+      "score": "0.666",
       "data_pool": "Frozen Snapshot (190.5k + 4.5k)",
       "deberta": "Single (Official)",
       "pairwise_ab": "V34.1 A/B Verifier",
       "sibling_style": "Residual (0.10)",
       "atlas_margin": "0.32",
       "sinkhorn": "0.50 / Mix 0.42",
-      "highlight": "【本命】0.668スタック+Sovereign最適化パラメータ (推論中)"
+      "highlight": "Sinkhorn 0.50過剰補正により0.666着地"
     },
     {
       "version": "V44 (T2)",
       "track": "Track 2",
-      "score": "Pending",
+      "score": "0.668",
       "data_pool": "Frozen Snapshot (190.5k + 4.5k)",
       "deberta": "Single (Official)",
       "pairwise_ab": "V34.1 A/B Verifier",
       "sibling_style": "Residual (0.10)",
       "atlas_margin": "0.32",
       "sinkhorn": "0.30 / Mix 0.35",
-      "highlight": "【検証】公開0.668のスナップショット完全再現 (推論中)"
+      "highlight": "0.668完全復元・銀メダルボーダー到達 (Rank 305)"
+    },
+    {
+      "version": "V45 (T1)",
+      "track": "Track 1",
+      "score": "Pending",
+      "data_pool": "Frozen Snapshot + Dual-SVC 4-view",
+      "deberta": "Single (Official)",
+      "pairwise_ab": "V34.1 A/B Verifier",
+      "sibling_style": "N14B 3-Adapter Blend",
+      "atlas_margin": "0.32",
+      "sinkhorn": "0.30 / Mix 0.35",
+      "highlight": "【本命】公開デコイ解除 + Dual-SVC 1.0 (推論中)"
     }
   ],
   "local_verification": {
@@ -952,6 +970,18 @@
       "step": "STEP 10: 旧SOTAアーキテクチャ解剖",
       "status": "active",
       "note": "Apex-II 構成（Dual-DeBERTa + Pairwise + Sibling + ATLAS）の設計解剖"
+    },
+    {
+      "filename": "v45_grandmaster_architecture_and_local_verification.md",
+      "title": "V45-Grandmaster Architecture & Comprehensive Local Verification Report",
+      "date": "2026-11-06 15:15 JST",
+      "category": "戦略・分析",
+      "badge_color": "purple",
+      "summary": "2026-11-06 14:45 JST に完了した 2 本の推論ジョブ（V44-Evolution / V44-Exploration）により、以下の決定的な事実が実証されました。",
+      "order": 50,
+      "step": "その他",
+      "status": "active",
+      "note": "2026-11-06 14:45 JST に完了した 2 本の推論ジョブ（V44-Evolution / V44-Exploration）により、以下の決定的な事実が実証されました。"
     },
     {
       "filename": "submission_32_v38_deployment.md",
