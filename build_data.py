@@ -378,8 +378,8 @@ def main():
         top_pct = round((my_rank / total_teams) * 100, 2)
 
     # 3. Evolution timeline
-    v45_sub = next((s for s in sub_list if ("V45 Evolution" in s["description"] or "0675" in s["description"]) and "COMPLETE" in s["status"] and s.get("public_score")), None)
-    v45_score = float(v45_sub["public_score"]) if (v45_sub and str(v45_sub.get("public_score", "")).strip() not in ["None", ""]) else None
+    v45_sub = next((s for s in sub_list if ("V45 Evolution" in s["description"] or "0675" in s["description"]) and "COMPLETE" in s["status"] and s.get("score") is not None), None)
+    v45_score = float(v45_sub["score"]) if v45_sub else None
 
     timeline = [
         {"version": "V28", "score": 0.662, "date": "10-31", "tag": "Bronze", "desc": "Sinkhorn 0.50 + ATLAS 20% (ブロンズ同点密集)"},

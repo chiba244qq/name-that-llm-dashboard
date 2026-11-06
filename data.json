@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-11-06 23:09:21 JST",
+  "updated_at": "2026-11-06 23:35:50 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 4884,
-    "my_rank": 374,
+    "total_teams": 4886,
+    "my_rank": 379,
     "my_score": 0.668,
     "medal": "Bronze",
-    "top_percent": 7.66,
+    "top_percent": 7.76,
     "gold_cutoff": 0.708,
     "silver_cutoff": 0.668,
     "silver_rank_cutoff": 244,
@@ -116,11 +116,11 @@
     },
     {
       "version": "V45 (T1)",
-      "score": null,
+      "score": 0.667,
       "target": 0.672,
       "date": "11-06",
       "tag": "Pending",
-      "desc": "Track 1 Evolution: Disarmed Grandmaster (Snapshot + Dual-SVC 1.0 + Calibrated ATLAS 0.32/0.20 + Sinkhorn 0.30: 推論中)"
+      "desc": "Track 1 Evolution: Disarmed Grandmaster (Snapshot + Dual-SVC 1.0 + Calibrated ATLAS 0.32/0.20 + Sinkhorn 0.30: 0.667)"
     }
   ],
   "submissions": [
@@ -401,14 +401,14 @@
     {
       "version": "V45 (T1)",
       "track": "Track 1",
-      "score": "Pending",
+      "score": "0.667",
       "data_pool": "Frozen Snapshot + Dual-SVC 4-view",
       "deberta": "Single (Official)",
       "pairwise_ab": "V34.1 A/B Verifier",
       "sibling_style": "N14B 3-Adapter Blend",
       "atlas_margin": "0.32",
       "sinkhorn": "0.30 / Mix 0.35",
-      "highlight": "【本命】公開デコイ解除 + Dual-SVC 1.0 (推論中)"
+      "highlight": "【本命】公開デコイ解除 + Dual-SVC 1.0 (着地: 0.667)"
     }
   ],
   "local_verification": {
