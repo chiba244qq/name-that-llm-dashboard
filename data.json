@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-11-06 23:35:50 JST",
+  "updated_at": "2026-11-06 23:44:36 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 4886,
-    "my_rank": 379,
+    "total_teams": 4887,
+    "my_rank": 381,
     "my_score": 0.668,
     "medal": "Bronze",
-    "top_percent": 7.76,
+    "top_percent": 7.8,
     "gold_cutoff": 0.708,
     "silver_cutoff": 0.668,
     "silver_rank_cutoff": 244,
@@ -117,10 +117,17 @@
     {
       "version": "V45 (T1)",
       "score": 0.667,
-      "target": 0.672,
       "date": "11-06",
+      "tag": "Decoy Trap",
+      "desc": "Track 1 Evolution: Dual-SVC 1.0 + N14B 3-Adapter (0.667着地、主力N14B希釈特定)"
+    },
+    {
+      "version": "V46 (T1)",
+      "score": null,
+      "target": 0.67,
+      "date": "11-07",
       "tag": "Pending",
-      "desc": "Track 1 Evolution: Disarmed Grandmaster (Snapshot + Dual-SVC 1.0 + Calibrated ATLAS 0.32/0.20 + Sinkhorn 0.30: 0.667)"
+      "desc": "Track 1 Evolution: Sovereign Refined (純N14B 2.5復元 + Mix 0.45 + Pairwise 0.10: 推論中)"
     }
   ],
   "submissions": [
@@ -408,7 +415,19 @@
       "sibling_style": "N14B 3-Adapter Blend",
       "atlas_margin": "0.32",
       "sinkhorn": "0.30 / Mix 0.35",
-      "highlight": "【本命】公開デコイ解除 + Dual-SVC 1.0 (着地: 0.667)"
+      "highlight": "公開デコイ解除も主力N14B希釈により0.667着地"
+    },
+    {
+      "version": "V46 (T1)",
+      "track": "Track 1",
+      "score": "Pending",
+      "data_pool": "Frozen Snapshot (190.5k + 4.5k)",
+      "deberta": "Single (Official)",
+      "pairwise_ab": "V34.1 A/B Verifier",
+      "sibling_style": "Undiluted N14B (2.5)",
+      "atlas_margin": "0.32",
+      "sinkhorn": "0.30 / Mix 0.45",
+      "highlight": "【本命】0.668骨格復元 + Target Mix 0.45最適化 (推論中)"
     }
   ],
   "local_verification": {

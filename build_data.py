@@ -293,11 +293,16 @@ def main():
             params_summary = ""
             track_label = "Track 1 (Evolution)"
             est_comp = "~15:30 JST"
-            if "V45 Evolution" in desc or "V45" in desc or "0675" in desc:
+            if "V46" in desc or "0676" in desc:
+                ver_name = "V46 (Sovereign Refined)"
+                params_summary = "Undiluted N14B 2.5 | Target Mix 0.45 | Sinkhorn 0.30 | Pairwise 0.10 | 0.668 Base"
+                track_label = "Track 1 (Evolution)"
+                est_comp = "~05:15 JST"
+            elif "V45 Evolution" in desc or "V45" in desc or "0675" in desc:
                 ver_name = "V45 (Disarmed Grandmaster)"
                 params_summary = "Snapshot + Dual-SVC 1.0 + Calibrated ATLAS 0.32/0.20 + Sinkhorn 0.30"
                 track_label = "Track 1 (Evolution)"
-                est_comp = "~20:45 JST"
+                est_comp = "Completed (0.667)"
             elif "V44 Evolution" in desc or "V44-Evolution" in desc:
                 ver_name = "V44 (Sovereign-Aegis Hybrid)"
                 params_summary = "Frozen Snapshot | Sinkhorn 0.50 | Mix 0.42 | Pairwise Verifier | Single-DeBERTa"
@@ -381,6 +386,9 @@ def main():
     v45_sub = next((s for s in sub_list if ("V45 Evolution" in s["description"] or "0675" in s["description"]) and "COMPLETE" in s["status"] and s.get("score") is not None), None)
     v45_score = float(v45_sub["score"]) if v45_sub else None
 
+    v46_sub = next((s for s in sub_list if ("V46" in s["description"] or "0676" in s["description"]) and "COMPLETE" in s["status"] and s.get("score") is not None), None)
+    v46_score = float(v46_sub["score"]) if v46_sub else None
+
     timeline = [
         {"version": "V28", "score": 0.662, "date": "10-31", "tag": "Bronze", "desc": "Sinkhorn 0.50 + ATLAS 20% (ブロンズ同点密集)"},
         {"version": "V31", "score": 0.662, "date": "11-01", "tag": "Bronze", "desc": "2xT4 DP Fast Run + ATLAS 20%"},
@@ -396,7 +404,8 @@ def main():
         {"version": "V43 (T2)", "score": 0.661, "date": "11-05", "tag": "Dataset Drift", "desc": "Track 2 Exploration: 0.668 Repro (CLI push時の外部DS強制最新化により0.661へ低下)"},
         {"version": "V44 (T1)", "score": 0.666, "date": "11-06", "tag": "Silver", "desc": "Track 1 Evolution: Sovereign-Aegis Hybrid (Sinkhorn 0.50過剰補正ペナルティ実証 -0.002)"},
         {"version": "V44 (T2)", "score": 0.668, "date": "11-06", "tag": "Silver Repro", "desc": "Track 2 Exploration: 0.668 Repro (Snapshot固定により0.668完全復元、Rank 305達成)"},
-        {"version": "V45 (T1)", "score": v45_score, "target": 0.672, "date": "11-06", "tag": "Silver SOTA" if v45_score and v45_score >= 0.670 else "Pending", "desc": f"Track 1 Evolution: Disarmed Grandmaster (Snapshot + Dual-SVC 1.0 + Calibrated ATLAS 0.32/0.20 + Sinkhorn 0.30: {v45_score if v45_score else '推論中'})"}
+        {"version": "V45 (T1)", "score": v45_score, "date": "11-06", "tag": "Decoy Trap", "desc": f"Track 1 Evolution: Dual-SVC 1.0 + N14B 3-Adapter ({v45_score}着地、主力N14B希釈特定)"},
+        {"version": "V46 (T1)", "score": v46_score, "target": 0.670, "date": "11-07", "tag": "Silver SOTA" if v46_score and v46_score >= 0.670 else "Pending", "desc": f"Track 1 Evolution: Sovereign Refined (純N14B 2.5復元 + Mix 0.45 + Pairwise 0.10: {v46_score if v46_score else '推論中'})"}
     ]
 
     # 4. Architecture comparison matrix
@@ -412,7 +421,8 @@ def main():
         {"version": "V43 (T2)", "track": "Track 2", "score": "0.661", "data_pool": "Open Pool v15 (213k) + Afify v11", "deberta": "Single (Official)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "Residual (0.10)", "atlas_margin": "0.32", "sinkhorn": "0.30 / Mix 0.35", "highlight": "公開0.668無改変でもDS更新により0.661へ急落"},
         {"version": "V44 (T1)", "track": "Track 1", "score": "0.666", "data_pool": "Frozen Snapshot (190.5k + 4.5k)", "deberta": "Single (Official)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "Residual (0.10)", "atlas_margin": "0.32", "sinkhorn": "0.50 / Mix 0.42", "highlight": "Sinkhorn 0.50過剰補正により0.666着地"},
         {"version": "V44 (T2)", "track": "Track 2", "score": "0.668", "data_pool": "Frozen Snapshot (190.5k + 4.5k)", "deberta": "Single (Official)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "Residual (0.10)", "atlas_margin": "0.32", "sinkhorn": "0.30 / Mix 0.35", "highlight": "0.668完全復元・銀メダルボーダー到達 (Rank 305)"},
-        {"version": "V45 (T1)", "track": "Track 1", "score": str(v45_score) if v45_score else "Pending", "data_pool": "Frozen Snapshot + Dual-SVC 4-view", "deberta": "Single (Official)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "N14B 3-Adapter Blend", "atlas_margin": "0.32", "sinkhorn": "0.30 / Mix 0.35", "highlight": f"【本命】公開デコイ解除 + Dual-SVC 1.0 ({'着地: ' + str(v45_score) if v45_score else '推論中'})"}
+        {"version": "V45 (T1)", "track": "Track 1", "score": str(v45_score) if v45_score else "Pending", "data_pool": "Frozen Snapshot + Dual-SVC 4-view", "deberta": "Single (Official)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "N14B 3-Adapter Blend", "atlas_margin": "0.32", "sinkhorn": "0.30 / Mix 0.35", "highlight": f"公開デコイ解除も主力N14B希釈により0.667着地"},
+        {"version": "V46 (T1)", "track": "Track 1", "score": str(v46_score) if v46_score else "Pending", "data_pool": "Frozen Snapshot (190.5k + 4.5k)", "deberta": "Single (Official)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "Undiluted N14B (2.5)", "atlas_margin": "0.32", "sinkhorn": "0.30 / Mix 0.45", "highlight": f"【本命】0.668骨格復元 + Target Mix 0.45最適化 ({'着地: ' + str(v46_score) if v46_score else '推論中'})"}
     ]
 
     # 5. Extract Markdown Reports
