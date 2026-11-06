@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-11-06 14:40:18 JST",
+  "updated_at": "2026-11-06 14:45:22 JST",
   "competition": {
     "name": "Name That LLM",
     "total_teams": 4833,
-    "my_rank": 439,
-    "my_score": 0.666,
+    "my_rank": 305,
+    "my_score": 0.668,
     "medal": "Bronze",
-    "top_percent": 9.08,
+    "top_percent": 6.31,
     "gold_cutoff": 0.706,
     "silver_cutoff": 0.668,
     "silver_rank_cutoff": 241,
@@ -35,17 +35,6 @@
       "status": "PENDING",
       "target_score": "0.667 - 0.668+",
       "estimated_completion": "~15:30 JST"
-    },
-    {
-      "ref": 58037920,
-      "version": "V44 (0.668 Frozen Repro)",
-      "track": "Track 2 (Exploration)",
-      "description": "NTL 0674 V44 Exploration (0.668 Repro: Frozen Snapshot + Single-DeBERTa + Sinkhorn 0.30 + Pairwise Verifier)",
-      "params": "Frozen Snapshot | Sinkhorn 0.30 | Mix 0.35 | Pairwise Verifier | areebbb 1x",
-      "submitted_at": "2026-11-06 08:39:32",
-      "status": "PENDING",
-      "target_score": "0.667 - 0.668+",
-      "estimated_completion": "~15:35 JST"
     },
     {
       "ref": 58037914,
@@ -172,8 +161,8 @@
     {
       "ref": 58037920,
       "date": "2026-11-06 08:39:32",
-      "status": "PENDING",
-      "score": null,
+      "status": "COMPLETE",
+      "score": 0.668,
       "description": "NTL 0674 V44 Exploration (0.668 Repro: Frozen Snapshot + Single-DeBERTa + Sinkhorn 0.30 + Pairwise Verifier)"
     },
     {
