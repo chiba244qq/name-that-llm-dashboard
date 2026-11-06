@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-11-07 05:28:33 JST",
+  "updated_at": "2026-11-07 06:40:35 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 4930,
-    "my_rank": 434,
+    "total_teams": 4935,
+    "my_rank": 390,
     "my_score": 0.668,
     "medal": "Bronze",
-    "top_percent": 8.8,
+    "top_percent": 7.9,
     "gold_cutoff": 0.708,
     "silver_cutoff": 0.669,
     "silver_rank_cutoff": 246,
@@ -32,17 +32,6 @@
       "description": "NTL 0676 V46 Exploration (EXP-09: Damped Stylometry Routing + Target Mix 0.45 + Pairwise 0.10)",
       "params": "Undiluted N14B 2.5 | Target Mix 0.45 | Sinkhorn 0.30 | Pairwise 0.10 | 0.668 Base",
       "submitted_at": "2026-11-07 01:32:04",
-      "status": "PENDING",
-      "target_score": "0.667 - 0.668+",
-      "estimated_completion": "~05:15 JST"
-    },
-    {
-      "ref": 58061105,
-      "version": "V46 (Sovereign Refined)",
-      "track": "Track 1 (Evolution)",
-      "description": "NTL 0676 V46 Sovereign Refined (Undiluted N14B 2.5 + Clean Snapshot 0.668 + Calibrated Target Mix 0.45 + Pairwise 0.10)",
-      "params": "Undiluted N14B 2.5 | Target Mix 0.45 | Sinkhorn 0.30 | Pairwise 0.10 | 0.668 Base",
-      "submitted_at": "2026-11-06 23:51:29",
       "status": "PENDING",
       "target_score": "0.667 - 0.668+",
       "estimated_completion": "~05:15 JST"
@@ -156,11 +145,11 @@
     },
     {
       "version": "V46 (T1)",
-      "score": null,
+      "score": 0.668,
       "target": 0.67,
       "date": "11-07",
       "tag": "Pending",
-      "desc": "Track 1 Evolution: Sovereign Refined (純N14B 2.5復元 + Mix 0.45 + Pairwise 0.10: 推論中)"
+      "desc": "Track 1 Evolution: Sovereign Refined (純N14B 2.5復元 + Mix 0.45 + Pairwise 0.10: 0.668)"
     }
   ],
   "submissions": [
@@ -174,8 +163,8 @@
     {
       "ref": 58061105,
       "date": "2026-11-06 23:51:29",
-      "status": "PENDING",
-      "score": null,
+      "status": "COMPLETE",
+      "score": 0.668,
       "description": "NTL 0676 V46 Sovereign Refined (Undiluted N14B 2.5 + Clean Snapshot 0.668 + Calibrated Target Mix 0.45 + Pairwise 0.10)"
     },
     {
@@ -453,14 +442,14 @@
     {
       "version": "V46 (T1)",
       "track": "Track 1",
-      "score": "Pending",
+      "score": "0.668",
       "data_pool": "Frozen Snapshot (190.5k + 4.5k)",
       "deberta": "Single (Official)",
       "pairwise_ab": "V34.1 A/B Verifier",
       "sibling_style": "Undiluted N14B (2.5)",
       "atlas_margin": "0.32",
       "sinkhorn": "0.30 / Mix 0.45",
-      "highlight": "【本命】0.668骨格復元 + Target Mix 0.45最適化 (推論中)"
+      "highlight": "【本命】0.668骨格復元 + Target Mix 0.45最適化 (着地: 0.668)"
     }
   ],
   "local_verification": {
