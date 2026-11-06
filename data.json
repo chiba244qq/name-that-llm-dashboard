@@ -1,42 +1,20 @@
 {
-  "updated_at": "2026-11-06 21:49:15 JST",
+  "updated_at": "2026-11-06 23:09:21 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 4877,
-    "my_rank": 361,
+    "total_teams": 4884,
+    "my_rank": 374,
     "my_score": 0.668,
     "medal": "Bronze",
-    "top_percent": 7.4,
+    "top_percent": 7.66,
     "gold_cutoff": 0.708,
     "silver_cutoff": 0.668,
-    "silver_rank_cutoff": 243,
-    "bronze_cutoff": 0.666,
-    "bronze_rank_cutoff": 487
+    "silver_rank_cutoff": 244,
+    "bronze_cutoff": 0.667,
+    "bronze_rank_cutoff": 488
   },
-  "running_submission": {
-    "ref": 58048220,
-    "version": "V45 (Disarmed Grandmaster)",
-    "track": "Track 1 (Evolution)",
-    "description": "NTL 0675 V45 Evolution (Disarmed Grandmaster: Snapshot + Dual-SVC 1.0 + Calibrated ATLAS 0.32/0.20 + Sinkhorn 0.30)",
-    "params": "Snapshot + Dual-SVC 1.0 + Calibrated ATLAS 0.32/0.20 + Sinkhorn 0.30",
-    "submitted_at": "2026-11-06 15:16:30",
-    "status": "PENDING",
-    "target_score": "0.667 - 0.668+",
-    "estimated_completion": "~20:45 JST"
-  },
-  "active_runs": [
-    {
-      "ref": 58048220,
-      "version": "V45 (Disarmed Grandmaster)",
-      "track": "Track 1 (Evolution)",
-      "description": "NTL 0675 V45 Evolution (Disarmed Grandmaster: Snapshot + Dual-SVC 1.0 + Calibrated ATLAS 0.32/0.20 + Sinkhorn 0.30)",
-      "params": "Snapshot + Dual-SVC 1.0 + Calibrated ATLAS 0.32/0.20 + Sinkhorn 0.30",
-      "submitted_at": "2026-11-06 15:16:30",
-      "status": "PENDING",
-      "target_score": "0.667 - 0.668+",
-      "estimated_completion": "~20:45 JST"
-    }
-  ],
+  "running_submission": null,
+  "active_runs": [],
   "timeline": [
     {
       "version": "V28",
@@ -149,8 +127,8 @@
     {
       "ref": 58048220,
       "date": "2026-11-06 15:16:30",
-      "status": "PENDING",
-      "score": null,
+      "status": "COMPLETE",
+      "score": 0.667,
       "description": "NTL 0675 V45 Evolution (Disarmed Grandmaster: Snapshot + Dual-SVC 1.0 + Calibrated ATLAS 0.32/0.20 + Sinkhorn 0.30)"
     },
     {
