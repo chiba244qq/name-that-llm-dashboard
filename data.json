@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-11-06 20:49:53 JST",
+  "updated_at": "2026-11-06 20:55:04 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 4872,
-    "my_rank": 355,
+    "total_teams": 4873,
+    "my_rank": 356,
     "my_score": 0.668,
     "medal": "Bronze",
-    "top_percent": 7.29,
+    "top_percent": 7.31,
     "gold_cutoff": 0.708,
     "silver_cutoff": 0.668,
     "silver_rank_cutoff": 243,
@@ -35,17 +35,6 @@
       "status": "PENDING",
       "target_score": "0.667 - 0.668+",
       "estimated_completion": "~20:45 JST"
-    },
-    {
-      "ref": 58046684,
-      "version": "V44 (Sovereign-Aegis Hybrid)",
-      "track": "Track 1 (Evolution)",
-      "description": "NTL 0674 V44 Evolution (Sovereign-Aegis Hybrid: Snapshot + Verifier + Sinkhorn 0.50 + Mix 0.42) (Pure V40 Anchor: Single-DeBERTa + ATLAS Margin 0.32 + Sinkhorn 0.50 + Mix 0.42 OOF Opt)",
-      "params": "Frozen Snapshot | Sinkhorn 0.50 | Mix 0.42 | Pairwise Verifier | Single-DeBERTa",
-      "submitted_at": "2026-11-06 14:19:27",
-      "status": "PENDING",
-      "target_score": "0.667 - 0.668+",
-      "estimated_completion": "Completed (0.666)"
     }
   ],
   "timeline": [
@@ -167,8 +156,8 @@
     {
       "ref": 58046684,
       "date": "2026-11-06 14:19:27",
-      "status": "PENDING",
-      "score": null,
+      "status": "COMPLETE",
+      "score": 0.666,
       "description": "NTL 0674 V44 Evolution (Sovereign-Aegis Hybrid: Snapshot + Verifier + Sinkhorn 0.50 + Mix 0.42) (Pure V40 Anchor: Single-DeBERTa + ATLAS Margin 0.32 + Sinkhorn 0.50 + Mix 0.42 OOF Opt)"
     },
     {
