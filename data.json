@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-11-06 15:15:33 JST",
+  "updated_at": "2026-11-06 15:17:09 JST",
   "competition": {
     "name": "Name That LLM",
     "total_teams": 4835,
-    "my_rank": 307,
+    "my_rank": 308,
     "my_score": 0.668,
     "medal": "Bronze",
-    "top_percent": 6.35,
+    "top_percent": 6.37,
     "gold_cutoff": 0.706,
     "silver_cutoff": 0.668,
     "silver_rank_cutoff": 241,
@@ -14,17 +14,28 @@
     "bronze_rank_cutoff": 483
   },
   "running_submission": {
-    "ref": 58046684,
-    "version": "V44 (Sovereign-Aegis Hybrid)",
+    "ref": 58048220,
+    "version": "V45 (Disarmed Grandmaster)",
     "track": "Track 1 (Evolution)",
-    "description": "NTL 0674 V44 Evolution (Sovereign-Aegis Hybrid: Snapshot + Verifier + Sinkhorn 0.50 + Mix 0.42) (Pure V40 Anchor: Single-DeBERTa + ATLAS Margin 0.32 + Sinkhorn 0.50 + Mix 0.42 OOF Opt)",
-    "params": "Frozen Snapshot | Sinkhorn 0.50 | Mix 0.42 | Pairwise Verifier | Single-DeBERTa",
-    "submitted_at": "2026-11-06 14:19:27",
+    "description": "NTL 0675 V45 Evolution (Disarmed Grandmaster: Snapshot + Dual-SVC 1.0 + Calibrated ATLAS 0.32/0.20 + Sinkhorn 0.30)",
+    "params": "Snapshot + Dual-SVC 1.0 + Calibrated ATLAS 0.32/0.20 + Sinkhorn 0.30",
+    "submitted_at": "2026-11-06 15:16:30",
     "status": "PENDING",
     "target_score": "0.667 - 0.668+",
-    "estimated_completion": "Completed (0.666)"
+    "estimated_completion": "~20:45 JST"
   },
   "active_runs": [
+    {
+      "ref": 58048220,
+      "version": "V45 (Disarmed Grandmaster)",
+      "track": "Track 1 (Evolution)",
+      "description": "NTL 0675 V45 Evolution (Disarmed Grandmaster: Snapshot + Dual-SVC 1.0 + Calibrated ATLAS 0.32/0.20 + Sinkhorn 0.30)",
+      "params": "Snapshot + Dual-SVC 1.0 + Calibrated ATLAS 0.32/0.20 + Sinkhorn 0.30",
+      "submitted_at": "2026-11-06 15:16:30",
+      "status": "PENDING",
+      "target_score": "0.667 - 0.668+",
+      "estimated_completion": "~20:45 JST"
+    },
     {
       "ref": 58046684,
       "version": "V44 (Sovereign-Aegis Hybrid)",
@@ -146,6 +157,13 @@
     }
   ],
   "submissions": [
+    {
+      "ref": 58048220,
+      "date": "2026-11-06 15:16:30",
+      "status": "PENDING",
+      "score": null,
+      "description": "NTL 0675 V45 Evolution (Disarmed Grandmaster: Snapshot + Dual-SVC 1.0 + Calibrated ATLAS 0.32/0.20 + Sinkhorn 0.30)"
+    },
     {
       "ref": 58046684,
       "date": "2026-11-06 14:19:27",
@@ -278,13 +296,6 @@
       "status": "COMPLETE",
       "score": 0.665,
       "description": "NTL 0664 V38 OpenPool-SVC12 Sinkhorn50 (V35 + OpenPool 198k + SVC 12 + Sinkhorn 0.50)"
-    },
-    {
-      "ref": 57885009,
-      "date": "2026-11-02 06:59:49",
-      "status": "COMPLETE",
-      "score": 0.659,
-      "description": "NTL 0664 V37 Sibling Calib (V31 + 2xT4 DP + ATLAS 20% + Sinkhorn 0.50 + Sibling Disambiguation)"
     }
   ],
   "architecture_matrix": [
