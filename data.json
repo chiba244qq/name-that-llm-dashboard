@@ -1,20 +1,42 @@
 {
-  "updated_at": "2026-11-06 23:44:36 JST",
+  "updated_at": "2026-11-06 23:52:07 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 4887,
-    "my_rank": 381,
+    "total_teams": 4888,
+    "my_rank": 385,
     "my_score": 0.668,
     "medal": "Bronze",
-    "top_percent": 7.8,
+    "top_percent": 7.88,
     "gold_cutoff": 0.708,
     "silver_cutoff": 0.668,
     "silver_rank_cutoff": 244,
     "bronze_cutoff": 0.667,
     "bronze_rank_cutoff": 488
   },
-  "running_submission": null,
-  "active_runs": [],
+  "running_submission": {
+    "ref": 58061105,
+    "version": "V46 (Sovereign Refined)",
+    "track": "Track 1 (Evolution)",
+    "description": "NTL 0676 V46 Sovereign Refined (Undiluted N14B 2.5 + Clean Snapshot 0.668 + Calibrated Target Mix 0.45 + Pairwise 0.10)",
+    "params": "Undiluted N14B 2.5 | Target Mix 0.45 | Sinkhorn 0.30 | Pairwise 0.10 | 0.668 Base",
+    "submitted_at": "2026-11-06 23:51:29",
+    "status": "PENDING",
+    "target_score": "0.667 - 0.668+",
+    "estimated_completion": "~05:15 JST"
+  },
+  "active_runs": [
+    {
+      "ref": 58061105,
+      "version": "V46 (Sovereign Refined)",
+      "track": "Track 1 (Evolution)",
+      "description": "NTL 0676 V46 Sovereign Refined (Undiluted N14B 2.5 + Clean Snapshot 0.668 + Calibrated Target Mix 0.45 + Pairwise 0.10)",
+      "params": "Undiluted N14B 2.5 | Target Mix 0.45 | Sinkhorn 0.30 | Pairwise 0.10 | 0.668 Base",
+      "submitted_at": "2026-11-06 23:51:29",
+      "status": "PENDING",
+      "target_score": "0.667 - 0.668+",
+      "estimated_completion": "~05:15 JST"
+    }
+  ],
   "timeline": [
     {
       "version": "V28",
@@ -131,6 +153,13 @@
     }
   ],
   "submissions": [
+    {
+      "ref": 58061105,
+      "date": "2026-11-06 23:51:29",
+      "status": "PENDING",
+      "score": null,
+      "description": "NTL 0676 V46 Sovereign Refined (Undiluted N14B 2.5 + Clean Snapshot 0.668 + Calibrated Target Mix 0.45 + Pairwise 0.10)"
+    },
     {
       "ref": 58048220,
       "date": "2026-11-06 15:16:30",
@@ -263,13 +292,6 @@
       "status": "COMPLETE",
       "score": 0.666,
       "description": "NTL 0666 V39 Extra49k Sinkhorn50 (V38 0.665 + OpenPool v11 Extra 49k + Sinkhorn 0.50)"
-    },
-    {
-      "ref": 57897658,
-      "date": "2026-11-02 15:11:10",
-      "status": "COMPLETE",
-      "score": 0.665,
-      "description": "NTL 0664 V38 OpenPool-SVC12 Sinkhorn50 (V35 + OpenPool 198k + SVC 12 + Sinkhorn 0.50)"
     }
   ],
   "architecture_matrix": [
