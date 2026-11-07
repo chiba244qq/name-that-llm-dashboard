@@ -1,42 +1,20 @@
 {
-  "updated_at": "2026-11-07 15:35:38 JST",
+  "updated_at": "2026-11-07 17:42:09 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 4966,
-    "my_rank": 439,
+    "total_teams": 4979,
+    "my_rank": 464,
     "my_score": 0.668,
     "medal": "Bronze",
-    "top_percent": 8.84,
-    "gold_cutoff": 0.708,
+    "top_percent": 9.32,
+    "gold_cutoff": 0.71,
     "silver_cutoff": 0.669,
     "silver_rank_cutoff": 248,
     "bronze_cutoff": 0.668,
-    "bronze_rank_cutoff": 496
+    "bronze_rank_cutoff": 497
   },
-  "running_submission": {
-    "ref": 58074482,
-    "version": "In Progress",
-    "track": "Track 1 (Evolution)",
-    "description": "NTL 0677 V47 Evolution (0.668 Sovereign + Amanatar 45k Clean SVC Bank w=1.5 + Mix 0.45 + Pairwise 0.10)",
-    "params": "",
-    "submitted_at": "2026-11-07 09:57:16",
-    "status": "PENDING",
-    "target_score": "0.667 - 0.668+",
-    "estimated_completion": "~15:30 JST"
-  },
-  "active_runs": [
-    {
-      "ref": 58074482,
-      "version": "In Progress",
-      "track": "Track 1 (Evolution)",
-      "description": "NTL 0677 V47 Evolution (0.668 Sovereign + Amanatar 45k Clean SVC Bank w=1.5 + Mix 0.45 + Pairwise 0.10)",
-      "params": "",
-      "submitted_at": "2026-11-07 09:57:16",
-      "status": "PENDING",
-      "target_score": "0.667 - 0.668+",
-      "estimated_completion": "~15:30 JST"
-    }
-  ],
+  "running_submission": null,
+  "active_runs": [],
   "timeline": [
     {
       "version": "V28",
@@ -156,8 +134,8 @@
     {
       "ref": 58074482,
       "date": "2026-11-07 09:57:16",
-      "status": "PENDING",
-      "score": null,
+      "status": "COMPLETE",
+      "score": 0.664,
       "description": "NTL 0677 V47 Evolution (0.668 Sovereign + Amanatar 45k Clean SVC Bank w=1.5 + Mix 0.45 + Pairwise 0.10)"
     },
     {
