@@ -1,42 +1,20 @@
 {
-  "updated_at": "2026-11-08 02:17:08 JST",
+  "updated_at": "2026-11-08 06:10:50 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 5031,
-    "my_rank": 534,
-    "my_score": 0.668,
-    "medal": "No Medal",
-    "top_percent": 10.61,
-    "gold_cutoff": 0.712,
-    "silver_cutoff": 0.669,
-    "silver_rank_cutoff": 251,
+    "total_teams": 5052,
+    "my_rank": 268,
+    "my_score": 0.67,
+    "medal": "Bronze",
+    "top_percent": 5.3,
+    "gold_cutoff": 0.713,
+    "silver_cutoff": 0.67,
+    "silver_rank_cutoff": 252,
     "bronze_cutoff": 0.668,
-    "bronze_rank_cutoff": 503
+    "bronze_rank_cutoff": 505
   },
-  "running_submission": {
-    "ref": 58090759,
-    "version": "In Progress",
-    "track": "Track 1 (Evolution)",
-    "description": "NTL 0678 V48 Apex (0.670 DeBERTa-v3 Classifier w=2.2 + Tuned Dual-SVC 6.0/4.0 + ATLAS 0.20 + Sinkhorn 0.30)",
-    "params": "",
-    "submitted_at": "2026-11-07 20:52:34",
-    "status": "PENDING",
-    "target_score": "0.667 - 0.668+",
-    "estimated_completion": "~15:30 JST"
-  },
-  "active_runs": [
-    {
-      "ref": 58090759,
-      "version": "In Progress",
-      "track": "Track 1 (Evolution)",
-      "description": "NTL 0678 V48 Apex (0.670 DeBERTa-v3 Classifier w=2.2 + Tuned Dual-SVC 6.0/4.0 + ATLAS 0.20 + Sinkhorn 0.30)",
-      "params": "",
-      "submitted_at": "2026-11-07 20:52:34",
-      "status": "PENDING",
-      "target_score": "0.667 - 0.668+",
-      "estimated_completion": "~15:30 JST"
-    }
-  ],
+  "running_submission": null,
+  "active_runs": [],
   "timeline": [
     {
       "version": "V28",
@@ -156,8 +134,8 @@
     {
       "ref": 58090759,
       "date": "2026-11-07 20:52:34",
-      "status": "PENDING",
-      "score": null,
+      "status": "COMPLETE",
+      "score": 0.67,
       "description": "NTL 0678 V48 Apex (0.670 DeBERTa-v3 Classifier w=2.2 + Tuned Dual-SVC 6.0/4.0 + ATLAS 0.20 + Sinkhorn 0.30)"
     },
     {
