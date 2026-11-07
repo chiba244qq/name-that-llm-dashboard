@@ -1,42 +1,20 @@
 {
-  "updated_at": "2026-11-07 06:40:35 JST",
+  "updated_at": "2026-11-07 09:21:46 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 4935,
-    "my_rank": 390,
+    "total_teams": 4942,
+    "my_rank": 414,
     "my_score": 0.668,
     "medal": "Bronze",
-    "top_percent": 7.9,
+    "top_percent": 8.38,
     "gold_cutoff": 0.708,
     "silver_cutoff": 0.669,
-    "silver_rank_cutoff": 246,
-    "bronze_cutoff": 0.667,
-    "bronze_rank_cutoff": 493
+    "silver_rank_cutoff": 247,
+    "bronze_cutoff": 0.668,
+    "bronze_rank_cutoff": 494
   },
-  "running_submission": {
-    "ref": 58063546,
-    "version": "V46 (Sovereign Refined)",
-    "track": "Track 1 (Evolution)",
-    "description": "NTL 0676 V46 Exploration (EXP-09: Damped Stylometry Routing + Target Mix 0.45 + Pairwise 0.10)",
-    "params": "Undiluted N14B 2.5 | Target Mix 0.45 | Sinkhorn 0.30 | Pairwise 0.10 | 0.668 Base",
-    "submitted_at": "2026-11-07 01:32:04",
-    "status": "PENDING",
-    "target_score": "0.667 - 0.668+",
-    "estimated_completion": "~05:15 JST"
-  },
-  "active_runs": [
-    {
-      "ref": 58063546,
-      "version": "V46 (Sovereign Refined)",
-      "track": "Track 1 (Evolution)",
-      "description": "NTL 0676 V46 Exploration (EXP-09: Damped Stylometry Routing + Target Mix 0.45 + Pairwise 0.10)",
-      "params": "Undiluted N14B 2.5 | Target Mix 0.45 | Sinkhorn 0.30 | Pairwise 0.10 | 0.668 Base",
-      "submitted_at": "2026-11-07 01:32:04",
-      "status": "PENDING",
-      "target_score": "0.667 - 0.668+",
-      "estimated_completion": "~05:15 JST"
-    }
-  ],
+  "running_submission": null,
+  "active_runs": [],
   "timeline": [
     {
       "version": "V28",
@@ -156,8 +134,8 @@
     {
       "ref": 58063546,
       "date": "2026-11-07 01:32:04",
-      "status": "PENDING",
-      "score": null,
+      "status": "COMPLETE",
+      "score": 0.668,
       "description": "NTL 0676 V46 Exploration (EXP-09: Damped Stylometry Routing + Target Mix 0.45 + Pairwise 0.10)"
     },
     {
