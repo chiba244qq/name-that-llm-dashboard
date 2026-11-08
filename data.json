@@ -1,42 +1,20 @@
 {
-  "updated_at": "2026-11-09 06:42:42 JST",
+  "updated_at": "2026-11-09 06:44:47 JST",
   "competition": {
     "name": "Name That LLM",
     "total_teams": 5175,
-    "my_rank": 233,
-    "my_score": 0.674,
+    "my_rank": 190,
+    "my_score": 0.68,
     "medal": "Silver",
-    "top_percent": 4.5,
+    "top_percent": 3.67,
     "gold_cutoff": 0.716,
     "silver_cutoff": 0.673,
     "silver_rank_cutoff": 258,
     "bronze_cutoff": 0.669,
     "bronze_rank_cutoff": 517
   },
-  "running_submission": {
-    "ref": 58130534,
-    "version": "In Progress",
-    "track": "Track 1 (Evolution)",
-    "description": "NTL 0682 V52 Sovereign (0.680 Native Qwen3-Embedding LoRA 40% + 5-Fold Staged Parent 60% + Dynamic Path Fix)",
-    "params": "",
-    "submitted_at": "2026-11-08 23:07:30",
-    "status": "PENDING",
-    "target_score": "0.667 - 0.668+",
-    "estimated_completion": "~15:30 JST"
-  },
-  "active_runs": [
-    {
-      "ref": 58130534,
-      "version": "In Progress",
-      "track": "Track 1 (Evolution)",
-      "description": "NTL 0682 V52 Sovereign (0.680 Native Qwen3-Embedding LoRA 40% + 5-Fold Staged Parent 60% + Dynamic Path Fix)",
-      "params": "",
-      "submitted_at": "2026-11-08 23:07:30",
-      "status": "PENDING",
-      "target_score": "0.667 - 0.668+",
-      "estimated_completion": "~15:30 JST"
-    }
-  ],
+  "running_submission": null,
+  "active_runs": [],
   "timeline": [
     {
       "version": "V28",
@@ -156,8 +134,8 @@
     {
       "ref": 58130534,
       "date": "2026-11-08 23:07:30",
-      "status": "PENDING",
-      "score": null,
+      "status": "COMPLETE",
+      "score": 0.68,
       "description": "NTL 0682 V52 Sovereign (0.680 Native Qwen3-Embedding LoRA 40% + 5-Fold Staged Parent 60% + Dynamic Path Fix)"
     },
     {
