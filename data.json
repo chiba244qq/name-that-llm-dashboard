@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-11-08 19:42:23 JST",
+  "updated_at": "2026-11-08 20:10:28 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 5106,
-    "my_rank": 119,
+    "total_teams": 5112,
+    "my_rank": 123,
     "my_score": 0.673,
     "medal": "Silver",
-    "top_percent": 2.33,
+    "top_percent": 2.41,
     "gold_cutoff": 0.715,
     "silver_cutoff": 0.673,
     "silver_rank_cutoff": 255,
     "bronze_cutoff": 0.669,
-    "bronze_rank_cutoff": 510
+    "bronze_rank_cutoff": 511
   },
   "running_submission": null,
   "active_runs": [],
@@ -971,7 +971,7 @@
     {
       "filename": "v45_grandmaster_architecture_and_local_verification.md",
       "title": "V45-Grandmaster Architecture & Comprehensive Local Verification Report",
-      "date": "2026-11-06 15:15 JST",
+      "date": "2026-11-08 20:10 JST",
       "category": "戦略・分析",
       "badge_color": "purple",
       "summary": "2026-11-06 14:45 JST に完了した 2 本の推論ジョブ（V44-Evolution / V44-Exploration）により、以下の決定的な事実が実証されました。",
@@ -979,6 +979,54 @@
       "step": "その他",
       "status": "active",
       "note": "2026-11-06 14:45 JST に完了した 2 本の推論ジョブ（V44-Evolution / V44-Exploration）により、以下の決定的な事実が実証されました。"
+    },
+    {
+      "filename": "v47_clean_svc_bank_integration_and_day_strategy.md",
+      "title": "NTL 0677 V47 Evolution: Amanatar 45k Clean SVC Bank 統合レポート",
+      "date": "2026-11-08 20:10 JST",
+      "category": "アーキテクチャ設計",
+      "badge_color": "blue",
+      "summary": "2026-11-06 夜間投入の 2 本（Track 1: V46 Sovereign Refined, Track 2: V46 Exploration）は、ともにチーム最高水準の **`0.668`** を堅牢に維持・再現した。",
+      "order": 50,
+      "step": "その他",
+      "status": "active",
+      "note": "2026-11-06 夜間投入の 2 本（Track 1: V46 Sovereign Refined, Track 2: V46 Exploration）は、ともにチーム最高水準の **`0.668`** を堅牢に維持・再現した。"
+    },
+    {
+      "filename": "v48_deberta_v3_classifier_and_dual_svc_apex_report.md",
+      "title": "NTL 0678 V48 Apex: 0.670 DeBERTa-v3 分類器 ＋ 最適比率 Dual-SVC 統合レポート",
+      "date": "2026-11-08 20:10 JST",
+      "category": "戦略・分析",
+      "badge_color": "purple",
+      "summary": "* **V47（`0.664`）の技術的教訓**:",
+      "order": 50,
+      "step": "その他",
+      "status": "active",
+      "note": "* **V47（`0.664`）の技術的教訓**:"
+    },
+    {
+      "filename": "v49_pre_sinkhorn_sibling_forensic_residual_report.md",
+      "title": "NTL 0679 V49 Evolution: Pre-Sinkhorn Sibling Forensic Residual 統合レポート",
+      "date": "2026-11-08 20:10 JST",
+      "category": "戦略・分析",
+      "badge_color": "purple",
+      "summary": "* **V48-Apex（`0.670`）の達成**:",
+      "order": 50,
+      "step": "その他",
+      "status": "active",
+      "note": "* **V48-Apex（`0.670`）の達成**:"
+    },
+    {
+      "filename": "v50_dual_encoder_modernbert_sibling_forensic_apex_report.md",
+      "title": "NTL 0680 V50 Apex: デュアル双方向エンコーダー ＋ Pre-Sinkhorn 兄弟モデル残差 統合レポート",
+      "date": "2026-11-08 20:10 JST",
+      "category": "戦略・分析",
+      "badge_color": "purple",
+      "summary": "* **V48-Apex（`0.670`）のブレイクスルー**:",
+      "order": 50,
+      "step": "その他",
+      "status": "active",
+      "note": "* **V48-Apex（`0.670`）のブレイクスルー**:"
     },
     {
       "filename": "submission_32_v38_deployment.md",
