@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-11-08 12:19:15 JST",
+  "updated_at": "2026-11-08 12:20:01 JST",
   "competition": {
     "name": "Name That LLM",
     "total_teams": 5072,
-    "my_rank": 314,
+    "my_rank": 315,
     "my_score": 0.67,
     "medal": "Bronze",
-    "top_percent": 6.19,
+    "top_percent": 6.21,
     "gold_cutoff": 0.714,
     "silver_cutoff": 0.671,
     "silver_rank_cutoff": 253,
@@ -14,17 +14,28 @@
     "bronze_rank_cutoff": 507
   },
   "running_submission": {
-    "ref": 58109880,
+    "ref": 58113113,
     "version": "In Progress",
     "track": "Track 1 (Evolution)",
-    "description": "NTL 0679 V49 Evolution (0.670 Core + Pre-Sinkhorn Sibling Forensic Residual + DeBERTa-v3 w=2.2 + Dual-SVC 6.0/4.0)",
+    "description": "NTL 0680 V50 Apex (Dual-Encoder: ModernBERT 1.4 + DeBERTa-v3 0.8 + Pre-Sinkhorn Sibling Forensic Residual + Tuned Dual-SVC 6.0/4.0)",
     "params": "",
-    "submitted_at": "2026-11-08 09:50:38",
+    "submitted_at": "2026-11-08 12:19:55",
     "status": "PENDING",
     "target_score": "0.667 - 0.668+",
     "estimated_completion": "~15:30 JST"
   },
   "active_runs": [
+    {
+      "ref": 58113113,
+      "version": "In Progress",
+      "track": "Track 1 (Evolution)",
+      "description": "NTL 0680 V50 Apex (Dual-Encoder: ModernBERT 1.4 + DeBERTa-v3 0.8 + Pre-Sinkhorn Sibling Forensic Residual + Tuned Dual-SVC 6.0/4.0)",
+      "params": "",
+      "submitted_at": "2026-11-08 12:19:55",
+      "status": "PENDING",
+      "target_score": "0.667 - 0.668+",
+      "estimated_completion": "~15:30 JST"
+    },
     {
       "ref": 58109880,
       "version": "In Progress",
@@ -154,6 +165,13 @@
   ],
   "submissions": [
     {
+      "ref": 58113113,
+      "date": "2026-11-08 12:19:55",
+      "status": "PENDING",
+      "score": null,
+      "description": "NTL 0680 V50 Apex (Dual-Encoder: ModernBERT 1.4 + DeBERTa-v3 0.8 + Pre-Sinkhorn Sibling Forensic Residual + Tuned Dual-SVC 6.0/4.0)"
+    },
+    {
       "ref": 58109880,
       "date": "2026-11-08 09:50:38",
       "status": "PENDING",
@@ -282,13 +300,6 @@
     {
       "ref": 57924834,
       "date": "2026-11-03 09:01:15",
-      "status": "COMPLETE",
-      "score": 0.666,
-      "description": "NTL 0668 V40 Apex Sovereign (V39 0.666 + Clean Gemini Routing + ATLAS Margin 0.32 + Sinkhorn 0.50)"
-    },
-    {
-      "ref": 57924679,
-      "date": "2026-11-03 09:00:11",
       "status": "COMPLETE",
       "score": 0.666,
       "description": "NTL 0668 V40 Apex Sovereign (V39 0.666 + Clean Gemini Routing + ATLAS Margin 0.32 + Sinkhorn 0.50)"
