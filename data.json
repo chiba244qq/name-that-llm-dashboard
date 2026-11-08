@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-11-09 03:18:47 JST",
+  "updated_at": "2026-11-09 03:21:52 JST",
   "competition": {
     "name": "Name That LLM",
     "total_teams": 5158,
-    "my_rank": 210,
-    "my_score": 0.673,
+    "my_rank": 197,
+    "my_score": 0.674,
     "medal": "Silver",
-    "top_percent": 4.07,
+    "top_percent": 3.82,
     "gold_cutoff": 0.716,
     "silver_cutoff": 0.673,
     "silver_rank_cutoff": 257,
@@ -32,17 +32,6 @@
       "description": "NTL 0682 V52 Sovereign (0.680 Native Qwen3-Embedding LoRA 40% + 5-Fold Staged Parent 60% + Dynamic Path Fix)",
       "params": "",
       "submitted_at": "2026-11-08 23:07:30",
-      "status": "PENDING",
-      "target_score": "0.667 - 0.668+",
-      "estimated_completion": "~15:30 JST"
-    },
-    {
-      "ref": 58126401,
-      "version": "In Progress",
-      "track": "Track 1 (Evolution)",
-      "description": "NTL 0681 V51 Apex (Dual-Encoder: ModernBERT 1.4 + DeBERTa-v3 0.8 + Pre-Sinkhorn Sibling Forensic Residual + Tuned Target Mix 0.45)",
-      "params": "",
-      "submitted_at": "2026-11-08 20:50:32",
       "status": "PENDING",
       "target_score": "0.667 - 0.668+",
       "estimated_completion": "~15:30 JST"
@@ -174,8 +163,8 @@
     {
       "ref": 58126401,
       "date": "2026-11-08 20:50:32",
-      "status": "PENDING",
-      "score": null,
+      "status": "COMPLETE",
+      "score": 0.674,
       "description": "NTL 0681 V51 Apex (Dual-Encoder: ModernBERT 1.4 + DeBERTa-v3 0.8 + Pre-Sinkhorn Sibling Forensic Residual + Tuned Target Mix 0.45)"
     },
     {
