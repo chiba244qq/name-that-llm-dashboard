@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-11-08 17:12:24 JST",
+  "updated_at": "2026-11-08 17:52:03 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 5088,
-    "my_rank": 353,
+    "total_teams": 5092,
+    "my_rank": 314,
     "my_score": 0.67,
     "medal": "Bronze",
-    "top_percent": 6.94,
+    "top_percent": 6.17,
     "gold_cutoff": 0.715,
     "silver_cutoff": 0.672,
     "silver_rank_cutoff": 254,
     "bronze_cutoff": 0.669,
-    "bronze_rank_cutoff": 508
+    "bronze_rank_cutoff": 509
   },
   "running_submission": {
     "ref": 58113113,
@@ -32,17 +32,6 @@
       "description": "NTL 0680 V50 Apex (Dual-Encoder: ModernBERT 1.4 + DeBERTa-v3 0.8 + Pre-Sinkhorn Sibling Forensic Residual + Tuned Dual-SVC 6.0/4.0)",
       "params": "",
       "submitted_at": "2026-11-08 12:19:55",
-      "status": "PENDING",
-      "target_score": "0.667 - 0.668+",
-      "estimated_completion": "~15:30 JST"
-    },
-    {
-      "ref": 58109880,
-      "version": "In Progress",
-      "track": "Track 1 (Evolution)",
-      "description": "NTL 0679 V49 Evolution (0.670 Core + Pre-Sinkhorn Sibling Forensic Residual + DeBERTa-v3 w=2.2 + Dual-SVC 6.0/4.0)",
-      "params": "",
-      "submitted_at": "2026-11-08 09:50:38",
       "status": "PENDING",
       "target_score": "0.667 - 0.668+",
       "estimated_completion": "~15:30 JST"
@@ -174,8 +163,8 @@
     {
       "ref": 58109880,
       "date": "2026-11-08 09:50:38",
-      "status": "PENDING",
-      "score": null,
+      "status": "COMPLETE",
+      "score": 0.67,
       "description": "NTL 0679 V49 Evolution (0.670 Core + Pre-Sinkhorn Sibling Forensic Residual + DeBERTa-v3 w=2.2 + Dual-SVC 6.0/4.0)"
     },
     {
