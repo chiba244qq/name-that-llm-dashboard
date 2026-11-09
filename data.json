@@ -1,20 +1,42 @@
 {
-  "updated_at": "2026-11-09 10:08:31 JST",
+  "updated_at": "2026-11-09 10:41:48 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 5182,
-    "my_rank": 197,
+    "total_teams": 5184,
+    "my_rank": 201,
     "my_score": 0.68,
     "medal": "Silver",
-    "top_percent": 3.8,
+    "top_percent": 3.88,
     "gold_cutoff": 0.718,
-    "silver_cutoff": 0.674,
+    "silver_cutoff": 0.675,
     "silver_rank_cutoff": 259,
     "bronze_cutoff": 0.67,
     "bronze_rank_cutoff": 518
   },
-  "running_submission": null,
-  "active_runs": [],
+  "running_submission": {
+    "ref": 58147368,
+    "version": "In Progress",
+    "track": "Track 1 (Evolution)",
+    "description": "NTL 0683 V53 Apex Fusion Fix (0.681 Native Qwen3-Embedding LoRA 50% + Robust Sovereign Stack)",
+    "params": "",
+    "submitted_at": "2026-11-09 10:41:40",
+    "status": "PENDING",
+    "target_score": "0.667 - 0.668+",
+    "estimated_completion": "~15:30 JST"
+  },
+  "active_runs": [
+    {
+      "ref": 58147368,
+      "version": "In Progress",
+      "track": "Track 1 (Evolution)",
+      "description": "NTL 0683 V53 Apex Fusion Fix (0.681 Native Qwen3-Embedding LoRA 50% + Robust Sovereign Stack)",
+      "params": "",
+      "submitted_at": "2026-11-09 10:41:40",
+      "status": "PENDING",
+      "target_score": "0.667 - 0.668+",
+      "estimated_completion": "~15:30 JST"
+    }
+  ],
   "timeline": [
     {
       "version": "V28",
@@ -131,6 +153,13 @@
     }
   ],
   "submissions": [
+    {
+      "ref": 58147368,
+      "date": "2026-11-09 10:41:40",
+      "status": "PENDING",
+      "score": null,
+      "description": "NTL 0683 V53 Apex Fusion Fix (0.681 Native Qwen3-Embedding LoRA 50% + Robust Sovereign Stack)"
+    },
     {
       "ref": 58145280,
       "date": "2026-11-09 09:19:12",
@@ -263,13 +292,6 @@
       "status": "COMPLETE",
       "score": 0.663,
       "description": "NTL 0670 V41 Apex II (Dual-DeBERTa + Pairwise A/B + Sibling Residual 0.10 + Sinkhorn 0.30)"
-    },
-    {
-      "ref": 57925269,
-      "date": "2026-11-03 09:04:28",
-      "status": "COMPLETE",
-      "score": 0.666,
-      "description": "NTL 0668 V40 Apex Sovereign (V39 0.666 + Clean Gemini Routing + ATLAS Margin 0.32 + Sinkhorn 0.50)"
     }
   ],
   "architecture_matrix": [
