@@ -1,20 +1,42 @@
 {
-  "updated_at": "2026-11-09 20:16:03 JST",
+  "updated_at": "2026-11-10 08:47:46 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 5226,
-    "my_rank": 232,
+    "total_teams": 5271,
+    "my_rank": 276,
     "my_score": 0.68,
-    "medal": "Silver",
-    "top_percent": 4.44,
-    "gold_cutoff": 0.72,
+    "medal": "Bronze",
+    "top_percent": 5.24,
+    "gold_cutoff": 0.723,
     "silver_cutoff": 0.68,
-    "silver_rank_cutoff": 261,
-    "bronze_cutoff": 0.672,
-    "bronze_rank_cutoff": 522
+    "silver_rank_cutoff": 263,
+    "bronze_cutoff": 0.673,
+    "bronze_rank_cutoff": 527
   },
-  "running_submission": null,
-  "active_runs": [],
+  "running_submission": {
+    "ref": 58177999,
+    "version": "In Progress",
+    "track": "Track 1 (Evolution)",
+    "description": "NTL 0684 V54 Apex Fusion (0.680 Native Qwen3-Embedding 40% + Standalone ModernBERT 1.4/DeBERTa 0.8 Cls)",
+    "params": "",
+    "submitted_at": "2026-11-10 08:47:26",
+    "status": "PENDING",
+    "target_score": "0.667 - 0.668+",
+    "estimated_completion": "~15:30 JST"
+  },
+  "active_runs": [
+    {
+      "ref": 58177999,
+      "version": "In Progress",
+      "track": "Track 1 (Evolution)",
+      "description": "NTL 0684 V54 Apex Fusion (0.680 Native Qwen3-Embedding 40% + Standalone ModernBERT 1.4/DeBERTa 0.8 Cls)",
+      "params": "",
+      "submitted_at": "2026-11-10 08:47:26",
+      "status": "PENDING",
+      "target_score": "0.667 - 0.668+",
+      "estimated_completion": "~15:30 JST"
+    }
+  ],
   "timeline": [
     {
       "version": "V28",
@@ -131,6 +153,13 @@
     }
   ],
   "submissions": [
+    {
+      "ref": 58177999,
+      "date": "2026-11-10 08:47:26",
+      "status": "PENDING",
+      "score": null,
+      "description": "NTL 0684 V54 Apex Fusion (0.680 Native Qwen3-Embedding 40% + Standalone ModernBERT 1.4/DeBERTa 0.8 Cls)"
+    },
     {
       "ref": 58147368,
       "date": "2026-11-09 10:41:40",
@@ -263,13 +292,6 @@
       "status": "COMPLETE",
       "score": 0.663,
       "description": "NTL 0672 V42-B Apex Conservative (Dual-DeBERTa + Pairwise A/B + Sibling Residual 0.05 + Sinkhorn 0.50)"
-    },
-    {
-      "ref": 57963401,
-      "date": "2026-11-04 09:00:17",
-      "status": "COMPLETE",
-      "score": 0.663,
-      "description": "NTL 0670 V41 Apex II (Dual-DeBERTa + Pairwise A/B + Sibling Residual 0.10 + Sinkhorn 0.30)"
     }
   ],
   "architecture_matrix": [
