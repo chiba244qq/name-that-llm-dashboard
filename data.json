@@ -1,42 +1,20 @@
 {
-  "updated_at": "2026-11-09 10:42:06 JST",
+  "updated_at": "2026-11-09 20:15:59 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 5184,
-    "my_rank": 201,
+    "total_teams": 5226,
+    "my_rank": 232,
     "my_score": 0.68,
     "medal": "Silver",
-    "top_percent": 3.88,
-    "gold_cutoff": 0.718,
-    "silver_cutoff": 0.675,
-    "silver_rank_cutoff": 259,
-    "bronze_cutoff": 0.67,
-    "bronze_rank_cutoff": 518
+    "top_percent": 4.44,
+    "gold_cutoff": 0.72,
+    "silver_cutoff": 0.68,
+    "silver_rank_cutoff": 261,
+    "bronze_cutoff": 0.672,
+    "bronze_rank_cutoff": 522
   },
-  "running_submission": {
-    "ref": 58147368,
-    "version": "In Progress",
-    "track": "Track 1 (Evolution)",
-    "description": "NTL 0683 V53 Apex Fusion Fix (0.681 Native Qwen3-Embedding LoRA 50% + Robust Sovereign Stack)",
-    "params": "",
-    "submitted_at": "2026-11-09 10:41:40",
-    "status": "PENDING",
-    "target_score": "0.667 - 0.668+",
-    "estimated_completion": "~15:30 JST"
-  },
-  "active_runs": [
-    {
-      "ref": 58147368,
-      "version": "In Progress",
-      "track": "Track 1 (Evolution)",
-      "description": "NTL 0683 V53 Apex Fusion Fix (0.681 Native Qwen3-Embedding LoRA 50% + Robust Sovereign Stack)",
-      "params": "",
-      "submitted_at": "2026-11-09 10:41:40",
-      "status": "PENDING",
-      "target_score": "0.667 - 0.668+",
-      "estimated_completion": "~15:30 JST"
-    }
-  ],
+  "running_submission": null,
+  "active_runs": [],
   "timeline": [
     {
       "version": "V28",
@@ -156,8 +134,8 @@
     {
       "ref": 58147368,
       "date": "2026-11-09 10:41:40",
-      "status": "PENDING",
-      "score": null,
+      "status": "COMPLETE",
+      "score": 0.679,
       "description": "NTL 0683 V53 Apex Fusion Fix (0.681 Native Qwen3-Embedding LoRA 50% + Robust Sovereign Stack)"
     },
     {
