@@ -1,0 +1,11 @@
+{
+  "modernbert_bacc_sparse2": 0.8047768358232019,
+  "deberta_bacc_sparse2": 0.6600519639509781,
+  "dual_encoder_bacc_sparse2": 0.7952285289095353,
+  "recommended_w_mbert": 1.4,
+  "recommended_w_deb": 0.8,
+  "recommended_w_cls_in_parent": 0.18,
+  "recommended_native_share": 0.4,
+  "recommended_sinkhorn_target_mix": 0.35,
+  "status": "optimal_for_v54"
+}
