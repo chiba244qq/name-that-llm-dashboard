@@ -1,42 +1,20 @@
 {
-  "updated_at": "2026-11-10 19:35:19 JST",
+  "updated_at": "2026-11-11 08:54:37 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 5326,
-    "my_rank": 324,
+    "total_teams": 5401,
+    "my_rank": 486,
     "my_score": 0.68,
     "medal": "Bronze",
-    "top_percent": 6.08,
-    "gold_cutoff": 0.725,
-    "silver_cutoff": 0.68,
-    "silver_rank_cutoff": 266,
-    "bronze_cutoff": 0.679,
-    "bronze_rank_cutoff": 532
+    "top_percent": 9.0,
+    "gold_cutoff": 0.727,
+    "silver_cutoff": 0.681,
+    "silver_rank_cutoff": 270,
+    "bronze_cutoff": 0.68,
+    "bronze_rank_cutoff": 540
   },
-  "running_submission": {
-    "ref": 58197261,
-    "version": "In Progress",
-    "track": "Track 1 (Evolution)",
-    "description": "NTL 0687 V56 Sovereign Fix (Pure Dual-Embedding: Qwen3-8B 40% + WeMM4 7% on Proven V52 Base)",
-    "params": "",
-    "submitted_at": "2026-11-10 19:35:12",
-    "status": "PENDING",
-    "target_score": "0.667 - 0.668+",
-    "estimated_completion": "~15:30 JST"
-  },
-  "active_runs": [
-    {
-      "ref": 58197261,
-      "version": "In Progress",
-      "track": "Track 1 (Evolution)",
-      "description": "NTL 0687 V56 Sovereign Fix (Pure Dual-Embedding: Qwen3-8B 40% + WeMM4 7% on Proven V52 Base)",
-      "params": "",
-      "submitted_at": "2026-11-10 19:35:12",
-      "status": "PENDING",
-      "target_score": "0.667 - 0.668+",
-      "estimated_completion": "~15:30 JST"
-    }
-  ],
+  "running_submission": null,
+  "active_runs": [],
   "timeline": [
     {
       "version": "V28",
@@ -156,8 +134,8 @@
     {
       "ref": 58197261,
       "date": "2026-11-10 19:35:12",
-      "status": "PENDING",
-      "score": null,
+      "status": "COMPLETE",
+      "score": 0.68,
       "description": "NTL 0687 V56 Sovereign Fix (Pure Dual-Embedding: Qwen3-8B 40% + WeMM4 7% on Proven V52 Base)"
     },
     {
