@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-11-10 08:47:46 JST",
+  "updated_at": "2026-11-10 10:18:09 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 5271,
-    "my_rank": 276,
+    "total_teams": 5277,
+    "my_rank": 281,
     "my_score": 0.68,
     "medal": "Bronze",
-    "top_percent": 5.24,
+    "top_percent": 5.32,
     "gold_cutoff": 0.723,
     "silver_cutoff": 0.68,
     "silver_rank_cutoff": 263,
@@ -14,17 +14,28 @@
     "bronze_rank_cutoff": 527
   },
   "running_submission": {
-    "ref": 58177999,
+    "ref": 58181182,
     "version": "In Progress",
     "track": "Track 1 (Evolution)",
-    "description": "NTL 0684 V54 Apex Fusion (0.680 Native Qwen3-Embedding 40% + Standalone ModernBERT 1.4/DeBERTa 0.8 Cls)",
+    "description": "NTL 0685 V55 Apex Tuned (0.680 Native Qwen3-Embedding 40% + Colab-Optimized ModernBERT 1.6/DeBERTa 0.4 Cls)",
     "params": "",
-    "submitted_at": "2026-11-10 08:47:26",
+    "submitted_at": "2026-11-10 10:18:04",
     "status": "PENDING",
     "target_score": "0.667 - 0.668+",
     "estimated_completion": "~15:30 JST"
   },
   "active_runs": [
+    {
+      "ref": 58181182,
+      "version": "In Progress",
+      "track": "Track 1 (Evolution)",
+      "description": "NTL 0685 V55 Apex Tuned (0.680 Native Qwen3-Embedding 40% + Colab-Optimized ModernBERT 1.6/DeBERTa 0.4 Cls)",
+      "params": "",
+      "submitted_at": "2026-11-10 10:18:04",
+      "status": "PENDING",
+      "target_score": "0.667 - 0.668+",
+      "estimated_completion": "~15:30 JST"
+    },
     {
       "ref": 58177999,
       "version": "In Progress",
@@ -153,6 +164,13 @@
     }
   ],
   "submissions": [
+    {
+      "ref": 58181182,
+      "date": "2026-11-10 10:18:04",
+      "status": "PENDING",
+      "score": null,
+      "description": "NTL 0685 V55 Apex Tuned (0.680 Native Qwen3-Embedding 40% + Colab-Optimized ModernBERT 1.6/DeBERTa 0.4 Cls)"
+    },
     {
       "ref": 58177999,
       "date": "2026-11-10 08:47:26",
@@ -285,13 +303,6 @@
       "status": "COMPLETE",
       "score": 0.663,
       "description": "NTL 0672 V42 Apex Re-Anchored (Dual-DeBERTa + Pairwise A/B + Sibling Residual 0.10 + Sinkhorn 0.50)"
-    },
-    {
-      "ref": 57977214,
-      "date": "2026-11-04 16:59:32",
-      "status": "COMPLETE",
-      "score": 0.663,
-      "description": "NTL 0672 V42-B Apex Conservative (Dual-DeBERTa + Pairwise A/B + Sibling Residual 0.05 + Sinkhorn 0.50)"
     }
   ],
   "architecture_matrix": [
