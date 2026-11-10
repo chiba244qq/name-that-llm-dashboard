@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10 18:08:24 JST",
+  "updated_at": "2026-11-10 18:11:32 JST",
   "competition": {
     "name": "Name That LLM",
     "total_teams": 5323,
@@ -13,8 +13,30 @@
     "bronze_cutoff": 0.677,
     "bronze_rank_cutoff": 532
   },
-  "running_submission": null,
-  "active_runs": [],
+  "running_submission": {
+    "ref": 58194816,
+    "version": "In Progress",
+    "track": "Track 1 (Evolution)",
+    "description": "NTL 0686 V56 Pure Dual-Embedding (Qwen3-8B 40% + WeMM4 7% + 0.680 Sovereign Base)",
+    "params": "",
+    "submitted_at": "2026-11-10 18:11:26",
+    "status": "PENDING",
+    "target_score": "0.667 - 0.668+",
+    "estimated_completion": "~15:30 JST"
+  },
+  "active_runs": [
+    {
+      "ref": 58194816,
+      "version": "In Progress",
+      "track": "Track 1 (Evolution)",
+      "description": "NTL 0686 V56 Pure Dual-Embedding (Qwen3-8B 40% + WeMM4 7% + 0.680 Sovereign Base)",
+      "params": "",
+      "submitted_at": "2026-11-10 18:11:26",
+      "status": "PENDING",
+      "target_score": "0.667 - 0.668+",
+      "estimated_completion": "~15:30 JST"
+    }
+  ],
   "timeline": [
     {
       "version": "V28",
@@ -131,6 +153,13 @@
     }
   ],
   "submissions": [
+    {
+      "ref": 58194816,
+      "date": "2026-11-10 18:11:26",
+      "status": "PENDING",
+      "score": null,
+      "description": "NTL 0686 V56 Pure Dual-Embedding (Qwen3-8B 40% + WeMM4 7% + 0.680 Sovereign Base)"
+    },
     {
       "ref": 58181182,
       "date": "2026-11-10 10:18:04",
@@ -263,13 +292,6 @@
       "status": "COMPLETE",
       "score": 0.661,
       "description": "NTL 0672 V42c Apex V40Anchor (V40 Anchor: Sinkhorn 0.50 + Mix 0.35 + Apex-II Dual-DeBERTa + Sibling 0.10)"
-    },
-    {
-      "ref": 57977217,
-      "date": "2026-11-04 16:59:35",
-      "status": "COMPLETE",
-      "score": 0.663,
-      "description": "NTL 0672 V42 Apex Re-Anchored (Dual-DeBERTa + Pairwise A/B + Sibling Residual 0.10 + Sinkhorn 0.50)"
     }
   ],
   "architecture_matrix": [
