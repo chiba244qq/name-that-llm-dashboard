@@ -1,0 +1,11 @@
+{
+  "modernbert_bacc_sparse2": 0.8066819257585591,
+  "deberta_bacc_sparse2": 0.660559623110858,
+  "grid_best_sparse2": 0.8048657178131708,
+  "recommended_w_mbert": 1.6,
+  "recommended_w_deb": 0.4,
+  "recommended_target_mix": 0.0,
+  "recommended_w_cls_in_parent": 0.18,
+  "recommended_native_share": 0.4,
+  "verified_timestamp": "2026-11-10 00:41:41"
+}
