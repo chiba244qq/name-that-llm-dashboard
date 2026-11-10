@@ -1,53 +1,20 @@
 {
-  "updated_at": "2026-11-10 10:18:09 JST",
+  "updated_at": "2026-11-10 18:08:24 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 5277,
-    "my_rank": 281,
+    "total_teams": 5323,
+    "my_rank": 316,
     "my_score": 0.68,
     "medal": "Bronze",
-    "top_percent": 5.32,
-    "gold_cutoff": 0.723,
+    "top_percent": 5.94,
+    "gold_cutoff": 0.725,
     "silver_cutoff": 0.68,
-    "silver_rank_cutoff": 263,
-    "bronze_cutoff": 0.673,
-    "bronze_rank_cutoff": 527
+    "silver_rank_cutoff": 266,
+    "bronze_cutoff": 0.677,
+    "bronze_rank_cutoff": 532
   },
-  "running_submission": {
-    "ref": 58181182,
-    "version": "In Progress",
-    "track": "Track 1 (Evolution)",
-    "description": "NTL 0685 V55 Apex Tuned (0.680 Native Qwen3-Embedding 40% + Colab-Optimized ModernBERT 1.6/DeBERTa 0.4 Cls)",
-    "params": "",
-    "submitted_at": "2026-11-10 10:18:04",
-    "status": "PENDING",
-    "target_score": "0.667 - 0.668+",
-    "estimated_completion": "~15:30 JST"
-  },
-  "active_runs": [
-    {
-      "ref": 58181182,
-      "version": "In Progress",
-      "track": "Track 1 (Evolution)",
-      "description": "NTL 0685 V55 Apex Tuned (0.680 Native Qwen3-Embedding 40% + Colab-Optimized ModernBERT 1.6/DeBERTa 0.4 Cls)",
-      "params": "",
-      "submitted_at": "2026-11-10 10:18:04",
-      "status": "PENDING",
-      "target_score": "0.667 - 0.668+",
-      "estimated_completion": "~15:30 JST"
-    },
-    {
-      "ref": 58177999,
-      "version": "In Progress",
-      "track": "Track 1 (Evolution)",
-      "description": "NTL 0684 V54 Apex Fusion (0.680 Native Qwen3-Embedding 40% + Standalone ModernBERT 1.4/DeBERTa 0.8 Cls)",
-      "params": "",
-      "submitted_at": "2026-11-10 08:47:26",
-      "status": "PENDING",
-      "target_score": "0.667 - 0.668+",
-      "estimated_completion": "~15:30 JST"
-    }
-  ],
+  "running_submission": null,
+  "active_runs": [],
   "timeline": [
     {
       "version": "V28",
@@ -167,15 +134,15 @@
     {
       "ref": 58181182,
       "date": "2026-11-10 10:18:04",
-      "status": "PENDING",
-      "score": null,
+      "status": "COMPLETE",
+      "score": 0.674,
       "description": "NTL 0685 V55 Apex Tuned (0.680 Native Qwen3-Embedding 40% + Colab-Optimized ModernBERT 1.6/DeBERTa 0.4 Cls)"
     },
     {
       "ref": 58177999,
       "date": "2026-11-10 08:47:26",
-      "status": "PENDING",
-      "score": null,
+      "status": "COMPLETE",
+      "score": 0.671,
       "description": "NTL 0684 V54 Apex Fusion (0.680 Native Qwen3-Embedding 40% + Standalone ModernBERT 1.4/DeBERTa 0.8 Cls)"
     },
     {
