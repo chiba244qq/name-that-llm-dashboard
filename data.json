@@ -1,37 +1,37 @@
 {
-  "updated_at": "2026-11-10 18:11:32 JST",
+  "updated_at": "2026-11-10 19:35:19 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 5323,
-    "my_rank": 316,
+    "total_teams": 5326,
+    "my_rank": 324,
     "my_score": 0.68,
     "medal": "Bronze",
-    "top_percent": 5.94,
+    "top_percent": 6.08,
     "gold_cutoff": 0.725,
     "silver_cutoff": 0.68,
     "silver_rank_cutoff": 266,
-    "bronze_cutoff": 0.677,
+    "bronze_cutoff": 0.679,
     "bronze_rank_cutoff": 532
   },
   "running_submission": {
-    "ref": 58194816,
+    "ref": 58197261,
     "version": "In Progress",
     "track": "Track 1 (Evolution)",
-    "description": "NTL 0686 V56 Pure Dual-Embedding (Qwen3-8B 40% + WeMM4 7% + 0.680 Sovereign Base)",
+    "description": "NTL 0687 V56 Sovereign Fix (Pure Dual-Embedding: Qwen3-8B 40% + WeMM4 7% on Proven V52 Base)",
     "params": "",
-    "submitted_at": "2026-11-10 18:11:26",
+    "submitted_at": "2026-11-10 19:35:12",
     "status": "PENDING",
     "target_score": "0.667 - 0.668+",
     "estimated_completion": "~15:30 JST"
   },
   "active_runs": [
     {
-      "ref": 58194816,
+      "ref": 58197261,
       "version": "In Progress",
       "track": "Track 1 (Evolution)",
-      "description": "NTL 0686 V56 Pure Dual-Embedding (Qwen3-8B 40% + WeMM4 7% + 0.680 Sovereign Base)",
+      "description": "NTL 0687 V56 Sovereign Fix (Pure Dual-Embedding: Qwen3-8B 40% + WeMM4 7% on Proven V52 Base)",
       "params": "",
-      "submitted_at": "2026-11-10 18:11:26",
+      "submitted_at": "2026-11-10 19:35:12",
       "status": "PENDING",
       "target_score": "0.667 - 0.668+",
       "estimated_completion": "~15:30 JST"
@@ -154,9 +154,16 @@
   ],
   "submissions": [
     {
+      "ref": 58197261,
+      "date": "2026-11-10 19:35:12",
+      "status": "PENDING",
+      "score": null,
+      "description": "NTL 0687 V56 Sovereign Fix (Pure Dual-Embedding: Qwen3-8B 40% + WeMM4 7% on Proven V52 Base)"
+    },
+    {
       "ref": 58194816,
       "date": "2026-11-10 18:11:26",
-      "status": "PENDING",
+      "status": "COMPLETE",
       "score": null,
       "description": "NTL 0686 V56 Pure Dual-Embedding (Qwen3-8B 40% + WeMM4 7% + 0.680 Sovereign Base)"
     },
@@ -285,13 +292,6 @@
       "status": "COMPLETE",
       "score": 0.662,
       "description": "NTL 0673 V43 Evolution (Pure V40 Anchor: Single-DeBERTa + ATLAS Margin 0.32 + Sinkhorn 0.50 + Mix 0.42 OOF Opt)"
-    },
-    {
-      "ref": 57977543,
-      "date": "2026-11-04 17:07:22",
-      "status": "COMPLETE",
-      "score": 0.661,
-      "description": "NTL 0672 V42c Apex V40Anchor (V40 Anchor: Sinkhorn 0.50 + Mix 0.35 + Apex-II Dual-DeBERTa + Sibling 0.10)"
     }
   ],
   "architecture_matrix": [
