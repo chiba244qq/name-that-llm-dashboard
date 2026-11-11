@@ -317,7 +317,19 @@ def main():
             params_summary = ""
             track_label = "Track 1 (Evolution)"
             est_comp = "~15:30 JST"
-            if "V59" in desc or "0690" in desc:
+            if "0692" in desc or "canary" in desc:
+                ver_name = "NTL-0692 (WeMM Canary)"
+                params_summary = "V56-Fix + WeMM 5-Fold Hard Assert (RuntimeError on missing folds)"
+                track_label = "Verification Track (Canary)"
+                est_comp = "~14:00 JST"
+                target_sc = "0.680 (or Fail)"
+            elif "0691" in desc or "rerun" in desc:
+                ver_name = "NTL-0691 (V56-Fix Rerun)"
+                params_summary = "100% Identical to V56-Fix (s=0.40, w=0.07, gsq=0.03, atlas=0.10)"
+                track_label = "Verification Track (LB Noise)"
+                est_comp = "~14:00 JST"
+                target_sc = "0.680"
+            elif "V59" in desc or "0690" in desc:
                 ver_name = "V59 (WeMM 15% Exploration)"
                 params_summary = "Qwen3-Emb 50% | WeMM4-Emb 15% | ATLAS 0.15 | GSQ 0.06 | 5-Ctx Proxy OOF"
                 track_label = "Track 3 (Dual-Embedding Grid Exploration)"
