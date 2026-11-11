@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-11 19:08:49 JST",
+  "updated_at": "2026-11-11 19:09:34 JST",
   "competition": {
     "name": "Name That LLM",
     "total_teams": 5453,
@@ -15,26 +15,26 @@
   },
   "running_submission": {
     "ref": 58233790,
-    "version": "In Progress",
-    "track": "Track 1 (Evolution)",
+    "version": "V59 (Max OOF Grid Apex)",
+    "track": "Track 3 (Max OOF Global Peak)",
     "description": "NTL 0690 V59 Sovereign Apex (Max OOF Grid: Qwen3 50% + WeMM4 15% + ATLAS 0.15 + GSQ 0.06)",
-    "params": "",
+    "params": "Qwen3-Emb 50% | WeMM4-Emb 15% | ATLAS 0.15 | GSQ 0.06 | 5-Ctx True OOF 0.68977",
     "submitted_at": "2026-11-11 19:08:44",
     "status": "PENDING",
-    "target_score": "0.681 - 0.682+",
-    "estimated_completion": "~15:30 JST"
+    "target_score": "0.682 - 0.683+",
+    "estimated_completion": "~01:00 JST"
   },
   "active_runs": [
     {
       "ref": 58233790,
-      "version": "In Progress",
-      "track": "Track 1 (Evolution)",
+      "version": "V59 (Max OOF Grid Apex)",
+      "track": "Track 3 (Max OOF Global Peak)",
       "description": "NTL 0690 V59 Sovereign Apex (Max OOF Grid: Qwen3 50% + WeMM4 15% + ATLAS 0.15 + GSQ 0.06)",
-      "params": "",
+      "params": "Qwen3-Emb 50% | WeMM4-Emb 15% | ATLAS 0.15 | GSQ 0.06 | 5-Ctx True OOF 0.68977",
       "submitted_at": "2026-11-11 19:08:44",
       "status": "PENDING",
-      "target_score": "0.681 - 0.682+",
-      "estimated_completion": "~15:30 JST"
+      "target_score": "0.682 - 0.683+",
+      "estimated_completion": "~01:00 JST"
     },
     {
       "ref": 58224297,
@@ -220,8 +220,16 @@
       "score": null,
       "target": 0.682,
       "date": "11-11",
-      "tag": "True-OOF Peak",
+      "tag": "Running",
       "desc": "100%実測5-Fold OOF検証済み (Qwen3 50% + WeMM4 10% + ATLAS 0.15 + GSQ 0.06: 推論中)"
+    },
+    {
+      "version": "V59",
+      "score": null,
+      "target": 0.683,
+      "date": "11-11",
+      "tag": "Max OOF Peak",
+      "desc": "実測5-Fold OOF最高点 (Qwen3 50% + WeMM4 15% + ATLAS 0.15 + GSQ 0.06: 推論中)"
     }
   ],
   "submissions": [
@@ -582,6 +590,18 @@
       "atlas_margin": "0.30",
       "sinkhorn": "0.30 / Mix 0.35",
       "highlight": "【本命・推論中】Ref: 58224297 (実測OOF 5-Ctx: 0.68892 / Inner-CV極大点)"
+    },
+    {
+      "version": "V59 (Running)",
+      "track": "Track 3",
+      "score": "PENDING",
+      "data_pool": "Sovereign 5-Fold + GSQ 0.06",
+      "deberta": "Core + Comp (.85/.15)",
+      "pairwise_ab": "ATLAS (w=0.15)",
+      "sibling_style": "Qwen3 (0.50) + WeMM4 (0.15)",
+      "atlas_margin": "0.30",
+      "sinkhorn": "0.30 / Mix 0.35",
+      "highlight": "【最高OOF・推論中】Ref: 58233790 (実測OOF 5-Ctx Composite: 0.68977 / 全グリッド最高値)"
     }
   ],
   "local_verification": {

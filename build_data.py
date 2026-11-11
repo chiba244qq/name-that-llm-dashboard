@@ -317,7 +317,13 @@ def main():
             params_summary = ""
             track_label = "Track 1 (Evolution)"
             est_comp = "~15:30 JST"
-            if "V58" in desc or "0689" in desc:
+            if "V59" in desc or "0690" in desc:
+                ver_name = "V59 (Max OOF Grid Apex)"
+                params_summary = "Qwen3-Emb 50% | WeMM4-Emb 15% | ATLAS 0.15 | GSQ 0.06 | 5-Ctx True OOF 0.68977"
+                track_label = "Track 3 (Max OOF Global Peak)"
+                est_comp = "~01:00 JST"
+                target_sc = "0.682 - 0.683+"
+            elif "V58" in desc or "0689" in desc:
                 ver_name = "V58 (True-OOF Verified Apex)"
                 params_summary = "Qwen3-Emb 50% | WeMM4-Emb 10% | ATLAS 0.15 | GSQ 0.06 | 5-Ctx True OOF 0.68892"
                 track_label = "Track 1 (True-OOF Interior Peak)"
@@ -448,7 +454,8 @@ def main():
         {"version": "V55", "score": 0.674, "date": "11-10", "tag": "Diagnostic", "desc": "ModernBERT 1.6 / DeBERTa 0.4 比率調整 (+0.003改善するもextra_cls汚染を確認)"},
         {"version": "V56-Fix", "score": 0.680, "date": "11-10", "tag": "Dual-Emb Base", "desc": "extra_cls完全排除 + Qwen3-8B (40%) + Tencent WeMM-4B (7%) 並列統合で0.680完全復帰"},
         {"version": "V57", "score": None, "target": 0.681, "date": "11-11", "tag": "Running", "desc": "Dual-Embedding Sovereign (Qwen3 45% + WeMM4 10% + ATLAS 0.20 + GSQ 0.06: 推論中)"},
-        {"version": "V58", "score": None, "target": 0.682, "date": "11-11", "tag": "True-OOF Peak", "desc": "100%実測5-Fold OOF検証済み (Qwen3 50% + WeMM4 10% + ATLAS 0.15 + GSQ 0.06: 推論中)"}
+        {"version": "V58", "score": None, "target": 0.682, "date": "11-11", "tag": "Running", "desc": "100%実測5-Fold OOF検証済み (Qwen3 50% + WeMM4 10% + ATLAS 0.15 + GSQ 0.06: 推論中)"},
+        {"version": "V59", "score": None, "target": 0.683, "date": "11-11", "tag": "Max OOF Peak", "desc": "実測5-Fold OOF最高点 (Qwen3 50% + WeMM4 15% + ATLAS 0.15 + GSQ 0.06: 推論中)"}
     ]
 
     # 4. Architecture comparison matrix
@@ -470,7 +477,8 @@ def main():
         {"version": "V54 / V55", "track": "Track 2", "score": "0.671 / 0.674", "data_pool": "Sovereign + Extra Cls (w=0.18)", "deberta": "ModernBERT + DeBERTa-v3", "pairwise_ab": "ATLAS (w=0.10)", "sibling_style": "Qwen3-Emb-8B (0.40)", "atlas_margin": "0.30", "sinkhorn": "0.30 / Mix 0.35", "highlight": "未較正の外部生ロジット注入による確率幾何崩壊を実証・棄却"},
         {"version": "V56-Fix", "track": "Track 1", "score": "0.680", "data_pool": "Sovereign 5-Fold + GSQ 0.03", "deberta": "Core + Comp (No ExtraCls)", "pairwise_ab": "ATLAS (w=0.10)", "sibling_style": "Qwen3 (0.40) + WeMM4 (0.07)", "atlas_margin": "0.30", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【0.680完全復帰】2xT4並列WeMM-4Bワーカー統合・5時間00分完走"},
         {"version": "V57 (Running)", "track": "Track 2", "score": "PENDING", "data_pool": "Sovereign 5-Fold + GSQ 0.06", "deberta": "Core + Comp (.85/.15)", "pairwise_ab": "ATLAS (w=0.20)", "sibling_style": "Qwen3 (0.45) + WeMM4 (0.10)", "atlas_margin": "0.30", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【推論中】Ref: 58222075 (True OOF 5-Ctx Composite: 0.68772)"},
-        {"version": "V58 (Running)", "track": "Track 1", "score": "PENDING", "data_pool": "Sovereign 5-Fold + GSQ 0.06", "deberta": "Core + Comp (.85/.15)", "pairwise_ab": "ATLAS (w=0.15)", "sibling_style": "Qwen3 (0.50) + WeMM4 (0.10)", "atlas_margin": "0.30", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【本命・推論中】Ref: 58224297 (実測OOF 5-Ctx: 0.68892 / Inner-CV極大点)"}
+        {"version": "V58 (Running)", "track": "Track 1", "score": "PENDING", "data_pool": "Sovereign 5-Fold + GSQ 0.06", "deberta": "Core + Comp (.85/.15)", "pairwise_ab": "ATLAS (w=0.15)", "sibling_style": "Qwen3 (0.50) + WeMM4 (0.10)", "atlas_margin": "0.30", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【本命・推論中】Ref: 58224297 (実測OOF 5-Ctx: 0.68892 / Inner-CV極大点)"},
+        {"version": "V59 (Running)", "track": "Track 3", "score": "PENDING", "data_pool": "Sovereign 5-Fold + GSQ 0.06", "deberta": "Core + Comp (.85/.15)", "pairwise_ab": "ATLAS (w=0.15)", "sibling_style": "Qwen3 (0.50) + WeMM4 (0.15)", "atlas_margin": "0.30", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【最高OOF・推論中】Ref: 58233790 (実測OOF 5-Ctx Composite: 0.68977 / 全グリッド最高値)"}
     ]
 
     # 5. Extract Markdown Reports
