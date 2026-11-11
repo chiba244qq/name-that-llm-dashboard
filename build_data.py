@@ -42,11 +42,35 @@ DOC_DATES = {
     "idea_03_early_mid_layer_spectral_probing.md": "2026-11-05 13:55 JST",
     "idea_04_atlas_fast_batching_and_focused_margin.md": "2026-11-05 13:57 JST",
     "idea_05_family_specific_stylometry_and_m2_validator.md": "2026-11-05 13:58 JST",
-    "local_oof_benchmark_and_v44_selection_report.md": "2026-11-05 14:30 JST"
+    "local_oof_benchmark_and_v44_selection_report.md": "2026-11-05 14:30 JST",
+    "v45_grandmaster_architecture_and_local_verification.md": "2026-11-06 15:02 JST",
+    "v47_clean_svc_bank_integration_and_day_strategy.md": "2026-11-07 09:51 JST",
+    "v48_deberta_v3_classifier_and_dual_svc_apex_report.md": "2026-11-07 20:30 JST",
+    "v49_pre_sinkhorn_sibling_forensic_residual_report.md": "2026-11-08 09:43 JST",
+    "v50_dual_encoder_modernbert_sibling_forensic_apex_report.md": "2026-11-08 12:21 JST",
+    "v51_target_mix_calibration_and_apex_report.md": "2026-11-08 20:51 JST",
+    "v52_0680_native_embedding_lora_sovereign_report.md": "2026-11-08 22:45 JST",
+    "v53_apex_fusion_dual_encoder_hybrid_report.md": "2026-11-08 22:54 JST",
+    "v53_flattened_repro_and_colab_sparse_eval_plan.md": "2026-11-09 10:43 JST",
+    "colab_v55_hyperparameter_optimization_report.md": "2026-11-10 10:15 JST",
+    "v56_dual_embedding_dual_encoder_preliminary_design.md": "2026-11-10 13:27 JST",
+    "colab_v57_sovereign_hyperparameter_verification_report.md": "2026-11-11 11:56 JST"
 }
 
 REPORT_METADATA = {
     # --- ACTIVE: Reading Order 1 to 21 ---
+    "colab_v57_sovereign_hyperparameter_verification_report.md": {
+        "order": 1, "step": "STEP 0: 実測 5-Fold OOF 完全検証 (最新・必読)", "status": "active",
+        "note": "【最新・最重要】合成ノイズを全廃し100%実測5-Fold OOF (Qwen3-8B + WeMM-4B + 親OOF) で5コンテキスト検証したV57/V58決定版レポート"
+    },
+    "v56_dual_embedding_dual_encoder_preliminary_design.md": {
+        "order": 2, "step": "STEP 0.5: Dual-Embedding Sovereign 設計", "status": "active",
+        "note": "【0.680完全復帰】外部生ロジット汚染(extra_cls)を排除し、Qwen3-8B + Tencent WeMM-4Bの純粋2大Embedding統合を確立した設計書"
+    },
+    "v52_0680_native_embedding_lora_sovereign_report.md": {
+        "order": 3, "step": "STEP 0.8: 0.680 Breakthrough", "status": "active",
+        "note": "【0.680到達】5-Fold Native Qwen3-Embedding-8B LoRA (share 0.40) + 5-Fold Sovereign Base統合による大台突破レポート"
+    },
     "name_that_llm_comprehensive_guide.md": {
         "order": 1, "step": "STEP 1: 超入門・全体像", "status": "active",
         "note": "【必読・全体像】コンペ概要、Balanced Accuracy、9時間VOID崖、基本解法が中学生でもわかる完全ガイド"
@@ -293,7 +317,19 @@ def main():
             params_summary = ""
             track_label = "Track 1 (Evolution)"
             est_comp = "~15:30 JST"
-            if "V46" in desc or "0676" in desc:
+            if "V58" in desc or "0689" in desc:
+                ver_name = "V58 (True-OOF Verified Apex)"
+                params_summary = "Qwen3-Emb 50% | WeMM4-Emb 10% | ATLAS 0.15 | GSQ 0.06 | 5-Ctx True OOF 0.68892"
+                track_label = "Track 1 (True-OOF Interior Peak)"
+                est_comp = "~18:00 JST"
+                target_sc = "0.681 - 0.682+"
+            elif "V57" in desc or "0688" in desc:
+                ver_name = "V57 (Dual-Emb Sovereign Apex)"
+                params_summary = "Qwen3-Emb 45% | WeMM4-Emb 10% | ATLAS 0.20 | GSQ 0.06 | 5-Ctx True OOF 0.68772"
+                track_label = "Track 2 (Dual-Emb Sovereign)"
+                est_comp = "~16:25 JST"
+                target_sc = "0.681+"
+            elif "V46" in desc or "0676" in desc:
                 ver_name = "V46 (Sovereign Refined)"
                 params_summary = "Undiluted N14B 2.5 | Target Mix 0.45 | Sinkhorn 0.30 | Pairwise 0.10 | 0.668 Base"
                 track_label = "Track 1 (Evolution)"
@@ -348,7 +384,7 @@ def main():
                 "params": params_summary,
                 "submitted_at": s["date"],
                 "status": "RUNNING" if "RUNNING" in s["status"] else "PENDING",
-                "target_score": "0.667 - 0.668+",
+                "target_score": locals().get("target_sc", "0.681 - 0.682+"),
                 "estimated_completion": est_comp
             })
 
@@ -405,7 +441,14 @@ def main():
         {"version": "V44 (T1)", "score": 0.666, "date": "11-06", "tag": "Silver", "desc": "Track 1 Evolution: Sovereign-Aegis Hybrid (Sinkhorn 0.50過剰補正ペナルティ実証 -0.002)"},
         {"version": "V44 (T2)", "score": 0.668, "date": "11-06", "tag": "Silver Repro", "desc": "Track 2 Exploration: 0.668 Repro (Snapshot固定により0.668完全復元、Rank 305達成)"},
         {"version": "V45 (T1)", "score": v45_score, "date": "11-06", "tag": "Decoy Trap", "desc": f"Track 1 Evolution: Dual-SVC 1.0 + N14B 3-Adapter ({v45_score}着地、主力N14B希釈特定)"},
-        {"version": "V46 (T1)", "score": v46_score, "target": 0.670, "date": "11-07", "tag": "Silver SOTA" if v46_score and v46_score >= 0.670 else "Pending", "desc": f"Track 1 Evolution: Sovereign Refined (純N14B 2.5復元 + Mix 0.45 + Pairwise 0.10: {v46_score if v46_score else '推論中'})"}
+        {"version": "V46", "score": 0.668, "date": "11-07", "tag": "Silver", "desc": "Sovereign Refined (純N14B 2.5復元 + Mix 0.45: 0.668)"},
+        {"version": "V52", "score": 0.680, "date": "11-08", "tag": "0.680 Breakthrough", "desc": "Native Qwen3-Embedding-8B 5-Fold LoRA (40%) + 5-Fold Sovereign Base (60%) で0.680大台突破"},
+        {"version": "V53-Fix", "score": 0.679, "date": "11-09", "tag": "Silver", "desc": "Qwen3-Embedding 50%単一引き上げ検証 (0.679)"},
+        {"version": "V54", "score": 0.671, "date": "11-10", "tag": "Diagnostic", "desc": "Standalone ModernBERT 1.4 / DeBERTa 0.8 注入 (w_cls=0.18過大により0.671へ低下・原因特定)"},
+        {"version": "V55", "score": 0.674, "date": "11-10", "tag": "Diagnostic", "desc": "ModernBERT 1.6 / DeBERTa 0.4 比率調整 (+0.003改善するもextra_cls汚染を確認)"},
+        {"version": "V56-Fix", "score": 0.680, "date": "11-10", "tag": "Dual-Emb Base", "desc": "extra_cls完全排除 + Qwen3-8B (40%) + Tencent WeMM-4B (7%) 並列統合で0.680完全復帰"},
+        {"version": "V57", "score": None, "target": 0.681, "date": "11-11", "tag": "Running", "desc": "Dual-Embedding Sovereign (Qwen3 45% + WeMM4 10% + ATLAS 0.20 + GSQ 0.06: 推論中)"},
+        {"version": "V58", "score": None, "target": 0.682, "date": "11-11", "tag": "True-OOF Peak", "desc": "100%実測5-Fold OOF検証済み (Qwen3 50% + WeMM4 10% + ATLAS 0.15 + GSQ 0.06: 推論中)"}
     ]
 
     # 4. Architecture comparison matrix
@@ -422,7 +465,12 @@ def main():
         {"version": "V44 (T1)", "track": "Track 1", "score": "0.666", "data_pool": "Frozen Snapshot (190.5k + 4.5k)", "deberta": "Single (Official)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "Residual (0.10)", "atlas_margin": "0.32", "sinkhorn": "0.50 / Mix 0.42", "highlight": "Sinkhorn 0.50過剰補正により0.666着地"},
         {"version": "V44 (T2)", "track": "Track 2", "score": "0.668", "data_pool": "Frozen Snapshot (190.5k + 4.5k)", "deberta": "Single (Official)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "Residual (0.10)", "atlas_margin": "0.32", "sinkhorn": "0.30 / Mix 0.35", "highlight": "0.668完全復元・銀メダルボーダー到達 (Rank 305)"},
         {"version": "V45 (T1)", "track": "Track 1", "score": str(v45_score) if v45_score else "Pending", "data_pool": "Frozen Snapshot + Dual-SVC 4-view", "deberta": "Single (Official)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "N14B 3-Adapter Blend", "atlas_margin": "0.32", "sinkhorn": "0.30 / Mix 0.35", "highlight": f"公開デコイ解除も主力N14B希釈により0.667着地"},
-        {"version": "V46 (T1)", "track": "Track 1", "score": str(v46_score) if v46_score else "Pending", "data_pool": "Frozen Snapshot (190.5k + 4.5k)", "deberta": "Single (Official)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "Undiluted N14B (2.5)", "atlas_margin": "0.32", "sinkhorn": "0.30 / Mix 0.45", "highlight": f"【本命】0.668骨格復元 + Target Mix 0.45最適化 ({'着地: ' + str(v46_score) if v46_score else '推論中'})"}
+        {"version": "V46", "track": "Track 1", "score": "0.668", "data_pool": "Frozen Snapshot (190.5k)", "deberta": "Single (Official)", "pairwise_ab": "V34.1 A/B Verifier", "sibling_style": "Undiluted N14B (2.5)", "atlas_margin": "0.32", "sinkhorn": "0.30 / Mix 0.45", "highlight": "旧世代骨格での0.668到達"},
+        {"version": "V52", "track": "Track 1", "score": "0.680", "data_pool": "Sovereign 5-Fold + GSQ 0.03", "deberta": "Core + Comp (.85/.15)", "pairwise_ab": "ATLAS (w=0.10)", "sibling_style": "Qwen3-Emb-8B (0.40)", "atlas_margin": "0.30", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【大台突破】Native Qwen3-8B 5-Fold LoRA融合で0.680達成"},
+        {"version": "V54 / V55", "track": "Track 2", "score": "0.671 / 0.674", "data_pool": "Sovereign + Extra Cls (w=0.18)", "deberta": "ModernBERT + DeBERTa-v3", "pairwise_ab": "ATLAS (w=0.10)", "sibling_style": "Qwen3-Emb-8B (0.40)", "atlas_margin": "0.30", "sinkhorn": "0.30 / Mix 0.35", "highlight": "未較正の外部生ロジット注入による確率幾何崩壊を実証・棄却"},
+        {"version": "V56-Fix", "track": "Track 1", "score": "0.680", "data_pool": "Sovereign 5-Fold + GSQ 0.03", "deberta": "Core + Comp (No ExtraCls)", "pairwise_ab": "ATLAS (w=0.10)", "sibling_style": "Qwen3 (0.40) + WeMM4 (0.07)", "atlas_margin": "0.30", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【0.680完全復帰】2xT4並列WeMM-4Bワーカー統合・5時間00分完走"},
+        {"version": "V57 (Running)", "track": "Track 2", "score": "PENDING", "data_pool": "Sovereign 5-Fold + GSQ 0.06", "deberta": "Core + Comp (.85/.15)", "pairwise_ab": "ATLAS (w=0.20)", "sibling_style": "Qwen3 (0.45) + WeMM4 (0.10)", "atlas_margin": "0.30", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【推論中】Ref: 58222075 (True OOF 5-Ctx Composite: 0.68772)"},
+        {"version": "V58 (Running)", "track": "Track 1", "score": "PENDING", "data_pool": "Sovereign 5-Fold + GSQ 0.06", "deberta": "Core + Comp (.85/.15)", "pairwise_ab": "ATLAS (w=0.15)", "sibling_style": "Qwen3 (0.50) + WeMM4 (0.10)", "atlas_margin": "0.30", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【本命・推論中】Ref: 58224297 (実測OOF 5-Ctx: 0.68892 / Inner-CV極大点)"}
     ]
 
     # 5. Extract Markdown Reports
