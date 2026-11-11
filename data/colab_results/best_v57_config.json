@@ -1,0 +1,13 @@
+{
+  "verified_timestamp": "2026-11-11 01:47:11",
+  "best_sparse2_bacc": 0.8329570443410418,
+  "optimal_params": {
+    "w_atlas": 0.2,
+    "gsq_share": 0.06,
+    "s_native": 0.45,
+    "w_wemm": 0.1,
+    "bacc_sparse2": 0.8329570443410418,
+    "bacc_std": 0.026047079936037186
+  },
+  "target_submission": "tsuyoshichiba/ntl-0688-v57-apex-sovereign"
+}
