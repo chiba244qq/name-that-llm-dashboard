@@ -1,42 +1,20 @@
 {
-  "updated_at": "2026-11-11 23:20:17 JST",
+  "updated_at": "2026-11-12 08:44:12 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 5494,
-    "my_rank": 616,
+    "total_teams": 5557,
+    "my_rank": 718,
     "my_score": 0.68,
     "medal": "No Medal",
-    "top_percent": 11.21,
-    "gold_cutoff": 0.73,
-    "silver_cutoff": 0.682,
-    "silver_rank_cutoff": 274,
+    "top_percent": 12.92,
+    "gold_cutoff": 0.733,
+    "silver_cutoff": 0.684,
+    "silver_rank_cutoff": 277,
     "bronze_cutoff": 0.681,
-    "bronze_rank_cutoff": 549
+    "bronze_rank_cutoff": 555
   },
-  "running_submission": {
-    "ref": 58233790,
-    "version": "V59 (WeMM 15% Exploration)",
-    "track": "Track 3 (Dual-Embedding Grid Exploration)",
-    "description": "NTL 0690 V59 Sovereign Apex (Max OOF Grid: Qwen3 50% + WeMM4 15% + ATLAS 0.15 + GSQ 0.06)",
-    "params": "Qwen3-Emb 50% | WeMM4-Emb 15% | ATLAS 0.15 | GSQ 0.06 | 5-Ctx Proxy OOF",
-    "submitted_at": "2026-11-11 19:08:44",
-    "status": "PENDING",
-    "target_score": "0.680",
-    "estimated_completion": "~01:00 JST"
-  },
-  "active_runs": [
-    {
-      "ref": 58233790,
-      "version": "V59 (WeMM 15% Exploration)",
-      "track": "Track 3 (Dual-Embedding Grid Exploration)",
-      "description": "NTL 0690 V59 Sovereign Apex (Max OOF Grid: Qwen3 50% + WeMM4 15% + ATLAS 0.15 + GSQ 0.06)",
-      "params": "Qwen3-Emb 50% | WeMM4-Emb 15% | ATLAS 0.15 | GSQ 0.06 | 5-Ctx Proxy OOF",
-      "submitted_at": "2026-11-11 19:08:44",
-      "status": "PENDING",
-      "target_score": "0.680",
-      "estimated_completion": "~01:00 JST"
-    }
-  ],
+  "running_submission": null,
+  "active_runs": [],
   "timeline": [
     {
       "version": "V28",
@@ -214,8 +192,8 @@
     {
       "ref": 58233790,
       "date": "2026-11-11 19:08:44",
-      "status": "PENDING",
-      "score": null,
+      "status": "COMPLETE",
+      "score": 0.673,
       "description": "NTL 0690 V59 Sovereign Apex (Max OOF Grid: Qwen3 50% + WeMM4 15% + ATLAS 0.15 + GSQ 0.06)"
     },
     {
