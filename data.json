@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-11-12 13:13:02 JST",
+  "updated_at": "2026-11-12 17:15:57 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 5570,
-    "my_rank": 736,
+    "total_teams": 5593,
+    "my_rank": 765,
     "my_score": 0.68,
     "medal": "No Medal",
-    "top_percent": 13.21,
-    "gold_cutoff": 0.733,
+    "top_percent": 13.68,
+    "gold_cutoff": 0.735,
     "silver_cutoff": 0.684,
-    "silver_rank_cutoff": 278,
+    "silver_rank_cutoff": 279,
     "bronze_cutoff": 0.682,
-    "bronze_rank_cutoff": 557
+    "bronze_rank_cutoff": 559
   },
   "running_submission": {
     "ref": 58258303,
@@ -46,28 +46,6 @@
       "status": "PENDING",
       "target_score": "0.680",
       "estimated_completion": "~16:40 JST"
-    },
-    {
-      "ref": 58253128,
-      "version": "NTL-0692 (WeMM Canary)",
-      "track": "Verification Track (Canary)",
-      "description": "NTL 0692 WeMM canary (V56-Fix + hard-fail if WeMM missing; verification)",
-      "params": "V56-Fix + WeMM 5-Fold Hard Assert (RuntimeError on missing folds)",
-      "submitted_at": "2026-11-12 08:48:12",
-      "status": "PENDING",
-      "target_score": "0.680 (or Fail)",
-      "estimated_completion": "~14:00 JST"
-    },
-    {
-      "ref": 58253121,
-      "version": "NTL-0691 (V56-Fix Rerun)",
-      "track": "Verification Track (LB Noise)",
-      "description": "NTL 0691 V56-Fix identical rerun (LB noise measurement; no parameter change)",
-      "params": "100% Identical to V56-Fix (s=0.40, w=0.07, gsq=0.03, atlas=0.10)",
-      "submitted_at": "2026-11-12 08:47:50",
-      "status": "PENDING",
-      "target_score": "0.680",
-      "estimated_completion": "~14:00 JST"
     }
   ],
   "timeline": [
@@ -261,15 +239,15 @@
     {
       "ref": 58253128,
       "date": "2026-11-12 08:48:12",
-      "status": "PENDING",
-      "score": null,
+      "status": "COMPLETE",
+      "score": 0.675,
       "description": "NTL 0692 WeMM canary (V56-Fix + hard-fail if WeMM missing; verification)"
     },
     {
       "ref": 58253121,
       "date": "2026-11-12 08:47:50",
-      "status": "PENDING",
-      "score": null,
+      "status": "COMPLETE",
+      "score": 0.676,
       "description": "NTL 0691 V56-Fix identical rerun (LB noise measurement; no parameter change)"
     },
     {
