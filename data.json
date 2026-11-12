@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-12 11:40:07 JST",
+  "updated_at": "2026-11-12 11:40:21 JST",
   "competition": {
     "name": "Name That LLM",
     "total_teams": 5563,
@@ -14,17 +14,28 @@
     "bronze_rank_cutoff": 556
   },
   "running_submission": {
-    "ref": 58258298,
+    "ref": 58258303,
     "version": "In Progress",
     "track": "Track 1 (Evolution)",
-    "description": "NTL 0693 Ablation E1 (V56-Fix Base + gsq_share 0.06 only)",
+    "description": "NTL 0694 Ablation E2 (V56-Fix Base + atlas_blend 0.15 only)",
     "params": "",
-    "submitted_at": "2026-11-12 11:40:00",
+    "submitted_at": "2026-11-12 11:40:15",
     "status": "PENDING",
     "target_score": "0.681 - 0.682+",
     "estimated_completion": "~15:30 JST"
   },
   "active_runs": [
+    {
+      "ref": 58258303,
+      "version": "In Progress",
+      "track": "Track 1 (Evolution)",
+      "description": "NTL 0694 Ablation E2 (V56-Fix Base + atlas_blend 0.15 only)",
+      "params": "",
+      "submitted_at": "2026-11-12 11:40:15",
+      "status": "PENDING",
+      "target_score": "0.681 - 0.682+",
+      "estimated_completion": "~15:30 JST"
+    },
     {
       "ref": 58258298,
       "version": "In Progress",
@@ -234,6 +245,13 @@
   ],
   "submissions": [
     {
+      "ref": 58258303,
+      "date": "2026-11-12 11:40:15",
+      "status": "PENDING",
+      "score": null,
+      "description": "NTL 0694 Ablation E2 (V56-Fix Base + atlas_blend 0.15 only)"
+    },
+    {
       "ref": 58258298,
       "date": "2026-11-12 11:40:00",
       "status": "PENDING",
@@ -365,13 +383,6 @@
       "status": "COMPLETE",
       "score": 0.668,
       "description": "NTL 0676 V46 Exploration (EXP-09: Damped Stylometry Routing + Target Mix 0.45 + Pairwise 0.10)"
-    },
-    {
-      "ref": 58061105,
-      "date": "2026-11-06 23:51:29",
-      "status": "COMPLETE",
-      "score": 0.668,
-      "description": "NTL 0676 V46 Sovereign Refined (Undiluted N14B 2.5 + Clean Snapshot 0.668 + Calibrated Target Mix 0.45 + Pairwise 0.10)"
     }
   ],
   "architecture_matrix": [
