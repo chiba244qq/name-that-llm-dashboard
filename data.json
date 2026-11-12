@@ -1,30 +1,41 @@
 {
-  "updated_at": "2026-11-12 08:49:10 JST",
+  "updated_at": "2026-11-12 11:40:07 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 5558,
-    "my_rank": 721,
+    "total_teams": 5563,
+    "my_rank": 732,
     "my_score": 0.68,
     "medal": "No Medal",
-    "top_percent": 12.97,
+    "top_percent": 13.16,
     "gold_cutoff": 0.733,
     "silver_cutoff": 0.684,
-    "silver_rank_cutoff": 277,
-    "bronze_cutoff": 0.681,
-    "bronze_rank_cutoff": 555
+    "silver_rank_cutoff": 278,
+    "bronze_cutoff": 0.682,
+    "bronze_rank_cutoff": 556
   },
   "running_submission": {
-    "ref": 58253128,
-    "version": "NTL-0692 (WeMM Canary)",
-    "track": "Verification Track (Canary)",
-    "description": "NTL 0692 WeMM canary (V56-Fix + hard-fail if WeMM missing; verification)",
-    "params": "V56-Fix + WeMM 5-Fold Hard Assert (RuntimeError on missing folds)",
-    "submitted_at": "2026-11-12 08:48:12",
+    "ref": 58258298,
+    "version": "In Progress",
+    "track": "Track 1 (Evolution)",
+    "description": "NTL 0693 Ablation E1 (V56-Fix Base + gsq_share 0.06 only)",
+    "params": "",
+    "submitted_at": "2026-11-12 11:40:00",
     "status": "PENDING",
-    "target_score": "0.680 (or Fail)",
-    "estimated_completion": "~14:00 JST"
+    "target_score": "0.681 - 0.682+",
+    "estimated_completion": "~15:30 JST"
   },
   "active_runs": [
+    {
+      "ref": 58258298,
+      "version": "In Progress",
+      "track": "Track 1 (Evolution)",
+      "description": "NTL 0693 Ablation E1 (V56-Fix Base + gsq_share 0.06 only)",
+      "params": "",
+      "submitted_at": "2026-11-12 11:40:00",
+      "status": "PENDING",
+      "target_score": "0.681 - 0.682+",
+      "estimated_completion": "~15:30 JST"
+    },
     {
       "ref": 58253128,
       "version": "NTL-0692 (WeMM Canary)",
@@ -149,10 +160,10 @@
     },
     {
       "version": "V45 (T1)",
-      "score": 0.667,
+      "score": null,
       "date": "11-06",
       "tag": "Decoy Trap",
-      "desc": "Track 1 Evolution: Dual-SVC 1.0 + N14B 3-Adapter (0.667着地、主力N14B希釈特定)"
+      "desc": "Track 1 Evolution: Dual-SVC 1.0 + N14B 3-Adapter (None着地、主力N14B希釈特定)"
     },
     {
       "version": "V46",
@@ -222,6 +233,13 @@
     }
   ],
   "submissions": [
+    {
+      "ref": 58258298,
+      "date": "2026-11-12 11:40:00",
+      "status": "PENDING",
+      "score": null,
+      "description": "NTL 0693 Ablation E1 (V56-Fix Base + gsq_share 0.06 only)"
+    },
     {
       "ref": 58253128,
       "date": "2026-11-12 08:48:12",
@@ -354,13 +372,6 @@
       "status": "COMPLETE",
       "score": 0.668,
       "description": "NTL 0676 V46 Sovereign Refined (Undiluted N14B 2.5 + Clean Snapshot 0.668 + Calibrated Target Mix 0.45 + Pairwise 0.10)"
-    },
-    {
-      "ref": 58048220,
-      "date": "2026-11-06 15:16:30",
-      "status": "COMPLETE",
-      "score": 0.667,
-      "description": "NTL 0675 V45 Evolution (Disarmed Grandmaster: Snapshot + Dual-SVC 1.0 + Calibrated ATLAS 0.32/0.20 + Sinkhorn 0.30)"
     }
   ],
   "architecture_matrix": [
@@ -499,7 +510,7 @@
     {
       "version": "V45 (T1)",
       "track": "Track 1",
-      "score": "0.667",
+      "score": "Pending",
       "data_pool": "Frozen Snapshot + Dual-SVC 4-view",
       "deberta": "Single (Official)",
       "pairwise_ab": "V34.1 A/B Verifier",
