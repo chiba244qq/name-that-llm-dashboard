@@ -317,7 +317,19 @@ def main():
             params_summary = ""
             track_label = "Track 1 (Evolution)"
             est_comp = "~15:30 JST"
-            if "0692" in desc or "canary" in desc:
+            if "0694" in desc or "E2" in desc:
+                ver_name = "NTL-0694 (Ablation E2: ATLAS 0.15)"
+                params_summary = "V56-Fix + atlas_blend 0.15 only (s=0.40, w=0.07, gsq=0.03)"
+                track_label = "Ablation Track (ATLAS)"
+                est_comp = "~16:40 JST"
+                target_sc = "0.680"
+            elif "0693" in desc or "E1" in desc:
+                ver_name = "NTL-0693 (Ablation E1: GSQ 0.06)"
+                params_summary = "V56-Fix + gsq_share 0.06 only (s=0.40, w=0.07, atlas=0.10)"
+                track_label = "Ablation Track (GSQ)"
+                est_comp = "~16:40 JST"
+                target_sc = "0.680"
+            elif "0692" in desc or "canary" in desc:
                 ver_name = "NTL-0692 (WeMM Canary)"
                 params_summary = "V56-Fix + WeMM 5-Fold Hard Assert (RuntimeError on missing folds)"
                 track_label = "Verification Track (Canary)"

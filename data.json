@@ -1,51 +1,51 @@
 {
-  "updated_at": "2026-11-12 11:40:21 JST",
+  "updated_at": "2026-11-12 13:13:02 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 5563,
-    "my_rank": 732,
+    "total_teams": 5570,
+    "my_rank": 736,
     "my_score": 0.68,
     "medal": "No Medal",
-    "top_percent": 13.16,
+    "top_percent": 13.21,
     "gold_cutoff": 0.733,
     "silver_cutoff": 0.684,
     "silver_rank_cutoff": 278,
     "bronze_cutoff": 0.682,
-    "bronze_rank_cutoff": 556
+    "bronze_rank_cutoff": 557
   },
   "running_submission": {
     "ref": 58258303,
-    "version": "In Progress",
-    "track": "Track 1 (Evolution)",
+    "version": "NTL-0694 (Ablation E2: ATLAS 0.15)",
+    "track": "Ablation Track (ATLAS)",
     "description": "NTL 0694 Ablation E2 (V56-Fix Base + atlas_blend 0.15 only)",
-    "params": "",
+    "params": "V56-Fix + atlas_blend 0.15 only (s=0.40, w=0.07, gsq=0.03)",
     "submitted_at": "2026-11-12 11:40:15",
     "status": "PENDING",
-    "target_score": "0.681 - 0.682+",
-    "estimated_completion": "~15:30 JST"
+    "target_score": "0.680",
+    "estimated_completion": "~16:40 JST"
   },
   "active_runs": [
     {
       "ref": 58258303,
-      "version": "In Progress",
-      "track": "Track 1 (Evolution)",
+      "version": "NTL-0694 (Ablation E2: ATLAS 0.15)",
+      "track": "Ablation Track (ATLAS)",
       "description": "NTL 0694 Ablation E2 (V56-Fix Base + atlas_blend 0.15 only)",
-      "params": "",
+      "params": "V56-Fix + atlas_blend 0.15 only (s=0.40, w=0.07, gsq=0.03)",
       "submitted_at": "2026-11-12 11:40:15",
       "status": "PENDING",
-      "target_score": "0.681 - 0.682+",
-      "estimated_completion": "~15:30 JST"
+      "target_score": "0.680",
+      "estimated_completion": "~16:40 JST"
     },
     {
       "ref": 58258298,
-      "version": "In Progress",
-      "track": "Track 1 (Evolution)",
+      "version": "NTL-0693 (Ablation E1: GSQ 0.06)",
+      "track": "Ablation Track (GSQ)",
       "description": "NTL 0693 Ablation E1 (V56-Fix Base + gsq_share 0.06 only)",
-      "params": "",
+      "params": "V56-Fix + gsq_share 0.06 only (s=0.40, w=0.07, atlas=0.10)",
       "submitted_at": "2026-11-12 11:40:00",
       "status": "PENDING",
-      "target_score": "0.681 - 0.682+",
-      "estimated_completion": "~15:30 JST"
+      "target_score": "0.680",
+      "estimated_completion": "~16:40 JST"
     },
     {
       "ref": 58253128,
