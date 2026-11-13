@@ -1,20 +1,42 @@
 {
-  "updated_at": "2026-11-13 17:50:40 JST",
+  "updated_at": "2026-11-13 18:05:56 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 5724,
-    "my_rank": 603,
+    "total_teams": 5727,
+    "my_rank": 606,
     "my_score": 0.684,
     "medal": "No Medal",
-    "top_percent": 10.53,
+    "top_percent": 10.58,
     "gold_cutoff": 0.737,
     "silver_cutoff": 0.684,
     "silver_rank_cutoff": 286,
     "bronze_cutoff": 0.684,
     "bronze_rank_cutoff": 572
   },
-  "running_submission": null,
-  "active_runs": [],
+  "running_submission": {
+    "ref": 58303363,
+    "version": "In Progress",
+    "track": "Track 1 (Evolution)",
+    "description": "NTL 0696 Public 0.684 Clean + WeMM-4B 0.07 (5-Fold Parallel + Safe Fallback)",
+    "params": "",
+    "submitted_at": "2026-11-13 18:05:37",
+    "status": "PENDING",
+    "target_score": "0.681 - 0.682+",
+    "estimated_completion": "~15:30 JST"
+  },
+  "active_runs": [
+    {
+      "ref": 58303363,
+      "version": "In Progress",
+      "track": "Track 1 (Evolution)",
+      "description": "NTL 0696 Public 0.684 Clean + WeMM-4B 0.07 (5-Fold Parallel + Safe Fallback)",
+      "params": "",
+      "submitted_at": "2026-11-13 18:05:37",
+      "status": "PENDING",
+      "target_score": "0.681 - 0.682+",
+      "estimated_completion": "~15:30 JST"
+    }
+  ],
   "timeline": [
     {
       "version": "V28",
@@ -190,6 +212,13 @@
   ],
   "submissions": [
     {
+      "ref": 58303363,
+      "date": "2026-11-13 18:05:37",
+      "status": "PENDING",
+      "score": null,
+      "description": "NTL 0696 Public 0.684 Clean + WeMM-4B 0.07 (5-Fold Parallel + Safe Fallback)"
+    },
+    {
       "ref": 58292048,
       "date": "2026-11-13 11:14:05",
       "status": "COMPLETE",
@@ -321,13 +350,6 @@
       "status": "COMPLETE",
       "score": 0.67,
       "description": "NTL 0678 V48 Apex (0.670 DeBERTa-v3 Classifier w=2.2 + Tuned Dual-SVC 6.0/4.0 + ATLAS 0.20 + Sinkhorn 0.30)"
-    },
-    {
-      "ref": 58074482,
-      "date": "2026-11-07 09:57:16",
-      "status": "COMPLETE",
-      "score": 0.664,
-      "description": "NTL 0677 V47 Evolution (0.668 Sovereign + Amanatar 45k Clean SVC Bank w=1.5 + Mix 0.45 + Pairwise 0.10)"
     }
   ],
   "architecture_matrix": [
