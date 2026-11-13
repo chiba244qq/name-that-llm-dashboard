@@ -1,53 +1,20 @@
 {
-  "updated_at": "2026-11-12 17:15:57 JST",
+  "updated_at": "2026-11-13 10:24:04 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 5593,
-    "my_rank": 765,
+    "total_teams": 5686,
+    "my_rank": 878,
     "my_score": 0.68,
     "medal": "No Medal",
-    "top_percent": 13.68,
-    "gold_cutoff": 0.735,
+    "top_percent": 15.44,
+    "gold_cutoff": 0.737,
     "silver_cutoff": 0.684,
-    "silver_rank_cutoff": 279,
-    "bronze_cutoff": 0.682,
-    "bronze_rank_cutoff": 559
+    "silver_rank_cutoff": 284,
+    "bronze_cutoff": 0.683,
+    "bronze_rank_cutoff": 568
   },
-  "running_submission": {
-    "ref": 58258303,
-    "version": "NTL-0694 (Ablation E2: ATLAS 0.15)",
-    "track": "Ablation Track (ATLAS)",
-    "description": "NTL 0694 Ablation E2 (V56-Fix Base + atlas_blend 0.15 only)",
-    "params": "V56-Fix + atlas_blend 0.15 only (s=0.40, w=0.07, gsq=0.03)",
-    "submitted_at": "2026-11-12 11:40:15",
-    "status": "PENDING",
-    "target_score": "0.680",
-    "estimated_completion": "~16:40 JST"
-  },
-  "active_runs": [
-    {
-      "ref": 58258303,
-      "version": "NTL-0694 (Ablation E2: ATLAS 0.15)",
-      "track": "Ablation Track (ATLAS)",
-      "description": "NTL 0694 Ablation E2 (V56-Fix Base + atlas_blend 0.15 only)",
-      "params": "V56-Fix + atlas_blend 0.15 only (s=0.40, w=0.07, gsq=0.03)",
-      "submitted_at": "2026-11-12 11:40:15",
-      "status": "PENDING",
-      "target_score": "0.680",
-      "estimated_completion": "~16:40 JST"
-    },
-    {
-      "ref": 58258298,
-      "version": "NTL-0693 (Ablation E1: GSQ 0.06)",
-      "track": "Ablation Track (GSQ)",
-      "description": "NTL 0693 Ablation E1 (V56-Fix Base + gsq_share 0.06 only)",
-      "params": "V56-Fix + gsq_share 0.06 only (s=0.40, w=0.07, atlas=0.10)",
-      "submitted_at": "2026-11-12 11:40:00",
-      "status": "PENDING",
-      "target_score": "0.680",
-      "estimated_completion": "~16:40 JST"
-    }
-  ],
+  "running_submission": null,
+  "active_runs": [],
   "timeline": [
     {
       "version": "V28",
@@ -225,15 +192,15 @@
     {
       "ref": 58258303,
       "date": "2026-11-12 11:40:15",
-      "status": "PENDING",
-      "score": null,
+      "status": "COMPLETE",
+      "score": 0.676,
       "description": "NTL 0694 Ablation E2 (V56-Fix Base + atlas_blend 0.15 only)"
     },
     {
       "ref": 58258298,
       "date": "2026-11-12 11:40:00",
-      "status": "PENDING",
-      "score": null,
+      "status": "COMPLETE",
+      "score": 0.677,
       "description": "NTL 0693 Ablation E1 (V56-Fix Base + gsq_share 0.06 only)"
     },
     {
