@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-11-13 18:05:56 JST",
+  "updated_at": "2026-11-13 18:42:11 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 5727,
+    "total_teams": 5729,
     "my_rank": 606,
     "my_score": 0.684,
     "medal": "No Medal",
@@ -14,17 +14,28 @@
     "bronze_rank_cutoff": 572
   },
   "running_submission": {
-    "ref": 58303363,
+    "ref": 58304300,
     "version": "In Progress",
     "track": "Track 1 (Evolution)",
-    "description": "NTL 0696 Public 0.684 Clean + WeMM-4B 0.07 (5-Fold Parallel + Safe Fallback)",
+    "description": "NTL 0697 Public 0.684 Clean + Sinkhorn 0.20 (prvsiyan v37 hypothesis)",
     "params": "",
-    "submitted_at": "2026-11-13 18:05:37",
+    "submitted_at": "2026-11-13 18:41:33",
     "status": "PENDING",
     "target_score": "0.681 - 0.682+",
     "estimated_completion": "~15:30 JST"
   },
   "active_runs": [
+    {
+      "ref": 58304300,
+      "version": "In Progress",
+      "track": "Track 1 (Evolution)",
+      "description": "NTL 0697 Public 0.684 Clean + Sinkhorn 0.20 (prvsiyan v37 hypothesis)",
+      "params": "",
+      "submitted_at": "2026-11-13 18:41:33",
+      "status": "PENDING",
+      "target_score": "0.681 - 0.682+",
+      "estimated_completion": "~15:30 JST"
+    },
     {
       "ref": 58303363,
       "version": "In Progress",
@@ -212,6 +223,13 @@
   ],
   "submissions": [
     {
+      "ref": 58304300,
+      "date": "2026-11-13 18:41:33",
+      "status": "PENDING",
+      "score": null,
+      "description": "NTL 0697 Public 0.684 Clean + Sinkhorn 0.20 (prvsiyan v37 hypothesis)"
+    },
+    {
       "ref": 58303363,
       "date": "2026-11-13 18:05:37",
       "status": "PENDING",
@@ -343,13 +361,6 @@
       "status": "COMPLETE",
       "score": 0.67,
       "description": "NTL 0679 V49 Evolution (0.670 Core + Pre-Sinkhorn Sibling Forensic Residual + DeBERTa-v3 w=2.2 + Dual-SVC 6.0/4.0)"
-    },
-    {
-      "ref": 58090759,
-      "date": "2026-11-07 20:52:34",
-      "status": "COMPLETE",
-      "score": 0.67,
-      "description": "NTL 0678 V48 Apex (0.670 DeBERTa-v3 Classifier w=2.2 + Tuned Dual-SVC 6.0/4.0 + ATLAS 0.20 + Sinkhorn 0.30)"
     }
   ],
   "architecture_matrix": [
