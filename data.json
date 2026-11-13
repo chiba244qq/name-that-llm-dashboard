@@ -1,20 +1,42 @@
 {
-  "updated_at": "2026-11-13 10:24:04 JST",
+  "updated_at": "2026-11-13 11:14:24 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 5686,
-    "my_rank": 878,
+    "total_teams": 5691,
+    "my_rank": 882,
     "my_score": 0.68,
     "medal": "No Medal",
-    "top_percent": 15.44,
+    "top_percent": 15.5,
     "gold_cutoff": 0.737,
     "silver_cutoff": 0.684,
     "silver_rank_cutoff": 284,
     "bronze_cutoff": 0.683,
-    "bronze_rank_cutoff": 568
+    "bronze_rank_cutoff": 569
   },
-  "running_submission": null,
-  "active_runs": [],
+  "running_submission": {
+    "ref": 58292048,
+    "version": "In Progress",
+    "track": "Track 1 (Evolution)",
+    "description": "NTL 0695 Public 0.684 Clean Benchmark (All Public Repro)",
+    "params": "",
+    "submitted_at": "2026-11-13 11:14:05",
+    "status": "PENDING",
+    "target_score": "0.681 - 0.682+",
+    "estimated_completion": "~15:30 JST"
+  },
+  "active_runs": [
+    {
+      "ref": 58292048,
+      "version": "In Progress",
+      "track": "Track 1 (Evolution)",
+      "description": "NTL 0695 Public 0.684 Clean Benchmark (All Public Repro)",
+      "params": "",
+      "submitted_at": "2026-11-13 11:14:05",
+      "status": "PENDING",
+      "target_score": "0.681 - 0.682+",
+      "estimated_completion": "~15:30 JST"
+    }
+  ],
   "timeline": [
     {
       "version": "V28",
@@ -190,6 +212,13 @@
   ],
   "submissions": [
     {
+      "ref": 58292048,
+      "date": "2026-11-13 11:14:05",
+      "status": "PENDING",
+      "score": null,
+      "description": "NTL 0695 Public 0.684 Clean Benchmark (All Public Repro)"
+    },
+    {
       "ref": 58258303,
       "date": "2026-11-12 11:40:15",
       "status": "COMPLETE",
@@ -321,13 +350,6 @@
       "status": "COMPLETE",
       "score": 0.664,
       "description": "NTL 0677 V47 Evolution (0.668 Sovereign + Amanatar 45k Clean SVC Bank w=1.5 + Mix 0.45 + Pairwise 0.10)"
-    },
-    {
-      "ref": 58063546,
-      "date": "2026-11-07 01:32:04",
-      "status": "COMPLETE",
-      "score": 0.668,
-      "description": "NTL 0676 V46 Exploration (EXP-09: Damped Stylometry Routing + Target Mix 0.45 + Pairwise 0.10)"
     }
   ],
   "architecture_matrix": [
