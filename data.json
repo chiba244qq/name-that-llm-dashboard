@@ -1,42 +1,20 @@
 {
-  "updated_at": "2026-11-13 15:00:05 JST",
+  "updated_at": "2026-11-13 17:50:40 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 5710,
-    "my_rank": 909,
-    "my_score": 0.68,
+    "total_teams": 5724,
+    "my_rank": 603,
+    "my_score": 0.684,
     "medal": "No Medal",
-    "top_percent": 15.92,
+    "top_percent": 10.53,
     "gold_cutoff": 0.737,
     "silver_cutoff": 0.684,
-    "silver_rank_cutoff": 285,
+    "silver_rank_cutoff": 286,
     "bronze_cutoff": 0.684,
-    "bronze_rank_cutoff": 571
+    "bronze_rank_cutoff": 572
   },
-  "running_submission": {
-    "ref": 58292048,
-    "version": "In Progress",
-    "track": "Track 1 (Evolution)",
-    "description": "NTL 0695 Public 0.684 Clean Benchmark (All Public Repro)",
-    "params": "",
-    "submitted_at": "2026-11-13 11:14:05",
-    "status": "PENDING",
-    "target_score": "0.681 - 0.682+",
-    "estimated_completion": "~15:30 JST"
-  },
-  "active_runs": [
-    {
-      "ref": 58292048,
-      "version": "In Progress",
-      "track": "Track 1 (Evolution)",
-      "description": "NTL 0695 Public 0.684 Clean Benchmark (All Public Repro)",
-      "params": "",
-      "submitted_at": "2026-11-13 11:14:05",
-      "status": "PENDING",
-      "target_score": "0.681 - 0.682+",
-      "estimated_completion": "~15:30 JST"
-    }
-  ],
+  "running_submission": null,
+  "active_runs": [],
   "timeline": [
     {
       "version": "V28",
@@ -214,8 +192,8 @@
     {
       "ref": 58292048,
       "date": "2026-11-13 11:14:05",
-      "status": "PENDING",
-      "score": null,
+      "status": "COMPLETE",
+      "score": 0.684,
       "description": "NTL 0695 Public 0.684 Clean Benchmark (All Public Repro)"
     },
     {
