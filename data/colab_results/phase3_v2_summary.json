@@ -1,0 +1,21 @@
+{
+  "model_id": "Qwen/Qwen3-Embedding-4B",
+  "max_len": 384,
+  "epochs": 3,
+  "lr": 0.00015,
+  "lora_r": 16,
+  "overall_3class_oof_acc": 0.38752783964365256,
+  "fold_best_accs": [
+    0.4111111111111111,
+    0.3888888888888889,
+    0.35555555555555557,
+    0.4222222222222222,
+    0.3595505617977528
+  ],
+  "target_names": [
+    "glm-5.3",
+    "glm-5.3-flash",
+    "claude-fable-5"
+  ],
+  "timestamp_utc": "2026-11-14 09:29:22 UTC"
+}
