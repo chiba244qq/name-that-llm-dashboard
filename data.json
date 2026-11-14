@@ -1,53 +1,20 @@
 {
-  "updated_at": "2026-11-13 18:42:11 JST",
+  "updated_at": "2026-11-14 09:02:56 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 5729,
-    "my_rank": 606,
+    "total_teams": 5797,
+    "my_rank": 651,
     "my_score": 0.684,
     "medal": "No Medal",
-    "top_percent": 10.58,
+    "top_percent": 11.23,
     "gold_cutoff": 0.737,
     "silver_cutoff": 0.684,
-    "silver_rank_cutoff": 286,
+    "silver_rank_cutoff": 289,
     "bronze_cutoff": 0.684,
-    "bronze_rank_cutoff": 572
+    "bronze_rank_cutoff": 579
   },
-  "running_submission": {
-    "ref": 58304300,
-    "version": "In Progress",
-    "track": "Track 1 (Evolution)",
-    "description": "NTL 0697 Public 0.684 Clean + Sinkhorn 0.20 (prvsiyan v37 hypothesis)",
-    "params": "",
-    "submitted_at": "2026-11-13 18:41:33",
-    "status": "PENDING",
-    "target_score": "0.681 - 0.682+",
-    "estimated_completion": "~15:30 JST"
-  },
-  "active_runs": [
-    {
-      "ref": 58304300,
-      "version": "In Progress",
-      "track": "Track 1 (Evolution)",
-      "description": "NTL 0697 Public 0.684 Clean + Sinkhorn 0.20 (prvsiyan v37 hypothesis)",
-      "params": "",
-      "submitted_at": "2026-11-13 18:41:33",
-      "status": "PENDING",
-      "target_score": "0.681 - 0.682+",
-      "estimated_completion": "~15:30 JST"
-    },
-    {
-      "ref": 58303363,
-      "version": "In Progress",
-      "track": "Track 1 (Evolution)",
-      "description": "NTL 0696 Public 0.684 Clean + WeMM-4B 0.07 (5-Fold Parallel + Safe Fallback)",
-      "params": "",
-      "submitted_at": "2026-11-13 18:05:37",
-      "status": "PENDING",
-      "target_score": "0.681 - 0.682+",
-      "estimated_completion": "~15:30 JST"
-    }
-  ],
+  "running_submission": null,
+  "active_runs": [],
   "timeline": [
     {
       "version": "V28",
@@ -225,15 +192,15 @@
     {
       "ref": 58304300,
       "date": "2026-11-13 18:41:33",
-      "status": "PENDING",
-      "score": null,
+      "status": "COMPLETE",
+      "score": 0.679,
       "description": "NTL 0697 Public 0.684 Clean + Sinkhorn 0.20 (prvsiyan v37 hypothesis)"
     },
     {
       "ref": 58303363,
       "date": "2026-11-13 18:05:37",
-      "status": "PENDING",
-      "score": null,
+      "status": "COMPLETE",
+      "score": 0.678,
       "description": "NTL 0696 Public 0.684 Clean + WeMM-4B 0.07 (5-Fold Parallel + Safe Fallback)"
     },
     {
