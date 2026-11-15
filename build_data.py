@@ -479,7 +479,13 @@ def main():
         {"version": "V56-Fix", "score": 0.680, "date": "11-10", "tag": "Dual-Emb Base", "desc": "extra_cls完全排除 + Qwen3-8B (40%) + Tencent WeMM-4B (7%) 並列統合で0.680完全復帰"},
         {"version": "V57", "score": None, "target": 0.680, "date": "11-11", "tag": "Timeout", "desc": "Dual-Embedding Sovereign (9時間制限超過により失格判定)"},
         {"version": "V58", "score": 0.673, "target": 0.680, "date": "11-11", "tag": "Diagnostic", "desc": "Dual-Embedding Tuned (Qwen3 50% + WeMM4 10% + ATLAS 0.15 + GSQ 0.06: LB 0.673)"},
-        {"version": "V59", "score": None, "target": 0.680, "date": "11-11", "tag": "Diagnostic", "desc": "WeMM4 15% 拡張検証 (Qwen3 50% + WeMM4 15% + ATLAS 0.15 + GSQ 0.06: 推論中)"}
+        {"version": "V59 (0690)", "score": 0.673, "target": 0.680, "date": "11-11", "tag": "Diagnostic", "desc": "WeMM4 15% 拡張検証 (Qwen3 50% + WeMM4 15% + ATLAS 0.15 + GSQ 0.06: LB 0.673)"},
+        {"version": "0691-0694", "score": 0.677, "date": "11-12", "tag": "Ablation", "desc": "V56-Fix再検証・WeMMカナリア・GSQ0.06/ATLAS0.15単体アブレーション (0.675〜0.677)"},
+        {"version": "NTL 0695", "score": 0.684, "date": "11-13", "tag": "0.684 Clean Base", "desc": "All Public 0.684 Clean Benchmark (infer.py + comp_stack.py 完走)"},
+        {"version": "0696 / 0697", "score": 0.679, "date": "11-13", "tag": "Diagnostic", "desc": "0.684 + WeMM 0.07 (0.678) / Sinkhorn 0.20 (0.679)"},
+        {"version": "0698 / 0699", "score": None, "date": "11-15", "tag": "Error", "desc": "sanpierベース 81b1e7c4 イメージで CUDA init 失敗・リラン例外エラー"},
+        {"version": "NTL 0700", "score": 0.696, "date": "11-15", "tag": "0.696 Breakthrough", "desc": "0.684 Stack + GLM-5.3/Flash V1 Graft (de153e6d GPU + 実測V1_COST + 8.75h: 0.696)"},
+        {"version": "NTL 0701", "score": 0.694, "date": "11-15", "tag": "Bronze", "desc": "0700 + 曖昧度優先選択 (mass - 0.25*|p53 - pflash|: 0.694)"}
     ]
 
     # 4. Architecture comparison matrix
@@ -502,7 +508,10 @@ def main():
         {"version": "V56-Fix", "track": "Track 1", "score": "0.680", "data_pool": "Sovereign 5-Fold + GSQ 0.03", "deberta": "Core + Comp (No ExtraCls)", "pairwise_ab": "ATLAS (w=0.10)", "sibling_style": "Qwen3 (0.40) + WeMM4 (0.07)", "atlas_margin": "0.30", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【0.680完全復帰】2xT4並列WeMM-4Bワーカー統合・5時間00分完走"},
         {"version": "V57 (Timeout)", "track": "Track 2", "score": "TIMEOUT", "data_pool": "Sovereign 5-Fold + GSQ 0.06", "deberta": "Core + Comp (.85/.15)", "pairwise_ab": "ATLAS (w=0.20)", "sibling_style": "Qwen3 (0.45) + WeMM4 (0.10)", "atlas_margin": "0.30", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【9時間超過】Ref: 58222075 (ランタイム上限超過失格)"},
         {"version": "V58 (0.673)", "track": "Track 1", "score": "0.673", "data_pool": "Sovereign 5-Fold + GSQ 0.06", "deberta": "Core + Comp (.85/.15)", "pairwise_ab": "ATLAS (w=0.15)", "sibling_style": "Qwen3 (0.50) + WeMM4 (0.10)", "atlas_margin": "0.30", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【推論完了: 0.673】Ref: 58224297 (LB 0.673 / V56比 -0.007)"},
-        {"version": "V59 (Running)", "track": "Track 3", "score": "PENDING", "data_pool": "Sovereign 5-Fold + GSQ 0.06", "deberta": "Core + Comp (.85/.15)", "pairwise_ab": "ATLAS (w=0.15)", "sibling_style": "Qwen3 (0.50) + WeMM4 (0.15)", "atlas_margin": "0.30", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【推論中】Ref: 58233790 (WeMM4 15% 拡張検証)"}
+        {"version": "V59 (0690)", "track": "Track 3", "score": "0.673", "data_pool": "Sovereign 5-Fold + GSQ 0.06", "deberta": "Core + Comp (.85/.15)", "pairwise_ab": "ATLAS (w=0.15)", "sibling_style": "Qwen3 (0.50) + WeMM4 (0.15)", "atlas_margin": "0.30", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【完了: 0.673】Ref: 58233790 (WeMM4 15% 拡張検証)"},
+        {"version": "NTL 0695", "track": "Benchmark", "score": "0.684", "data_pool": "All Public 0.684 Clean", "deberta": "comp_stack.py", "pairwise_ab": "ATLAS V9", "sibling_style": "Qwen3-Emb + GSQ-27B", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【0.684再現】Ref: 58292048 (de153e6d / クリーン基準)"},
+        {"version": "NTL 0700", "track": "V1 Graft", "score": "0.696", "data_pool": "0.684 Clean + V1 GLM Likelihood", "deberta": "comp_stack.py + ntl-segrun", "pairwise_ab": "ATLAS V9", "sibling_style": "Qwen3 + GSQ + GLM-5.3/Flash", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【0.696突破】Ref: 58388241 (de153e6d GPU + 実測V1_COST + 8.75h / Bronze復帰)"},
+        {"version": "NTL 0701", "track": "V1 Graft", "score": "0.694", "data_pool": "0700 + Ambiguity Priority", "deberta": "comp_stack.py + ntl-segrun", "pairwise_ab": "ATLAS V9", "sibling_style": "mass - 0.25*|p53-pflash|", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【完了: 0.694】Ref: 58388340 (曖昧度優先選択)"}
     ]
 
     # 5. Extract Markdown Reports
