@@ -1,0 +1,49 @@
+{
+  "model_id": "Qwen/Qwen3-Embedding-8B",
+  "use_4bit": false,
+  "max_len": 512,
+  "epochs": 4,
+  "n_folds_run": 5,
+  "rows_evaluated": 2699,
+  "overall_18class_bacc": 0.46121,
+  "glm_fable5_3class_acc": 0.4321,
+  "gem37_38_2class_acc": 0.5667,
+  "gpt56_3class_acc": 0.5,
+  "folds": {
+    "fold0": {
+      "best_epoch": 4,
+      "best_bacc": 0.47222,
+      "glm_fable5_acc": 0.4667,
+      "gem37_38_acc": 0.4667,
+      "elapsed_sec": 1539.4
+    },
+    "fold1": {
+      "best_epoch": 4,
+      "best_bacc": 0.45741,
+      "glm_fable5_acc": 0.3778,
+      "gem37_38_acc": 0.6167,
+      "elapsed_sec": 1507.7
+    },
+    "fold2": {
+      "best_epoch": 4,
+      "best_bacc": 0.45,
+      "glm_fable5_acc": 0.4222,
+      "gem37_38_acc": 0.6333,
+      "elapsed_sec": 1504.3
+    },
+    "fold3": {
+      "best_epoch": 4,
+      "best_bacc": 0.47261,
+      "glm_fable5_acc": 0.4944,
+      "gem37_38_acc": 0.55,
+      "elapsed_sec": 1498.6
+    },
+    "fold4": {
+      "best_epoch": 4,
+      "best_bacc": 0.4537,
+      "glm_fable5_acc": 0.4,
+      "gem37_38_acc": 0.5667,
+      "elapsed_sec": 1506.1
+    }
+  }
+}
