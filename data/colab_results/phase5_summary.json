@@ -1,0 +1,15 @@
+{
+  "models": [
+    "Qwen/Qwen3-4B-Base",
+    "Qwen/Qwen2.5-7B"
+  ],
+  "max_len": 1024,
+  "shape": [
+    2699,
+    70
+  ],
+  "qwen3_4b_lp_mean": -3.19454,
+  "qwen3_4b_ent_mean": 2.89068,
+  "qwen25_7b_lp_mean": -3.11292,
+  "qwen25_7b_ent_mean": 2.7896
+}
