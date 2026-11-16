@@ -1,0 +1,27 @@
+{
+  "gpu": "NVIDIA A100-SXM4-40GB",
+  "models": [
+    "Qwen/Qwen3-8B-Base",
+    "unsloth/Meta-Llama-3.1-8B"
+  ],
+  "max_len": 1024,
+  "shape": [
+    2699,
+    70
+  ],
+  "total_elapsed_sec": 213.7,
+  "timings": {
+    "qwen3_8b_base": {
+      "load_sec": 64.0,
+      "infer_sec": 50.2
+    },
+    "llama31_8b": {
+      "load_sec": 53.9,
+      "infer_sec": 44.5
+    }
+  },
+  "qwen3_8b_lp_mean": -3.01705,
+  "qwen3_8b_ent_mean": 2.75804,
+  "llama31_8b_lp_mean": -3.13612,
+  "llama31_8b_ent_mean": 2.9193
+}
