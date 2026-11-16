@@ -1,0 +1,18 @@
+{
+  "model_id": "Qwen/Qwen3-4B-Base",
+  "n_folds_run": 1,
+  "rows_evaluated": 540,
+  "overall_18class_bacc": 0.44074,
+  "glm_fable5_3class_acc": 0.4778,
+  "gem37_38_2class_acc": 0.6,
+  "gpt56_3class_acc": 0.5333,
+  "folds": {
+    "fold0": {
+      "best_epoch": 6,
+      "best_bacc": 0.44074,
+      "glm_fable5_acc": 0.4778,
+      "gem37_38_acc": 0.6,
+      "elapsed_sec": 3127.8
+    }
+  }
+}
