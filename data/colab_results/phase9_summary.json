@@ -1,0 +1,29 @@
+{
+  "gpu": "NVIDIA L4",
+  "models": {
+    "qwen35_9b": "unsloth/Qwen3.5-9B-Base",
+    "gemma4_12b": "unsloth/gemma-4-12b"
+  },
+  "max_len": 1024,
+  "shape": [
+    2699,
+    60
+  ],
+  "total_elapsed_sec": 1095.6,
+  "timings": {
+    "qwen35_9b": {
+      "load_sec": 148.0,
+      "infer_sec": 314.0,
+      "hf_id": "unsloth/Qwen3.5-9B-Base"
+    },
+    "gemma4_12b": {
+      "load_sec": 137.8,
+      "infer_sec": 494.3,
+      "hf_id": "unsloth/gemma-4-12b"
+    }
+  },
+  "qwen35_9b_lp_mean": -2.78919,
+  "qwen35_9b_ent_mean": 2.30309,
+  "gemma4_12b_lp_mean": -3.22086,
+  "gemma4_12b_ent_mean": 2.9849
+}
