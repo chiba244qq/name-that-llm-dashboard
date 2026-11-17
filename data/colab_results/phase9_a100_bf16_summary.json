@@ -1,0 +1,58 @@
+{
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "vram_gb": 85.1,
+  "models": {
+    "qwen35_9b": "unsloth/Qwen3.5-9B-Base",
+    "gemma4_12b": "unsloth/gemma-4-12b"
+  },
+  "max_len": 1024,
+  "shape": [
+    2699,
+    60
+  ],
+  "total_elapsed_sec": 453.6,
+  "timings": {
+    "qwen35_9b": {
+      "load_sec": 121.3,
+      "infer_sec": 97.3,
+      "hf_id": "unsloth/Qwen3.5-9B-Base",
+      "used_4bit": false,
+      "dtype": "torch.bfloat16",
+      "t4_parity": {
+        "0": {
+          "dlp": 0.02044,
+          "dent": 0.17084,
+          "dtok": 0
+        },
+        "1280": {
+          "dlp": 0.02749,
+          "dent": 0.09236,
+          "dtok": 0
+        }
+      }
+    },
+    "gemma4_12b": {
+      "load_sec": 83.8,
+      "infer_sec": 149.8,
+      "hf_id": "unsloth/gemma-4-12b",
+      "used_4bit": false,
+      "dtype": "torch.bfloat16",
+      "t4_parity": {
+        "0": {
+          "dlp": 0.00402,
+          "dent": 0.0027,
+          "dtok": 0
+        },
+        "1280": {
+          "dlp": -0.00606,
+          "dent": 0.00413,
+          "dtok": 0
+        }
+      }
+    }
+  },
+  "qwen35_9b_lp_mean": -2.73926,
+  "qwen35_9b_ent_mean": 2.30967,
+  "gemma4_12b_lp_mean": -3.16534,
+  "gemma4_12b_ent_mean": 2.78198
+}
