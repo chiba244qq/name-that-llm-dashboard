@@ -515,8 +515,8 @@ def main():
     # 6. Load Local Offline Verification Benchmark Results
     local_verif = None
     verif_candidates = [
+        os.path.join(os.path.dirname(os.path.abspath(__file__)), 'local_verification_results.json'),
         '/Users/echo/kaggle/name-that-llm/local_verification_results.json',
-        os.path.join(os.path.dirname(os.path.abspath(__file__)), 'local_verification_results.json')
     ]
     for vp in verif_candidates:
         if os.path.exists(vp):
