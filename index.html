@@ -142,9 +142,9 @@
           <span class="text-xs text-slate-400">Balanced Acc</span>
         </div>
         <div class="mt-3 flex items-center text-xs space-x-1.5 text-slate-400">
-          <span>Target (V57/V58):</span>
-          <span class="font-bold text-emerald-400 mono">0.681 - 0.682+</span>
-          <span class="text-slate-500">(Top 100 Zone)</span>
+          <span>Breakout Target:</span>
+          <span class="font-bold text-emerald-400 mono">0.705+</span>
+          <span class="text-slate-500" id="kpi-cliff-note">(Top 153 Silver Cliff)</span>
         </div>
       </div>
 
@@ -192,15 +192,15 @@
       <div class="lg:col-span-2 rounded-2xl border border-slate-800 bg-slate-900/60 p-5 space-y-4">
         <div class="flex items-center justify-between">
           <div>
-            <h3 class="text-base font-bold text-white">Score Evolution & Breakthrough Trajectory</h3>
-            <p class="text-xs text-slate-400">V28 (0.662) → V44 (0.668) → V52/V56-Fix (0.680) → V57/V58 (Dual-Emb Sovereign)</p>
+            <h3 class="text-base font-bold text-white">Score Evolution &amp; Breakthrough Trajectory</h3>
+            <p class="text-xs text-slate-400">V28 (0.662) → V52/V56 (0.680) → NTL 0695 (0.684) → NTL 0700 (0.696) → NTL 0707 (0.698)</p>
           </div>
           <div class="flex items-center space-x-2 text-xs">
             <span class="inline-flex items-center px-2 py-0.5 rounded bg-cyan-950 text-cyan-400 border border-cyan-800 font-semibold">
               Actual Score
             </span>
             <span class="inline-flex items-center px-2 py-0.5 rounded bg-emerald-950 text-emerald-400 border border-emerald-800 font-semibold">
-              V57/V58 Target
+              0.705+ Target
             </span>
           </div>
         </div>
@@ -212,50 +212,61 @@
       <!-- Live Operations & Strategy Radar (1 Col) -->
       <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 space-y-4 flex flex-col justify-between">
         <div>
-          <h3 class="text-base font-bold text-white">Competition Architecture Highlights</h3>
-          <p class="text-xs text-slate-400">Mathematical & Algorithmic Milestones</p>
+          <h3 class="text-base font-bold text-white">0.702 団子 vs 0.705+ 銀の崖 &amp; 棄却ログ</h3>
+          <p class="text-xs text-slate-400">LB Cluster Radar &amp; Do-Not-Repeat Registry</p>
           <div class="mt-4 space-y-3 text-xs">
+            <div class="p-3 rounded-xl bg-slate-800/60 border border-slate-700/60 space-y-1.5">
+              <div class="flex items-center justify-between font-semibold text-slate-200">
+                <span class="flex items-center space-x-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                  <span>LB スコア帯別密集分布</span>
+                </span>
+                <span class="mono text-amber-300" id="cluster-0702">0.702+: --</span>
+              </div>
+              <div class="grid grid-cols-3 gap-1.5 pt-1 mono text-[11px]">
+                <div class="bg-slate-950/70 rounded px-2 py-1 border border-slate-800">
+                  <div class="text-slate-400">≥ 0.705</div>
+                  <div class="text-emerald-400 font-bold" id="cluster-0705">--</div>
+                </div>
+                <div class="bg-slate-950/70 rounded px-2 py-1 border border-slate-800">
+                  <div class="text-slate-400">≥ 0.710</div>
+                  <div class="text-cyan-400 font-bold" id="cluster-0710">--</div>
+                </div>
+                <div class="bg-slate-950/70 rounded px-2 py-1 border border-slate-800">
+                  <div class="text-slate-400">≥ 0.750</div>
+                  <div class="text-amber-300 font-bold" id="cluster-0750">--</div>
+                </div>
+              </div>
+            </div>
             <div class="p-3 rounded-xl bg-slate-800/60 border border-slate-700/60 space-y-1">
               <div class="flex items-center justify-between font-semibold text-slate-200">
                 <span class="flex items-center space-x-1.5">
                   <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
-                  <span>Sinkhorn Marginal Balancing</span>
+                  <span>NTL 0707 (現ベスト 0.698)</span>
                 </span>
-                <span class="mono text-cyan-300">λ = 0.30</span>
+                <span class="mono text-cyan-300">cover = 0.30</span>
               </div>
               <p class="text-slate-400 leading-relaxed">
-                予測確率の偏りをテストセット大域で等配分。過小予測クラスのRecallゼロ崖を完全回避。
+                comp_stack 無効化 ＋ GSQ 27B 完走 ＋ V1(fixed_s=870/1140) で 0.698。0.15(0.694) / 0.45+pack(0.695) より優位。
               </p>
             </div>
-            <div class="p-3 rounded-xl bg-slate-800/60 border border-slate-700/60 space-y-1">
-              <div class="flex items-center justify-between font-semibold text-slate-200">
+            <div class="p-3 rounded-xl bg-rose-950/25 border border-rose-900/50 space-y-1">
+              <div class="flex items-center justify-between font-semibold text-rose-300">
                 <span class="flex items-center space-x-1.5">
-                  <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
-                  <span>Dual-DeBERTa Stack</span>
+                  <span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
+                  <span>棄却済み (Do-Not-Repeat)</span>
                 </span>
-                <span class="mono text-blue-300">0.75 / 0.25</span>
+                <span class="mono text-rose-400">OOF/LB 検証済</span>
               </div>
               <p class="text-slate-400 leading-relaxed">
-                未見プロンプト精度が 0.523 → 0.576 へ急伸した OpenPool 学習済み DeBERTa 重みを統合。
-              </p>
-            </div>
-            <div class="p-3 rounded-xl bg-slate-800/60 border border-slate-700/60 space-y-1">
-              <div class="flex items-center justify-between font-semibold text-slate-200">
-                <span class="flex items-center space-x-1.5">
-                  <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
-                  <span>Pairwise A/B + Sibling Residual</span>
-                </span>
-                <span class="mono text-amber-300">α = 0.10</span>
-              </div>
-              <p class="text-slate-400 leading-relaxed">
-                全体質量を保存したまま Gemini / Claude / GLM 兄弟モデル間の微細タイを高速判定。
+                Surprisal注入(5連敗)、Apex V4 (-0.0037)、StyleLM、GRL/Ordinal (-0.022)、Hungarian、CPU Spec並列は再採用禁止。
               </p>
             </div>
           </div>
         </div>
         <div class="pt-3 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
           <span>Submission Quota Remaining:</span>
-          <span class="font-bold text-emerald-400 mono text-sm">3 / 5 Slots</span>
+          <span class="font-bold text-emerald-400 mono text-sm" id="kpi-quota">-- / 5 Slots</span>
         </div>
       </div>
 
@@ -265,7 +276,7 @@
     <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 space-y-4">
       <div class="flex items-center justify-between">
         <div>
-          <h3 class="text-base font-bold text-white">Pipeline Evolution Matrix (V38 → V58 Dual-Embedding Sovereign)</h3>
+          <h3 class="text-base font-bold text-white">Pipeline Evolution Matrix (V38 → NTL 0707 Clean V1 / 0.698)</h3>
           <p class="text-xs text-slate-400">Detailed component breakdown across major competition releases</p>
         </div>
       </div>
@@ -566,6 +577,14 @@
       setTxt("cutoff-gold", c.gold_cutoff.toFixed(3));
       setTxt("cutoff-silver", c.silver_cutoff.toFixed(3));
       setTxt("cutoff-bronze", c.bronze_cutoff.toFixed(3));
+      if (c.quota_remaining !== undefined) setTxt("kpi-quota", `${c.quota_remaining} / 5 Slots`);
+      if (c.clusters) {
+        setTxt("cluster-0702", `0.702+: ${c.clusters.ge_0702}組`);
+        setTxt("cluster-0705", `${c.clusters.ge_0705}組`);
+        setTxt("cluster-0710", `${c.clusters.ge_0710}組`);
+        setTxt("cluster-0750", `${c.clusters.ge_0750}組`);
+        setTxt("kpi-cliff-note", `(Top ${c.clusters.ge_0705} Silver Cliff)`);
+      }
 
       // Multi-Line Active Inference Monitoring
       const arc = document.getElementById('active-runs-container');
@@ -1133,7 +1152,7 @@
           scales: {
             y: {
               min: 0.658,
-              max: 0.685,
+              max: 0.710,
               grid: {
                 color: 'rgba(51, 65, 85, 0.4)'
               },

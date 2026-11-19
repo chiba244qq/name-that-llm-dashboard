@@ -1,47 +1,11 @@
 {
-  "generated_at": "2026-11-11 11:56 JST (100% True 5-Fold OOF)",
-  "elapsed_seconds": 56.92,
+  "generated_at": "2026-11-19 09:38 JST (5-Context GroupKFold + Non-Oracle Mix/Sparse x15 + 500x Bootstrap)",
+  "elapsed_seconds": 92.3,
   "calibration_discovery": {
     "wsum_infer": 9.0,
-    "note": "Phase-0 oof_log_probs is unnormalized sum across 9 LP entries (min=-508.8). Dividing by wsum=9.0 and using infer.py's exact 100-iter log-space Sinkhorn restores exact inference calibration."
+    "note": "本番 infer.py の decide_scores は Sinkhorn のみ（typography_evidence なし）であることを確認。さらに重要教訓として、旧 3 モデル代理 OOF（Qwen3-8B + WeMM-4B + Q35）で +0.005〜+0.006 改善した Surprisal 群が、本番 S10 + GSQ 27B + V1 上では 5 戦全敗（-0.001〜-0.005）となる OOF→LB 乖離を実証。"
   },
   "stylometry_diagnostics": {
-    "uniform_148d": {
-      "claude": {
-        "bacc": 0.4217,
-        "reliability": 1.0
-      },
-      "gemini": {
-        "bacc": 0.48,
-        "reliability": 1.0
-      },
-      "gpt": {
-        "bacc": 0.4053,
-        "reliability": 1.0
-      },
-      "glm": {
-        "bacc": 0.5267,
-        "reliability": 0.1778
-      }
-    },
-    "family_routed": {
-      "claude": {
-        "bacc": 0.4337,
-        "reliability": 1.0
-      },
-      "gemini": {
-        "bacc": 0.48,
-        "reliability": 1.0
-      },
-      "gpt": {
-        "bacc": 0.368,
-        "reliability": 1.0
-      },
-      "glm": {
-        "bacc": 0.5333,
-        "reliability": 0.2222
-      }
-    },
     "sibling_pair_benchmarks": [
       {
         "pair": "Claude Opus 4.6 vs 4.8",
@@ -75,76 +39,88 @@
   },
   "experiments": [
     {
-      "exp_id": "TRUE-OOF-01",
-      "name": "V52 Sovereign Base (LB 0.680 Anchor)",
-      "params": "s_native=0.40, w_wemm=0.00, TF-IDF Centering + Finalize",
-      "idea_ref": "V52 Baseline",
-      "ba_full_m18": 0.69868,
-      "ba_sparse_m2": 0.67086,
+      "exp_id": "OOF-1119-01",
+      "name": "Raw infer.py S10 Proxy (Baseline)",
+      "params": "Sinkhorn Balance Only (No extra typo_ev_all) — matching NTL 0707",
+      "idea_ref": "NTL 0707 (0.698 LB)",
+      "ba_full_m18": 0.70462,
+      "ba_sparse_m2": 0.68619,
       "delta_m2": 0.0,
-      "ba_sparse_m3": 0.67703,
-      "lb_sd_gap": 0.0091,
-      "verdict": "Adopted (0.680 LB)"
+      "ba_sparse_m3": 0.69430,
+      "lb_sd_gap": 0.0050,
+      "verdict": "Adopted (0.698 Best)"
     },
     {
-      "exp_id": "TRUE-OOF-02",
-      "name": "Public 0.681 Repro (Qwen3-Emb 50% Single-Expert)",
-      "params": "s_native=0.50, w_wemm=0.00, TF-IDF Centering + Finalize",
-      "idea_ref": "dfenglei 0.681",
+      "exp_id": "OOF-1119-02",
+      "name": "Apex V4 Post-Process (lightningv08)",
+      "params": "PngyResidual(C=0.03, str=0.10) + prompt_pair(0.35) + TypoRules(0.15)",
+      "idea_ref": "Public 0.702 Audit",
       "ba_full_m18": 0.70091,
-      "ba_sparse_m2": 0.67659,
-      "delta_m2": 0.00573,
-      "ba_sparse_m3": 0.68194,
-      "lb_sd_gap": 0.0044,
-      "verdict": "Baseline Reference"
+      "ba_sparse_m2": 0.68311,
+      "delta_m2": -0.00308,
+      "ba_sparse_m3": 0.69249,
+      "lb_sd_gap": 0.0035,
+      "verdict": "Rejected (OOF P=0.020)"
     },
     {
-      "exp_id": "TRUE-OOF-03",
-      "name": "V56-Fix Pure Dual-Embedding (LB 0.680 Verified)",
-      "params": "s_native=0.40, w_wemm=0.07, w_atlas=0.10, gsq=0.03",
-      "idea_ref": "V56-Fix (Ref 58197261)",
-      "ba_full_m18": 0.70425,
-      "ba_sparse_m2": 0.67425,
-      "delta_m2": 0.00339,
-      "ba_sparse_m3": 0.68256,
-      "lb_sd_gap": 0.0058,
-      "verdict": "Adopted (0.680 LB)"
+      "exp_id": "OOF-1119-03",
+      "name": "StyleLanguageModel (kirilltym)",
+      "params": "Structural Trigram LM (w=0.22, margin<0.25); Res併用時 Mean4 0.68012",
+      "idea_ref": "kirilltym V20+",
+      "ba_full_m18": 0.70721,
+      "ba_sparse_m2": 0.68321,
+      "delta_m2": -0.00298,
+      "ba_sparse_m3": 0.68981,
+      "lb_sd_gap": 0.0073,
+      "verdict": "Rejected (Sparse Drop)"
     },
     {
-      "exp_id": "TRUE-OOF-04",
-      "name": "V57-Apex Sovereign (Currently Running)",
-      "params": "s_native=0.45, w_wemm=0.10, w_atlas=0.20, gsq=0.06",
-      "idea_ref": "V57 (Ref 58222075)",
-      "ba_full_m18": 0.7087,
-      "ba_sparse_m2": 0.67802,
-      "delta_m2": 0.00716,
-      "ba_sparse_m3": 0.68641,
-      "lb_sd_gap": 0.002,
-      "verdict": "Recommended (Running)"
+      "exp_id": "OOF-1119-04",
+      "name": "GRL+SupCon + Ordinal + GmResidual (gm_champ V18)",
+      "params": "AdversarialStyleNet(w=0.08) + OrdinalRidge(0.05) + DualTFIDF-Res",
+      "idea_ref": "gm_champ V18 Audit",
+      "ba_full_m18": 0.68347,
+      "ba_sparse_m2": 0.65819,
+      "delta_m2": -0.02800,
+      "ba_sparse_m3": 0.66949,
+      "lb_sd_gap": 0.0091,
+      "verdict": "Rejected (OOF P=0.000)"
     },
     {
-      "exp_id": "TRUE-OOF-05",
-      "name": "V58-Apex Sovereign (Inner-CV Peak + 5-Ctx Robust)",
-      "params": "s_native=0.50, w_wemm=0.10, w_atlas=0.15, gsq=0.06",
-      "idea_ref": "V58 (Ref 58224297)",
-      "ba_full_m18": 0.7087,
-      "ba_sparse_m2": 0.68011,
-      "delta_m2": 0.00925,
-      "ba_sparse_m3": 0.68779,
-      "lb_sd_gap": 0.001,
-      "verdict": "Top Recommended (Running)"
+      "exp_id": "OOF-1119-05",
+      "name": "P5 + Gemma-4-12B Surprisal (90D, kNN 2,0.20)",
+      "params": "Q3-4B + Q25-7B + Gem4-12B (T4 fp16 parity <0.006); OOF高だが本番LB低下",
+      "idea_ref": "NTL 0706/0708",
+      "ba_full_m18": 0.71314,
+      "ba_sparse_m2": 0.69506,
+      "delta_m2": 0.00887,
+      "ba_sparse_m3": 0.69911,
+      "lb_sd_gap": 0.0078,
+      "verdict": "Rejected (LB 0.693/0.694)"
     },
     {
-      "exp_id": "TRUE-OOF-06",
-      "name": "V59 Candidate (Outer 5-Context Composite Maximum)",
-      "params": "s_native=0.50, w_wemm=0.15, w_atlas=0.15, gsq=0.06",
-      "idea_ref": "Outer 5-Ctx Peak",
-      "ba_full_m18": 0.70945,
-      "ba_sparse_m2": 0.68119,
-      "delta_m2": 0.01033,
-      "ba_sparse_m3": 0.68692,
-      "lb_sd_gap": 0.0012,
-      "verdict": "Hold (Next Candidate)"
+      "exp_id": "OOF-1119-06",
+      "name": "P5 + Qwen3.5-9B Surprisal (90D, kNN 2,0.20)",
+      "params": "A100 bf16 vs Kaggle bbucxi T4 fp16 間で ent乖離 +0.171 を検知し不採用",
+      "idea_ref": "Phase 9 Parity Gate",
+      "ba_full_m18": 0.71240,
+      "ba_sparse_m2": 0.69656,
+      "delta_m2": 0.01037,
+      "ba_sparse_m3": 0.70034,
+      "lb_sd_gap": 0.0075,
+      "verdict": "Rejected (T4 Shift +0.17)"
+    },
+    {
+      "exp_id": "OOF-1119-07",
+      "name": "P5+Q35+Gem4 + GPT/Claude Sibling Heads",
+      "params": "GPT(0.08) + Claude(0.08) 追加; Full微増も Sparse(m=2) -0.0051 悪化",
+      "idea_ref": "Multi-Family Head",
+      "ba_full_m18": 0.71870,
+      "ba_sparse_m2": 0.69017,
+      "delta_m2": 0.00398,
+      "ba_sparse_m3": 0.69752,
+      "lb_sd_gap": 0.0082,
+      "verdict": "Rejected (Sparse Drop)"
     }
   ]
 }

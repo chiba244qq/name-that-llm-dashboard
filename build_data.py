@@ -54,106 +54,163 @@ DOC_DATES = {
     "v53_flattened_repro_and_colab_sparse_eval_plan.md": "2026-11-09 10:43 JST",
     "colab_v55_hyperparameter_optimization_report.md": "2026-11-10 10:15 JST",
     "v56_dual_embedding_dual_encoder_preliminary_design.md": "2026-11-10 13:27 JST",
-    "colab_v57_sovereign_hyperparameter_verification_report.md": "2026-11-11 11:56 JST"
+    "colab_v57_sovereign_hyperparameter_verification_report.md": "2026-11-11 11:56 JST",
+    "forum_review_and_verification_plan_1112.md": "2026-11-12 11:37 JST",
+    "strategic_verification_plan_1113.md": "2026-11-13 10:28 JST",
+    "strategic_verification_plan_1118.md": "2026-11-18 11:53 JST",
+    "dashboard_and_strategy_roadmap_1119.md": "2026-11-19 09:58 JST"
 }
 
 REPORT_METADATA = {
-    # --- ACTIVE: Reading Order 1 to 21 ---
-    "colab_v57_sovereign_hyperparameter_verification_report.md": {
-        "order": 1, "step": "STEP 0: 実測 5-Fold OOF 完全検証 (最新・必読)", "status": "active",
-        "note": "【最新・最重要】合成ノイズを全廃し100%実測5-Fold OOF (Qwen3-8B + WeMM-4B + 親OOF) で5コンテキスト検証したV57/V58決定版レポート"
+    # --- ACTIVE: Curated Reading Order (11/19 Current Strategy) ---
+    "dashboard_and_strategy_roadmap_1119.md": {
+        "order": 1, "step": "STEP 0: 最新戦況・0.705+突破方針 (11/19 必読)", "status": "active",
+        "note": "【最新・最重要】6,370チーム・0.702公開団子(707組) vs 0.705+(153組)の崖構造、NTL 0707(0.698)樹立、Surprisal 5連敗総括、次期方針"
     },
-    "v56_dual_embedding_dual_encoder_preliminary_design.md": {
-        "order": 2, "step": "STEP 0.5: Dual-Embedding Sovereign 設計", "status": "active",
-        "note": "【0.680完全復帰】外部生ロジット汚染(extra_cls)を排除し、Qwen3-8B + Tencent WeMM-4Bの純粋2大Embedding統合を確立した設計書"
-    },
-    "v52_0680_native_embedding_lora_sovereign_report.md": {
-        "order": 3, "step": "STEP 0.8: 0.680 Breakthrough", "status": "active",
-        "note": "【0.680到達】5-Fold Native Qwen3-Embedding-8B LoRA (share 0.40) + 5-Fold Sovereign Base統合による大台突破レポート"
+    "strategic_verification_plan_1118.md": {
+        "order": 2, "step": "STEP 0.5: 2×2 切り分け検証計画 (11/18)", "status": "active",
+        "note": "【実験設計】NTL 0706〜0708 の 2×2 要因計画と全11構成 Surprisal OOF ベンチマーク結果"
     },
     "name_that_llm_comprehensive_guide.md": {
-        "order": 1, "step": "STEP 1: 超入門・全体像", "status": "active",
-        "note": "【必読・全体像】コンペ概要、Balanced Accuracy、9時間VOID崖、基本解法が中学生でもわかる完全ガイド"
+        "order": 3, "step": "STEP 1: 超入門・全体像", "status": "active",
+        "note": "【必読・全体像】コンペ概要、Balanced Accuracy、9時間VOID崖、基本解法ガイド"
     },
     "kaggle_live_dashboard_deployment.md": {
-        "order": 2, "step": "STEP 2: 運用インフラ", "status": "active",
-        "note": "リアルタイム監視ダッシュボード・自動提出・アーカイブ統合の全体像"
+        "order": 4, "step": "STEP 2: 運用インフラ", "status": "active",
+        "note": "リアルタイム監視ダッシュボード・アーカイブ統合の運用設計"
     },
     "dual_track_strategy_and_operations.md": {
-        "order": 3, "step": "STEP 3: 運用体制・戦略プロトコル", "status": "active",
-        "note": "【重要】Track 1 (堅実進化) ＆ Track 2 (インテル探索) の2系統分割とスロット配分規律"
-    },
-    "submission_37_v43_evolution_deployment.md": {
-        "order": 4, "step": "STEP 3: Track 1 堅実進化 (最新)", "status": "active",
-        "note": "【最新・本命】第37弾 V43-Evolution。V40基準スタック復帰＋OOF最適化 Target Mix 0.42"
+        "order": 5, "step": "STEP 3: 運用体制・戦略プロトコル", "status": "active",
+        "note": "Track 1 (堅実進化) ＆ Track 2 (探索) の2系統分割と1変数切り分け規律"
     },
     "offline_verification_and_hungarian_trap_analysis.md": {
-        "order": 5, "step": "STEP 4: オフライン数理検証", "status": "active",
-        "note": "【必読・解明】スタイロメトリーの限界とHungarian割当の罠。Soft Sinkhornの必然性を数理実証"
-    },
-    "local_oof_benchmark_and_v44_selection_report.md": {
-        "order": 6, "step": "STEP 4: ローカル実験ベンチマーク (最新)", "status": "active",
-        "note": "【最新・実験総括】wsum=9.0較正の発見と全8実験 (EXP-01〜08) のFull/Sparse(m=2) OOF比較レポート"
+        "order": 6, "step": "STEP 4: オフライン数理検証", "status": "active",
+        "note": "スタイロメトリーの限界と Hungarian 割当の罠、Soft Sinkhorn の必然性"
     },
     "idea_01_glm_exact_teacher_log_likelihood.md": {
-        "order": 7, "step": "STEP 5: 次世代実験ネタ #01", "status": "active",
-        "note": "【実験ネタ #01】GLM-5.3 / Flash 実モデル重みによる直接尤度検証（Exact Teacher Log-Likelihood）"
+        "order": 7, "step": "STEP 5: コア技術 — 直接対数尤度 (V1)", "status": "active",
+        "note": "【0.684→0.698 牽引】GLM-5.3 / Flash 実モデル重みによる直接尤度評価（他ターゲット拡張候補）"
     },
     "idea_02_open_pool_v12_and_hard_supplement.md": {
-        "order": 8, "step": "STEP 5: 次世代実験ネタ #02", "status": "active",
-        "note": "【実験ネタ #02】Open Pool v12 (211k行) ＋ Hard-Class Supplement (Vertex AI 厳密ルート) データ刷新"
-    },
-    "idea_03_early_mid_layer_spectral_probing.md": {
-        "order": 9, "step": "STEP 5: 次世代実験ネタ #03", "status": "active",
-        "note": "【実験ネタ #03】Transformer 初期〜中間層特化プロービングと LoRA+ / 位置重み付けプーリング"
-    },
-    "idea_04_atlas_fast_batching_and_focused_margin.md": {
-        "order": 10, "step": "STEP 5: 次世代実験ネタ #04", "status": "active",
-        "note": "【実験ネタ #04】ATLAS 高速バッチ推論 (BS=6) ＋ 集中 Dispute Margin (0.28) ＋ Pairwise 較正"
-    },
-    "idea_05_family_specific_stylometry_and_m2_validator.md": {
-        "order": 11, "step": "STEP 5: 次世代実験ネタ #05", "status": "active",
-        "note": "【実験ネタ #05】ファミリー別最適スタイロメトリー選択 (148d vs 81d) と疎プロンプト抽出 (m=2) 検証器"
-    },
-    "gold_medal_master_strategy.md": {
-        "order": 12, "step": "STEP 6: 戦略ロードマップ", "status": "active",
-        "note": "Top 18 金メダル獲得に向けた4段階フェーズ計画とリソース配分"
-    },
-    "ntl_master_strategy_and_operations.md": {
-        "order": 12, "step": "STEP 6: 戦略ロードマップ", "status": "active",
-        "note": "銀メダル死守から金メダル挑戦へのマスター戦略＆作戦計画"
-    },
-    "phase0_oof_results_and_breakthrough_findings.md": {
-        "order": 13, "step": "STEP 7: 検証基盤の確立", "status": "active",
-        "note": "オフライン 5-Fold OOF 基盤の確立と、Public LB との相関解明"
-    },
-    "offline_oof_and_error_analysis_report.md": {
-        "order": 14, "step": "STEP 7: 検証基盤 (エラー深層分析)", "status": "active",
-        "note": "Sinkhorn x Target Mix 2次元グリッド探索 & 176件の兄弟混同深層分析"
+        "order": 8, "step": "STEP 5: 路線A — Open Pool 拡張学習", "status": "active",
+        "note": "Open Pool 大規模データによる異ファミリー LoRA 表現学習（路線A パイロット検討資料）"
     },
     "sibling_disambiguation_training_plan.md": {
-        "order": 15, "step": "STEP 8: コア技術・ブレークスルー", "status": "active",
-        "note": "全エラーの68%を占める兄弟モデル（Gemini/GLM）特化識別器の学習仕様書"
+        "order": 9, "step": "STEP 6: 兄弟モデル識別設計", "status": "active",
+        "note": "全エラーの大半を占める兄弟モデル（Gemini/GLM/Claude/GPT）混同の分析と対策設計"
+    },
+    "gold_medal_master_strategy.md": {
+        "order": 10, "step": "STEP 7: 戦略ロードマップ", "status": "active",
+        "note": "上位メダル獲得に向けたフェーズ計画とリソース配分方針"
+    },
+    # --- ARCHIVED / SUPERSEDED (過去の通過点・旧世代) ---
+    "colab_v57_sovereign_hyperparameter_verification_report.md": {
+        "order": 70, "step": "ARCHIVE: V57/V58 世代", "status": "archived",
+        "note": "【旧世代】0.680 Dual-Embedding 時代の 5-Fold OOF 検証（0707 世代へ移行済み）"
+    },
+    "v56_dual_embedding_dual_encoder_preliminary_design.md": {
+        "order": 71, "step": "ARCHIVE: V56 世代", "status": "archived",
+        "note": "【旧世代】WeMM-4B 統合設計（0.684/0.698 世代で代替済み）"
+    },
+    "v52_0680_native_embedding_lora_sovereign_report.md": {
+        "order": 72, "step": "ARCHIVE: 0.680 通過点", "status": "archived",
+        "note": "【通過点】5-Fold Native Qwen3-Emb-8B 導入による 0.680 到達記録"
+    },
+    "strategic_verification_plan_1113.md": {
+        "order": 73, "step": "ARCHIVE: 11/13 計画", "status": "archived",
+        "note": "【完了】0.684 クリーン基準〜V1 導入前の検証計画"
+    },
+    "forum_review_and_verification_plan_1112.md": {
+        "order": 74, "step": "ARCHIVE: 11/12 インテル", "status": "archived",
+        "note": "【旧インテル】11/12 時点のフォーラム調査"
+    },
+    "local_oof_benchmark_and_v44_selection_report.md": {
+        "order": 75, "step": "ARCHIVE: V44 世代", "status": "archived",
+        "note": "【旧世代】wsum=9.0 較正発見と V44 時代のローカルベンチマーク"
+    },
+    "submission_37_v43_evolution_deployment.md": {
+        "order": 76, "step": "ARCHIVE: V43 世代", "status": "archived",
+        "note": "【旧世代】V43 (0.662) デプロイ記録"
+    },
+    "idea_03_early_mid_layer_spectral_probing.md": {
+        "order": 77, "step": "ARCHIVE: R&D #03", "status": "archived",
+        "note": "【検証済】Phase 6 初期〜中間層プロービング構想"
+    },
+    "idea_04_atlas_fast_batching_and_focused_margin.md": {
+        "order": 78, "step": "ARCHIVE: R&D #04", "status": "archived",
+        "note": "【旧世代】ATLAS バッチ推論・マージン最適化"
+    },
+    "idea_05_family_specific_stylometry_and_m2_validator.md": {
+        "order": 79, "step": "ARCHIVE: R&D #05", "status": "archived",
+        "note": "【旧世代】ファミリー別スタイロメトリー検証"
+    },
+    "ntl_master_strategy_and_operations.md": {
+        "order": 80, "step": "ARCHIVE: 初期戦略", "status": "archived",
+        "note": "【旧世代】10月末時点のマスター戦略"
+    },
+    "phase0_oof_results_and_breakthrough_findings.md": {
+        "order": 81, "step": "ARCHIVE: Phase 0", "status": "archived",
+        "note": "【旧世代】初期 OOF 基盤の分析結果"
+    },
+    "offline_oof_and_error_analysis_report.md": {
+        "order": 82, "step": "ARCHIVE: 初期エラー分析", "status": "archived",
+        "note": "【旧世代】Sinkhorn x Target Mix 初期エラー分析"
     },
     "kaggle_discussion_and_code_intel_report.md": {
-        "order": 16, "step": "STEP 8: コア技術・最新インテル", "status": "active",
-        "note": "Kaggle上位陣（0.667+）の解法動向、Hungarian破綻の理由、Apex Kの分析"
+        "order": 83, "step": "ARCHIVE: 11/02 インテル", "status": "archived",
+        "note": "【旧インテル】0.667 時代の動向レポート"
     },
     "submission_33_v39_deployment.md": {
-        "order": 17, "step": "STEP 9: 実戦・ブレークスルー", "status": "active",
-        "note": "0.666達成！Open Pool v11 Extra 49k 換装で銀メダル上位を確定させた記録"
+        "order": 84, "step": "ARCHIVE: V39 通過点", "status": "archived",
+        "note": "【通過点】V39 (0.666) 記録"
     },
     "submission_34_v40_deployment.md": {
-        "order": 18, "step": "STEP 9: 実戦・ブレークスルー", "status": "active",
-        "note": "0.666完全再現！Geminiルーティング除外 & ATLAS Margin 0.32で114位防衛"
+        "order": 85, "step": "ARCHIVE: V40 通過点", "status": "archived",
+        "note": "【通過点】V40 (0.666) 記録"
     },
     "v39_verification_and_tradeoff_analysis.md": {
-        "order": 19, "step": "STEP 9: 実戦・ブレークスルー", "status": "active",
-        "note": "投入前のOOF事前検証手法とリスク・リターンのトレードオフ分析"
+        "order": 86, "step": "ARCHIVE: V39 分析", "status": "archived",
+        "note": "【旧世代】V39 トレードオフ分析"
     },
     "apex_ii_sota_architecture_and_v41_plan.md": {
-        "order": 20, "step": "STEP 10: 旧SOTAアーキテクチャ解剖", "status": "active",
-        "note": "Apex-II 構成（Dual-DeBERTa + Pairwise + Sibling + ATLAS）の設計解剖"
+        "order": 87, "step": "ARCHIVE: V41 世代", "status": "archived",
+        "note": "【旧世代】Apex-II 設計解剖"
+    },
+    "v45_grandmaster_architecture_and_local_verification.md": {
+        "order": 88, "step": "ARCHIVE: V45 世代", "status": "archived",
+        "note": "【旧世代】V45 ローカル検証"
+    },
+    "v47_clean_svc_bank_integration_and_day_strategy.md": {
+        "order": 88, "step": "ARCHIVE: V47 世代", "status": "archived",
+        "note": "【旧世代】SVC バンク統合"
+    },
+    "v48_deberta_v3_classifier_and_dual_svc_apex_report.md": {
+        "order": 88, "step": "ARCHIVE: V48 世代", "status": "archived",
+        "note": "【旧世代】DeBERTa-v3 + Dual SVC"
+    },
+    "v49_pre_sinkhorn_sibling_forensic_residual_report.md": {
+        "order": 88, "step": "ARCHIVE: V49 世代", "status": "archived",
+        "note": "【旧世代】Pre-Sinkhorn Sibling Residual"
+    },
+    "v50_dual_encoder_modernbert_sibling_forensic_apex_report.md": {
+        "order": 88, "step": "ARCHIVE: V50 世代", "status": "archived",
+        "note": "【旧世代】Dual Encoder ModernBERT"
+    },
+    "v51_target_mix_calibration_and_apex_report.md": {
+        "order": 89, "step": "ARCHIVE: V51 世代", "status": "archived",
+        "note": "【旧世代】Target Mix 較正"
+    },
+    "v53_apex_fusion_dual_encoder_hybrid_report.md": {
+        "order": 89, "step": "ARCHIVE: V53 世代", "status": "archived",
+        "note": "【旧世代】V53 Apex Fusion"
+    },
+    "v53_flattened_repro_and_colab_sparse_eval_plan.md": {
+        "order": 89, "step": "ARCHIVE: V53 評価計画", "status": "archived",
+        "note": "【旧世代】V53 疎評価計画"
+    },
+    "colab_v55_hyperparameter_optimization_report.md": {
+        "order": 90, "step": "ARCHIVE: V55 世代", "status": "archived",
+        "note": "【旧世代】V55 Colab ハイパラ検証"
     },
 
     # --- ARCHIVED / SUPERSEDED / REJECTED (9件) ---
@@ -308,120 +365,31 @@ def main():
         }
         sub_list.append(item)
 
-    # Detect all active/running submissions
+    # Detect all active/running submissions (generic NTL 07xx+ parser)
     active_runs = []
     for s in sub_list:
         if "PENDING" in s["status"] or "RUNNING" in s["status"]:
-            desc = s["description"]
-            ver_name = "In Progress"
-            params_summary = ""
-            track_label = "Track 1 (Evolution)"
-            est_comp = "~15:30 JST"
-            if "0694" in desc or "E2" in desc:
-                ver_name = "NTL-0694 (Ablation E2: ATLAS 0.15)"
-                params_summary = "V56-Fix + atlas_blend 0.15 only (s=0.40, w=0.07, gsq=0.03)"
-                track_label = "Ablation Track (ATLAS)"
-                est_comp = "~16:40 JST"
-                target_sc = "0.680"
-            elif "0693" in desc or "E1" in desc:
-                ver_name = "NTL-0693 (Ablation E1: GSQ 0.06)"
-                params_summary = "V56-Fix + gsq_share 0.06 only (s=0.40, w=0.07, atlas=0.10)"
-                track_label = "Ablation Track (GSQ)"
-                est_comp = "~16:40 JST"
-                target_sc = "0.680"
-            elif "0692" in desc or "canary" in desc:
-                ver_name = "NTL-0692 (WeMM Canary)"
-                params_summary = "V56-Fix + WeMM 5-Fold Hard Assert (RuntimeError on missing folds)"
-                track_label = "Verification Track (Canary)"
-                est_comp = "~14:00 JST"
-                target_sc = "0.680 (or Fail)"
-            elif "0691" in desc or "rerun" in desc:
-                ver_name = "NTL-0691 (V56-Fix Rerun)"
-                params_summary = "100% Identical to V56-Fix (s=0.40, w=0.07, gsq=0.03, atlas=0.10)"
-                track_label = "Verification Track (LB Noise)"
-                est_comp = "~14:00 JST"
-                target_sc = "0.680"
-            elif "V59" in desc or "0690" in desc:
-                ver_name = "V59 (WeMM 15% Exploration)"
-                params_summary = "Qwen3-Emb 50% | WeMM4-Emb 15% | ATLAS 0.15 | GSQ 0.06 | 5-Ctx Proxy OOF"
-                track_label = "Track 3 (Dual-Embedding Grid Exploration)"
-                est_comp = "~01:00 JST"
-                target_sc = "0.680"
-            elif "V58" in desc or "0689" in desc:
-                ver_name = "V58 (Dual-Embedding Tuned)"
-                params_summary = "Qwen3-Emb 50% | WeMM4-Emb 10% | ATLAS 0.15 | GSQ 0.06 | 5-Ctx Proxy OOF"
-                track_label = "Track 1 (Dual-Embedding Tuned)"
-                est_comp = "~18:00 JST"
-                target_sc = "0.681 - 0.682+"
-            elif "V57" in desc or "0688" in desc:
-                ver_name = "V57 (Dual-Emb Sovereign Apex)"
-                params_summary = "Qwen3-Emb 45% | WeMM4-Emb 10% | ATLAS 0.20 | GSQ 0.06 | 5-Ctx True OOF 0.68772"
-                track_label = "Track 2 (Dual-Emb Sovereign)"
-                est_comp = "~16:25 JST"
-                target_sc = "0.681+"
-            elif "V46" in desc or "0676" in desc:
-                ver_name = "V46 (Sovereign Refined)"
-                params_summary = "Undiluted N14B 2.5 | Target Mix 0.45 | Sinkhorn 0.30 | Pairwise 0.10 | 0.668 Base"
-                track_label = "Track 1 (Evolution)"
-                est_comp = "~05:15 JST"
-            elif "V45 Evolution" in desc or "V45" in desc or "0675" in desc:
-                ver_name = "V45 (Disarmed Grandmaster)"
-                params_summary = "Snapshot + Dual-SVC 1.0 + Calibrated ATLAS 0.32/0.20 + Sinkhorn 0.30"
-                track_label = "Track 1 (Evolution)"
-                est_comp = "Completed (0.667)"
-            elif "V44 Evolution" in desc or "V44-Evolution" in desc:
-                ver_name = "V44 (Sovereign-Aegis Hybrid)"
-                params_summary = "Frozen Snapshot | Sinkhorn 0.50 | Mix 0.42 | Pairwise Verifier | Single-DeBERTa"
-                track_label = "Track 1 (Evolution)"
-                est_comp = "Completed (0.666)"
-            elif "V44 Exploration" in desc or "V44-Exploration" in desc:
-                ver_name = "V44 (0.668 Frozen Repro)"
-                params_summary = "Frozen Snapshot | Sinkhorn 0.30 | Mix 0.35 | Pairwise Verifier | areebbb 1x"
-                track_label = "Track 2 (Exploration)"
-                est_comp = "Completed (0.668)"
-            elif "V43-Evolution" in desc:
-                ver_name = "V43 (Evolution Anchor+Mix)"
-                params_summary = "Sinkhorn 0.50 | Mix 0.42 | Single-DeBERTa | ATLAS 0.32"
-                track_label = "Track 1 (Evolution)"
-                est_comp = "~19:30 JST"
-            elif "V43-Exploration" in desc:
-                ver_name = "V43 (0.668 Repro Verifier)"
-                params_summary = "Sinkhorn 0.30 | Mix 0.35 | Pairwise A/B | Sibling 0.10 | areebbb 1x"
-                track_label = "Track 2 (Exploration)"
-                est_comp = "~19:35 JST"
-            elif "V42c" in desc or "V42-C" in desc:
-                ver_name = "V42-C (Apex V40Anchor)"
-                params_summary = "Sinkhorn 0.50 | Mix 0.35 | Sibling 0.10 | Dual-DeBERTa 0.75"
-                track_label = "Track 1 (Evolution Anchor)"
-            elif "V42-B" in desc:
-                ver_name = "V42-B (Apex Conservative)"
-                params_summary = "Sinkhorn 0.50 | Mix 0.42 | Sibling 0.05 | Dual-DeBERTa 0.75"
-                track_label = "Track 1 (Evolution Conservative)"
-            elif "V42 " in desc or "V42 Apex" in desc:
-                ver_name = "V42 (Apex Re-Anchored)"
-                params_summary = "Sinkhorn 0.50 | Mix 0.42 | Sibling 0.10 | Dual-DeBERTa 0.75"
-                track_label = "Track 1 (Evolution Aggressive)"
-            elif "V41" in desc:
-                ver_name = "V41 (Apex-II)"
-                params_summary = "Sinkhorn 0.30 | Mix 0.35 | Sibling 0.10 | Dual-DeBERTa 0.75"
-                track_label = "Track 2 (Exploration Prototype)"
-
+            desc = s["description"] or ""
+            m_ver = re.search(r'(NTL\s*\d+|V\d+(?:-[A-Z0-9]+)?)', desc, re.IGNORECASE)
+            ver_name = m_ver.group(1).upper() if m_ver else f"Run #{s['ref']}"
+            track_label = "Surprisal Test" if "Surprisal" in desc else ("V1 Coverage" if "max-cover" in desc or "PACK" in desc else "Baseline / Pipeline")
             active_runs.append({
                 "ref": s["ref"],
                 "version": ver_name,
                 "track": track_label,
                 "description": desc,
-                "params": params_summary,
+                "params": desc,
                 "submitted_at": s["date"],
                 "status": "RUNNING" if "RUNNING" in s["status"] else "PENDING",
-                "target_score": locals().get("target_sc", "0.681 - 0.682+"),
-                "estimated_completion": est_comp
+                "target_score": "0.705+ (Silver Cliff)",
+                "estimated_completion": "~8-9h from submit"
             })
 
     running_sub = active_runs[0] if active_runs else None
 
     # 2. Fetch Leaderboard metrics
     print("Fetching Kaggle leaderboard...")
+    clusters = {"ge_0698": 0, "ge_0700": 0, "ge_0702": 0, "ge_0705": 0, "ge_0710": 0, "ge_0750": 0}
     with tempfile.TemporaryDirectory() as tmpdir:
         api.competition_leaderboard_download('name-that-llm', path=tmpdir)
         for f in os.listdir(tmpdir):
@@ -432,14 +400,14 @@ def main():
         latest_csv = sorted(csv_files)[-1]
         df = pd.read_csv(latest_csv)
         total_teams = len(df)
-        
+
         my_row = df[df['TeamMemberUserNames'].str.contains('tsuyoshichiba', na=False) | df['TeamName'].str.contains('tsuyoshichiba', na=False)]
         if not my_row.empty:
             my_rank = int(my_row.iloc[0]['Rank'])
             my_score = float(my_row.iloc[0]['Score'])
         else:
-            my_rank = 189
-            my_score = 0.666
+            my_rank = 1009
+            my_score = 0.698
 
         top18_cutoff = float(df.iloc[17]['Score'])
         silver_rank_cutoff = int(total_teams * 0.05)
@@ -447,6 +415,23 @@ def main():
         silver_cutoff = float(df.iloc[silver_rank_cutoff - 1]['Score'])
         bronze_cutoff = float(df.iloc[bronze_rank_cutoff - 1]['Score'])
         top_pct = round((my_rank / total_teams) * 100, 2)
+
+        clusters = {
+            "ge_0698": int((df['Score'] >= 0.698).sum()),
+            "ge_0700": int((df['Score'] >= 0.700).sum()),
+            "ge_0702": int((df['Score'] >= 0.702).sum()),
+            "ge_0705": int((df['Score'] >= 0.705).sum()),
+            "ge_0710": int((df['Score'] >= 0.710).sum()),
+            "ge_0750": int((df['Score'] >= 0.750).sum()),
+        }
+
+    # Count today's UTC submissions for remaining quota (5/day)
+    today_utc = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d")
+    used_today = sum(
+        1 for s in subs
+        if str(s.date).startswith(today_utc)
+    )
+    quota_remaining = max(0, 5 - used_today)
 
     # 3. Evolution timeline
     v45_sub = next((s for s in sub_list if ("V45 Evolution" in s["description"] or "0675" in s["description"]) and "COMPLETE" in s["status"] and s.get("score") is not None), None)
@@ -485,7 +470,13 @@ def main():
         {"version": "0696 / 0697", "score": 0.679, "date": "11-13", "tag": "Diagnostic", "desc": "0.684 + WeMM 0.07 (0.678) / Sinkhorn 0.20 (0.679)"},
         {"version": "0698 / 0699", "score": None, "date": "11-15", "tag": "Error", "desc": "sanpierベース 81b1e7c4 イメージで CUDA init 失敗・リラン例外エラー"},
         {"version": "NTL 0700", "score": 0.696, "date": "11-15", "tag": "0.696 Breakthrough", "desc": "0.684 Stack + GLM-5.3/Flash V1 Graft (de153e6d GPU + 実測V1_COST + 8.75h: 0.696)"},
-        {"version": "NTL 0701", "score": 0.694, "date": "11-15", "tag": "Bronze", "desc": "0700 + 曖昧度優先選択 (mass - 0.25*|p53 - pflash|: 0.694)"}
+        {"version": "NTL 0701", "score": 0.694, "date": "11-15", "tag": "Diagnostic", "desc": "0700 + 曖昧度優先選択 (mass - 0.25*|p53 - pflash|: 0.694)"},
+        {"version": "0702 / 0703", "score": 0.694, "date": "11-17", "tag": "Rejected", "desc": "Surprisal P5(0.695) / P5+Gem2(0.694): V1時間圧迫により0700比微減"},
+        {"version": "0704 / 0705", "score": 0.690, "date": "11-17", "tag": "Rejected", "desc": "Open-Pool CPU Spec並列競合 + V1 fixed_s=100 超過 (0704: 0.684, 0705: 0.690)"},
+        {"version": "NTL 0706", "score": 0.694, "date": "11-18", "tag": "Rejected", "desc": "Spec除去 + V1(870/1140)修正 + P5+Gem4-12B (0705比+0.004回復も0700未満)"},
+        {"version": "NTL 0707", "score": 0.698, "target": 0.705, "date": "11-18", "tag": "0.698 Peak", "desc": "comp_stack無効 + GSQ 27B完走 + Native 7.2h + 安全V1(cover 0.30): 自己ベスト 0.698"},
+        {"version": "NTL 0708", "score": 0.693, "date": "11-18", "tag": "Rejected", "desc": "0707基盤 + P5+Gem4-12B Surprisal (OOF最高も本番-0.005、Surprisal路線打ち切り)"},
+        {"version": "0709 / 0711", "score": 0.695, "date": "11-19", "tag": "Ablation", "desc": "0707基盤 V1 cover比較: 0.15(0.694) < 0.30(0.698) > 0.45+pack(0.695)"}
     ]
 
     # 4. Architecture comparison matrix
@@ -510,8 +501,11 @@ def main():
         {"version": "V58 (0.673)", "track": "Track 1", "score": "0.673", "data_pool": "Sovereign 5-Fold + GSQ 0.06", "deberta": "Core + Comp (.85/.15)", "pairwise_ab": "ATLAS (w=0.15)", "sibling_style": "Qwen3 (0.50) + WeMM4 (0.10)", "atlas_margin": "0.30", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【推論完了: 0.673】Ref: 58224297 (LB 0.673 / V56比 -0.007)"},
         {"version": "V59 (0690)", "track": "Track 3", "score": "0.673", "data_pool": "Sovereign 5-Fold + GSQ 0.06", "deberta": "Core + Comp (.85/.15)", "pairwise_ab": "ATLAS (w=0.15)", "sibling_style": "Qwen3 (0.50) + WeMM4 (0.15)", "atlas_margin": "0.30", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【完了: 0.673】Ref: 58233790 (WeMM4 15% 拡張検証)"},
         {"version": "NTL 0695", "track": "Benchmark", "score": "0.684", "data_pool": "All Public 0.684 Clean", "deberta": "comp_stack.py", "pairwise_ab": "ATLAS V9", "sibling_style": "Qwen3-Emb + GSQ-27B", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【0.684再現】Ref: 58292048 (de153e6d / クリーン基準)"},
-        {"version": "NTL 0700", "track": "V1 Graft", "score": "0.696", "data_pool": "0.684 Clean + V1 GLM Likelihood", "deberta": "comp_stack.py + ntl-segrun", "pairwise_ab": "ATLAS V9", "sibling_style": "Qwen3 + GSQ + GLM-5.3/Flash", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【0.696突破】Ref: 58388241 (de153e6d GPU + 実測V1_COST + 8.75h / Bronze復帰)"},
-        {"version": "NTL 0701", "track": "V1 Graft", "score": "0.694", "data_pool": "0700 + Ambiguity Priority", "deberta": "comp_stack.py + ntl-segrun", "pairwise_ab": "ATLAS V9", "sibling_style": "mass - 0.25*|p53-pflash|", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【完了: 0.694】Ref: 58388340 (曖昧度優先選択)"}
+        {"version": "NTL 0700", "track": "V1 Graft", "score": "0.696", "data_pool": "0.684 Clean + V1 GLM Likelihood", "deberta": "comp_stack.py + ntl-segrun", "pairwise_ab": "ATLAS V9", "sibling_style": "Qwen3 + GSQ + GLM-5.3/Flash", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【0.696突破】Ref: 58388241 (de153e6d GPU + 実測V1_COST + 8.75h)"},
+        {"version": "NTL 0706", "track": "Track 2", "score": "0.694", "data_pool": "0700 + P5+Gem4 (NO Spec)", "deberta": "comp_stack.py + ntl-segrun", "pairwise_ab": "ATLAS V9", "sibling_style": "P5+Gem4 kNN(2,0.20)", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【棄却】Ref: 58490392 (Spec競合解消もV1圧迫で0.694止まり)"},
+        {"version": "NTL 0707", "track": "Track 1", "score": "0.698", "data_pool": "No comp_stack + Full GSQ 27B", "deberta": "comp_stack OFF + ntl-segrun", "pairwise_ab": "ATLAS V9", "sibling_style": "Qwen3(0.40) + GSQ(0.03) + V1(0.30)", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【現自己ベスト: 0.698】Ref: 58490991 (comp_stack廃止+GSQ完走+安全V1)"},
+        {"version": "NTL 0708", "track": "Track 2", "score": "0.693", "data_pool": "0707 + P5+Gem4-12B Surprisal", "deberta": "comp_stack OFF + ntl-segrun", "pairwise_ab": "ATLAS V9", "sibling_style": "0707 + P5+Gem4 kNN(2,0.20)", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【棄却】Ref: 58494871 (Surprisal注入5戦全敗確定・打ち切り)"},
+        {"version": "NTL 0709 / 0711", "track": "Track 2", "score": "0.694 / 0.695", "data_pool": "0707 + V1 Cover (0.15 / 0.45+pack)", "deberta": "comp_stack OFF + ntl-segrun", "pairwise_ab": "ATLAS V9", "sibling_style": "V1 max-cover 0.15 vs 0.45+pack", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【検証完了】0.30(0.698)が最適点と実証"}
     ]
 
     # 5. Extract Markdown Reports
@@ -549,7 +543,9 @@ def main():
             "silver_cutoff": silver_cutoff,
             "silver_rank_cutoff": silver_rank_cutoff,
             "bronze_cutoff": bronze_cutoff,
-            "bronze_rank_cutoff": bronze_rank_cutoff
+            "bronze_rank_cutoff": bronze_rank_cutoff,
+            "quota_remaining": quota_remaining,
+            "clusters": clusters
         },
         "running_submission": running_sub,
         "active_runs": active_runs,
