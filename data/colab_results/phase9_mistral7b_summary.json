@@ -4,9 +4,12 @@
   "ext_rows": 500,
   "max_len": 384,
   "epochs": 2,
-  "folds_completed": 5,
+  "n_folds_run": 5,
   "rows_evaluated": 2699,
   "overall_18class_bacc": 0.41452,
+  "glm_fable5_3class_acc": 0.392,
+  "gem37_38_2class_acc": 0.5233,
+  "gpt56_3class_acc": 0.5244,
   "folds": {
     "fold0": {
       "best_epoch": 2,
