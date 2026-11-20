@@ -1,0 +1,19 @@
+{
+  "model_id": "unsloth/mistral-7b-v0.3-bnb-4bit",
+  "use_external": true,
+  "ext_rows": 500,
+  "max_len": 384,
+  "epochs": 2,
+  "folds_completed": 1,
+  "rows_evaluated": 540,
+  "overall_18class_bacc": 0.42407,
+  "folds": {
+    "fold0": {
+      "best_epoch": 2,
+      "best_bacc": 0.42407,
+      "glm_fable5_acc": 0.3889,
+      "gem37_38_acc": 0.55,
+      "elapsed_sec": 3404.5
+    }
+  }
+}
