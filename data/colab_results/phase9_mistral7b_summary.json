@@ -4,9 +4,9 @@
   "ext_rows": 500,
   "max_len": 384,
   "epochs": 2,
-  "folds_completed": 2,
-  "rows_evaluated": 1080,
-  "overall_18class_bacc": 0.42315,
+  "folds_completed": 3,
+  "rows_evaluated": 1620,
+  "overall_18class_bacc": 0.4216,
   "folds": {
     "fold0": {
       "best_epoch": 2,
@@ -21,6 +21,13 @@
       "glm_fable5_acc": 0.3556,
       "gem37_38_acc": 0.4667,
       "elapsed_sec": 3374.1
+    },
+    "fold2": {
+      "best_epoch": 2,
+      "best_bacc": 0.41852,
+      "glm_fable5_acc": 0.4111,
+      "gem37_38_acc": 0.5,
+      "elapsed_sec": 3368.5
     }
   }
 }
