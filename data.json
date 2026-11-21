@@ -1,29 +1,51 @@
 {
-  "updated_at": "2026-11-19 10:04:13 JST",
+  "updated_at": "2026-11-22 08:27:53 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 6371,
-    "my_rank": 1012,
-    "my_score": 0.698,
-    "medal": "No Medal",
-    "top_percent": 15.88,
-    "gold_cutoff": 0.751,
-    "silver_cutoff": 0.702,
-    "silver_rank_cutoff": 318,
-    "bronze_cutoff": 0.702,
-    "bronze_rank_cutoff": 637,
-    "quota_remaining": 5,
+    "total_teams": 6658,
+    "my_rank": 111,
+    "my_score": 0.717,
+    "medal": "Silver",
+    "top_percent": 1.67,
+    "gold_cutoff": 0.755,
+    "silver_cutoff": 0.711,
+    "silver_rank_cutoff": 332,
+    "bronze_cutoff": 0.705,
+    "bronze_rank_cutoff": 665,
+    "quota_remaining": 1,
     "clusters": {
-      "ge_0698": 1013,
-      "ge_0700": 987,
-      "ge_0702": 710,
-      "ge_0705": 153,
-      "ge_0710": 116,
-      "ge_0750": 20
+      "ge_0698": 1392,
+      "ge_0700": 1374,
+      "ge_0702": 1191,
+      "ge_0705": 667,
+      "ge_0710": 398,
+      "ge_0750": 26
     }
   },
-  "running_submission": null,
-  "active_runs": [],
+  "running_submission": {
+    "ref": 58690579,
+    "version": "NTL 0716",
+    "track": "Baseline / Pipeline",
+    "description": "NTL 0716: 0715 (0.717 Prefix B + Robust V1) + Fable Routing",
+    "params": "NTL 0716: 0715 (0.717 Prefix B + Robust V1) + Fable Routing",
+    "submitted_at": "2026-11-22 08:02:03",
+    "status": "PENDING",
+    "target_score": "0.705+ (Silver Cliff)",
+    "estimated_completion": "~8-9h from submit"
+  },
+  "active_runs": [
+    {
+      "ref": 58690579,
+      "version": "NTL 0716",
+      "track": "Baseline / Pipeline",
+      "description": "NTL 0716: 0715 (0.717 Prefix B + Robust V1) + Fable Routing",
+      "params": "NTL 0716: 0715 (0.717 Prefix B + Robust V1) + Fable Routing",
+      "submitted_at": "2026-11-22 08:02:03",
+      "status": "PENDING",
+      "target_score": "0.705+ (Silver Cliff)",
+      "estimated_completion": "~8-9h from submit"
+    }
+  ],
   "timeline": [
     {
       "version": "V28",
@@ -280,9 +302,81 @@
       "date": "11-19",
       "tag": "Ablation",
       "desc": "0707基盤 V1 cover比較: 0.15(0.694) < 0.30(0.698) > 0.45+pack(0.695)"
+    },
+    {
+      "version": "NTL 0712",
+      "score": 0.696,
+      "date": "11-19",
+      "tag": "Rejected",
+      "desc": "0707 + Soft Typography (penalty=0.05) 単体 (0.696、自己ベスト未達)"
+    },
+    {
+      "version": "NTL 0713",
+      "score": 0.709,
+      "date": "11-21",
+      "tag": "320-Tok V1",
+      "desc": "320-Token GLM Likelihood + Qwen Ensemble (sanpier 0.709 再現)"
+    },
+    {
+      "version": "NTL 0714",
+      "score": 0.71,
+      "date": "11-21",
+      "tag": "Fable Routing",
+      "desc": "0713 + Fable Routing (claude-fable-5 加重キュー: +0.001)"
+    },
+    {
+      "version": "NTL 0715",
+      "score": 0.717,
+      "target": 0.72,
+      "date": "11-21",
+      "tag": "0.717 Peak",
+      "desc": "Prefix B (Reasoning Low + {n_words}) + Robust V1 (W=1.5): 自己ベスト 0.717"
+    },
+    {
+      "version": "NTL 0716",
+      "score": null,
+      "target": 0.72,
+      "date": "11-22",
+      "tag": "Pending",
+      "desc": "0715 (0.717 Prefix B + Robust V1) + Fable Routing 検証中"
     }
   ],
   "submissions": [
+    {
+      "ref": 58690579,
+      "date": "2026-11-22 08:02:03",
+      "status": "PENDING",
+      "score": null,
+      "description": "NTL 0716: 0715 (0.717 Prefix B + Robust V1) + Fable Routing"
+    },
+    {
+      "ref": 58665553,
+      "date": "2026-11-21 21:10:10",
+      "status": "COMPLETE",
+      "score": 0.717,
+      "description": "NTL 0715: 0.711 Prefix B + Robust V1"
+    },
+    {
+      "ref": 58652168,
+      "date": "2026-11-21 14:31:48",
+      "status": "COMPLETE",
+      "score": 0.71,
+      "description": "NTL 0714: 320-Token GLM Likelihood + Fable Routing (0713 + Fable)"
+    },
+    {
+      "ref": 58651815,
+      "date": "2026-11-21 14:20:42",
+      "status": "COMPLETE",
+      "score": 0.709,
+      "description": "NTL 0713: 320-Token GLM Likelihood + Qwen Ensemble (sanpier 0.709 baseline)"
+    },
+    {
+      "ref": 58556097,
+      "date": "2026-11-19 19:42:07",
+      "status": "COMPLETE",
+      "score": 0.696,
+      "description": "NTL 0712: 0707 (0.698) + Soft Typography (penalty=0.05)"
+    },
     {
       "ref": 58515387,
       "date": "2026-11-19 00:23:17",
@@ -387,41 +481,6 @@
       "status": "COMPLETE",
       "score": 0.678,
       "description": "NTL 0696 Public 0.684 Clean + WeMM-4B 0.07 (5-Fold Parallel + Safe Fallback)"
-    },
-    {
-      "ref": 58292048,
-      "date": "2026-11-13 11:14:05",
-      "status": "COMPLETE",
-      "score": 0.684,
-      "description": "NTL 0695 Public 0.684 Clean Benchmark (All Public Repro)"
-    },
-    {
-      "ref": 58258303,
-      "date": "2026-11-12 11:40:15",
-      "status": "COMPLETE",
-      "score": 0.676,
-      "description": "NTL 0694 Ablation E2 (V56-Fix Base + atlas_blend 0.15 only)"
-    },
-    {
-      "ref": 58258298,
-      "date": "2026-11-12 11:40:00",
-      "status": "COMPLETE",
-      "score": 0.677,
-      "description": "NTL 0693 Ablation E1 (V56-Fix Base + gsq_share 0.06 only)"
-    },
-    {
-      "ref": 58253128,
-      "date": "2026-11-12 08:48:12",
-      "status": "COMPLETE",
-      "score": 0.675,
-      "description": "NTL 0692 WeMM canary (V56-Fix + hard-fail if WeMM missing; verification)"
-    },
-    {
-      "ref": 58253121,
-      "date": "2026-11-12 08:47:50",
-      "status": "COMPLETE",
-      "score": 0.676,
-      "description": "NTL 0691 V56-Fix identical rerun (LB noise measurement; no parameter change)"
     }
   ],
   "architecture_matrix": [
@@ -724,6 +783,54 @@
       "atlas_margin": "0.35",
       "sinkhorn": "0.30 / Mix 0.35",
       "highlight": "【検証完了】0.30(0.698)が最適点と実証"
+    },
+    {
+      "version": "NTL 0712",
+      "track": "Track 2",
+      "score": "0.696",
+      "data_pool": "0707 + Soft Typo (0.05)",
+      "deberta": "comp_stack OFF + ntl-segrun",
+      "pairwise_ab": "ATLAS V9",
+      "sibling_style": "Soft Typography (penalty=0.05)",
+      "atlas_margin": "0.35",
+      "sinkhorn": "0.30 / Mix 0.35",
+      "highlight": "【未達】Ref: 58556097 (0707比 -0.002)"
+    },
+    {
+      "version": "NTL 0713 / 0714",
+      "track": "Track 1",
+      "score": "0.709 / 0.710",
+      "data_pool": "320-Token GLM V1",
+      "deberta": "Prefix A (320 tok) + Apex 0.10",
+      "pairwise_ab": "ATLAS V9",
+      "sibling_style": "320tok V1 + Fable Routing",
+      "atlas_margin": "0.35",
+      "sinkhorn": "0.30 / Mix 0.35",
+      "highlight": "【0.710突破】320tok(0.709) + Fable Routing(0.710)"
+    },
+    {
+      "version": "NTL 0715",
+      "track": "Track 1",
+      "score": "0.717",
+      "data_pool": "Prefix B + Robust V1 (W=1.5)",
+      "deberta": "Prefix B (160 tok) + Apex 0.10",
+      "pairwise_ab": "ATLAS V9",
+      "sibling_style": "Reasoning Low + {n_words} + Robust V1",
+      "atlas_margin": "0.35",
+      "sinkhorn": "0.30 / Mix 0.35",
+      "highlight": "【現自己ベスト: 0.717】Ref: 58665553 (Prefix B + Robust V1)"
+    },
+    {
+      "version": "NTL 0716",
+      "track": "Track 1",
+      "score": "Pending",
+      "data_pool": "0715 + Fable Routing",
+      "deberta": "Prefix B (160 tok) + Fable",
+      "pairwise_ab": "ATLAS V9",
+      "sibling_style": "0715 + claude-fable-5 加重キュー",
+      "atlas_margin": "0.35",
+      "sinkhorn": "0.30 / Mix 0.35",
+      "highlight": "【採点中】Ref: 58690579 (0.717 + Fable Routing)"
     }
   ],
   "local_verification": {

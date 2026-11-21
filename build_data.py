@@ -406,8 +406,8 @@ def main():
             my_rank = int(my_row.iloc[0]['Rank'])
             my_score = float(my_row.iloc[0]['Score'])
         else:
-            my_rank = 1009
-            my_score = 0.698
+            my_rank = 100
+            my_score = 0.717
 
         top18_cutoff = float(df.iloc[17]['Score'])
         silver_rank_cutoff = int(total_teams * 0.05)
@@ -476,7 +476,12 @@ def main():
         {"version": "NTL 0706", "score": 0.694, "date": "11-18", "tag": "Rejected", "desc": "Spec除去 + V1(870/1140)修正 + P5+Gem4-12B (0705比+0.004回復も0700未満)"},
         {"version": "NTL 0707", "score": 0.698, "target": 0.705, "date": "11-18", "tag": "0.698 Peak", "desc": "comp_stack無効 + GSQ 27B完走 + Native 7.2h + 安全V1(cover 0.30): 自己ベスト 0.698"},
         {"version": "NTL 0708", "score": 0.693, "date": "11-18", "tag": "Rejected", "desc": "0707基盤 + P5+Gem4-12B Surprisal (OOF最高も本番-0.005、Surprisal路線打ち切り)"},
-        {"version": "0709 / 0711", "score": 0.695, "date": "11-19", "tag": "Ablation", "desc": "0707基盤 V1 cover比較: 0.15(0.694) < 0.30(0.698) > 0.45+pack(0.695)"}
+        {"version": "0709 / 0711", "score": 0.695, "date": "11-19", "tag": "Ablation", "desc": "0707基盤 V1 cover比較: 0.15(0.694) < 0.30(0.698) > 0.45+pack(0.695)"},
+        {"version": "NTL 0712", "score": 0.696, "date": "11-19", "tag": "Rejected", "desc": "0707 + Soft Typography (penalty=0.05) 単体 (0.696、自己ベスト未達)"},
+        {"version": "NTL 0713", "score": 0.709, "date": "11-21", "tag": "320-Tok V1", "desc": "320-Token GLM Likelihood + Qwen Ensemble (sanpier 0.709 再現)"},
+        {"version": "NTL 0714", "score": 0.710, "date": "11-21", "tag": "Fable Routing", "desc": "0713 + Fable Routing (claude-fable-5 加重キュー: +0.001)"},
+        {"version": "NTL 0715", "score": 0.717, "target": 0.720, "date": "11-21", "tag": "0.717 Peak", "desc": "Prefix B (Reasoning Low + {n_words}) + Robust V1 (W=1.5): 自己ベスト 0.717"},
+        {"version": "NTL 0716", "score": None, "target": 0.720, "date": "11-22", "tag": "Pending", "desc": "0715 (0.717 Prefix B + Robust V1) + Fable Routing 検証中"}
     ]
 
     # 4. Architecture comparison matrix
@@ -505,7 +510,11 @@ def main():
         {"version": "NTL 0706", "track": "Track 2", "score": "0.694", "data_pool": "0700 + P5+Gem4 (NO Spec)", "deberta": "comp_stack.py + ntl-segrun", "pairwise_ab": "ATLAS V9", "sibling_style": "P5+Gem4 kNN(2,0.20)", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【棄却】Ref: 58490392 (Spec競合解消もV1圧迫で0.694止まり)"},
         {"version": "NTL 0707", "track": "Track 1", "score": "0.698", "data_pool": "No comp_stack + Full GSQ 27B", "deberta": "comp_stack OFF + ntl-segrun", "pairwise_ab": "ATLAS V9", "sibling_style": "Qwen3(0.40) + GSQ(0.03) + V1(0.30)", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【現自己ベスト: 0.698】Ref: 58490991 (comp_stack廃止+GSQ完走+安全V1)"},
         {"version": "NTL 0708", "track": "Track 2", "score": "0.693", "data_pool": "0707 + P5+Gem4-12B Surprisal", "deberta": "comp_stack OFF + ntl-segrun", "pairwise_ab": "ATLAS V9", "sibling_style": "0707 + P5+Gem4 kNN(2,0.20)", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【棄却】Ref: 58494871 (Surprisal注入5戦全敗確定・打ち切り)"},
-        {"version": "NTL 0709 / 0711", "track": "Track 2", "score": "0.694 / 0.695", "data_pool": "0707 + V1 Cover (0.15 / 0.45+pack)", "deberta": "comp_stack OFF + ntl-segrun", "pairwise_ab": "ATLAS V9", "sibling_style": "V1 max-cover 0.15 vs 0.45+pack", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【検証完了】0.30(0.698)が最適点と実証"}
+        {"version": "NTL 0709 / 0711", "track": "Track 2", "score": "0.694 / 0.695", "data_pool": "0707 + V1 Cover (0.15 / 0.45+pack)", "deberta": "comp_stack OFF + ntl-segrun", "pairwise_ab": "ATLAS V9", "sibling_style": "V1 max-cover 0.15 vs 0.45+pack", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【検証完了】0.30(0.698)が最適点と実証"},
+        {"version": "NTL 0712", "track": "Track 2", "score": "0.696", "data_pool": "0707 + Soft Typo (0.05)", "deberta": "comp_stack OFF + ntl-segrun", "pairwise_ab": "ATLAS V9", "sibling_style": "Soft Typography (penalty=0.05)", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【未達】Ref: 58556097 (0707比 -0.002)"},
+        {"version": "NTL 0713 / 0714", "track": "Track 1", "score": "0.709 / 0.710", "data_pool": "320-Token GLM V1", "deberta": "Prefix A (320 tok) + Apex 0.10", "pairwise_ab": "ATLAS V9", "sibling_style": "320tok V1 + Fable Routing", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【0.710突破】320tok(0.709) + Fable Routing(0.710)"},
+        {"version": "NTL 0715", "track": "Track 1", "score": "0.717", "data_pool": "Prefix B + Robust V1 (W=1.5)", "deberta": "Prefix B (160 tok) + Apex 0.10", "pairwise_ab": "ATLAS V9", "sibling_style": "Reasoning Low + {n_words} + Robust V1", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【現自己ベスト: 0.717】Ref: 58665553 (Prefix B + Robust V1)"},
+        {"version": "NTL 0716", "track": "Track 1", "score": "Pending", "data_pool": "0715 + Fable Routing", "deberta": "Prefix B (160 tok) + Fable", "pairwise_ab": "ATLAS V9", "sibling_style": "0715 + claude-fable-5 加重キュー", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【採点中】Ref: 58690579 (0.717 + Fable Routing)"}
     ]
 
     # 5. Extract Markdown Reports
