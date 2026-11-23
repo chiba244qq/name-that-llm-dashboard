@@ -481,7 +481,10 @@ def main():
         {"version": "NTL 0713", "score": 0.709, "date": "11-21", "tag": "320-Tok V1", "desc": "320-Token GLM Likelihood + Qwen Ensemble (sanpier 0.709 再現)"},
         {"version": "NTL 0714", "score": 0.710, "date": "11-21", "tag": "Fable Routing", "desc": "0713 + Fable Routing (claude-fable-5 加重キュー: +0.001)"},
         {"version": "NTL 0715", "score": 0.717, "target": 0.720, "date": "11-21", "tag": "0.717 Peak", "desc": "Prefix B (Reasoning Low + {n_words}) + Robust V1 (W=1.5): 自己ベスト 0.717"},
-        {"version": "NTL 0716", "score": None, "target": 0.720, "date": "11-22", "tag": "Pending", "desc": "0715 (0.717 Prefix B + Robust V1) + Fable Routing 検証中"}
+        {"version": "NTL 0716", "score": 0.714, "date": "11-22", "tag": "Rejected", "desc": "0715 + Fable Routing (0.717比 -0.003、Prefix B下では逆効果)"},
+        {"version": "NTL 0717", "score": 0.717, "date": "11-22", "tag": "320-Tok B", "desc": "0715 + Prefix B 320-Token ll_model (OOF +0.02818、本番0.717横並び)"},
+        {"version": "NTL 0718 / 0719", "score": 0.717, "date": "11-23", "tag": "0.717 Clean", "desc": "Guarded Fable Return + No comp_stack (0718/0719ともに0.717安定再現)"},
+        {"version": "NTL 0720 / 0721", "score": 0.715, "date": "11-23", "tag": "Rejected", "desc": "GSQ 0.10(0.715) / Native 0.48(0.711): シェア増量は両者とも悪化・現行0.03/0.40維持"}
     ]
 
     # 4. Architecture comparison matrix
@@ -514,7 +517,10 @@ def main():
         {"version": "NTL 0712", "track": "Track 2", "score": "0.696", "data_pool": "0707 + Soft Typo (0.05)", "deberta": "comp_stack OFF + ntl-segrun", "pairwise_ab": "ATLAS V9", "sibling_style": "Soft Typography (penalty=0.05)", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【未達】Ref: 58556097 (0707比 -0.002)"},
         {"version": "NTL 0713 / 0714", "track": "Track 1", "score": "0.709 / 0.710", "data_pool": "320-Token GLM V1", "deberta": "Prefix A (320 tok) + Apex 0.10", "pairwise_ab": "ATLAS V9", "sibling_style": "320tok V1 + Fable Routing", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【0.710突破】320tok(0.709) + Fable Routing(0.710)"},
         {"version": "NTL 0715", "track": "Track 1", "score": "0.717", "data_pool": "Prefix B + Robust V1 (W=1.5)", "deberta": "Prefix B (160 tok) + Apex 0.10", "pairwise_ab": "ATLAS V9", "sibling_style": "Reasoning Low + {n_words} + Robust V1", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【現自己ベスト: 0.717】Ref: 58665553 (Prefix B + Robust V1)"},
-        {"version": "NTL 0716", "track": "Track 1", "score": "Pending", "data_pool": "0715 + Fable Routing", "deberta": "Prefix B (160 tok) + Fable", "pairwise_ab": "ATLAS V9", "sibling_style": "0715 + claude-fable-5 加重キュー", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【採点中】Ref: 58690579 (0.717 + Fable Routing)"}
+        {"version": "NTL 0716", "track": "Track 2", "score": "0.714", "data_pool": "0715 + Fable Routing", "deberta": "Prefix B (160 tok) + Fable", "pairwise_ab": "ATLAS V9", "sibling_style": "0715 + claude-fable-5 加重キュー", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【棄却】Ref: 58690579 (0715比 -0.003)"},
+        {"version": "NTL 0717", "track": "Track 1", "score": "0.717", "data_pool": "0715 + Prefix B 320-Token", "deberta": "Prefix B (320 tok) + Robust V1", "pairwise_ab": "ATLAS V9", "sibling_style": "自前2699件320-Token再学習", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【0.717確認】Ref: 58716522 (320tok飽和確認)"},
+        {"version": "NTL 0718 / 0719", "track": "Track 1", "score": "0.717", "data_pool": "Guarded Fable + No comp_stack", "deberta": "comp_stack OFF + Guarded Fable", "pairwise_ab": "ATLAS V9", "sibling_style": "Fable保護ゲート + 境界キュー", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【クリーン基盤: 0.717】Ref: 58725503 (無駄計算削減)"},
+        {"version": "NTL 0720 / 0721", "track": "Track 2", "score": "0.715 / 0.711", "data_pool": "0719 + GSQ 0.10 / Native 0.48", "deberta": "comp_stack OFF + Guarded Fable", "pairwise_ab": "ATLAS V9", "sibling_style": "GSQ/Native シェア増量実験", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【棄却】Ref: 58749169/58749173 (0.03/0.40が最適)"}
     ]
 
     # 5. Extract Markdown Reports
