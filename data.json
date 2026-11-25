@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-11-25 17:15:54 JST",
+  "updated_at": "2026-11-25 17:43:02 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 7033,
-    "my_rank": 147,
+    "total_teams": 7034,
+    "my_rank": 148,
     "my_score": 0.722,
     "medal": "Silver",
-    "top_percent": 2.09,
+    "top_percent": 2.1,
     "gold_cutoff": 0.763,
     "silver_cutoff": 0.72,
     "silver_rank_cutoff": 351,
@@ -14,38 +14,16 @@
     "bronze_rank_cutoff": 703,
     "quota_remaining": 2,
     "clusters": {
-      "ge_0698": 1781,
-      "ge_0700": 1768,
-      "ge_0702": 1641,
-      "ge_0705": 1295,
-      "ge_0710": 1187,
+      "ge_0698": 1782,
+      "ge_0700": 1769,
+      "ge_0702": 1642,
+      "ge_0705": 1298,
+      "ge_0710": 1190,
       "ge_0750": 35
     }
   },
-  "running_submission": {
-    "ref": 58857635,
-    "version": "NTL 0725",
-    "track": "Baseline / Pipeline",
-    "description": "NTL 0725 (Diff B): 0724 + argsort(-mass) (no likelihood_queue)",
-    "params": "NTL 0725 (Diff B): 0724 + argsort(-mass) (no likelihood_queue)",
-    "submitted_at": "2026-11-25 09:30:55",
-    "status": "PENDING",
-    "target_score": "0.705+ (Silver Cliff)",
-    "estimated_completion": "~8-9h from submit"
-  },
-  "active_runs": [
-    {
-      "ref": 58857635,
-      "version": "NTL 0725",
-      "track": "Baseline / Pipeline",
-      "description": "NTL 0725 (Diff B): 0724 + argsort(-mass) (no likelihood_queue)",
-      "params": "NTL 0725 (Diff B): 0724 + argsort(-mass) (no likelihood_queue)",
-      "submitted_at": "2026-11-25 09:30:55",
-      "status": "PENDING",
-      "target_score": "0.705+ (Silver Cliff)",
-      "estimated_completion": "~8-9h from submit"
-    }
-  ],
+  "running_submission": null,
+  "active_runs": [],
   "timeline": [
     {
       "version": "V28",
@@ -383,10 +361,10 @@
     },
     {
       "version": "NTL 0725 (Diff B)",
-      "score": 0.717,
+      "score": 0.719,
       "date": "11-25",
-      "tag": "Diff B",
-      "desc": "差分B(0724 + argsort(-mass)純GLM順) 評価中"
+      "tag": "Diff B (+0.002)",
+      "desc": "差分B(0724 + argsort(-mass)純GLM順): 0.719到達（likelihood_queue廃止が+0.002効いたと特定）"
     },
     {
       "version": "NTL 0726",
@@ -408,8 +386,8 @@
     {
       "ref": 58857635,
       "date": "2026-11-25 09:30:55",
-      "status": "PENDING",
-      "score": null,
+      "status": "COMPLETE",
+      "score": 0.719,
       "description": "NTL 0725 (Diff B): 0724 + argsort(-mass) (no likelihood_queue)"
     },
     {
@@ -963,14 +941,14 @@
     {
       "version": "NTL 0725 (Diff B)",
       "track": "Track 1",
-      "score": "Pending",
+      "score": "0.719",
       "data_pool": "0724 + argsort(-mass)",
       "deberta": "comp_stack ON + ranjeet258順",
       "pairwise_ab": "ATLAS V9",
       "sibling_style": "純GLM質量順 + Sibling Odds",
       "atlas_margin": "0.35",
       "sinkhorn": "0.30 / Mix 0.35",
-      "highlight": "【評価中】Ref: 58857635 (差分B検証)"
+      "highlight": "【0.719達成】Ref: 58857635 (差分B確定: argsort(-mass)で+0.002)"
     },
     {
       "version": "NTL 0726 (PB115)",
