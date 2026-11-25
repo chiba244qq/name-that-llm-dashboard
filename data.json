@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-11-25 17:06:22 JST",
+  "updated_at": "2026-11-25 17:15:54 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 7032,
+    "total_teams": 7033,
     "my_rank": 147,
     "my_score": 0.722,
     "medal": "Silver",
@@ -14,11 +14,11 @@
     "bronze_rank_cutoff": 703,
     "quota_remaining": 2,
     "clusters": {
-      "ge_0698": 1780,
-      "ge_0700": 1767,
-      "ge_0702": 1640,
-      "ge_0705": 1294,
-      "ge_0710": 1186,
+      "ge_0698": 1781,
+      "ge_0700": 1768,
+      "ge_0702": 1641,
+      "ge_0705": 1295,
+      "ge_0710": 1187,
       "ge_0750": 35
     }
   },
@@ -41,17 +41,6 @@
       "description": "NTL 0725 (Diff B): 0724 + argsort(-mass) (no likelihood_queue)",
       "params": "NTL 0725 (Diff B): 0724 + argsort(-mass) (no likelihood_queue)",
       "submitted_at": "2026-11-25 09:30:55",
-      "status": "PENDING",
-      "target_score": "0.705+ (Silver Cliff)",
-      "estimated_completion": "~8-9h from submit"
-    },
-    {
-      "ref": 58857627,
-      "version": "NTL 0724",
-      "track": "Baseline / Pipeline",
-      "description": "NTL 0724 (Diff A): 0723 (Sibling Odds + ozertuu Stage-3) + comp_stack (comp_w=0.15)",
-      "params": "NTL 0724 (Diff A): 0723 (Sibling Odds + ozertuu Stage-3) + comp_stack (comp_w=0.15)",
-      "submitted_at": "2026-11-25 09:30:51",
       "status": "PENDING",
       "target_score": "0.705+ (Silver Cliff)",
       "estimated_completion": "~8-9h from submit"
@@ -386,11 +375,18 @@
       "desc": "0719(No comp) + Sibling Odds + ozertuu V27 Stage-3: 0.717横並び"
     },
     {
-      "version": "NTL 0724 / 0725",
+      "version": "NTL 0724 (Diff A)",
       "score": 0.717,
       "date": "11-25",
-      "tag": "Diff Ablation",
-      "desc": "差分A(0724: comp_w=0.15) / 差分B(0725: argsort(-mass)純GLM順) 評価中"
+      "tag": "Diff A",
+      "desc": "差分A(0723 + comp_w=0.15): 0.717横並び（comp_stack有効化単体では0.717のまま）"
+    },
+    {
+      "version": "NTL 0725 (Diff B)",
+      "score": 0.717,
+      "date": "11-25",
+      "tag": "Diff B",
+      "desc": "差分B(0724 + argsort(-mass)純GLM順) 評価中"
     },
     {
       "version": "NTL 0726",
@@ -419,8 +415,8 @@
     {
       "ref": 58857627,
       "date": "2026-11-25 09:30:51",
-      "status": "PENDING",
-      "score": null,
+      "status": "COMPLETE",
+      "score": 0.717,
       "description": "NTL 0724 (Diff A): 0723 (Sibling Odds + ozertuu Stage-3) + comp_stack (comp_w=0.15)"
     },
     {
@@ -955,14 +951,14 @@
     {
       "version": "NTL 0724 (Diff A)",
       "track": "Track 1",
-      "score": "Pending",
+      "score": "0.717",
       "data_pool": "0723 + comp_stack (0.15)",
       "deberta": "comp_stack ON + ozertuu V27",
       "pairwise_ab": "ATLAS V9",
       "sibling_style": "comp_w=0.15 + Sibling Odds",
       "atlas_margin": "0.35",
       "sinkhorn": "0.30 / Mix 0.35",
-      "highlight": "【評価中】Ref: 58857627 (差分A検証)"
+      "highlight": "【0.717横並び】Ref: 58857627 (差分A検証: comp_w=0.15差なし)"
     },
     {
       "version": "NTL 0725 (Diff B)",
