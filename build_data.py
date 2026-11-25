@@ -484,7 +484,10 @@ def main():
         {"version": "NTL 0716", "score": 0.714, "date": "11-22", "tag": "Rejected", "desc": "0715 + Fable Routing (0.717比 -0.003、Prefix B下では逆効果)"},
         {"version": "NTL 0717", "score": 0.717, "date": "11-22", "tag": "320-Tok B", "desc": "0715 + Prefix B 320-Token ll_model (OOF +0.02818、本番0.717横並び)"},
         {"version": "NTL 0718 / 0719", "score": 0.717, "date": "11-23", "tag": "0.717 Clean", "desc": "Guarded Fable Return + No comp_stack (0718/0719ともに0.717安定再現)"},
-        {"version": "NTL 0720 / 0721", "score": 0.715, "date": "11-23", "tag": "Rejected", "desc": "GSQ 0.10(0.715) / Native 0.48(0.711): シェア増量は両者とも悪化・現行0.03/0.40維持"}
+        {"version": "NTL 0720 / 0721", "score": 0.715, "date": "11-23", "tag": "Rejected", "desc": "GSQ 0.10(0.715) / Native 0.48(0.711): シェア増量は両者とも悪化・現行0.03/0.40維持"},
+        {"version": "NTL 0722 v6", "score": 0.698, "date": "11-24", "tag": "Rejected", "desc": "0719 + prvsiyan Contrastive Qwen3-8B L24 (comp_w=0.12): 0.698に大幅悪化・棄却"},
+        {"version": "NTL 0723", "score": 0.717, "date": "11-24", "tag": "Sibling Odds", "desc": "0719(No comp) + Sibling Odds + ozertuu V27 Stage-3: 0.717横並び"},
+        {"version": "NTL 0724 / 0725", "score": 0.717, "date": "11-25", "tag": "Diff Ablation", "desc": "差分A(0724: comp_w=0.15) / 差分B(0725: argsort(-mass)純GLM順) 評価中"}
     ]
 
     # 4. Architecture comparison matrix
@@ -520,7 +523,11 @@ def main():
         {"version": "NTL 0716", "track": "Track 2", "score": "0.714", "data_pool": "0715 + Fable Routing", "deberta": "Prefix B (160 tok) + Fable", "pairwise_ab": "ATLAS V9", "sibling_style": "0715 + claude-fable-5 加重キュー", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【棄却】Ref: 58690579 (0715比 -0.003)"},
         {"version": "NTL 0717", "track": "Track 1", "score": "0.717", "data_pool": "0715 + Prefix B 320-Token", "deberta": "Prefix B (320 tok) + Robust V1", "pairwise_ab": "ATLAS V9", "sibling_style": "自前2699件320-Token再学習", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【0.717確認】Ref: 58716522 (320tok飽和確認)"},
         {"version": "NTL 0718 / 0719", "track": "Track 1", "score": "0.717", "data_pool": "Guarded Fable + No comp_stack", "deberta": "comp_stack OFF + Guarded Fable", "pairwise_ab": "ATLAS V9", "sibling_style": "Fable保護ゲート + 境界キュー", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【クリーン基盤: 0.717】Ref: 58725503 (無駄計算削減)"},
-        {"version": "NTL 0720 / 0721", "track": "Track 2", "score": "0.715 / 0.711", "data_pool": "0719 + GSQ 0.10 / Native 0.48", "deberta": "comp_stack OFF + Guarded Fable", "pairwise_ab": "ATLAS V9", "sibling_style": "GSQ/Native シェア増量実験", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【棄却】Ref: 58749169/58749173 (0.03/0.40が最適)"}
+        {"version": "NTL 0720 / 0721", "track": "Track 2", "score": "0.715 / 0.711", "data_pool": "0719 + GSQ 0.10 / Native 0.48", "deberta": "comp_stack OFF + Guarded Fable", "pairwise_ab": "ATLAS V9", "sibling_style": "GSQ/Native シェア増量実験", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【棄却】Ref: 58749169/58749173 (0.03/0.40が最適)"},
+        {"version": "NTL 0722 v6", "track": "Track 2", "score": "0.698", "data_pool": "0719 + prvsiyan Ctr L24", "deberta": "comp_w=0.12 (5-fold Qwen3-8B)", "pairwise_ab": "ATLAS V9", "sibling_style": "prvsiyan OOF 0.57459統合", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【棄却】Ref: 58806448 (0.698へ大幅悪化)"},
+        {"version": "NTL 0723", "track": "Track 1", "score": "0.717", "data_pool": "0719 + Sibling Odds", "deberta": "comp_stack OFF + ozertuu V27", "pairwise_ab": "ATLAS V9", "sibling_style": "Sibling Odds + reconcile_typography", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【0.717維持】Ref: 58813043 (comp_w=0.0での再現)"},
+        {"version": "NTL 0724 (Diff A)", "track": "Track 1", "score": "Pending", "data_pool": "0723 + comp_stack (0.15)", "deberta": "comp_stack ON + ozertuu V27", "pairwise_ab": "ATLAS V9", "sibling_style": "comp_w=0.15 + Sibling Odds", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【評価中】Ref: 58857627 (差分A検証)"},
+        {"version": "NTL 0725 (Diff B)", "track": "Track 1", "score": "Pending", "data_pool": "0724 + argsort(-mass)", "deberta": "comp_stack ON + ranjeet258順", "pairwise_ab": "ATLAS V9", "sibling_style": "純GLM質量順 + Sibling Odds", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【評価中】Ref: 58857635 (差分B検証)"}
     ]
 
     # 5. Extract Markdown Reports

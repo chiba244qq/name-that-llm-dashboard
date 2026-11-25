@@ -1,29 +1,62 @@
 {
-  "updated_at": "2026-11-23 21:16:33 JST",
+  "updated_at": "2026-11-25 09:32:23 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 6827,
-    "my_rank": 511,
+    "total_teams": 7004,
+    "my_rank": 865,
     "my_score": 0.717,
-    "medal": "Bronze",
-    "top_percent": 7.48,
-    "gold_cutoff": 0.759,
-    "silver_cutoff": 0.718,
-    "silver_rank_cutoff": 341,
-    "bronze_cutoff": 0.716,
-    "bronze_rank_cutoff": 682,
+    "medal": "No Medal",
+    "top_percent": 12.35,
+    "gold_cutoff": 0.761,
+    "silver_cutoff": 0.72,
+    "silver_rank_cutoff": 350,
+    "bronze_cutoff": 0.718,
+    "bronze_rank_cutoff": 700,
     "quota_remaining": 3,
     "clusters": {
-      "ge_0698": 1582,
-      "ge_0700": 1565,
-      "ge_0702": 1415,
-      "ge_0705": 1006,
-      "ge_0710": 856,
-      "ge_0750": 29
+      "ge_0698": 1753,
+      "ge_0700": 1738,
+      "ge_0702": 1609,
+      "ge_0705": 1258,
+      "ge_0710": 1148,
+      "ge_0750": 33
     }
   },
-  "running_submission": null,
-  "active_runs": [],
+  "running_submission": {
+    "ref": 58857635,
+    "version": "NTL 0725",
+    "track": "Baseline / Pipeline",
+    "description": "NTL 0725 (Diff B): 0724 + argsort(-mass) (no likelihood_queue)",
+    "params": "NTL 0725 (Diff B): 0724 + argsort(-mass) (no likelihood_queue)",
+    "submitted_at": "2026-11-25 09:30:55",
+    "status": "PENDING",
+    "target_score": "0.705+ (Silver Cliff)",
+    "estimated_completion": "~8-9h from submit"
+  },
+  "active_runs": [
+    {
+      "ref": 58857635,
+      "version": "NTL 0725",
+      "track": "Baseline / Pipeline",
+      "description": "NTL 0725 (Diff B): 0724 + argsort(-mass) (no likelihood_queue)",
+      "params": "NTL 0725 (Diff B): 0724 + argsort(-mass) (no likelihood_queue)",
+      "submitted_at": "2026-11-25 09:30:55",
+      "status": "PENDING",
+      "target_score": "0.705+ (Silver Cliff)",
+      "estimated_completion": "~8-9h from submit"
+    },
+    {
+      "ref": 58857627,
+      "version": "NTL 0724",
+      "track": "Baseline / Pipeline",
+      "description": "NTL 0724 (Diff A): 0723 (Sibling Odds + ozertuu Stage-3) + comp_stack (comp_w=0.15)",
+      "params": "NTL 0724 (Diff A): 0723 (Sibling Odds + ozertuu Stage-3) + comp_stack (comp_w=0.15)",
+      "submitted_at": "2026-11-25 09:30:51",
+      "status": "PENDING",
+      "target_score": "0.705+ (Silver Cliff)",
+      "estimated_completion": "~8-9h from submit"
+    }
+  ],
   "timeline": [
     {
       "version": "V28",
@@ -337,9 +370,72 @@
       "date": "11-23",
       "tag": "Rejected",
       "desc": "GSQ 0.10(0.715) / Native 0.48(0.711): シェア増量は両者とも悪化・現行0.03/0.40維持"
+    },
+    {
+      "version": "NTL 0722 v6",
+      "score": 0.698,
+      "date": "11-24",
+      "tag": "Rejected",
+      "desc": "0719 + prvsiyan Contrastive Qwen3-8B L24 (comp_w=0.12): 0.698に大幅悪化・棄却"
+    },
+    {
+      "version": "NTL 0723",
+      "score": 0.717,
+      "date": "11-24",
+      "tag": "Sibling Odds",
+      "desc": "0719(No comp) + Sibling Odds + ozertuu V27 Stage-3: 0.717横並び"
+    },
+    {
+      "version": "NTL 0724 / 0725",
+      "score": 0.717,
+      "date": "11-25",
+      "tag": "Diff Ablation",
+      "desc": "差分A(0724: comp_w=0.15) / 差分B(0725: argsort(-mass)純GLM順) 評価中"
     }
   ],
   "submissions": [
+    {
+      "ref": 58857635,
+      "date": "2026-11-25 09:30:55",
+      "status": "PENDING",
+      "score": null,
+      "description": "NTL 0725 (Diff B): 0724 + argsort(-mass) (no likelihood_queue)"
+    },
+    {
+      "ref": 58857627,
+      "date": "2026-11-25 09:30:51",
+      "status": "PENDING",
+      "score": null,
+      "description": "NTL 0724 (Diff A): 0723 (Sibling Odds + ozertuu Stage-3) + comp_stack (comp_w=0.15)"
+    },
+    {
+      "ref": 58813043,
+      "date": "2026-11-24 14:27:36",
+      "status": "COMPLETE",
+      "score": 0.717,
+      "description": "NTL 0723: 0719 (0.717 No-comp) + Sibling Odds + ozertuu V27 Stage-3"
+    },
+    {
+      "ref": 58806448,
+      "date": "2026-11-24 11:25:57",
+      "status": "COMPLETE",
+      "score": 0.698,
+      "description": "NTL 0722 v6: 0719 (0.717 No-comp) + prvsiyan Contrastive Qwen3-8B L24 (comp_w=0.12, run() fix)"
+    },
+    {
+      "ref": 58803640,
+      "date": "2026-11-24 10:03:20",
+      "status": "COMPLETE",
+      "score": null,
+      "description": "NTL 0722 v4: 0719 (0.717 No-comp) + prvsiyan Contrastive Qwen3-8B L24 (comp_w=0.12, comp_meta fix)"
+    },
+    {
+      "ref": 58796176,
+      "date": "2026-11-24 06:39:18",
+      "status": "COMPLETE",
+      "score": null,
+      "description": "NTL 0722: 0719 (0.717 No-comp) + prvsiyan Contrastive Qwen3-8B L24 (comp_w=0.12)"
+    },
     {
       "ref": 58749173,
       "date": "2026-11-23 09:16:07",
@@ -437,48 +533,6 @@
       "status": "COMPLETE",
       "score": 0.698,
       "description": "NTL 0707: Clean Baseline (No comp_stack, Full GSQ 27B 6.3h + Native 7.2h, Safe V1 fixed_s=870/1140)"
-    },
-    {
-      "ref": 58490392,
-      "date": "2026-11-18 11:01:06",
-      "status": "COMPLETE",
-      "score": 0.694,
-      "description": "NTL 0706: Clean 0700 + P5+Gem4-12B Surprisal (kNN k=2,tau=0.20, NO Spec, Safe V1 fixed_s=870/1140)"
-    },
-    {
-      "ref": 58462695,
-      "date": "2026-11-17 17:35:41",
-      "status": "COMPLETE",
-      "score": 0.69,
-      "description": "NTL 0705: 0700 + Gemma-4-12B->P5 Surprisal (kNN k=2,tau=0.20) + Open-Pool CPU Specialists (w=0.05)"
-    },
-    {
-      "ref": 58456031,
-      "date": "2026-11-17 13:33:26",
-      "status": "COMPLETE",
-      "score": 0.684,
-      "description": "NTL 0704: 0703 P5+Gemma2 Surprisal (kNN k=2,tau=0.20) + Open-Pool CPU Specialists (w=0.05)"
-    },
-    {
-      "ref": 58452566,
-      "date": "2026-11-17 11:19:13",
-      "status": "COMPLETE",
-      "score": 0.694,
-      "description": "NTL 0703: 0700 + Route 2 Surprisal Stage (P5 Qwen2.5-7B+Qwen3-4B + Gemma-2-9B, OOF +0.00434)"
-    },
-    {
-      "ref": 58448840,
-      "date": "2026-11-17 09:05:37",
-      "status": "COMPLETE",
-      "score": 0.695,
-      "description": "NTL 0702: 0700 + Phase 5 Surprisal Stage (Qwen2.5-7B + Qwen3-4B-Base, OOF +0.00382)"
-    },
-    {
-      "ref": 58388340,
-      "date": "2026-11-15 23:28:45",
-      "status": "COMPLETE",
-      "score": 0.694,
-      "description": "NTL 0701 0.684 Stack + GLM-5.3/Flash V1 Graft + Ambiguity Priority (de153e6d GPU + empirical V1_COST + 8.75h)"
     }
   ],
   "architecture_matrix": [
@@ -865,6 +919,54 @@
       "atlas_margin": "0.35",
       "sinkhorn": "0.30 / Mix 0.35",
       "highlight": "【棄却】Ref: 58749169/58749173 (0.03/0.40が最適)"
+    },
+    {
+      "version": "NTL 0722 v6",
+      "track": "Track 2",
+      "score": "0.698",
+      "data_pool": "0719 + prvsiyan Ctr L24",
+      "deberta": "comp_w=0.12 (5-fold Qwen3-8B)",
+      "pairwise_ab": "ATLAS V9",
+      "sibling_style": "prvsiyan OOF 0.57459統合",
+      "atlas_margin": "0.35",
+      "sinkhorn": "0.30 / Mix 0.35",
+      "highlight": "【棄却】Ref: 58806448 (0.698へ大幅悪化)"
+    },
+    {
+      "version": "NTL 0723",
+      "track": "Track 1",
+      "score": "0.717",
+      "data_pool": "0719 + Sibling Odds",
+      "deberta": "comp_stack OFF + ozertuu V27",
+      "pairwise_ab": "ATLAS V9",
+      "sibling_style": "Sibling Odds + reconcile_typography",
+      "atlas_margin": "0.35",
+      "sinkhorn": "0.30 / Mix 0.35",
+      "highlight": "【0.717維持】Ref: 58813043 (comp_w=0.0での再現)"
+    },
+    {
+      "version": "NTL 0724 (Diff A)",
+      "track": "Track 1",
+      "score": "Pending",
+      "data_pool": "0723 + comp_stack (0.15)",
+      "deberta": "comp_stack ON + ozertuu V27",
+      "pairwise_ab": "ATLAS V9",
+      "sibling_style": "comp_w=0.15 + Sibling Odds",
+      "atlas_margin": "0.35",
+      "sinkhorn": "0.30 / Mix 0.35",
+      "highlight": "【評価中】Ref: 58857627 (差分A検証)"
+    },
+    {
+      "version": "NTL 0725 (Diff B)",
+      "track": "Track 1",
+      "score": "Pending",
+      "data_pool": "0724 + argsort(-mass)",
+      "deberta": "comp_stack ON + ranjeet258順",
+      "pairwise_ab": "ATLAS V9",
+      "sibling_style": "純GLM質量順 + Sibling Odds",
+      "atlas_margin": "0.35",
+      "sinkhorn": "0.30 / Mix 0.35",
+      "highlight": "【評価中】Ref: 58857635 (差分B検証)"
     }
   ],
   "local_verification": {
