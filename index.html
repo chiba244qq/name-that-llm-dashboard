@@ -1095,6 +1095,9 @@
       const labels = timeline.map(t => t.version);
       const scores = timeline.map(t => t.score);
       const targets = timeline.map(t => t.target || null);
+      const allVals = [...scores, ...targets].filter(v => typeof v === 'number' && isFinite(v));
+      const yMin = allVals.length ? Math.floor((Math.min(...allVals) - 0.004) * 1000) / 1000 : 0.658;
+      const yMax = allVals.length ? Math.ceil((Math.max(...allVals) + 0.004) * 1000) / 1000 : 0.730;
 
       if (myChart) myChart.destroy();
 
@@ -1151,8 +1154,8 @@
           },
           scales: {
             y: {
-              min: 0.658,
-              max: 0.710,
+              min: yMin,
+              max: yMax,
               grid: {
                 color: 'rgba(51, 65, 85, 0.4)'
               },

@@ -1,39 +1,50 @@
 {
-  "updated_at": "2026-11-25 09:32:23 JST",
+  "updated_at": "2026-11-25 10:44:07 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 7004,
-    "my_rank": 865,
+    "total_teams": 7007,
+    "my_rank": 870,
     "my_score": 0.717,
     "medal": "No Medal",
-    "top_percent": 12.35,
+    "top_percent": 12.42,
     "gold_cutoff": 0.761,
     "silver_cutoff": 0.72,
     "silver_rank_cutoff": 350,
     "bronze_cutoff": 0.718,
     "bronze_rank_cutoff": 700,
-    "quota_remaining": 3,
+    "quota_remaining": 2,
     "clusters": {
-      "ge_0698": 1753,
-      "ge_0700": 1738,
-      "ge_0702": 1609,
-      "ge_0705": 1258,
-      "ge_0710": 1148,
+      "ge_0698": 1758,
+      "ge_0700": 1743,
+      "ge_0702": 1615,
+      "ge_0705": 1262,
+      "ge_0710": 1152,
       "ge_0750": 33
     }
   },
   "running_submission": {
-    "ref": 58857635,
-    "version": "NTL 0725",
+    "ref": 58859803,
+    "version": "NTL 0726",
     "track": "Baseline / Pipeline",
-    "description": "NTL 0725 (Diff B): 0724 + argsort(-mass) (no likelihood_queue)",
-    "params": "NTL 0725 (Diff B): 0724 + argsort(-mass) (no likelihood_queue)",
-    "submitted_at": "2026-11-25 09:30:55",
+    "description": "NTL 0726: LumiBee Kiro v66 PB115 Hybrid Apex (115-dim LR+LGB + Hybrid Alpha 0.25 + All-GLM-Out Guard)",
+    "params": "NTL 0726: LumiBee Kiro v66 PB115 Hybrid Apex (115-dim LR+LGB + Hybrid Alpha 0.25 + All-GLM-Out Guard)",
+    "submitted_at": "2026-11-25 10:31:59",
     "status": "PENDING",
     "target_score": "0.705+ (Silver Cliff)",
     "estimated_completion": "~8-9h from submit"
   },
   "active_runs": [
+    {
+      "ref": 58859803,
+      "version": "NTL 0726",
+      "track": "Baseline / Pipeline",
+      "description": "NTL 0726: LumiBee Kiro v66 PB115 Hybrid Apex (115-dim LR+LGB + Hybrid Alpha 0.25 + All-GLM-Out Guard)",
+      "params": "NTL 0726: LumiBee Kiro v66 PB115 Hybrid Apex (115-dim LR+LGB + Hybrid Alpha 0.25 + All-GLM-Out Guard)",
+      "submitted_at": "2026-11-25 10:31:59",
+      "status": "PENDING",
+      "target_score": "0.705+ (Silver Cliff)",
+      "estimated_completion": "~8-9h from submit"
+    },
     {
       "ref": 58857635,
       "version": "NTL 0725",
@@ -395,6 +406,13 @@
   ],
   "submissions": [
     {
+      "ref": 58859803,
+      "date": "2026-11-25 10:31:59",
+      "status": "PENDING",
+      "score": null,
+      "description": "NTL 0726: LumiBee Kiro v66 PB115 Hybrid Apex (115-dim LR+LGB + Hybrid Alpha 0.25 + All-GLM-Out Guard)"
+    },
+    {
       "ref": 58857635,
       "date": "2026-11-25 09:30:55",
       "status": "PENDING",
@@ -526,13 +544,6 @@
       "status": "COMPLETE",
       "score": 0.693,
       "description": "NTL 0708: 0707 Base (No comp_stack, Full GSQ 6.0h + Native 6.85h) + P5+Gem4-12B Surprisal (kNN 2,0.20) + Safe V1 (870/1140)"
-    },
-    {
-      "ref": 58490991,
-      "date": "2026-11-18 11:21:51",
-      "status": "COMPLETE",
-      "score": 0.698,
-      "description": "NTL 0707: Clean Baseline (No comp_stack, Full GSQ 27B 6.3h + Native 7.2h, Safe V1 fixed_s=870/1140)"
     }
   ],
   "architecture_matrix": [
