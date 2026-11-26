@@ -1,62 +1,29 @@
 {
-  "updated_at": "2026-11-26 16:32:43 JST",
+  "updated_at": "2026-11-26 18:30:27 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 7129,
-    "my_rank": 252,
-    "my_score": 0.724,
+    "total_teams": 7135,
+    "my_rank": 126,
+    "my_score": 0.725,
     "medal": "Silver",
-    "top_percent": 3.53,
+    "top_percent": 1.77,
     "gold_cutoff": 0.765,
-    "silver_cutoff": 0.722,
+    "silver_cutoff": 0.723,
     "silver_rank_cutoff": 356,
     "bronze_cutoff": 0.72,
-    "bronze_rank_cutoff": 712,
+    "bronze_rank_cutoff": 713,
     "quota_remaining": 2,
     "clusters": {
-      "ge_0698": 1881,
-      "ge_0700": 1867,
-      "ge_0702": 1745,
-      "ge_0705": 1429,
-      "ge_0710": 1335,
+      "ge_0698": 1885,
+      "ge_0700": 1870,
+      "ge_0702": 1749,
+      "ge_0705": 1435,
+      "ge_0710": 1339,
       "ge_0750": 37
     }
   },
-  "running_submission": {
-    "ref": 58917562,
-    "version": "NTL 0730",
-    "track": "Baseline / Pipeline",
-    "description": "NTL 0730 (A+B): Rohan 0.725 (LumiBee 0.724 + Sibling Odds on 40% coverage)",
-    "params": "NTL 0730 (A+B): Rohan 0.725 (LumiBee 0.724 + Sibling Odds on 40% coverage)",
-    "submitted_at": "2026-11-26 09:32:49",
-    "status": "PENDING",
-    "target_score": "0.705+ (Silver Cliff)",
-    "estimated_completion": "~8-9h from submit"
-  },
-  "active_runs": [
-    {
-      "ref": 58917562,
-      "version": "NTL 0730",
-      "track": "Baseline / Pipeline",
-      "description": "NTL 0730 (A+B): Rohan 0.725 (LumiBee 0.724 + Sibling Odds on 40% coverage)",
-      "params": "NTL 0730 (A+B): Rohan 0.725 (LumiBee 0.724 + Sibling Odds on 40% coverage)",
-      "submitted_at": "2026-11-26 09:32:49",
-      "status": "PENDING",
-      "target_score": "0.705+ (Silver Cliff)",
-      "estimated_completion": "~8-9h from submit"
-    },
-    {
-      "ref": 58917089,
-      "version": "NTL 0728",
-      "track": "V1 Coverage",
-      "description": "NTL 0728 (B): 0726 (0.722 PB115) + --max-cover 0.40 only",
-      "params": "NTL 0728 (B): 0726 (0.722 PB115) + --max-cover 0.40 only",
-      "submitted_at": "2026-11-26 09:21:19",
-      "status": "PENDING",
-      "target_score": "0.705+ (Silver Cliff)",
-      "estimated_completion": "~8-9h from submit"
-    }
-  ],
+  "running_submission": null,
+  "active_runs": [],
   "timeline": [
     {
       "version": "V28",
@@ -418,31 +385,31 @@
       "version": "NTL 0728 (B)",
       "score": 0.722,
       "date": "11-26",
-      "tag": "Pending",
-      "desc": "0726 + --max-cover 0.40 単体（カバレッジ解放1変数検証）評価中"
+      "tag": "0.722",
+      "desc": "0726 + --max-cover 0.40 単体: 0.722（カバレッジ40%単体では横並び）"
     },
     {
       "version": "NTL 0729 (A)",
       "score": 0.724,
-      "target": 0.725,
       "date": "11-26",
-      "tag": "0.724 Peak",
-      "desc": "LumiBee 0.724 (marginal_logodds + alpha 0.35 + max_cover 0.40 + 統合タイポマスク): 新自己ベスト 0.724 (+0.002)"
+      "tag": "0.724",
+      "desc": "LumiBee 0.724 (marginal_logodds + alpha 0.35 + max_cover 0.40 + 統合タイポマスク): +0.002更新"
     },
     {
       "version": "NTL 0730 (A+B)",
-      "score": 0.724,
+      "score": 0.725,
+      "target": 0.726,
       "date": "11-26",
-      "tag": "Pending",
-      "desc": "Rohan 0.725 (0729 + 40%カバレッジ上での Sibling Odds) 評価中"
+      "tag": "0.725 Peak",
+      "desc": "Rohan 0.725 (0729 + 40%カバレッジ上での Sibling Odds): 新自己ベスト 0.725 (+0.003)"
     }
   ],
   "submissions": [
     {
       "ref": 58917562,
       "date": "2026-11-26 09:32:49",
-      "status": "PENDING",
-      "score": null,
+      "status": "COMPLETE",
+      "score": 0.725,
       "description": "NTL 0730 (A+B): Rohan 0.725 (LumiBee 0.724 + Sibling Odds on 40% coverage)"
     },
     {
@@ -455,8 +422,8 @@
     {
       "ref": 58917089,
       "date": "2026-11-26 09:21:19",
-      "status": "PENDING",
-      "score": null,
+      "status": "COMPLETE",
+      "score": 0.722,
       "description": "NTL 0728 (B): 0726 (0.722 PB115) + --max-cover 0.40 only"
     },
     {
@@ -1039,14 +1006,14 @@
     {
       "version": "NTL 0728 (B)",
       "track": "Track 1",
-      "score": "Pending",
+      "score": "0.722",
       "data_pool": "0726 + max_cover 0.40",
       "deberta": "comp_stack OFF + Hybrid 0.25",
       "pairwise_ab": "ATLAS V9",
       "sibling_style": "PB115 + 40%カバレッジ単体",
       "atlas_margin": "0.35",
       "sinkhorn": "0.30 / Mix 0.35",
-      "highlight": "【評価中】Ref: 58917089 (1変数検証)"
+      "highlight": "【0.722横並び】Ref: 58917089 (1変数検証: 単体差なし)"
     },
     {
       "version": "NTL 0729 (A)",
@@ -1058,19 +1025,19 @@
       "sibling_style": "marginal_logodds + 統合タイポマスク",
       "atlas_margin": "0.35",
       "sinkhorn": "0.30 / Mix 0.35",
-      "highlight": "【現自己ベスト: 0.724】Ref: 58917092 (+0.002更新)"
+      "highlight": "【0.724到達】Ref: 58917092 (+0.002更新)"
     },
     {
       "version": "NTL 0730 (A+B)",
       "track": "Track 1",
-      "score": "Pending",
+      "score": "0.725",
       "data_pool": "0729 + Sibling Odds (40%)",
       "deberta": "comp_stack OFF + Hybrid 0.35",
       "pairwise_ab": "ATLAS V9",
       "sibling_style": "0729 + Sibling Odds (0.55, <0.8)",
       "atlas_margin": "0.35",
       "sinkhorn": "0.30 / Mix 0.35",
-      "highlight": "【評価中】Ref: 58917562 (Rohan 0.725再現)"
+      "highlight": "【現自己ベスト: 0.725】Ref: 58917562 (+0.003 / 0.725到達)"
     }
   ],
   "local_verification": {

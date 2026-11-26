@@ -491,9 +491,9 @@ def main():
         {"version": "NTL 0725 (Diff B)", "score": 0.719, "date": "11-25", "tag": "Diff B (+0.002)", "desc": "差分B(0724 + argsort(-mass)純GLM順): 0.719到達（likelihood_queue廃止が+0.002効いたと特定）"},
         {"version": "NTL 0726", "score": 0.722, "target": 0.725, "date": "11-25", "tag": "0.722 Peak", "desc": "LumiBee Kiro v66 PB115 Hybrid Apex (115-dim LR+LGB + Hybrid Alpha 0.25 + All-GLM-Out Guard): 自己ベスト 0.722 (+0.005 / 銀圏到達)"},
         {"version": "NTL 0727", "score": 0.721, "date": "11-26", "tag": "0.721", "desc": "0726 + Sibling Odds + ozertuu Stage-3: 0.721（0726比 -0.001、0726単体がベスト維持）"},
-        {"version": "NTL 0728 (B)", "score": 0.722, "date": "11-26", "tag": "Pending", "desc": "0726 + --max-cover 0.40 単体（カバレッジ解放1変数検証）評価中"},
-        {"version": "NTL 0729 (A)", "score": 0.724, "target": 0.725, "date": "11-26", "tag": "0.724 Peak", "desc": "LumiBee 0.724 (marginal_logodds + alpha 0.35 + max_cover 0.40 + 統合タイポマスク): 新自己ベスト 0.724 (+0.002)"},
-        {"version": "NTL 0730 (A+B)", "score": 0.724, "date": "11-26", "tag": "Pending", "desc": "Rohan 0.725 (0729 + 40%カバレッジ上での Sibling Odds) 評価中"}
+        {"version": "NTL 0728 (B)", "score": 0.722, "date": "11-26", "tag": "0.722", "desc": "0726 + --max-cover 0.40 単体: 0.722（カバレッジ40%単体では横並び）"},
+        {"version": "NTL 0729 (A)", "score": 0.724, "date": "11-26", "tag": "0.724", "desc": "LumiBee 0.724 (marginal_logodds + alpha 0.35 + max_cover 0.40 + 統合タイポマスク): +0.002更新"},
+        {"version": "NTL 0730 (A+B)", "score": 0.725, "target": 0.726, "date": "11-26", "tag": "0.725 Peak", "desc": "Rohan 0.725 (0729 + 40%カバレッジ上での Sibling Odds): 新自己ベスト 0.725 (+0.003)"}
     ]
 
     # 4. Architecture comparison matrix
@@ -536,9 +536,9 @@ def main():
         {"version": "NTL 0725 (Diff B)", "track": "Track 1", "score": "0.719", "data_pool": "0724 + argsort(-mass)", "deberta": "comp_stack ON + ranjeet258順", "pairwise_ab": "ATLAS V9", "sibling_style": "純GLM質量順 + Sibling Odds", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【0.719達成】Ref: 58857635 (差分B確定: argsort(-mass)で+0.002)"},
         {"version": "NTL 0726 (PB115)", "track": "Track 1", "score": "0.722", "data_pool": "No comp_stack + PB-115 (115-dim)", "deberta": "comp_stack OFF + 638.4s/1325.7s", "pairwise_ab": "ATLAS V9", "sibling_style": "PB115 LR+LGB + Hybrid 0.25 + All-GLM-Out", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【現自己ベスト: 0.722】Ref: 58859803 (銀メダル圏突入 / +0.005)"},
         {"version": "NTL 0727", "track": "Track 1", "score": "0.721", "data_pool": "0726 + Sibling Odds + ozertuu", "deberta": "comp_stack OFF + All-GLM-Out", "pairwise_ab": "ATLAS V9", "sibling_style": "PB115 + Sibling Odds + reconcile_typography", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【0.721着地】Ref: 58877898 (0726比 -0.001)"},
-        {"version": "NTL 0728 (B)", "track": "Track 1", "score": "Pending", "data_pool": "0726 + max_cover 0.40", "deberta": "comp_stack OFF + Hybrid 0.25", "pairwise_ab": "ATLAS V9", "sibling_style": "PB115 + 40%カバレッジ単体", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【評価中】Ref: 58917089 (1変数検証)"},
-        {"version": "NTL 0729 (A)", "track": "Track 1", "score": "0.724", "data_pool": "PB-115 + max_cover 0.40", "deberta": "comp_stack OFF + Hybrid 0.35", "pairwise_ab": "ATLAS V9", "sibling_style": "marginal_logodds + 統合タイポマスク", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【現自己ベスト: 0.724】Ref: 58917092 (+0.002更新)"},
-        {"version": "NTL 0730 (A+B)", "track": "Track 1", "score": "Pending", "data_pool": "0729 + Sibling Odds (40%)", "deberta": "comp_stack OFF + Hybrid 0.35", "pairwise_ab": "ATLAS V9", "sibling_style": "0729 + Sibling Odds (0.55, <0.8)", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【評価中】Ref: 58917562 (Rohan 0.725再現)"}
+        {"version": "NTL 0728 (B)", "track": "Track 1", "score": "0.722", "data_pool": "0726 + max_cover 0.40", "deberta": "comp_stack OFF + Hybrid 0.25", "pairwise_ab": "ATLAS V9", "sibling_style": "PB115 + 40%カバレッジ単体", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【0.722横並び】Ref: 58917089 (1変数検証: 単体差なし)"},
+        {"version": "NTL 0729 (A)", "track": "Track 1", "score": "0.724", "data_pool": "PB-115 + max_cover 0.40", "deberta": "comp_stack OFF + Hybrid 0.35", "pairwise_ab": "ATLAS V9", "sibling_style": "marginal_logodds + 統合タイポマスク", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【0.724到達】Ref: 58917092 (+0.002更新)"},
+        {"version": "NTL 0730 (A+B)", "track": "Track 1", "score": "0.725", "data_pool": "0729 + Sibling Odds (40%)", "deberta": "comp_stack OFF + Hybrid 0.35", "pairwise_ab": "ATLAS V9", "sibling_style": "0729 + Sibling Odds (0.55, <0.8)", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【現自己ベスト: 0.725】Ref: 58917562 (+0.003 / 0.725到達)"}
     ]
 
     # 5. Extract Markdown Reports
