@@ -1,25 +1,25 @@
 {
-  "updated_at": "2026-11-25 17:43:02 JST",
+  "updated_at": "2026-11-26 09:01:44 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 7034,
-    "my_rank": 148,
+    "total_teams": 7109,
+    "my_rank": 303,
     "my_score": 0.722,
     "medal": "Silver",
-    "top_percent": 2.1,
-    "gold_cutoff": 0.763,
-    "silver_cutoff": 0.72,
-    "silver_rank_cutoff": 351,
-    "bronze_cutoff": 0.719,
-    "bronze_rank_cutoff": 703,
-    "quota_remaining": 2,
+    "top_percent": 4.26,
+    "gold_cutoff": 0.764,
+    "silver_cutoff": 0.722,
+    "silver_rank_cutoff": 355,
+    "bronze_cutoff": 0.72,
+    "bronze_rank_cutoff": 710,
+    "quota_remaining": 5,
     "clusters": {
-      "ge_0698": 1782,
-      "ge_0700": 1769,
-      "ge_0702": 1642,
-      "ge_0705": 1298,
-      "ge_0710": 1190,
-      "ge_0750": 35
+      "ge_0698": 1859,
+      "ge_0700": 1845,
+      "ge_0702": 1725,
+      "ge_0705": 1403,
+      "ge_0710": 1304,
+      "ge_0750": 37
     }
   },
   "running_submission": null,
@@ -373,9 +373,23 @@
       "date": "11-25",
       "tag": "0.722 Peak",
       "desc": "LumiBee Kiro v66 PB115 Hybrid Apex (115-dim LR+LGB + Hybrid Alpha 0.25 + All-GLM-Out Guard): 自己ベスト 0.722 (+0.005 / 銀圏到達)"
+    },
+    {
+      "version": "NTL 0727",
+      "score": 0.721,
+      "date": "11-26",
+      "tag": "0.721",
+      "desc": "0726 + Sibling Odds + ozertuu Stage-3: 0.721（0726比 -0.001、0726単体がベスト維持）"
     }
   ],
   "submissions": [
+    {
+      "ref": 58877898,
+      "date": "2026-11-25 17:55:50",
+      "status": "COMPLETE",
+      "score": 0.721,
+      "description": "NTL 0727: 0726 (0.722 PB115 + All-GLM-Out) + Sibling Odds + ozertuu Stage-3"
+    },
     {
       "ref": 58859803,
       "date": "2026-11-25 10:31:59",
@@ -508,13 +522,6 @@
       "status": "COMPLETE",
       "score": 0.694,
       "description": "NTL 0709: 0707 Base (0.698) + V1 Top-15% Cover Cap (--max-cover 0.15)"
-    },
-    {
-      "ref": 58494871,
-      "date": "2026-11-18 13:43:54",
-      "status": "COMPLETE",
-      "score": 0.693,
-      "description": "NTL 0708: 0707 Base (No comp_stack, Full GSQ 6.0h + Native 6.85h) + P5+Gem4-12B Surprisal (kNN 2,0.20) + Safe V1 (870/1140)"
     }
   ],
   "architecture_matrix": [
@@ -960,7 +967,19 @@
       "sibling_style": "PB115 LR+LGB + Hybrid 0.25 + All-GLM-Out",
       "atlas_margin": "0.35",
       "sinkhorn": "0.30 / Mix 0.35",
-      "highlight": "【新自己ベスト: 0.722】Ref: 58859803 (銀メダル圏突入 / +0.005)"
+      "highlight": "【現自己ベスト: 0.722】Ref: 58859803 (銀メダル圏突入 / +0.005)"
+    },
+    {
+      "version": "NTL 0727",
+      "track": "Track 1",
+      "score": "0.721",
+      "data_pool": "0726 + Sibling Odds + ozertuu",
+      "deberta": "comp_stack OFF + All-GLM-Out",
+      "pairwise_ab": "ATLAS V9",
+      "sibling_style": "PB115 + Sibling Odds + reconcile_typography",
+      "atlas_margin": "0.35",
+      "sinkhorn": "0.30 / Mix 0.35",
+      "highlight": "【0.721着地】Ref: 58877898 (0726比 -0.001)"
     }
   ],
   "local_verification": {

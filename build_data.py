@@ -489,7 +489,8 @@ def main():
         {"version": "NTL 0723", "score": 0.717, "date": "11-24", "tag": "Sibling Odds", "desc": "0719(No comp) + Sibling Odds + ozertuu V27 Stage-3: 0.717横並び"},
         {"version": "NTL 0724 (Diff A)", "score": 0.717, "date": "11-25", "tag": "Diff A", "desc": "差分A(0723 + comp_w=0.15): 0.717横並び（comp_stack有効化単体では0.717のまま）"},
         {"version": "NTL 0725 (Diff B)", "score": 0.719, "date": "11-25", "tag": "Diff B (+0.002)", "desc": "差分B(0724 + argsort(-mass)純GLM順): 0.719到達（likelihood_queue廃止が+0.002効いたと特定）"},
-        {"version": "NTL 0726", "score": 0.722, "target": 0.725, "date": "11-25", "tag": "0.722 Peak", "desc": "LumiBee Kiro v66 PB115 Hybrid Apex (115-dim LR+LGB + Hybrid Alpha 0.25 + All-GLM-Out Guard): 自己ベスト 0.722 (+0.005 / 銀圏到達)"}
+        {"version": "NTL 0726", "score": 0.722, "target": 0.725, "date": "11-25", "tag": "0.722 Peak", "desc": "LumiBee Kiro v66 PB115 Hybrid Apex (115-dim LR+LGB + Hybrid Alpha 0.25 + All-GLM-Out Guard): 自己ベスト 0.722 (+0.005 / 銀圏到達)"},
+        {"version": "NTL 0727", "score": 0.721, "date": "11-26", "tag": "0.721", "desc": "0726 + Sibling Odds + ozertuu Stage-3: 0.721（0726比 -0.001、0726単体がベスト維持）"}
     ]
 
     # 4. Architecture comparison matrix
@@ -530,7 +531,8 @@ def main():
         {"version": "NTL 0723", "track": "Track 1", "score": "0.717", "data_pool": "0719 + Sibling Odds", "deberta": "comp_stack OFF + ozertuu V27", "pairwise_ab": "ATLAS V9", "sibling_style": "Sibling Odds + reconcile_typography", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【0.717維持】Ref: 58813043 (comp_w=0.0での再現)"},
         {"version": "NTL 0724 (Diff A)", "track": "Track 1", "score": "0.717", "data_pool": "0723 + comp_stack (0.15)", "deberta": "comp_stack ON + ozertuu V27", "pairwise_ab": "ATLAS V9", "sibling_style": "comp_w=0.15 + Sibling Odds", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【0.717横並び】Ref: 58857627 (差分A検証: comp_w=0.15差なし)"},
         {"version": "NTL 0725 (Diff B)", "track": "Track 1", "score": "0.719", "data_pool": "0724 + argsort(-mass)", "deberta": "comp_stack ON + ranjeet258順", "pairwise_ab": "ATLAS V9", "sibling_style": "純GLM質量順 + Sibling Odds", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【0.719達成】Ref: 58857635 (差分B確定: argsort(-mass)で+0.002)"},
-        {"version": "NTL 0726 (PB115)", "track": "Track 1", "score": "0.722", "data_pool": "No comp_stack + PB-115 (115-dim)", "deberta": "comp_stack OFF + 638.4s/1325.7s", "pairwise_ab": "ATLAS V9", "sibling_style": "PB115 LR+LGB + Hybrid 0.25 + All-GLM-Out", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【新自己ベスト: 0.722】Ref: 58859803 (銀メダル圏突入 / +0.005)"}
+        {"version": "NTL 0726 (PB115)", "track": "Track 1", "score": "0.722", "data_pool": "No comp_stack + PB-115 (115-dim)", "deberta": "comp_stack OFF + 638.4s/1325.7s", "pairwise_ab": "ATLAS V9", "sibling_style": "PB115 LR+LGB + Hybrid 0.25 + All-GLM-Out", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【現自己ベスト: 0.722】Ref: 58859803 (銀メダル圏突入 / +0.005)"},
+        {"version": "NTL 0727", "track": "Track 1", "score": "0.721", "data_pool": "0726 + Sibling Odds + ozertuu", "deberta": "comp_stack OFF + All-GLM-Out", "pairwise_ab": "ATLAS V9", "sibling_style": "PB115 + Sibling Odds + reconcile_typography", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【0.721着地】Ref: 58877898 (0726比 -0.001)"}
     ]
 
     # 5. Extract Markdown Reports
