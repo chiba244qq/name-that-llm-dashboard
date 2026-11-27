@@ -493,7 +493,9 @@ def main():
         {"version": "NTL 0727", "score": 0.721, "date": "11-26", "tag": "0.721", "desc": "0726 + Sibling Odds + ozertuu Stage-3: 0.721（0726比 -0.001、0726単体がベスト維持）"},
         {"version": "NTL 0728 (B)", "score": 0.722, "date": "11-26", "tag": "0.722", "desc": "0726 + --max-cover 0.40 単体: 0.722（カバレッジ40%単体では横並び）"},
         {"version": "NTL 0729 (A)", "score": 0.724, "date": "11-26", "tag": "0.724", "desc": "LumiBee 0.724 (marginal_logodds + alpha 0.35 + max_cover 0.40 + 統合タイポマスク): +0.002更新"},
-        {"version": "NTL 0730 (A+B)", "score": 0.725, "target": 0.726, "date": "11-26", "tag": "0.725 Peak", "desc": "Rohan 0.725 (0729 + 40%カバレッジ上での Sibling Odds): 新自己ベスト 0.725 (+0.003)"}
+        {"version": "NTL 0730 (A+B)", "score": 0.725, "target": 0.726, "date": "11-26", "tag": "0.725 Peak", "desc": "Rohan 0.725 (0729 + 40%カバレッジ上での Sibling Odds): 現自己ベスト 0.725 (+0.003)"},
+        {"version": "NTL 0731", "score": 0.716, "date": "11-27", "tag": "Rejected", "desc": "0730 + --hybrid-alpha 0.0: 0.716へ急落（本番ではmarginal_logodds alpha=0.35が必須と実証）"},
+        {"version": "NTL 0732", "score": 0.724, "date": "11-27", "tag": "Shakeup Guard", "desc": "0730からハードem-dash除外解除: 0.724（-0.001のみでPrivate保険候補として有力）"}
     ]
 
     # 4. Architecture comparison matrix
@@ -538,7 +540,9 @@ def main():
         {"version": "NTL 0727", "track": "Track 1", "score": "0.721", "data_pool": "0726 + Sibling Odds + ozertuu", "deberta": "comp_stack OFF + All-GLM-Out", "pairwise_ab": "ATLAS V9", "sibling_style": "PB115 + Sibling Odds + reconcile_typography", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【0.721着地】Ref: 58877898 (0726比 -0.001)"},
         {"version": "NTL 0728 (B)", "track": "Track 1", "score": "0.722", "data_pool": "0726 + max_cover 0.40", "deberta": "comp_stack OFF + Hybrid 0.25", "pairwise_ab": "ATLAS V9", "sibling_style": "PB115 + 40%カバレッジ単体", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【0.722横並び】Ref: 58917089 (1変数検証: 単体差なし)"},
         {"version": "NTL 0729 (A)", "track": "Track 1", "score": "0.724", "data_pool": "PB-115 + max_cover 0.40", "deberta": "comp_stack OFF + Hybrid 0.35", "pairwise_ab": "ATLAS V9", "sibling_style": "marginal_logodds + 統合タイポマスク", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【0.724到達】Ref: 58917092 (+0.002更新)"},
-        {"version": "NTL 0730 (A+B)", "track": "Track 1", "score": "0.725", "data_pool": "0729 + Sibling Odds (40%)", "deberta": "comp_stack OFF + Hybrid 0.35", "pairwise_ab": "ATLAS V9", "sibling_style": "0729 + Sibling Odds (0.55, <0.8)", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【現自己ベスト: 0.725】Ref: 58917562 (+0.003 / 0.725到達)"}
+        {"version": "NTL 0730 (A+B)", "track": "Track 1", "score": "0.725", "data_pool": "0729 + Sibling Odds (40%)", "deberta": "comp_stack OFF + Hybrid 0.35", "pairwise_ab": "ATLAS V9", "sibling_style": "0729 + Sibling Odds (0.55, <0.8)", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【現自己ベスト: 0.725】Ref: 58917562 (+0.003 / 0.725到達)"},
+        {"version": "NTL 0731 (C-1)", "track": "Track 2", "score": "0.716", "data_pool": "0730 + hybrid_alpha 0.0", "deberta": "comp_stack OFF + Hybrid 0.0", "pairwise_ab": "ATLAS V9", "sibling_style": "純18クラスPB-115 (alpha=0.0)", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【棄却】Ref: 58944404 (alpha 0.35の必須性を確認)"},
+        {"version": "NTL 0732 (C-2)", "track": "Track 1", "score": "0.724", "data_pool": "0730 (No em-dash veto)", "deberta": "comp_stack OFF + Hybrid 0.35", "pairwise_ab": "ATLAS V9", "sibling_style": "em-dash->Gemini除外のみ解除", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【Private保険: 0.724】Ref: 58944407 (0.725比 -0.001のみ)"}
     ]
 
     # 5. Extract Markdown Reports

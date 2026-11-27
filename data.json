@@ -1,24 +1,24 @@
 {
-  "updated_at": "2026-11-26 18:30:27 JST",
+  "updated_at": "2026-11-27 09:18:55 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 7135,
-    "my_rank": 126,
+    "total_teams": 7198,
+    "my_rank": 308,
     "my_score": 0.725,
     "medal": "Silver",
-    "top_percent": 1.77,
+    "top_percent": 4.28,
     "gold_cutoff": 0.765,
-    "silver_cutoff": 0.723,
-    "silver_rank_cutoff": 356,
-    "bronze_cutoff": 0.72,
-    "bronze_rank_cutoff": 713,
-    "quota_remaining": 2,
+    "silver_cutoff": 0.725,
+    "silver_rank_cutoff": 359,
+    "bronze_cutoff": 0.721,
+    "bronze_rank_cutoff": 719,
+    "quota_remaining": 5,
     "clusters": {
-      "ge_0698": 1885,
-      "ge_0700": 1870,
-      "ge_0702": 1749,
-      "ge_0705": 1435,
-      "ge_0710": 1339,
+      "ge_0698": 1950,
+      "ge_0700": 1933,
+      "ge_0702": 1819,
+      "ge_0705": 1515,
+      "ge_0710": 1423,
       "ge_0750": 37
     }
   },
@@ -401,10 +401,38 @@
       "target": 0.726,
       "date": "11-26",
       "tag": "0.725 Peak",
-      "desc": "Rohan 0.725 (0729 + 40%カバレッジ上での Sibling Odds): 新自己ベスト 0.725 (+0.003)"
+      "desc": "Rohan 0.725 (0729 + 40%カバレッジ上での Sibling Odds): 現自己ベスト 0.725 (+0.003)"
+    },
+    {
+      "version": "NTL 0731",
+      "score": 0.716,
+      "date": "11-27",
+      "tag": "Rejected",
+      "desc": "0730 + --hybrid-alpha 0.0: 0.716へ急落（本番ではmarginal_logodds alpha=0.35が必須と実証）"
+    },
+    {
+      "version": "NTL 0732",
+      "score": 0.724,
+      "date": "11-27",
+      "tag": "Shakeup Guard",
+      "desc": "0730からハードem-dash除外解除: 0.724（-0.001のみでPrivate保険候補として有力）"
     }
   ],
   "submissions": [
+    {
+      "ref": 58944407,
+      "date": "2026-11-26 20:39:27",
+      "status": "COMPLETE",
+      "score": 0.724,
+      "description": "NTL 0732 (C-2 Shakeup Guard): 0730 (0.725) without hard em-dash->Gemini veto"
+    },
+    {
+      "ref": 58944404,
+      "date": "2026-11-26 20:39:23",
+      "status": "COMPLETE",
+      "score": 0.716,
+      "description": "NTL 0731 (C-1 OOF Opt): 0730 (0.725) + --hybrid-alpha 0.0 (pure 18-class PB-115)"
+    },
     {
       "ref": 58917562,
       "date": "2026-11-26 09:32:49",
@@ -530,20 +558,6 @@
       "status": "COMPLETE",
       "score": 0.717,
       "description": "NTL 0715: 0.711 Prefix B + Robust V1"
-    },
-    {
-      "ref": 58652168,
-      "date": "2026-11-21 14:31:48",
-      "status": "COMPLETE",
-      "score": 0.71,
-      "description": "NTL 0714: 320-Token GLM Likelihood + Fable Routing (0713 + Fable)"
-    },
-    {
-      "ref": 58651815,
-      "date": "2026-11-21 14:20:42",
-      "status": "COMPLETE",
-      "score": 0.709,
-      "description": "NTL 0713: 320-Token GLM Likelihood + Qwen Ensemble (sanpier 0.709 baseline)"
     }
   ],
   "architecture_matrix": [
@@ -1038,6 +1052,30 @@
       "atlas_margin": "0.35",
       "sinkhorn": "0.30 / Mix 0.35",
       "highlight": "【現自己ベスト: 0.725】Ref: 58917562 (+0.003 / 0.725到達)"
+    },
+    {
+      "version": "NTL 0731 (C-1)",
+      "track": "Track 2",
+      "score": "0.716",
+      "data_pool": "0730 + hybrid_alpha 0.0",
+      "deberta": "comp_stack OFF + Hybrid 0.0",
+      "pairwise_ab": "ATLAS V9",
+      "sibling_style": "純18クラスPB-115 (alpha=0.0)",
+      "atlas_margin": "0.35",
+      "sinkhorn": "0.30 / Mix 0.35",
+      "highlight": "【棄却】Ref: 58944404 (alpha 0.35の必須性を確認)"
+    },
+    {
+      "version": "NTL 0732 (C-2)",
+      "track": "Track 1",
+      "score": "0.724",
+      "data_pool": "0730 (No em-dash veto)",
+      "deberta": "comp_stack OFF + Hybrid 0.35",
+      "pairwise_ab": "ATLAS V9",
+      "sibling_style": "em-dash->Gemini除外のみ解除",
+      "atlas_margin": "0.35",
+      "sinkhorn": "0.30 / Mix 0.35",
+      "highlight": "【Private保険: 0.724】Ref: 58944407 (0.725比 -0.001のみ)"
     }
   ],
   "local_verification": {
