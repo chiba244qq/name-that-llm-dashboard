@@ -495,7 +495,10 @@ def main():
         {"version": "NTL 0729 (A)", "score": 0.724, "date": "11-26", "tag": "0.724", "desc": "LumiBee 0.724 (marginal_logodds + alpha 0.35 + max_cover 0.40 + 統合タイポマスク): +0.002更新"},
         {"version": "NTL 0730 (A+B)", "score": 0.725, "target": 0.726, "date": "11-26", "tag": "0.725 Peak", "desc": "Rohan 0.725 (0729 + 40%カバレッジ上での Sibling Odds): 現自己ベスト 0.725 (+0.003)"},
         {"version": "NTL 0731", "score": 0.716, "date": "11-27", "tag": "Rejected", "desc": "0730 + --hybrid-alpha 0.0: 0.716へ急落（本番ではmarginal_logodds alpha=0.35が必須と実証）"},
-        {"version": "NTL 0732", "score": 0.724, "date": "11-27", "tag": "Shakeup Guard", "desc": "0730からハードem-dash除外解除: 0.724（-0.001のみでPrivate保険候補として有力）"}
+        {"version": "NTL 0732", "score": 0.724, "date": "11-27", "tag": "Shakeup Guard", "desc": "0730からハードem-dash除外解除: 0.724（-0.001のみでPrivate保険候補として有力）"},
+        {"version": "NTL 0733 / 0735 / 0736", "score": 0.725, "date": "11-27", "tag": "0.725 Plateau", "desc": "alpha 0.50(0.725) / alpha 0.60(0.725) / alpha 0.50 NoEm(0.725): 0.725安定再現＋NoEm無劣化確認"},
+        {"version": "NTL 0737", "score": 0.730, "target": 0.732, "date": "11-28", "tag": "0.730 Peak (#137)", "desc": "Rohan 0.730 (alpha 0.50 + 30-40%末尾 +0.10 marginal ramp): 自己ベスト 0.730 (+0.005 / #137)"},
+        {"version": "NTL 0738", "score": 0.727, "date": "11-28", "tag": "0.727", "desc": "Areeb Ali 0.729 The Model Lineup (lightningv08 V52再現): 0.727"}
     ]
 
     # 4. Architecture comparison matrix
@@ -542,7 +545,10 @@ def main():
         {"version": "NTL 0729 (A)", "track": "Track 1", "score": "0.724", "data_pool": "PB-115 + max_cover 0.40", "deberta": "comp_stack OFF + Hybrid 0.35", "pairwise_ab": "ATLAS V9", "sibling_style": "marginal_logodds + 統合タイポマスク", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【0.724到達】Ref: 58917092 (+0.002更新)"},
         {"version": "NTL 0730 (A+B)", "track": "Track 1", "score": "0.725", "data_pool": "0729 + Sibling Odds (40%)", "deberta": "comp_stack OFF + Hybrid 0.35", "pairwise_ab": "ATLAS V9", "sibling_style": "0729 + Sibling Odds (0.55, <0.8)", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【現自己ベスト: 0.725】Ref: 58917562 (+0.003 / 0.725到達)"},
         {"version": "NTL 0731 (C-1)", "track": "Track 2", "score": "0.716", "data_pool": "0730 + hybrid_alpha 0.0", "deberta": "comp_stack OFF + Hybrid 0.0", "pairwise_ab": "ATLAS V9", "sibling_style": "純18クラスPB-115 (alpha=0.0)", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【棄却】Ref: 58944404 (alpha 0.35の必須性を確認)"},
-        {"version": "NTL 0732 (C-2)", "track": "Track 1", "score": "0.724", "data_pool": "0730 (No em-dash veto)", "deberta": "comp_stack OFF + Hybrid 0.35", "pairwise_ab": "ATLAS V9", "sibling_style": "em-dash->Gemini除外のみ解除", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【Private保険: 0.724】Ref: 58944407 (0.725比 -0.001のみ)"}
+        {"version": "NTL 0732 (C-2)", "track": "Track 1", "score": "0.724", "data_pool": "0730 (No em-dash veto)", "deberta": "comp_stack OFF + Hybrid 0.35", "pairwise_ab": "ATLAS V9", "sibling_style": "em-dash->Gemini除外のみ解除", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【Private保険: 0.724】Ref: 58944407 (0.725比 -0.001のみ)"},
+        {"version": "NTL 0733 / 0735 / 0736", "track": "Track 1", "score": "0.725", "data_pool": "0730 + alpha 0.50 / 0.60 / NoEm", "deberta": "comp_stack OFF + Hybrid 0.50/0.60", "pairwise_ab": "ATLAS V9", "sibling_style": "alpha調整 + NoEm検証", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【0.725再現】Ref: 58976193/58982379/58982384 (NoEmでも0.725維持)"},
+        {"version": "NTL 0737 (Ramp)", "track": "Track 1", "score": "0.730", "data_pool": "0733 + 30-40% Queue Ramp", "deberta": "comp_stack OFF + alpha 0.50->0.60", "pairwise_ab": "ATLAS V9", "sibling_style": "末尾+0.10 marginal ramp + Sibling Odds", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【現自己ベスト: 0.730 (#137)】Ref: 58997644 (+0.005 / 銀圏上位)"},
+        {"version": "NTL 0738 (Lineup)", "track": "Track 2", "score": "0.727", "data_pool": "Areeb Ali 0.729 (lv08 V52)", "deberta": "comp_stack OFF + GSQ3", "pairwise_ab": "ATLAS V9", "sibling_style": "PB115 + Sibling Odds", "atlas_margin": "0.35", "sinkhorn": "0.30 / Mix 0.35", "highlight": "【0.727着地】Ref: 58997654"}
     ]
 
     # 5. Extract Markdown Reports

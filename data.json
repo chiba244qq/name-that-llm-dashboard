@@ -1,24 +1,24 @@
 {
-  "updated_at": "2026-11-27 09:18:55 JST",
+  "updated_at": "2026-11-28 12:58:36 JST",
   "competition": {
     "name": "Name That LLM",
-    "total_teams": 7198,
-    "my_rank": 308,
-    "my_score": 0.725,
+    "total_teams": 7295,
+    "my_rank": 137,
+    "my_score": 0.73,
     "medal": "Silver",
-    "top_percent": 4.28,
+    "top_percent": 1.88,
     "gold_cutoff": 0.765,
-    "silver_cutoff": 0.725,
-    "silver_rank_cutoff": 359,
-    "bronze_cutoff": 0.721,
-    "bronze_rank_cutoff": 719,
+    "silver_cutoff": 0.728,
+    "silver_rank_cutoff": 364,
+    "bronze_cutoff": 0.724,
+    "bronze_rank_cutoff": 729,
     "quota_remaining": 5,
     "clusters": {
-      "ge_0698": 1950,
-      "ge_0700": 1933,
-      "ge_0702": 1819,
-      "ge_0705": 1515,
-      "ge_0710": 1423,
+      "ge_0698": 2044,
+      "ge_0700": 2027,
+      "ge_0702": 1922,
+      "ge_0705": 1632,
+      "ge_0710": 1549,
       "ge_0750": 37
     }
   },
@@ -416,9 +416,66 @@
       "date": "11-27",
       "tag": "Shakeup Guard",
       "desc": "0730からハードem-dash除外解除: 0.724（-0.001のみでPrivate保険候補として有力）"
+    },
+    {
+      "version": "NTL 0733 / 0735 / 0736",
+      "score": 0.725,
+      "date": "11-27",
+      "tag": "0.725 Plateau",
+      "desc": "alpha 0.50(0.725) / alpha 0.60(0.725) / alpha 0.50 NoEm(0.725): 0.725安定再現＋NoEm無劣化確認"
+    },
+    {
+      "version": "NTL 0737",
+      "score": 0.73,
+      "target": 0.732,
+      "date": "11-28",
+      "tag": "0.730 Peak (#137)",
+      "desc": "Rohan 0.730 (alpha 0.50 + 30-40%末尾 +0.10 marginal ramp): 自己ベスト 0.730 (+0.005 / #137)"
+    },
+    {
+      "version": "NTL 0738",
+      "score": 0.727,
+      "date": "11-28",
+      "tag": "0.727",
+      "desc": "Areeb Ali 0.729 The Model Lineup (lightningv08 V52再現): 0.727"
     }
   ],
   "submissions": [
+    {
+      "ref": 58997654,
+      "date": "2026-11-27 20:02:01",
+      "status": "COMPLETE",
+      "score": 0.727,
+      "description": "NTL 0738: Areeb Ali 0.729 The Model Lineup (lightningv08 V52)"
+    },
+    {
+      "ref": 58997644,
+      "date": "2026-11-27 20:01:56",
+      "status": "COMPLETE",
+      "score": 0.73,
+      "description": "NTL 0737: Rohan 0.730 (alpha 0.50 + 30-40% queue tail +0.10 marginal ramp)"
+    },
+    {
+      "ref": 58982384,
+      "date": "2026-11-27 13:55:34",
+      "status": "COMPLETE",
+      "score": 0.725,
+      "description": "NTL 0736 (Shakeup Guard): 0733 (alpha=0.50) without hard em-dash->Gemini veto"
+    },
+    {
+      "ref": 58982379,
+      "date": "2026-11-27 13:55:30",
+      "status": "COMPLETE",
+      "score": 0.725,
+      "description": "NTL 0735: 0730 (0.725 PB115) + --hybrid-alpha 0.60"
+    },
+    {
+      "ref": 58976193,
+      "date": "2026-11-27 10:57:12",
+      "status": "COMPLETE",
+      "score": 0.725,
+      "description": "NTL 0733 (Priority 1): 0730 (0.725 PB115) + --hybrid-alpha 0.50 (Rohan 0.728)"
+    },
     {
       "ref": 58944407,
       "date": "2026-11-26 20:39:27",
@@ -523,41 +580,6 @@
       "status": "COMPLETE",
       "score": 0.715,
       "description": "NTL 0720: 0719 (0.717 No-comp) + GSQ 27B share 0.10 (vs 0.03)"
-    },
-    {
-      "ref": 58725503,
-      "date": "2026-11-22 23:26:01",
-      "status": "COMPLETE",
-      "score": 0.717,
-      "description": "NTL 0719: 0718 (Guarded Fable) + No comp_stack (--comp_w 0.0)"
-    },
-    {
-      "ref": 58721789,
-      "date": "2026-11-22 21:52:27",
-      "status": "COMPLETE",
-      "score": 0.717,
-      "description": "NTL 0718: Guarded Fable Return + Calibrated GLM Queue (dennis6886 0.719 baseline)"
-    },
-    {
-      "ref": 58716522,
-      "date": "2026-11-22 19:33:50",
-      "status": "COMPLETE",
-      "score": 0.717,
-      "description": "NTL 0717: 0715 (0.717) + Prefix B 320-Token ll_model (Robust V1)"
-    },
-    {
-      "ref": 58690579,
-      "date": "2026-11-22 08:02:03",
-      "status": "COMPLETE",
-      "score": 0.714,
-      "description": "NTL 0716: 0715 (0.717 Prefix B + Robust V1) + Fable Routing"
-    },
-    {
-      "ref": 58665553,
-      "date": "2026-11-21 21:10:10",
-      "status": "COMPLETE",
-      "score": 0.717,
-      "description": "NTL 0715: 0.711 Prefix B + Robust V1"
     }
   ],
   "architecture_matrix": [
@@ -1076,6 +1098,42 @@
       "atlas_margin": "0.35",
       "sinkhorn": "0.30 / Mix 0.35",
       "highlight": "【Private保険: 0.724】Ref: 58944407 (0.725比 -0.001のみ)"
+    },
+    {
+      "version": "NTL 0733 / 0735 / 0736",
+      "track": "Track 1",
+      "score": "0.725",
+      "data_pool": "0730 + alpha 0.50 / 0.60 / NoEm",
+      "deberta": "comp_stack OFF + Hybrid 0.50/0.60",
+      "pairwise_ab": "ATLAS V9",
+      "sibling_style": "alpha調整 + NoEm検証",
+      "atlas_margin": "0.35",
+      "sinkhorn": "0.30 / Mix 0.35",
+      "highlight": "【0.725再現】Ref: 58976193/58982379/58982384 (NoEmでも0.725維持)"
+    },
+    {
+      "version": "NTL 0737 (Ramp)",
+      "track": "Track 1",
+      "score": "0.730",
+      "data_pool": "0733 + 30-40% Queue Ramp",
+      "deberta": "comp_stack OFF + alpha 0.50->0.60",
+      "pairwise_ab": "ATLAS V9",
+      "sibling_style": "末尾+0.10 marginal ramp + Sibling Odds",
+      "atlas_margin": "0.35",
+      "sinkhorn": "0.30 / Mix 0.35",
+      "highlight": "【現自己ベスト: 0.730 (#137)】Ref: 58997644 (+0.005 / 銀圏上位)"
+    },
+    {
+      "version": "NTL 0738 (Lineup)",
+      "track": "Track 2",
+      "score": "0.727",
+      "data_pool": "Areeb Ali 0.729 (lv08 V52)",
+      "deberta": "comp_stack OFF + GSQ3",
+      "pairwise_ab": "ATLAS V9",
+      "sibling_style": "PB115 + Sibling Odds",
+      "atlas_margin": "0.35",
+      "sinkhorn": "0.30 / Mix 0.35",
+      "highlight": "【0.727着地】Ref: 58997654"
     }
   ],
   "local_verification": {
